@@ -1,3 +1,26 @@
 #!/bin/bash
 
 echo "I am workig on it"
+
+SRC=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+pushd .
+cd
+backup=`date +'%B-%d-Time-%H-%M'`
+backup="dotfiles-$backup.bak"
+mkdir -p $backup
+
+mv .tmux.conf $backup
+ln -s $SRC/tmux/tmux.conf .tmux.conf
+
+mv .vim $backup
+mv .vimrc $backup
+ln -s $SRC/vim/vim .vim
+ln -s $SRC/vim/vimrc .vimrc
+
+
+popd
+
+
+
+
