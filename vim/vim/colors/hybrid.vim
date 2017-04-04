@@ -169,7 +169,7 @@ let s:palette.cterm.changebg   = { 'dark' : "60"               , 'light' : "189"
 let s:palette.cterm.changefg   = { 'dark' : "189"              , 'light' : "53"  }
 let s:palette.cterm.delbg      = { 'dark' : s:cterm_delbg      , 'light' : "224" }
 let s:palette.cterm.darkblue   = { 'dark' : "17"               , 'light' : "194" }
-let s:palette.cterm.darkcyan   = { 'dark' : "24"               , 'light' : "22"  }
+let s:palette.cterm.darkcyan   = { 'dark' : "24"               , 'light' : "15"  }
 let s:palette.cterm.darkred    = { 'dark' : "52"               , 'light' : "189" }
 let s:palette.cterm.darkpurple = { 'dark' : "53"               , 'light' : "53"  }
 
