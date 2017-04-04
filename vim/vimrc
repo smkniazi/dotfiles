@@ -1,0 +1,229 @@
+execute pathogen#infect()
+
+" encryption
+set cryptmethod=blowfish2
+
+" show partial lines 
+set display=lastline
+
+" enable hard core mode
+let g:hardtime_default_on = 1
+
+" This must be first, because it changes other options as side effect
+set nocompatible
+
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+"backspace to delete
+set backspace=indent,eol,start
+
+"fix Ctrl U. 
+inoremap <C-U> <C-G>u<C-U>
+
+" disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" numbering
+set relativenumber
+set number
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Keep search matches in the middle of the window.
+"nnoremap n nzzzv
+"nnoremap N Nzzzv
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" auto ident
+set autoindent	
+set copyindent "copy the identation from the previous line
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch 
+
+" Show matching brackets when text indicator is over them
+set showmatch 
+" How many tenths of a second to blink when matching brackets
+" set mat=2
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" clipboard
+set clipboard=unnamedplus
+set guitablabel=%N/\ %t\ %M
+
+" not to break on words
+set formatoptions=1
+set linebreak
+
+" fixing up moving line by line in the paragraph
+"nnoremap j gj
+"nnoremap k gk
+"vnoremap j gj
+"vnoremap k gk
+
+" colors
+set t_Co=256
+set background=light
+
+"current themes installed
+"desertink molokai gruvbox.vim solarized Tomorrow-Night-Blue.vim  Tomorrow-Night-Bright.vim  Tomorrow-Night-Eighties.vim  Tomorrow-Night.vim  Tomorrow.vim
+
+" gruvbox
+"let g:gruvbox_italic=1
+"let g:gruvbox_termcolors=256
+"let g:gruvbox_bold=1
+"colorscheme gruvbox
+
+" hybrid
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 0
+colorscheme hybrid
+
+
+" Desert theme
+"colorscheme desertink 
+"highlight NonText ctermfg=59 ctermbg=NONE cterm=NONE guifg=#414e58 guibg=#232c31 gui=NONE
+
+"conoline
+let g:conoline_use_colorscheme_default_normal=1
+let g:conoline_use_colorscheme_default_insert=1
+
+"nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+"gitgutter 
+"highlight SignColumn ctermbg=black    " terminal Vim
+"highlight SignColumn guibg=NONE      " gVim/MacVim
+
+"airline 
+"let g:airline_theme='raven'
+"let g:airline_theme='zenburn'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
+
+"highlight colo
+"highlight Visual ctermfg=NONE ctermbg=blue cterm=NONE guifg=white guibg=green gui=none
+"highlight Normal guibg=green guifg=red
+
+"mode indicator
+set showmode
+"set noshowmode
+
+" Add a bit extra margin to the left
+set foldcolumn=0
+
+"mode indicator color
+highlight ModeMsg ctermbg=DARKRED ctermfg=BLACK
+
+" show commands
+set showcmd
+"delay on escape
+set timeoutlen=1000 ttimeoutlen=0
+
+" leader commands
+let mapleader = "\<Space>"
+
+"enter normal mode
+imap jj <Esc>
+
+" redraw screen
+nmap <silent> <leader>r :redraw!<CR>
+
+" reload .vimrc
+nmap <leader>q :so ~/.vimrc<CR>
+
+" Disable highlight when <leader><h> is pressed
+nmap <silent> <leader>h :nohl<CR>
+
+" leader save
+nmap <silent> <leader>s :w<CR>
+
+" spell checking
+"set spell spelllang=en_us
+"setlocal spell spelllang=en_us
+autocmd BufRead *.tex setlocal spell spelllang=en_us
+nmap <silent> <leader>c :set spell!<CR>
+
+"vim buffer management
+set wildchar=<Tab> wildmenu wildmode=full
+set wildcharm=<C-Z>
+nnoremap <F10> :b <C-Z>
+
+" Mappings to access buffers (don't use "\p" because a
+" " delay before pressing "p" would accidentally paste).
+" " \l       : list buffers
+" " \b \f \g : go back/forward/last-used
+" " \1 \2 \3 : go to buffer 1/2/3 etc
+ nnoremap <Leader>l :buffers<CR>:b<Space>
+ "nnoremap <Leader>l :ls<CR>
+ nnoremap <Leader>b :bp<CR>
+ nnoremap <Leader>f :bn<CR>
+ nnoremap <Leader>g :e#<CR>
+ nnoremap <Leader>1 :1b<CR>
+ nnoremap <Leader>2 :2b<CR>
+ nnoremap <Leader>3 :3b<CR>
+ nnoremap <Leader>4 :4b<CR>
+ nnoremap <Leader>5 :5b<CR>
+ nnoremap <Leader>6 :6b<CR>
+ nnoremap <Leader>7 :7b<CR>
+ nnoremap <Leader>8 :8b<CR>
+ nnoremap <Leader>9 :9b<CR>
+ nnoremap <Leader>0 :10b<CR>
+ "set autowriteall
+ set confirm
+ " ignore unsaved files while switching buffers
+ "set hidden
+ 
+
+""status bar
+"set laststatus=2 
+"set statusline+=%0*\ %02n\ \|                                  "buffernr
+""set statusline+=[%{expand('%:h')}/]                      "parent folder
+"set statusline+=%0*\ %t\ \|                                       "file name
+""set statusline+=%0*\ %<%h\                                "File+path
+"" et statusline+=%0*\ %<%t\                                "File+path
+""set statusline+=%0*\ %y\                                  "FileType
+""set statusline+=%0*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
+""set statusline+=%0*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
+""set statusline+=%0*\ %{&ff}\                              "FileFormat (dos/unix..) 
+""set statusline+=%0*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+"set statusline+=%0*\ %=\|\ col:%03c\ \|                            "Colnr
+"set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+
+" Auto correct mistakes
+iab filesystem file system
+
+"
+"highlight Cursor guifg=white guibg=black
+"highlight iCursor guifg=white guibg=steelblue
+"set guicursor=n-v-c:block-Cursor
+"set guicursor+=i:ver100-iCursor
+"set guicursor+=n-v-c:blinkon0
+"set guicursor+=i:blinkwait10
