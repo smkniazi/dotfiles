@@ -10,3 +10,6 @@
 [submodule "vim/vim/bundle/csv.vim"]
 	path = vim/vim/bundle/csv.vim
 	url = https://github.com/chrisbra/csv.vim
+[submodule "vim/vim/bundle/conoline.vim"]
+	path = vim/vim/bundle/conoline.vim
+	url = https://github.com/miyakogi/conoline.vim

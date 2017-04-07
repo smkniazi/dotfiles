@@ -78,6 +78,16 @@ endif
 "                    Misc                    
 "---------------------------------------------------------
 
+syntax on
+filetype plugin indent on
+
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -87,13 +97,6 @@ set display=lastline
 
 " This must be first, because it changes other options as side effect
 set nocompatible
-
-if has('autocmd')
-  filetype plugin indent on
-endif
-if has('syntax') && !exists('g:syntax_on')
-  syntax enable
-endif
 
 "backspace to delete
 set backspace=indent,eol,start
