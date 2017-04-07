@@ -4,10 +4,6 @@ execute pathogen#infect()
 "                    Themes                    
 "---------------------------------------------------------
 
-"highlight colo
-highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guifg=white guibg=green gui=none
-"highlight Normal guibg=green guifg=red
-
 "current themes installed
 "desertink molokai gruvbox hybrid
 
@@ -21,7 +17,6 @@ highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guifg=white guibg=green
 "colorscheme desertink 
 "highlight NonText ctermfg=59 ctermbg=NONE cterm=NONE guifg=#414e58 guibg=#232c31 gui=NONE
 
-
 " hybrid
 "let g:hybrid_custom_term_colors = 1
 "let g:hybrid_reduced_contrast = 0
@@ -34,6 +29,9 @@ highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guifg=white guibg=green
 " colors
 set t_Co=256
 set background=light
+
+"highlight colo
+highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guifg=white guibg=green gui=none
 
 "mode indicator
 set showmode
@@ -49,6 +47,19 @@ highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 set showcmd
 "delay on escape
 set timeoutlen=1000 ttimeoutlen=0
+
+"change cursor color base on the mode
+if &term =~ "xterm\\|rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;red\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;orange\x7"
+  silent !echo -ne "\033]12;red\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
+endif
+
 
 ""status bar
 "set laststatus=2 
