@@ -1,0 +1,12 @@
+[submodule "vim/vim/bundle/vim-hardtime"]
+	path = vim/vim/bundle/vim-hardtime
+	url = https://github.com/takac/vim-hardtime
+[submodule "vim/vim/bundle/nerdtree"]
+	path = vim/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/vim/bundle/vim-livedown"]
+	path = vim/vim/bundle/vim-livedown
+	url = https://github.com/shime/vim-livedown
+[submodule "vim/vim/bundle/csv.vim"]
+	path = vim/vim/bundle/csv.vim
+	url = https://github.com/chrisbra/csv.vim
