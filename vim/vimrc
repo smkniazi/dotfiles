@@ -5,7 +5,7 @@ execute pathogen#infect()
 "---------------------------------------------------------
 
 "highlight colo
-"highlight Visual ctermfg=NONE ctermbg=blue cterm=NONE guifg=white guibg=green gui=none
+highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guifg=white guibg=green gui=none
 "highlight Normal guibg=green guifg=red
 
 "current themes installed
@@ -23,13 +23,14 @@ execute pathogen#infect()
 
 
 " hybrid
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 0
-colorscheme hybrid
+"let g:hybrid_custom_term_colors = 1
+"let g:hybrid_reduced_contrast = 0
+"colorscheme hybrid
 
 "---------------------------------------------------------
 "                    Visual Changes                    
 "---------------------------------------------------------
+
 " colors
 set t_Co=256
 set background=light
@@ -42,7 +43,7 @@ set showmode
 set foldcolumn=0
 
 "mode indicator color
-highlight ModeMsg ctermbg=DARKRED ctermfg=BLACK
+highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 
 " show commands
 set showcmd
@@ -181,8 +182,8 @@ let g:hardtime_default_on = 1
 map <C-n> :NERDTreeToggle<CR>
 
 "conoline
-let g:conoline_use_colorscheme_default_normal=1
-let g:conoline_use_colorscheme_default_insert=1
+"let g:conoline_use_colorscheme_default_normal=1
+"let g:conoline_use_colorscheme_default_insert=1
 
 "---------------------------------------------------------
 "                    Leader                     
