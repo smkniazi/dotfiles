@@ -194,8 +194,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 "conoline
 let g:conoline_auto_enable = 1
-let g:conoline_color_insert_light = 'ctermbg=black ctermfg=white'
-let g:conoline_color_normal_light = 'ctermbg=black ctermfg=white'
+"let g:conoline_color_insert_light = 'ctermbg=black ctermfg=white'
+"let g:conoline_color_normal_light = 'ctermbg=black ctermfg=white'
 
 "---------------------------------------------------------
 "                    Leader                     
