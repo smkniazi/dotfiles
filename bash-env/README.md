@@ -1,0 +1,1 @@
+set paths and alias 

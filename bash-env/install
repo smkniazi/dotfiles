@@ -1,0 +1,27 @@
+#!/bin/bash
+#expects a dir location where the backup files are stored
+
+SRC=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+
+BACKUP_DIR=$1
+
+if [ -z "$BACKUP_DIR" ]; then
+	date=`date +'%B-%d-Time-%H-%M'`
+	BACKUP_DIR=~
+	BACKUP_DIR="$BACKUP_DIR/dotfiles-$date.bak"
+	mkdir -p $BACKUP_DIR
+	echo "Backup Dir is: $BACKUP_DIR" 
+fi
+
+grep "set-env.sh" ~/.bashrc
+exists=$?
+
+if [ "$exists" -eq 0 ]; then
+	echo "set-env.sh is already installed in .bashrc "
+else
+	echo "Installing set-env.sh"
+	cp ~/.bashrc $BACKUP_DIR
+	echo "source $SRC/set-env.sh" >> ~/.bashrc
+fi
+
