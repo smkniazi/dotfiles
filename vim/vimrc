@@ -48,19 +48,6 @@ set showcmd
 "delay on escape
 set timeoutlen=1000 ttimeoutlen=0
 
-"change cursor color base on the mode
-if &term =~ "xterm\\|rxvt"
-  " use an orange cursor in insert mode
-  let &t_SI = "\<Esc>]12;red\x7"
-  " use a red cursor otherwise
-  let &t_EI = "\<Esc>]12;orange\x7"
-  silent !echo -ne "\033]12;red\007"
-  " reset cursor when vim exits
-  autocmd VimLeave * silent !echo -ne "\033]112\007"
-  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
-endif
-
-
 ""status bar
 "set laststatus=2 
 "set statusline+=%0*\ %02n\ \|                              "buffernr
@@ -75,6 +62,19 @@ endif
 ""set statusline+=%0*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 "set statusline+=%0*\ %=\|\ col:%03c\ \|                    "Colnr
 "set statusline+=%0*\ \ %m%r%w\ %P\ \                       "Modified? Readonly? Top/bot.
+
+
+"change cursor color base on the mode
+if &term =~ "xterm\\|rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;red\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;orange\x7"
+  silent !echo -ne "\033]12;red\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
+endif
 
 "---------------------------------------------------------
 "                    Encryption                    
@@ -193,8 +193,8 @@ let g:hardtime_default_on = 1
 map <C-n> :NERDTreeToggle<CR>
 
 "conoline
-"let g:conoline_use_colorscheme_default_normal=1
-"let g:conoline_use_colorscheme_default_insert=1
+let g:conoline_use_colorscheme_default_normal=1
+let g:conoline_use_colorscheme_default_insert=1
 
 "---------------------------------------------------------
 "                    Leader                     
