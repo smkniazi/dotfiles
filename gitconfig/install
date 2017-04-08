@@ -13,6 +13,6 @@ if [ -z "$BACKUP_DIR" ]; then
 	echo "Backup Dir is: $BACKUP_DIR" 
 fi
 
-echo "Installing Dir Colors Conf"
-mv ~/.dircolors $BACKUP_DIR
-ln -s $SRC/dircolors ~/.dircolors
+echo "Installing Git Conf"
+mv ~/.gitconfig $BACKUP_DIR
+ln -s $SRC/gitconfig ~/.gitconfig

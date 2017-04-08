@@ -13,6 +13,6 @@ if [ -z "$BACKUP_DIR" ]; then
 	echo "Backup Dir is: $BACKUP_DIR" 
 fi
 
-echo "Installing Dir Colors Conf"
-mv ~/.dircolors $BACKUP_DIR
-ln -s $SRC/dircolors ~/.dircolors
+echo "Installing gtk.css Conf"
+mv ~/.config/gtk-3.0/gtk.css $BACKUP_DIR
+ln -s $SRC/gtk.css ~/.config/gtk-3.0/gtk.css

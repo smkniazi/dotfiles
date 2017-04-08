@@ -13,6 +13,8 @@ if [ -z "$BACKUP_DIR" ]; then
 	echo "Backup Dir is: $BACKUP_DIR" 
 fi
 
-echo "Installing Dir Colors Conf"
-mv ~/.dircolors $BACKUP_DIR
-ln -s $SRC/dircolors ~/.dircolors
+echo "Installing Vim Conf"
+mv ~/.vim $BACKUP_DIR
+mv ~/.vimrc $BACKUP_DIR
+ln -s $SRC/vimrc ~/.vimrc
+ln -s $SRC/vim ~/.vim

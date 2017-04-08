@@ -13,6 +13,9 @@ if [ -z "$BACKUP_DIR" ]; then
 	echo "Backup Dir is: $BACKUP_DIR" 
 fi
 
-echo "Installing Dir Colors Conf"
-mv ~/.dircolors $BACKUP_DIR
-ln -s $SRC/dircolors ~/.dircolors
+echo "Installing urxvt configs"
+mv ~/.Xresources $BACKUP_DIR
+mv ~/.XresourcesTheme $BACKUP_DIR
+ln -s $SRC/Xdefaults/Xresources ~/.Xresources
+ln -s $SRC/Xdefaults/themes/XresourceHybrid ~/.XresourcesTheme
+

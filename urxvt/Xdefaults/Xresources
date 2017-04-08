@@ -98,17 +98,5 @@ URxvt.matcher.button:       1
 !"\e[H": beginning-of-line
 !"\e[F": end-of-line
 
-!#include "/themes/tango"
-!#include "/themes/solarized"
-!#include "/themes/XresourceTomorrow"
-!#include "/themes/XresourceTomorrowNight"
-!#include "/themes/XresourceTomorrowNightBlue"
-!#include "/themes/XresourceTomorrowNightBright"
-!#include "/themes/XresourceTomorrowNightEighties"
-!#include "/themes/gruvbox-dark.xresources"
-!#include "/themes/XresourceMolokai"
-!#include "/themes/XresourceDesert"
-#include "/themes/XresourceHybrid"
-
-
+#include "~/.XresourcesTheme"
 

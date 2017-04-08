@@ -1,26 +1,22 @@
 #!/bin/bash
+#expects a dir location where the backup files are stored
 
-echo "I am workig on it"
+BACKUP_DIR=$1
+if [ -z "$BACKUP_DIR" ]; then
+	date=`date +'%B-%d-Time-%H-%M'`
+	BACKUP_DIR=~
+	BACKUP_DIR="$BACKUP_DIR/dotfiles-$date.bak"
+	mkdir -p $BACKUP_DIR
+	echo "Usage ./install [backup-dir]"
+	echo "No backup dir specified. "
+	echo "Backup Dir is: $BACKUP_DIR" 
+fi
 
-SRC=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-
-pushd .
-cd
-backup=`date +'%B-%d-Time-%H-%M'`
-backup="dotfiles-$backup.bak"
-mkdir -p $backup
-
-mv .tmux.conf $backup
-ln -s $SRC/tmux/tmux.conf .tmux.conf
-
-mv .vim $backup
-mv .vimrc $backup
-ln -s $SRC/vim/vim .vim
-ln -s $SRC/vim/vimrc .vimrc
-
-
-popd
-
-
-
+source ./dircolors/install $BACKUP_DIR
+source ./tmux/install $BACKUP_DIR
+source ./vim/install $BACKUP_DIR
+source ./fonts/install $BACKUP_DIR
+source ./gtk-3.0/install $BACKUP_DIR
+source ./ranger/install $BACKUP_DIR
+source ./gitconfig/install $BACKUP_DIR
 

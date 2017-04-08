@@ -13,6 +13,7 @@ if [ -z "$BACKUP_DIR" ]; then
 	echo "Backup Dir is: $BACKUP_DIR" 
 fi
 
-echo "Installing Dir Colors Conf"
-mv ~/.dircolors $BACKUP_DIR
-ln -s $SRC/dircolors ~/.dircolors
+echo "Installing Ranger Conf"
+mkdir -p ~/.config/ranger
+mv ~/.config/ranger/rc.conf $BACKUP_DIR
+ln -s $SRC/rc.conf ~/.config/ranger/rc.conf

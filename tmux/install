@@ -13,6 +13,6 @@ if [ -z "$BACKUP_DIR" ]; then
 	echo "Backup Dir is: $BACKUP_DIR" 
 fi
 
-echo "Installing Dir Colors Conf"
-mv ~/.dircolors $BACKUP_DIR
-ln -s $SRC/dircolors ~/.dircolors
+echo "Installing Tmux Conf"
+mv ~/.tmux.conf $BACKUP_DIR
+ln -s $SRC/tmux.conf ~/.tmux.conf
