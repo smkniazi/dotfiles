@@ -1,0 +1,21 @@
+#!/bin/bash
+dir=.
+usrdir=.
+cachedir=.
+if [ "$#" -eq 1 ]; then
+ tmpDir="$1/netbeans_cache"
+ if [ ! -f $tmpDir ]; then
+  usrdir="$tmpDir/usrDir"
+  cachedir="$tmpDir/cacheDir"  
+  mkdir -p $tmpDir
+  mkdir -p $usrdir
+  mkdir -p $cachedir
+    
+ fi
+ dir=$tmpDir	
+ echo "Netbeans dir is $dir"
+ nohup /home/salman/program_files/netbeansDir/bin/netbeans -J-Xmx4000m -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd --laf Metal --userdir $usrdir --cachedir $cachedir &
+else
+ echo "Netbeans dir is not set. using default dir"
+ nohup /home/salman/program_files/netbeansDir/bin/netbeans -J-Xmx4000m -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd --laf Metal &
+fi

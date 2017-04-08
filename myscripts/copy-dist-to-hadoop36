@@ -1,0 +1,14 @@
+#!/bin/bash
+pushd .
+file_name=`date +'%B-%d-Time-%H-%M'` 
+cd /home/salman/code/hopg/hops/hadoop-dist/target
+rm -f *.gz
+rm -f *.jar
+rm -f *.sh
+cd ..
+#tar cf $file_name.tar target
+tar -c --use-compress-program=pigz -f "$file_name.tar" target
+rsync -av --progress -e "ssh -p 8209 -A hdp@ice ssh" $file_name.tar tester@hadoop36:/home/tester/salman/code/hops/hadoop-dist/
+ssh -p 8209 -A hdp@ice ssh tester@hadoop36 "rm -rf  /home/tester/salman/code/hops/hadoop-dist/target"
+ssh -p 8209 -A hdp@ice ssh tester@hadoop36 "tar xf /home/tester/salman/code/hops/hadoop-dist/$file_name.tar -C /home/tester/salman/code/hops/hadoop-dist/"
+popd

@@ -1,0 +1,3 @@
+#ssh -A -t -l nzo cloud1 -L 9999:localhost:9999 ssh -A -t -l salman salman2 -L 9999:localhost:9999 ssh -A -t -l nzo bbc7 -L 9999:ghetto.sics.se:9999
+ssh -A -t -p 8209 -l hdp 109.225.89.18 -L 9999:hadoop4:26800
+

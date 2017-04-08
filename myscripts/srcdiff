@@ -1,0 +1,16 @@
+#!/bin/bash
+
+dir1=$1
+dir2=$2
+file=$3
+
+find $dir1 -iname "$file" -exec cp -f {} "/tmp/$file.1" \;
+find $dir2 -iname "$file" -exec cp -f {} "/tmp/$file.2" \; 
+
+nohup meld "/tmp/$file.1" "/tmp/$file.2" &
+
+exit
+
+ 
+
+

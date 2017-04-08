@@ -1,0 +1,24 @@
+/*home/salman/.config/gtk-3.0*/
+
+headerbar.default-decoration {
+ padding-top: 0px;
+ padding-bottom: 0px;
+ min-height: 0px;
+ font-size: 0.8em;
+ background-color: black;
+}
+
+headerbar.active-decoration{
+	background-color: red;
+}
+
+headerbar.default-decoration button.titlebutton {
+ padding: 0px;
+ min-height: 0px;
+}
+
+.window-frame.ssd .titlebar {
+	    padding-top: 0px;
+	        padding-bottom: 0px;
+		background-color: red;
+	}
