@@ -13,3 +13,6 @@
 [submodule "vim/vim/bundle/conoline.vim"]
 	path = vim/vim/bundle/conoline.vim
 	url = https://github.com/miyakogi/conoline.vim
+[submodule "vim/vim/autoload/vim-pathogen"]
+	path = vim/vim/autoload/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen

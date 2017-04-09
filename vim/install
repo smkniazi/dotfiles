@@ -14,6 +14,8 @@ if [ -z "$BACKUP_DIR" ]; then
 fi
 
 echo "Installing Vim Conf"
+# The pathogen link might be broken
+ln -s $SRC/vim/autoload/vim-pathogen/autoload/pathogen.vim $SRC/vim/autoload/pathogen.vim
 mv ~/.vim $BACKUP_DIR
 mv ~/.vimrc $BACKUP_DIR
 ln -s $SRC/vimrc ~/.vimrc
