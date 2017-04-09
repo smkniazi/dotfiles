@@ -18,4 +18,6 @@ alias vim=vimx
 
 alias grep="grep --color=auto"
 
-alias ls="ls -F --color=auto"
+alias l="ls -F --color=auto"
+alias lla="ls -Fal --color=auto"
+alias lt="ls -Faltr --color=auto"
