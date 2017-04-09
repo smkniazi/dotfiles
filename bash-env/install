@@ -14,14 +14,18 @@ if [ -z "$BACKUP_DIR" ]; then
 	echo "Backup Dir is: $BACKUP_DIR" 
 fi
 
-grep "set-env.sh" ~/.bashrc
-exists=$?
 
-if [ "$exists" -eq 0 ]; then
-	echo "set-env.sh is already installed in .bashrc "
-else
-	echo "Installing set-env.sh"
-	cp ~/.bashrc $BACKUP_DIR
-	echo "source $SRC/set-env.sh" >> ~/.bashrc
-fi
+script_names=("alias.sh" "bash-settings.sh" "paths.sh" "tmux-auto-start.sh")
+for script_name in "${script_names[@]}"
+do
+	grep "$script_name" ~/.bashrc
+	exists=$?
+	if [ "$exists" -eq 0 ]; then
+		echo "$script_name is already installed in .bashrc "
+	else
+		echo "Installing $script_name "
+		cp ~/.bashrc $BACKUP_DIR
+		echo "source $SRC/$script_name" >> ~/.bashrc
+	fi
+done
 
