@@ -20,4 +20,5 @@ source ./gtk-3.0/install $BACKUP_DIR
 source ./ranger/install $BACKUP_DIR
 source ./gitconfig/install $BACKUP_DIR
 source ./myscripts/install $BACKUP_DIR
+source ./bash-env/install $BACKUP_DIR
 

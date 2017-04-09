@@ -1,3 +1,6 @@
+#Using this, consecutive duplicate commands, invocations of ls, plus calls to the bg, fg and exit built-ins will not be appended to the history list. 
+export HISTIGNORE="&:ls:ls *:[bf]g:exit" 
+
 export JAVA_HOME=/home/salman/program_files/jdk
 export PATH=$PATH:/home/salman/program_files/jdk/bin
 
@@ -45,6 +48,8 @@ alias sf="cd /home/salman/code/hopg/hops-papers/hopsfs/hopsfs-small-files/draft"
 alias vim=vimx
 
 alias grep="grep --color=auto"
+
+alias ls="ls -F --color=auto"
 
 #~/Dropbox/programs/mouse-fix.sh
 
