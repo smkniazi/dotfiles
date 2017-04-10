@@ -30,3 +30,8 @@ RPC
 TCP
 subtree
 backoff
+metadata
+JVM
+failover
+myrid
+MapReduce
