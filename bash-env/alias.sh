@@ -11,13 +11,15 @@ alias cd9="cd ../../../../../../../../.."
 alias open="xdg-open"
 
 alias hp="cd /home/salman/code/hopg/hops-papers/hopsfs/"
-alias hg="cd /home/salman/code/hopg"
+alias h="cd /home/salman/code/hopg"
+alias hm="cd /home/salman/code/hopg/hops-metadata-dal"
+alias hmi="cd /home/salman/code/hopg/hops-metadata-dal-impl-ndb"
 alias sf="cd /home/salman/code/hopg/hops-papers/hopsfs/hopsfs-small-files/draft"
 
 alias vim=vimx
 
 alias grep="grep --color=auto"
 
-alias l="ls -F --color=auto"
-alias lla="ls -Fal --color=auto"
+alias ls="ls -F --color=auto"
+alias ll="ls -Fl --color=auto"
 alias lt="ls -Faltr --color=auto"
