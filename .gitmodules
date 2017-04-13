@@ -16,3 +16,6 @@
 [submodule "vim/vim/autoload/vim-pathogen"]
 	path = vim/vim/autoload/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
+[submodule "vim/vim/bundle/vim-bufferline"]
+	path = vim/vim/bundle/vim-bufferline
+	url = https://github.com/bling/vim-bufferline
