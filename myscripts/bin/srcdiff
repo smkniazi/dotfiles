@@ -28,6 +28,7 @@ finder(){
 
 	if [ "${#array[@]}" -gt "1"  ]; then
 		echo "More than one  files  named \"$2\" found in $1"
+		printf '%s\n' "${array[@]}"	
 		exit 1
 	fi
 }
