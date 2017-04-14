@@ -4,7 +4,7 @@ key bindings for VimFX firefox plugin
 {
   "prevent_autofocus": true,
   "ignore_keyboard_layout": true,
-  "hints.chars": "abcdefghijklmnopqrstuvwxyz",
+  "hints.chars": "abcdefghijklmnopqrstuvwx yz",
   "mode.normal.focus_location_bar": "a",
   "mode.normal.focus_search_bar": "s",
   "mode.normal.history_back": "h",
@@ -14,6 +14,8 @@ key bindings for VimFX firefox plugin
   "mode.normal.tab_close": "q",
   "mode.normal.tab_restore": "Q",
   "mode.normal.follow_multiple": "D",
+  "mode.normal.follow_previous": "",
+  "mode.normal.follow_next": "",
   "mode.normal.enter_mode_ignore": "x",
   "mode.caret.exit": "[ <escape>",
   "mode.hints.exit": "[ <escape>",

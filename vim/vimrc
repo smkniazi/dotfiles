@@ -147,7 +147,7 @@ set hlsearch
 set incsearch 
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+"set showmatch 
 " How many tenths of a second to blink when matching brackets
 " set mat=2
 
@@ -230,17 +230,16 @@ nmap <silent> <leader>s :w<CR>
 "vim buffer management
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
-nnoremap <F10> :b <C-Z>
 
 " Mappings to access buffers (don't use "\p" because a
 " " delay before pressing "p" would accidentally paste).
 " " \l       : list buffers
-" " \b \f \g : go back/forward/last-used
+" " \i \o \g : go back/forward/last-used
 " " \1 \2 \3 : go to buffer 1/2/3 etc
  nnoremap <Leader>l :buffers<CR>:b<Space>
  "nnoremap <Leader>l :ls<CR>
- nnoremap <Leader>b :bp<CR>
- nnoremap <Leader>f :bn<CR>
+ nnoremap <Leader>i :bp<CR>
+ nnoremap <Leader>o :bn<CR>
  nnoremap <Leader>g :e#<CR>
  nnoremap <Leader>1 :1b<CR>
  nnoremap <Leader>2 :2b<CR>
