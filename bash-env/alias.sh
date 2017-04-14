@@ -16,7 +16,7 @@ alias gl="git log"
 alias gs="git status"
 
 alias hp="cd /home/salman/code/hopg/hops-papers/hopsfs/"
-alias h="cd /home/salman/code/hopg"
+alias h="cd /home/salman/code/hopg/hops"
 alias hm="cd /home/salman/code/hopg/hops-metadata-dal"
 alias hmi="cd /home/salman/code/hopg/hops-metadata-dal-impl-ndb"
 alias sf="cd /home/salman/code/hopg/hops-papers/hopsfs/hopsfs-small-files/draft"
