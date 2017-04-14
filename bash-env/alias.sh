@@ -10,6 +10,11 @@ alias cd9="cd ../../../../../../../../.."
 
 alias open="xdg-open"
 
+alias gb="git branch"
+alias gd="git diff"
+alias gl="git log"
+alias gs="git status"
+
 alias hp="cd /home/salman/code/hopg/hops-papers/hopsfs/"
 alias h="cd /home/salman/code/hopg"
 alias hm="cd /home/salman/code/hopg/hops-metadata-dal"
