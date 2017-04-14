@@ -19,6 +19,7 @@ alias hp="cd /home/salman/code/hopg/hops-papers/hopsfs/"
 alias h="cd /home/salman/code/hopg/hops"
 alias hm="cd /home/salman/code/hopg/hops-metadata-dal"
 alias hmi="cd /home/salman/code/hopg/hops-metadata-dal-impl-ndb"
+alias ds="cd /home/salman/code/hopg/HopsFS-Deployment-Scripts"
 alias sf="cd /home/salman/code/hopg/hops-papers/hopsfs/hopsfs-small-files/draft"
 
 alias vim=vimx
