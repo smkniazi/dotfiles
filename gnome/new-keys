@@ -1,5 +1,5 @@
 custom	'lock-screen'	'lock-screen'	'<Primary><Alt>l'
-custom	'lock-screen'	'keypassxc'	'<Primary><Alt>k'
+custom	'keepassxc'	'keepassxc'	'<Primary><Alt>k'
 custom	'skype'	'/usr/bin/skype'	'<Primary><Alt>s'
 custom	'chrome'	'/usr/bin/google-chrome'	'<Primary><Alt>c'
 custom	'start-terminal'	'gnome-terminal'	'<Primary><Alt>t'
