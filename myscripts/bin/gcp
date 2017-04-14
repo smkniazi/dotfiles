@@ -2,8 +2,9 @@
 if [ "$#" -eq 1 ]; then
 	git commit -am "$1" && git push
 else
-	joke="$(wget 'http://api.icndb.com/jokes/random' -qO- | grep -Po '"joke":.*?[^\\]",' |  sed -e 's/\"//g' | sed -e 's/joke: //g' | sed -e 's/\"//g')"
-#	joke="Auto generated commit msg.  $joke"
-	joke="Auto generated commit msg."
+	joke=""
+	#joke="$(wget 'http://api.icndb.com/jokes/random' -qO- | grep -Po '"joke":.*?[^\\]",' |  sed -e 's/\"//g' | sed -e 's/joke: //g' | sed -e 's/\"//g')"
+
+	joke="Auto generated commit msg.  $joke"
 	git commit -am "$joke" && git push
 fi
