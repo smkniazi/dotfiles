@@ -1,12 +1,13 @@
-custom	'lock-screen'	'/home/salman/Dropbox/programs/lock-screen'	'<Primary><Alt>l'
+custom	'lock-screen'	'lock-screen'	'<Primary><Alt>l'
+custom	'lock-screen'	'keypassxc'	'<Primary><Alt>k'
 custom	'skype'	'/usr/bin/skype'	'<Primary><Alt>s'
 custom	'chrome'	'/usr/bin/google-chrome'	'<Primary><Alt>c'
 custom	'start-terminal'	'gnome-terminal'	'<Primary><Alt>t'
 custom	'internet'	'firefox'	'<Primary><Alt>f'
 custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
 custom	'open-home-folder'	'nautilus /home/salman'	'<Primary><Alt>h'
-custom	'open-dropbox-folder'	'nautilus /home/salman/Dropbox'	'<Primary><Alt>d'
-custom	'open-downloads-folder'	'nautilus /home/salman/Downloads'	'<Primary><Shift><Alt>d'
+custom	'open-dropbox-folder'	'nautilus /home/salman/Downloads'	'<Primary><Alt>d'
+custom	'open-downloads-folder'	'nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
 org.gnome.desktop.wm.keybindings	switch-to-workspace-1	['<Super>1']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-2	['<Super>2']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-3	['<Super>3']
