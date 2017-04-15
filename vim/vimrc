@@ -45,6 +45,7 @@ highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 
 " show commands
 set showcmd
+
 "delay on escape
 set timeoutlen=1000 ttimeoutlen=0
 
@@ -62,6 +63,9 @@ set timeoutlen=1000 ttimeoutlen=0
 ""set statusline+=%0*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 "set statusline+=%0*\ %=\|\ col:%03c\ \|                    "Colnr
 "set statusline+=%0*\ \ %m%r%w\ %P\ \                       "Modified? Readonly? Top/bot.
+
+hi StatusLine   ctermfg=red  guifg=#ffffff ctermbg=3 guibg=#4e4e4e cterm=bold gui=bold
+hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=black guibg=#3a3a3a cterm=none gui=none
 
 
 "change cursor color base on the mode
@@ -228,10 +232,21 @@ nmap <silent> <leader>r :redraw!<CR>
 nmap <leader>z :so ~/.vimrc<CR>
 
 " Disable highlight when <leader><h> is pressed
-nmap <silent> <leader>h :nohl<CR>
+nmap <silent> <leader>n :nohl<CR>
 
 " leader save
 nmap <silent> <leader>s :w<CR>
+
+" window selection 
+nmap <silent> <leader>h :wincmd h<CR>
+nmap <silent> <leader>j :wincmd j<CR>
+nmap <silent> <leader>k :wincmd k<CR>
+nmap <silent> <leader>l :wincmd l<CR>
+
+nmap <silent> <leader>t :diffthis <CR>
+nmap <silent> <leader>f :diffoff  <CR>
+nmap <silent> <leader>u :diffupdate <CR>
+
 
 "---------------------------------------------------------
 "                    Leader Buffer Management                     
@@ -246,8 +261,8 @@ set wildcharm=<C-Z>
 " " \l       : list buffers
 " " \i \o \g : go back/forward/last-used
 " " \1 \2 \3 : go to buffer 1/2/3 etc
- nnoremap <Leader>l :buffers<CR>:b<Space>
- "nnoremap <Leader>l :ls<CR>
+ nnoremap <Leader>b :buffers<CR>:b<Space>
+ "nnoremap <Leader>b :ls<CR>
  nnoremap <Leader>i :bp<CR>
  nnoremap <Leader>o :bn<CR>
  nnoremap <Leader>g :e#<CR>
