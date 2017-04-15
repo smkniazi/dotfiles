@@ -15,11 +15,14 @@
 [color]
 	        ui = true
 [merge]
-	        tool = mydiff
-[mergetool "mydiff"]
-		 #cmd = meld $LOCAL $BASE $REMOTE
-		 cmd = meld $LOCAL $MERGED $REMOTE
+#	        tool = mydiff
+	        tool = vimdiff
+
+#[mergetool "mydiff"]
+#		 #cmd = meld $LOCAL $BASE $REMOTE
+#		 cmd = meld $LOCAL $MERGED $REMOTE
+
 [diff]
-	        tool = meld
+	        tool = vimdiff
 [branch]
 	        autosetuprebase = always
