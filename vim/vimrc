@@ -88,6 +88,7 @@ set timeoutlen=1000 ttimeoutlen=0
 "    \ endif
 "  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 "endif
+
 "---------------------------------------------------------
 "                    Encryption                    
 "---------------------------------------------------------
@@ -97,6 +98,16 @@ if v:version > 74399
 	" encryption
 	set cryptmethod=blowfish2
 endif
+
+
+"---------------------------------------------------------
+"                    GVIM                    
+"---------------------------------------------------------
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+set guitablabel=%N/\ %t\ %M
 
 "---------------------------------------------------------
 "                    Misc                    
@@ -160,7 +171,6 @@ set tabstop=4
 
 " clipboard
 set clipboard=unnamedplus
-set guitablabel=%N/\ %t\ %M
 
 " not to break on words
 set formatoptions=1
