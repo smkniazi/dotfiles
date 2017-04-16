@@ -14,6 +14,7 @@ alias gb="git branch"
 alias gd="git diff"
 alias gl="git log"
 alias gs="git status"
+alias gp="git pull"
 
 alias hp="cd ~/code/hopg/hops-papers/hopsfs/"
 alias h="cd ~/code/hopg/hops"
