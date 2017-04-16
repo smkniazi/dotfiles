@@ -16,6 +16,7 @@ key bindings for VimFX firefox plugin
   "mode.normal.follow_multiple": "D",
   "mode.normal.follow_previous": "",
   "mode.normal.follow_next": "",
+  "mode.normal.find_highlight_all": "A/",
   "mode.normal.enter_mode_ignore": "x",
   "mode.caret.exit": "[ <escape>",
   "mode.hints.exit": "[ <escape>",
