@@ -43,11 +43,9 @@ set foldcolumn=0
 "mode indicator color
 highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 
-" show commands
+" show commands in at the bottom of the screen
 set showcmd
 
-"delay on escape
-set timeoutlen=1000 ttimeoutlen=0
 
 ""status bar
 "set laststatus=2 
@@ -64,9 +62,9 @@ set timeoutlen=1000 ttimeoutlen=0
 "set statusline+=%0*\ %=\|\ col:%03c\ \|                    "Colnr
 "set statusline+=%0*\ \ %m%r%w\ %P\ \                       "Modified? Readonly? Top/bot.
 
-hi StatusLine   ctermfg=red  guifg=#ffffff ctermbg=3 guibg=#4e4e4e cterm=bold gui=bold
-hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=black guibg=#3a3a3a cterm=none gui=none
-
+" Status line color
+hi StatusLine   ctermfg=232  ctermbg=3 cterm=bold 
+hi StatusLineNC ctermfg=255 ctermbg=black cterm=none 
 
 "change cursor color base on the mode
 "if &term =~ "xterm\\|rxvt"
@@ -124,6 +122,9 @@ endif
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
+
+"delay on escape
+set timeoutlen=1000 ttimeoutlen=0
 
 " Enable filetype plugins
 filetype plugin on
