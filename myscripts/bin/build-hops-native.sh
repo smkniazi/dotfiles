@@ -1,6 +1,4 @@
 #!/bin/bash
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/salman/program_files/clusterj/
-export LIBNDBPATH=/home/salman/program_files/clusterj
 export CC=~/program_files/gcc/bin/gcc
 export CXX=~/program_files/gcc/bin/g++
 cmake src/

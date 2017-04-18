@@ -1,6 +1,4 @@
 #!/bin/bash
-export LIBNDBPATH=/home/salman/program_files/clusterj
-
 mvn $@ install -Dmaven.test.skip=true -f ~/code/hopg/hops-metadata-dal/pom.xml
 
 mvn $@ install -Dmaven.test.skip=true -f ~/code/hopg/hops-metadata-dal-impl-ndb/pom.xml

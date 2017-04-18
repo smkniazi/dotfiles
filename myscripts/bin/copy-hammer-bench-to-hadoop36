@@ -1,7 +1,7 @@
 #!/bin/bash
 pushd .
 file_name=`date +'%B-%d-Time-%H-%M'` 
-cd /home/salman/code/hopg/hammer-bench/
+cd ~/code/hopg/hammer-bench/
 rm -rf target
 mvn clean install 
 tar -c --use-compress-program=pigz -f "$file_name.tar" target

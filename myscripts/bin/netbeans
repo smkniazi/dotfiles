@@ -14,8 +14,8 @@ if [ "$#" -eq 1 ]; then
  fi
  dir=$tmpDir	
  echo "Netbeans dir is $dir"
- nohup /home/salman/program_files/netbeansDir/bin/netbeans -J-Xmx4000m -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd --laf Metal --userdir $usrdir --cachedir $cachedir &
+ nohup ~/program_files/netbeansDir/bin/netbeans -J-Xmx4000m -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd --laf Metal --userdir $usrdir --cachedir $cachedir &
 else
  echo "Netbeans dir is not set. using default dir"
- nohup /home/salman/program_files/netbeansDir/bin/netbeans -J-Xmx4000m -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd --laf Metal &
+ nohup ~/program_files/netbeansDir/bin/netbeans -J-Xmx4000m -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd --laf Metal &
 fi

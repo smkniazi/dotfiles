@@ -5,18 +5,18 @@ if [ -z $1 ]; then
 fi
 
 pushd . 
-cd /home/salman/code/hopg/deployment-scripts/deployment-scripts
+cd ~/code/hopg/deployment-scripts/deployment-scripts
 ./deploy-hadoop.sh
-cd /home/salman/code/hopg/hops
+cd ~/code/hopg/hops
 rm *.tar
 tar cf $1 hadoop-dist
 copy-to-hadoop36 $1
 
-ssh  -p 8209 -l hdp 109.225.89.18 "ssh tester@hadoop36 rm -rf /home/tester/code/hops/hadoop-dist/"
-ssh  -p 8209 -l hdp 109.225.89.18 "ssh tester@hadoop36 rm -rf /home/tester/hadoop-dist/"
-ssh  -p 8209 -l hdp 109.225.89.18 "ssh tester@hadoop36 cp /tmp/$1 /home/tester/code/hops/"
-ssh  -p 8209 -l hdp 109.225.89.18 "ssh tester@hadoop36 tar xf /home/tester/code/hops/$1"
-ssh  -p 8209 -l hdp 109.225.89.18 "ssh tester@hadoop36 mv /home/tester/hadoop-dist /home/tester/code/hops/"
+ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 rm -rf /home/tester/code/hops/hadoop-dist/"
+ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 rm -rf /home/tester/hadoop-dist/"
+ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 cp /tmp/$1 /home/tester/code/hops/"
+ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 tar xf /home/tester/code/hops/$1"
+ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 mv /home/tester/hadoop-dist /home/tester/code/hops/"
 
 popd
 

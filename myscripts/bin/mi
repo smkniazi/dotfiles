@@ -1,4 +1,3 @@
 #!/bin/bash
-export LIBNDBPATH=/home/salman/program_files/clusterj
 mvn $@ install -Dmaven.test.skip=true 
 

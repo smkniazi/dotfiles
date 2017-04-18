@@ -2,7 +2,11 @@ export_to(){
 	eval value=\$$1
 	if ! grep -q $2 <<< $value; then
 		if [ -d "$2" ]; then
-			eval "export $1=\$$1:$2"
+			if [ -z "$value" ]; then
+				eval "export $1=$2"
+			else
+				eval "export $1=\$$1:$2"
+			fi
 		fi
 	fi
 }

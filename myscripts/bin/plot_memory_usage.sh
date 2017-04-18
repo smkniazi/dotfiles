@@ -6,7 +6,7 @@ if [ -z $1 ]; then
 fi
 
 if [ -z $2 ]; then
-	echo "please, specify the plot name. i.e /home/salman/Exepriment1Plot"
+	echo "please, specify the plot name. i.e ~/Exepriment1Plot"
 	exit
 fi
 
