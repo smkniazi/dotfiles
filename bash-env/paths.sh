@@ -1,36 +1,27 @@
-export_path(){
-	if ! grep -q $1 <<< $PATH; then
-		if [ -d "$1" ]; then
-			export PATH=$PATH:$1
+export_to(){
+	eval value=\$$1
+	if ! grep -q $2 <<< $value; then
+		if [ -d "$2" ]; then
+			eval "export $1=\$$1:$2"
 		fi
 	fi
 }
  
-export_ld_lib_path(){
-	if ! grep -q $1 <<< $LD_LIBRARY_PATH; then
-		if [ -d "$1" ]; then
-			export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$1
-		fi
-	fi
-}
+export_to	PATH		~/usr/bin
+export_to	PATH		~/usr/bin/jdk/bin
+export_to	PATH		~/usr/bin/maven/bin
+export_to	PATH		~/usr/bin/glark-1.7.10/bin
+export_to	PATH		~/usr/bin/protobuf/src
+export_to	PATH		~/usr/bin/set-pic-time
+export_to	PATH		~/usr/bin/idea/bin
+export_to	PATH		~/usr/bin/scala/bin
+export_to	PATH		~/usr/bin/sbt/bin
+export_to	PATH		~/usr/bin/latexdiff
+export_to	PATH		~/usr/local/texlive/2016/bin/x86_64-linux
 
-export_ld_lib_path ~/program_files/protobuf/src/.libs
-export_ld_lib_path ~/program_files/clusterj/
+export_to 	LD_LIBRARY_PARTH	~/usr/bin/protobuf/src/.libs
+export_to	LD_LIBRARY_PARTH	~/usr/bin/clusterj/
 
-export_path ~/program_files
-export_path ~/program_files/jdk/bin
-export_path ~/program_files/maven/bin
-export_path ~/program_files/glark-1.7.10/bin
-export_path ~/program_files/protobuf/src
-export_path ~/program_files/set-pic-time
-export_path ~/program_files/idea/bin
-export_path ~/program_files/scala/bin
-export_path ~/program_files/sbt/bin
-export_path ~/program_files/latexdiff
-export_path ~/usr/local/texlive/2016/bin/x86_64-linux
-export_path ~/Dropbox
-
-
-export LIBNDBPATH=/home/salman/program_files/clusterj
-export JAVA_HOME=/home/salman/program_files/jdk
-export M2_HOME=/home/salman/program_files/maven
+export_to	LIBNDBPATH 	~/usr/bin/clusterj
+export_to	JAVA_HOME	~/usr/bin/jdk
+export_to	M2_HOME		~/usr/bin/maven
