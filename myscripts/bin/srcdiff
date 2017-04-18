@@ -5,11 +5,10 @@ if [ "$#" -ne 3 ]; then
 	exit 1
 fi
 
-if [ -z "$DISPLAY" ]; then
-	program="vimdiff"
-else
-	program="gvimdiff"
-fi
+program="vimdiff"
+#if [ -z "$DISPLAY" ]; then
+#	program="vimdiff"
+#fi
 
 finder(){
 	# find files and store the result in array
