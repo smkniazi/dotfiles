@@ -1,10 +1,10 @@
 #!/bin/bash
-mvn $@ install -Dmaven.test.skip=true -f ~/code/hopg/hops-metadata-dal/pom.xml
+mvn $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml
 
-mvn $@ install -Dmaven.test.skip=true -f ~/code/hopg/hops-metadata-dal-impl-ndb/pom.xml
+mvn $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml
 
-mvn $@ install -Dmaven.test.skip=true generate-sources -Pndb -f ~/code/hopg/hops/pom.xml
+mvn $@ install -Dmaven.test.skip=true generate-sources -Pndb -f ~/code/hops/hops/pom.xml
 
 #temporarily change pwd
-cd ~/code/hopg/hops && mvn test-compile
+cd ~/code/hops/hops && mvn test-compile
 

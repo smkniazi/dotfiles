@@ -5,9 +5,9 @@ if [ -z $1 ]; then
 fi
 
 pushd . 
-cd ~/code/hopg/deployment-scripts/deployment-scripts
+cd ~/code/hops/deployment-scripts/deployment-scripts
 ./deploy-hadoop.sh
-cd ~/code/hopg/hops
+cd ~/code/hops/hops
 rm *.tar
 tar cf $1 hadoop-dist
 copy-to-hadoop36 $1
