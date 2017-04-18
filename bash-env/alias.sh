@@ -27,11 +27,11 @@ alias d="cd ~/code/dotfiles"
 
 
 # VIM
-hash vimx
+hash vimx 2> /dev/null
 if [ "$?" -eq "0" ]; then
 	alias vim=vimx
 else
-	echo "You might want to install vimx for clipboard support"
+#	echo "You might want to install vimx for clipboard support"
 fi
 
 alias grep="grep --color=auto"
