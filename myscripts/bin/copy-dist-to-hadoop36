@@ -1,7 +1,7 @@
 #!/bin/bash
 pushd .
 file_name=`date +'%B-%d-Time-%H-%M'` 
-cd ~/code/hopg/hops/hadoop-dist/target
+cd ~/code/hops/hops/hadoop-dist/target
 rm -f *.gz
 rm -f *.jar
 rm -f *.sh
