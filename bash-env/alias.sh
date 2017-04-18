@@ -1,3 +1,19 @@
+create_path_alias(){
+	if [ -d "$2" ]; then
+		eval "alias $1=\"cd $2\""
+	fi
+}
+
+create_path_alias	 hp		 ~/code/hopg/hops-papers/hopsfs/
+create_path_alias	 h		 ~/code/hopg/hops
+create_path_alias	 hm		 ~/code/hopg/hops-metadata-dal
+create_path_alias	 hmi	 ~/code/hopg/hops-metadata-dal-impl-ndb
+create_path_alias	 hb		 ~/code/hopg/hammer-bench
+create_path_alias	 ds		 ~/code/hopg/HopsFS-Deployment-Scripts
+create_path_alias	 sf		 ~/code/hopg/hops-papers/hopsfs/hopsfs-small-files/draft
+create_path_alias	 d		 ~/code/dotfiles
+
+
 alias cd1="cd .."
 alias cd2="cd ../.."
 alias cd3="cd ../../.."
@@ -15,15 +31,6 @@ alias gd="git diff"
 alias gl="git log"
 alias gs="git status"
 alias gp="git pull"
-
-alias hp="cd ~/code/hopg/hops-papers/hopsfs/"
-alias h="cd ~/code/hopg/hops"
-alias hm="cd ~/code/hopg/hops-metadata-dal"
-alias hmi="cd ~/code/hopg/hops-metadata-dal-impl-ndb"
-alias hb="cd ~/code/hopg/hammer-bench"
-alias ds="cd ~/code/hopg/HopsFS-Deployment-Scripts"
-alias sf="cd ~/code/hopg/hops-papers/hopsfs/hopsfs-small-files/draft"
-alias d="cd ~/code/dotfiles"
 
 
 # VIM
