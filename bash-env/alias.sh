@@ -4,13 +4,13 @@ create_path_alias(){
 	fi
 }
 
-create_path_alias	 hp		 ~/code/hopg/hops-papers/hopsfs/
-create_path_alias	 h		 ~/code/hopg/hops
-create_path_alias	 hm		 ~/code/hopg/hops-metadata-dal
-create_path_alias	 hmi	 ~/code/hopg/hops-metadata-dal-impl-ndb
-create_path_alias	 hb		 ~/code/hopg/hammer-bench
-create_path_alias	 ds		 ~/code/hopg/HopsFS-Deployment-Scripts
-create_path_alias	 sf		 ~/code/hopg/hops-papers/hopsfs/hopsfs-small-files/draft
+create_path_alias	 hp		 ~/code/hops/hops-papers/hopsfs/
+create_path_alias	 h		 ~/code/hops/hops
+create_path_alias	 hm		 ~/code/hops/hops-metadata-dal
+create_path_alias	 hmi	 ~/code/hops/hops-metadata-dal-impl-ndb
+create_path_alias	 hb		 ~/code/hops/hammer-bench
+create_path_alias	 ds		 ~/code/hops/HopsFS-Deployment-Scripts
+create_path_alias	 sf		 ~/code/hops/hops-papers/hopsfs/hopsfs-small-files/draft
 create_path_alias	 d		 ~/code/dotfiles
 
 

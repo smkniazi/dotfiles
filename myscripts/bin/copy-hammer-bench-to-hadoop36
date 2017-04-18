@@ -5,7 +5,7 @@ cd ~/code/hopg/hammer-bench/
 rm -rf target
 mvn clean install 
 tar -c --use-compress-program=pigz -f "$file_name.tar" target
-rsync -av --progress -e "ssh -p 8209 -A hdp@ice ssh" $file_name.tar tester@hadoop36:/home/tester/salman/code/hammer-bench
-ssh -p 8209 -A hdp@ice ssh tester@hadoop36 "rm -rf  /home/tester/salman/code/hammer-bench/target"
-ssh -p 8209 -A hdp@ice ssh tester@hadoop36 "tar xf /home/tester/salman/code/hammer-bench/$file_name.tar -C /home/tester/salman/code/hammer-bench"
+rsync -av --progress -e "ssh -p 8209 -A hdp@ice ssh" $file_name.tar tester@hadoop36:/home/tester/code/hops/hammer-bench
+ssh -p 8209 -A hdp@ice ssh tester@hadoop36 "rm -rf /home/tester/code/hops/hammer-bench/target"
+ssh -p 8209 -A hdp@ice ssh tester@hadoop36 "tar xf /home/tester/code/hops/hammer-bench/$file_name.tar -C /home/tester/code/hops/hammer-bench"
 popd
