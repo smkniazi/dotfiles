@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+	echo "Wrong Number of Parameters. Usage command {Program-Name} {Index-File}"
+	exit 1
+fi
+
+PROGRAM_NAME=$1
+INDEX_FILE_NAME="$2"
+
+if [ -f $INDEX_FILE_NAME ]; then
+	CINDEX=`cat $INDEX_FILE_NAME`
+	echo "Last Window Index is: $CINDEX"
+else
+	CINDEX=0
+	echo "$CINDEX" > $INDEX_FILE_NAME;
+	echo "No Index File Found. Created File: $INDEX_FILE_NAME"
+fi
+
+readarray -t program_list <<< "$(wmctrl -l | grep -i "0x.*$PROGRAM_NAME" | cut -d ' ' -f1)"
+
+if [ "$CINDEX" -ge "${#program_list[@]}" ]; then
+	CINDEX=0
+	echo "$CINDEX" > $INDEX_FILE_NAME;
+	echo "Index Wrap Around"
+fi
+
+if [ "${#program_list[@]}" -gt "0" ]; then
+	wmctrl -i -a ${program_list[$CINDEX]} 
+	export CINDEX=$(( $CINDEX + 1 ))
+ 	echo "New Index is: $CINDEX"	
+	echo "$CINDEX" > $INDEX_FILE_NAME;
+fi
