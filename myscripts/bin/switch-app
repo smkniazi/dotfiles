@@ -28,7 +28,22 @@ if [ -z "$PROCESS_NAME" ]; then
 else
 	pid="$(pgrep $PROCESS_NAME)"
 	echo "Found the process $PROCESS_NAME. Its PID is: $pid"
+
+		if [ -z $pid ]; then
+			echo "Starting $PROCESS_NAME"
+			$PROCESS_NAME &
+			exit 0
+		fi
 	readarray -t program_list <<< "$(wmctrl -l -p | grep -i "$pid" | cut -d ' ' -f1)"
+fi
+
+if [ "${#program_list[@]}" -eq "0" ]; then
+	echo "Starting program"
+	if [ -n $PROCESS_NAME ]; then
+		echo "Starting $PROCESS_NAME"
+		$PROCESS_NAME
+	fi
+	exit 0
 fi
 
 for i in `seq 1 ${#program_list[@]}`;

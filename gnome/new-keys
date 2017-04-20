@@ -1,17 +1,14 @@
 custom	'lock-screen'	'lock-screen'	'<Primary><Alt>l'
-custom	'keepassxc'	'keepassxc'	'<Primary><Alt>k'
-custom	'skype'	'/usr/bin/skype'	'<Primary><Alt>s'
-custom	'switch-to-chrome'	'switch-app chrome /tmp/ci'	'<Primary><Alt>c'
-custom	'chrome'	'/usr/bin/google-chrome'	'<Primary><Shift><Alt>c'
-custom	'switch-to-terminal'	'switch-app Terminal /tmp/gt'	'<Primary><Alt>t'
-custom	'start-terminal'	'gnome-terminal'	'<Primary><Shift><Alt>t'
-custom	'start-firefox'	'firefox'	'<Primary><Shift><Alt>f'
-custom	'switch-to-firefox'	'switch-app firefox /tmp/ffi'	'<Primary><Alt>f'
 custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
+custom	'keepassxc'	'switch-app keepassxc /tmp/kpx keepassxc'	'<Super>k'
+custom	'skype'	'/usr/bin/skype'	'<Primary><Alt>s'
+custom	'chrome'	'switch-app chrome /tmp/ci chrome'	['<Super>c']
+custom	'terminal'	'switch-app Terminal /tmp/gt gnome-terminal'	'<Primary>t'
+custom	'firefox'	'switch-app firefox /tmp/ffi firefox'	'<Super>f'
 custom	'open-home-folder'	'nautilus /home/salman'	'<Primary><Alt>h'
 custom	'open-dropbox-folder'	'nautilus /home/salman/Downloads'	'<Primary><Alt>d'
 custom	'open-downloads-folder'	'nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
-custom	'open-downloads-folder'	'switch-app nautilus /tmp/ni nautilus'	'<Primary><Alt>n'
+custom	'switch-folder'	'switch-app nautilus /tmp/ni nautilus'	'<Primary>n'
 org.gnome.desktop.wm.keybindings	switch-to-workspace-1	['<Super>1']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-2	['<Super>2']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-3	['<Super>3']
@@ -45,11 +42,11 @@ org.gnome.desktop.wm.keybindings	move-to-monitor-right	['<Super><Shift>r']
 org.gnome.desktop.wm.keybindings	move-to-monitor-up	[]
 org.gnome.desktop.wm.keybindings	switch-applications	['<Super>Tab', '<Alt>Tab', '<Super>o']
 org.gnome.desktop.wm.keybindings	switch-applications-backward	['<Shift><Super>Tab', '<Shift><Alt>Tab','<Super>i']
-org.gnome.desktop.wm.keybindings	toggle-fullscreen	['<Super>f']
-org.gnome.desktop.wm.keybindings	toggle-maximized	['<Super>f']
+org.gnome.desktop.wm.keybindings	toggle-fullscreen	['<Super><Shift>f']
+org.gnome.desktop.wm.keybindings	toggle-maximized	['<Super><Shift>f']
 org.gnome.desktop.wm.keybindings	show-desktop	        ['<Super>d']
 org.gnome.desktop.wm.keybindings	cycle-windows-backward	[]
-org.gnome.desktop.wm.keybindings	cycle-windows	        ['<Super>c']
+org.gnome.desktop.wm.keybindings	cycle-windows	        ['<Super>g']
 org.gnome.desktop.wm.keybindings	minimize	        ['<Super>n']
 org.gnome.desktop.wm.keybindings	unmaximize	        ['<Super>Down', '<Alt>F5']
 org.gnome.desktop.wm.keybindings	maximize	        ['<Super>m']
