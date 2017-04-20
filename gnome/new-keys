@@ -11,6 +11,7 @@ custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
 custom	'open-home-folder'	'nautilus /home/salman'	'<Primary><Alt>h'
 custom	'open-dropbox-folder'	'nautilus /home/salman/Downloads'	'<Primary><Alt>d'
 custom	'open-downloads-folder'	'nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
+custom	'open-downloads-folder'	'switch-app nautilus /tmp/ni nautilus'	'<Primary><Alt>n'
 org.gnome.desktop.wm.keybindings	switch-to-workspace-1	['<Super>1']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-2	['<Super>2']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-3	['<Super>3']

@@ -1,33 +1,63 @@
 #!/bin/bash
 
-if [ $# -ne 2 ]; then
-	echo "Wrong Number of Parameters. Usage command {Program-Name} {Index-File}"
+# The program can switch application based on the title of the application
+# or based on the process name
+# if process name is specified then the program-title parameter is ignored
+# 
+
+if [ $# -lt 2 ]; then
+	echo "Wrong Number of Parameters. Usage command {Program-Title} {Index-File} [Process-Name}"
 	exit 1
 fi
 
-PROGRAM_NAME=$1
+PROGRAM_TITLE=$1
 INDEX_FILE_NAME="$2"
+PROCESS_NAME=$3
 
 if [ -f $INDEX_FILE_NAME ]; then
 	CINDEX=`cat $INDEX_FILE_NAME`
-	echo "Last Window Index is: $CINDEX"
+	echo "Last Window Stored Index is: $CINDEX"
 else
 	CINDEX=0
 	echo "$CINDEX" > $INDEX_FILE_NAME;
 	echo "No Index File Found. Created File: $INDEX_FILE_NAME"
 fi
 
-readarray -t program_list <<< "$(wmctrl -l | grep -i "0x.*$PROGRAM_NAME" | cut -d ' ' -f1)"
-
-if [ "$CINDEX" -ge "${#program_list[@]}" ]; then
-	CINDEX=0
-	echo "$CINDEX" > $INDEX_FILE_NAME;
-	echo "Index Wrap Around"
+if [ -z "$PROCESS_NAME" ]; then
+	readarray -t program_list <<< "$(wmctrl -l | grep -i "0x.*$PROGRAM_TITLE" | cut -d ' ' -f1)"
+else
+	pid="$(pgrep $PROCESS_NAME)"
+	echo "Found the process $PROCESS_NAME. Its PID is: $pid"
+	readarray -t program_list <<< "$(wmctrl -l -p | grep -i "$pid" | cut -d ' ' -f1)"
 fi
 
-if [ "${#program_list[@]}" -gt "0" ]; then
-	wmctrl -i -a ${program_list[$CINDEX]} 
-	export CINDEX=$(( $CINDEX + 1 ))
+for i in `seq 1 ${#program_list[@]}`;
+do
+
+	echo ""
+	echo "Current Index is: $CINDEX"
+	if [ "$CINDEX" -ge "${#program_list[@]}" ]; then
+		CINDEX=0
+		echo "$CINDEX" > $INDEX_FILE_NAME;
+		echo "Current Index Wrap Around"
+	fi
+    
+	currFocusId="$(xdotool getactivewindow getwindowfocus)"
+	toFocusIdInHex=${program_list[$CINDEX]} 
+	toFocusIdInDec="$(echo $(($toFocusIdInHex)))"
+
+	CINDEX=$(( $CINDEX + 1 ))
+
+	if [ "$toFocusIdInDec" -eq "$currFocusId" ]; then
+		echo "The application is already in focus. Continue ..."
+		continue
+	fi
+
+	echo "Setting Focus to:  $toFocusIdInDec" 
+	wmctrl -i -a $toFocusIdInDec
  	echo "New Index is: $CINDEX"	
 	echo "$CINDEX" > $INDEX_FILE_NAME;
-fi
+	break
+done
+
+
