@@ -37,6 +37,7 @@ alias gp="git pull"
 hash vimx 2> /dev/null
 if [ "$?" -eq "0" ]; then
 	alias vim=vimx
+	alias vi=vimx
 #else
 #	echo "You might want to install vimx for clipboard support"
 fi
