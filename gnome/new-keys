@@ -3,7 +3,7 @@ custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
 custom	'keepassxc'	'switch-app keepassxc /tmp/kpx keepassxc'	'<Super>k'
 custom	'skype'	'/usr/bin/skype'	'<Primary><Alt>s'
 custom	'chrome'	'switch-app chrome /tmp/ci chrome'	['<Super>c']
-custom	'terminal'	'switch-app Terminal /tmp/gt gnome-terminal'	'<Primary>t'
+custom	'terminal'	'switch-app Terminal /tmp/gt gnome-terminal'	['<Super>e']
 custom	'firefox'	'switch-app firefox /tmp/ffi firefox'	'<Super>f'
 custom	'open-home-folder'	'nautilus /home/salman'	'<Primary><Alt>h'
 custom	'open-dropbox-folder'	'nautilus /home/salman/Downloads'	'<Primary><Alt>d'
