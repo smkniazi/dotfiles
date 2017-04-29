@@ -1,14 +1,13 @@
+custom	'firefox'	'switch-app -t firefox -f /tmp/firefox-index -c firefox'	'<Super>f'
+custom	'gnome-termianl'	'switch-app -n gnome-terminal -f /tmp/gnome-terminal-index -c gnome-terminal'	'<Super>t'
+custom	'nautilus'	'switch-app -n nautilus -f /tmp/nautilus-index -c nautilus'	'<Super>n'
+custom	'intellij'	'switch-app -t Intellij -f /tmp/intellij-index -c idea.sh'	'<Super>i'
 custom	'lock-screen'	'lock-screen'	'<Primary><Alt>l'
 custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
 custom	'keepassxc'	'switch-app keepassxc /tmp/kpx keepassxc'	'<Super>k'
-custom	'skype'	'/usr/bin/skype'	'<Primary><Alt>s'
-custom	'chrome'	'switch-app chrome /tmp/ci chrome'	['<Super>c']
-custom	'terminal'	'switch-app Terminal /tmp/gt gnome-terminal'	['<Super>e']
-custom	'firefox'	'switch-app firefox /tmp/ffi firefox'	'<Super>f'
 custom	'open-home-folder'	'nautilus /home/salman'	'<Primary><Alt>h'
 custom	'open-dropbox-folder'	'nautilus /home/salman/Downloads'	'<Primary><Alt>d'
 custom	'open-downloads-folder'	'nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
-custom	'switch-folder'	'switch-app nautilus /tmp/ni nautilus'	'<Primary>n'
 org.gnome.desktop.wm.keybindings	switch-to-workspace-1	['<Super>1']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-2	['<Super>2']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-3	['<Super>3']
@@ -40,19 +39,23 @@ org.gnome.desktop.wm.keybindings	move-to-monitor-left	['<Super><Shift>l']
 org.gnome.desktop.wm.keybindings	move-to-monitor-down	[]
 org.gnome.desktop.wm.keybindings	move-to-monitor-right	['<Super><Shift>r']
 org.gnome.desktop.wm.keybindings	move-to-monitor-up	[]
-org.gnome.desktop.wm.keybindings	switch-applications	['<Super>Tab', '<Alt>Tab', '<Super>o']
-org.gnome.desktop.wm.keybindings	switch-applications-backward	['<Shift><Super>Tab', '<Shift><Alt>Tab','<Super>i']
+org.gnome.desktop.wm.keybindings	switch-applications	['<Super>Tab', '<Alt>Tab']
+org.gnome.desktop.wm.keybindings	switch-applications-backward	['<Shift><Super>Tab', '<Shift><Alt>Tab']
 org.gnome.desktop.wm.keybindings	toggle-fullscreen	['<Super><Shift>f']
 org.gnome.desktop.wm.keybindings	toggle-maximized	['<Super><Shift>f']
 org.gnome.desktop.wm.keybindings	show-desktop	        ['<Super>d']
 org.gnome.desktop.wm.keybindings	cycle-windows-backward	[]
 org.gnome.desktop.wm.keybindings	cycle-windows	        ['<Super>g']
-org.gnome.desktop.wm.keybindings	minimize	        ['<Super>n']
+org.gnome.desktop.wm.keybindings	minimize	        []
 org.gnome.desktop.wm.keybindings	unmaximize	        ['<Super>Down', '<Alt>F5']
-org.gnome.desktop.wm.keybindings	maximize	        ['<Super>m']
+org.gnome.desktop.wm.keybindings	maximize	        []
+org.gnome.desktop.wm.keybindings	panel-main-menu	[]
 org.gnome.mutter.keybindings	toggle-tiled-left	        ['<Super>l']
 org.gnome.mutter.keybindings	toggle-tiled-right	        ['<Super>r']
 org.gnome.desktop.wm.keybindings	close	['<Alt>F4','<Super>q']
-org.gnome.mutter	overlay-key	['<Super>s']
-org.gnome.shell.keybindings	toggle-overview	['<Super>s']
+org.gnome.mutter	overlay-key	[]
+org.gnome.shell.keybindings	toggle-overview	[]
+org.gnome.shell.keybindings	focus-active-notification	[]
+org.gnome.shell.keybindings	toggle-message-tray	['<Super>m']
+org.gnome.shell.keybindings	toggle-application-view	[]
 
