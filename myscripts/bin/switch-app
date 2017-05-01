@@ -107,10 +107,10 @@ do
 	toFocusIdInHex=${program_list[$index]} 
 	toFocusIdInDec="$(echo $(($toFocusIdInHex)))"
 
-	index=$(( $index + 1 ))
 
 	if [ "$toFocusIdInDec" -eq "$currFocusId" ]; then
 		log "The application is already in focus. Continue ..." 
+		index=$(( $index + 1 ))
 		continue
 	fi
 
