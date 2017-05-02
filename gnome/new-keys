@@ -1,6 +1,10 @@
 custom	'keys'	'send-keys -l 1'	'<Super><Alt>h'
+
 custom	'firefox'	'switch-app -t firefox -f /tmp/firefox-index -c firefox'	'<Super>f'
-custom	'gnome-termianl'	'switch-app -n gnome-terminal -f /tmp/gnome-terminal-index -c gnome-terminal'	'<Super>t'
+
+custom	'swith-gnome-termianl'	'switch-app -n gnome-terminal -f /tmp/gnome-terminal-index -c gnome-terminal'	'<Super>t'
+custom	'gnome-termianl'	'gnome-terminal'	'<Primary><Alt>t'
+
 custom	'nautilus'	'switch-app -n nautilus -f /tmp/nautilus-index -c nautilus'	'<Super>n'
 custom	'intellij'	'switch-app -t Intellij -f /tmp/intellij-index -c idea.sh'	'<Super>i'
 custom	'lock-screen'	'lock-screen'	'<Primary><Alt>l'
