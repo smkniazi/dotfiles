@@ -16,6 +16,7 @@ function log(){
 function start_program(){
 	if [[ -n $1 ]]; then
 		log "Starting $1 ..." 
+		notify-send "Starting $1"
 		$1 &
 	fi
 }

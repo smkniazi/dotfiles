@@ -4,7 +4,8 @@ function log(){
 	echo -e    $1
 	echo -e    $1 >> /tmp/mykeyboard.log
 }
-eval "xdotool windowactivate --sync 0x022000f8 key Up"
+log "Uapp"
+eval "xdotool windowactivate key Up"
 exit 0
 #sleep 0.50
 xvkbd -window 0x02a00041 -text "\{+Up}\{-Up}"
