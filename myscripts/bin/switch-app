@@ -107,6 +107,7 @@ do
 	toFocusIdInHex=${program_list[$index]} 
 	toFocusIdInDec="$(echo $(($toFocusIdInHex)))"
 
+	log "Currrent Focus Id is: $currFocusId"
 
 	if [ "$toFocusIdInDec" -eq "$currFocusId" ]; then
 		log "The application is already in focus. Continue ..." 
@@ -114,7 +115,7 @@ do
 		continue
 	fi
 
-	log "Setting Focus to:  $toFocusIdInDec"  
+	log "Setting Focus to:  Hex: $toFocusIdInHex  Decimal: $toFocusIdInDec"  
 	wmctrl -i -a $toFocusIdInDec
  	log "New Index is: $index"	 
 	echo "$index" > $index_file;
