@@ -1,15 +1,13 @@
-custom	'keys'	'send-keys -l 1'	'<Super><Alt>h'
-
+custom	'chrome'	'switch-app -t \'google chrome\' -f /tmp/chome-index -c google-chrome'	'<Super>c'
 custom	'firefox'	'switch-app -t firefox -f /tmp/firefox-index -c firefox'	'<Super>f'
-
+custom	'firefox2'	'firefox'	'<Primary><Alt>f'
 custom	'swith-gnome-termianl'	'switch-app -n gnome-terminal -f /tmp/gnome-terminal-index -c gnome-terminal'	'<Super>t'
 custom	'gnome-termianl'	'gnome-terminal'	'<Primary><Alt>t'
-
 custom	'nautilus'	'switch-app -n nautilus -f /tmp/nautilus-index -c nautilus'	'<Super>n'
 custom	'intellij'	'switch-app -t Intellij -f /tmp/intellij-index -c idea.sh'	'<Super>i'
 custom	'lock-screen'	'lock-screen'	'<Primary><Alt>l'
 custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
-custom	'keepassxc'	'switch-app keepassxc /tmp/kpx keepassxc'	'<Super>k'
+custom	'keepassxc'	'switch-app -t keepassxc -f /tmp/kpx -c keepassxc'	'<Super>k'
 custom	'open-home-folder'	'nautilus /home/salman'	'<Primary><Alt>h'
 custom	'open-dropbox-folder'	'nautilus /home/salman/Downloads'	'<Primary><Alt>d'
 custom	'open-downloads-folder'	'nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
