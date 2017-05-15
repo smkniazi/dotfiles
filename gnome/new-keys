@@ -1,3 +1,4 @@
+custom	'vlc'	'switch-app -t \'VLC media player\' -f /tmp/vlc-index -c vlc'	'<Super>v'
 custom	'chrome'	'switch-app -t \'google chrome\' -f /tmp/chome-index -c google-chrome'	'<Super>c'
 custom	'firefox'	'switch-app -t firefox -f /tmp/firefox-index -c firefox'	'<Super>f'
 custom	'firefox2'	'firefox'	'<Primary><Alt>f'
