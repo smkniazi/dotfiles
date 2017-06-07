@@ -1,4 +1,8 @@
 #!/bin/bash
+mvn $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml
+
+mvn $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml
+
 mvn $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml
 
 mvn $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml
