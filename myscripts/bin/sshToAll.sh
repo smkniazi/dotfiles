@@ -38,8 +38,8 @@ starttmux() {
     done
     tmux select-pane -t 0
     tmux set-window-option synchronize-panes on > /dev/null
-	tmux setw pane-active-border-style fg=brightred,bg=default
-	tmux setw pane-border-style fg=yellow,bg=default
+	tmux setw pane-active-border-style fg=red,bg=red
+	tmux setw pane-border-style fg=red,bg=default
 }
 
 HOSTS=${HOSTS:=$*}
