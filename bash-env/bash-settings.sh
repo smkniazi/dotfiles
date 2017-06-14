@@ -2,3 +2,6 @@
 export HISTIGNORE="&:ls:ls *:[bf]g:exit" 
 #bind 'set show-all-if-ambiguous on'
 #bind 'TAB:menu-complete'
+
+#disable ctrl+s which freezes the terminal
+stty -ixon
