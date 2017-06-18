@@ -79,7 +79,7 @@ if [[ -n "$process_window_title" ]]; then
 		log "Found ${#program_list[@]} open windows"
 	else
 		log "No window with the title '$process_window_title' found"
-		start_program $process_command 
+		start_program "$process_command" 
 		exit 1
 	fi
 fi
@@ -88,7 +88,7 @@ if [[ -n "$process_name" ]]; then
 	log "Using process name to switch windows"
 	pid="$(pgrep $process_name)"
 	if [ "$?" -eq "1" ]; then
-		start_program $process_command 
+		start_program "$process_command" 
 		exit 1
 	fi
 
