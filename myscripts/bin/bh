@@ -1,14 +1,14 @@
 #!/bin/bash
-mvn $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml
+mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml
 
-mvn $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml
+mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml
 
-mvn $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml
+mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml
 
-mvn $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml
+mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml
 
-mvn $@ install -Dmaven.test.skip=true generate-sources -Pndb -f ~/code/hops/hops/pom.xml
+mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml
 
 #temporarily change pwd
-cd ~/code/hops/hops && mvn test-compile
+cd ~/code/hops/hops && mvn -T 1C $@ test-compile
 
