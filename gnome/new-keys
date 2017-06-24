@@ -1,3 +1,4 @@
+custom	'transmission'	'switch-app -t \'Transmission\' -f /tmp/transmission-index -c \'transmission-qt\''	'<Super>b'
 custom	'mpv'	'switch-app -t \'mpv\' -f /tmp/mpv-index -c \'mpv --player-operation-mode=pseudo-gui\''	'<Super>v'
 custom	'chrome'	'switch-app -t \'google chrome\' -f /tmp/chome-index -c google-chrome'	'<Super>c'
 custom	'firefox'	'switch-app -t firefox -f /tmp/firefox-index -c firefox'	'<Super>f'
