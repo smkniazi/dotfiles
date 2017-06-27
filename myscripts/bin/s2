@@ -1,2 +1,0 @@
-#ssh -A -t nzo@cloud1.sics.se ssh -A -t salman@salman2.sics.se
-ssh salman@salman2.sics.se

@@ -1,4 +1,0 @@
-#!/bin/bash
-
-mvn $@ install -Dmaven.test.skip=true generate-sources -Pndb
-

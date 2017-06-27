@@ -61,3 +61,61 @@ alias t="tmux -2"
 ta (){
 	tmux a -dt $@
 }
+
+
+bh (){
+	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml
+
+	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml
+
+	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml
+
+	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml
+
+	mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml
+
+	#temporarily change pwd
+	cd ~/code/hops/hops && mvn -T 1C $@ test-compile
+}
+
+mi () {
+	mvn $@ install -Dmaven.test.skip=true 
+}
+
+mig () {
+	mvn $@ install -Dmaven.test.skip=true generate-sources -Pndb
+}
+
+ph () {
+	cd /home/salman/code/hops/hops && git push && cd /home/salman/code/hops/hops-metadata-dal && git push && cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git push
+}
+
+
+gcp() {
+	if [ "$#" -eq 1 ]; then
+		git commit -am "$1" && git push
+	else
+		joke=""
+		#joke="$(wget 'http://api.icndb.com/jokes/random' -qO- | grep -Po '"joke":.*?[^\\]",' |  sed -e 's/\"//g' | sed -e 's/joke: //g' | sed -e 's/\"//g')"
+
+		joke="Auto generated commit msg.  $joke"
+		git commit -am "$joke" && git push
+	fi
+}
+
+s2 () {
+#ssh -A -t nzo@cloud1.sics.se ssh -A -t salman@salman2.sics.se
+	ssh salman@salman2.sics.se
+}
+
+ice () {
+	ssh -p 8209 hdp@ice $@
+}
+
+c1 () { 
+	ssh nzo@cloud1.sics.se
+}
+
+mtc () {
+	mvn test-compile
+}
