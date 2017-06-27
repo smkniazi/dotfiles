@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cd /home/salman/code/hops/hops && git push && cd /home/salman/code/hops/hops-metadata-dal && git push && cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git push
