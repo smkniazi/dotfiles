@@ -141,7 +141,7 @@ buildHops (){
 	end=`date +%s`
 
 	runtime=$((end-start))
-	echoColor "Total compilation time is : $runtime"
+	echoColor "Total compilation time is : $runtime sec(s)"
 }
 
 mi () {
