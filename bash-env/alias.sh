@@ -88,19 +88,43 @@ gcp() {
 	fi
 }
 
-ph () {
-	pushd .
+pushHops () {
+	pushd . &> /dev/null
 	echoColor "Hops"
 	cd /home/salman/code/hops/hops && git push 
 	echoColor "Hops-Metadata-Dal"
 	cd /home/salman/code/hops/hops-metadata-dal && git push
 	echoColor "Hops-Metadata-Dal-Impl-NDB"
 	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git push
-	popd
+	popd &> /dev/null 
 }
 
-bh (){
-	pushd .
+pullHops (){
+	pushd . &> /dev/null
+	echoColor "Hops"
+	cd /home/salman/code/hops/hops && git pull
+	echoColor "Hops-Metadata-Dal"
+	cd /home/salman/code/hops/hops-metadata-dal && git pull
+	echoColor "Hops-Metadata-Dal-Impl-NDB"
+	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git pull
+	popd &> /dev/null 
+}
+
+checkoutHops (){
+	pushd . &> /dev/null
+	echoColor "Hops"
+	cd /home/salman/code/hops/hops && git checkout $1
+	echoColor "Hops-Metadata-Dal"
+	cd /home/salman/code/hops/hops-metadata-dal && git checkout $1
+	echoColor "Hops-Metadata-Dal-Impl-NDB"
+	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git checkout $1
+	popd &> /dev/null 
+}
+
+
+buildHops (){
+	pushd . &> /dev/null
+	start=`date +%s`
 	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml
 
 	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml
@@ -113,7 +137,11 @@ bh (){
 
 	#temporarily change pwd
 	cd ~/code/hops/hops && mvn -T 1C $@ test-compile
-	popd
+	popd &> /dev/null 
+	end=`date +%s`
+
+	runtime=$((end-start))
+	echoColor "Total compilation time is : $runtime"
 }
 
 mi () {
