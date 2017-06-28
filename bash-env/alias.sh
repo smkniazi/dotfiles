@@ -88,7 +88,7 @@ gcp() {
 	fi
 }
 
-pushHops () {
+pushhops () {
 	pushd . &> /dev/null
 	echoColor "Hops"
 	cd /home/salman/code/hops/hops && git push 
@@ -99,7 +99,7 @@ pushHops () {
 	popd &> /dev/null 
 }
 
-pullHops (){
+pullhops (){
 	pushd . &> /dev/null
 	echoColor "Hops"
 	cd /home/salman/code/hops/hops && git pull
@@ -110,7 +110,7 @@ pullHops (){
 	popd &> /dev/null 
 }
 
-checkoutHops (){
+checkouthops (){
 	pushd . &> /dev/null
 	echoColor "Hops"
 	cd /home/salman/code/hops/hops && git checkout $1
@@ -122,7 +122,7 @@ checkoutHops (){
 }
 
 
-buildHops (){
+buildhops (){
 	pushd . &> /dev/null
 	start=`date +%s`
 	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml
