@@ -76,7 +76,7 @@ ta (){
 }
 
 
-gcp() {
+gc() {
 	if [ "$#" -eq 1 ]; then
 		git commit -am "$1" && git push
 	else
@@ -84,8 +84,13 @@ gcp() {
 		#joke="$(wget 'http://api.icndb.com/jokes/random' -qO- | grep -Po '"joke":.*?[^\\]",' |  sed -e 's/\"//g' | sed -e 's/joke: //g' | sed -e 's/\"//g')"
 
 		joke="Auto generated commit msg.  $joke"
-		git commit -am "$joke" && git push
+		git commit -am "$joke" 
 	fi
+}
+
+gcp (){
+	gc $@
+	git push
 }
 
 pushhops () {
