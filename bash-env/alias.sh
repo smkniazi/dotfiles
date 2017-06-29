@@ -93,6 +93,7 @@ gcp (){
 	git push
 }
 
+mvnc='grep --color=none "\[INFO] Building\|\[INFO] -----\|\[ERROR]\|\[WARN]\| SUCCESS \[\| FAILURE \[\| SKIPPED"'
 pushhops () {
 	pushd . &> /dev/null
 	echoColor "Hops"
@@ -130,18 +131,19 @@ checkouthops (){
 buildhops (){
 	pushd . &> /dev/null
 	start=`date +%s`
-	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml | $mvnc"
 
-	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml | $mvnc"
 
-	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml | $mvnc"
 
-	mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml | $mvnc"
 
-	mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml | $mvnc"
 
 	#temporarily change pwd
-	cd ~/code/hops/hops && mvn -T 1C $@ test-compile
+	cd ~/code/hops/hops 
+	eval "mvn -T 1C $@ test-compile | $mvnc"
 	popd &> /dev/null 
 	end=`date +%s`
 
@@ -150,14 +152,17 @@ buildhops (){
 }
 
 mi () {
-	mvn $@ install -Dmaven.test.skip=true 
+ 	eval	"mvn -T 1C $@ install -Dmaven.test.skip=true | $mvnc"
 }
 
 mig () {
-	mvn $@ install -Dmaven.test.skip=true generate-sources -Pndb
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -Pndb | $mvnc"
 }
 
 
+mtc () {
+   eval "mvn -T 1C test-compile | $mvnc"
+}
 
 s2 () {
 #ssh -A -t nzo@cloud1.sics.se ssh -A -t salman@salman2.sics.se
@@ -172,6 +177,3 @@ c1 () {
 	ssh nzo@cloud1.sics.se
 }
 
-mtc () {
-	mvn test-compile
-}
