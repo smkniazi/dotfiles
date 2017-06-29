@@ -93,7 +93,16 @@ gcp (){
 	git push
 }
 
-mvnc='grep --color=always "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED"'
+alias grey-grep="GREP_COLOR='1;30'    grep --color=always --line-buffered"
+alias red-grep="GREP_COLOR='1;31'     grep --color=always --line-buffered"
+alias green-grep="GREP_COLOR='1;32'   grep --color=always --line-buffered"
+alias yellow-grep="GREP_COLOR='1;33'  grep --color=always --line-buffered"
+alias blue-grep="GREP_COLOR='1;34'    grep --color=always --line-buffered"
+alias magenta-grep="GREP_COLOR='1;35' grep --color=always --line-buffered"
+alias cyan-grep="GREP_COLOR='1;36'    grep --color=always --line-buffered"
+alias white-grep="GREP_COLOR='1;37'   grep --color=always --line-buffered"
+mvnc='grep --line-buffered --color=none "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | red-grep  "^\|ERROR|WARN" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED"'
+#mvnc='grep --color=none "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | grey-grep "INFO"'
 pushhops () {
 	pushd . &> /dev/null
 	echoColor "Hops"
