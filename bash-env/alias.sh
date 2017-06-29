@@ -93,7 +93,7 @@ gcp (){
 	git push
 }
 
-mvnc='grep --color=none "\[INFO] Building\|\[ERROR]\|\[WARN]\| SUCCESS \[\| FAILURE \[\| SKIPPED"'
+mvnc='grep --color=always "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED"'
 pushhops () {
 	pushd . &> /dev/null
 	echoColor "Hops"
