@@ -93,7 +93,7 @@ gcp (){
 	git push
 }
 
-mvnc='grep --color=none "\[INFO] Building\|\[INFO] -----\|\[ERROR]\|\[WARN]\| SUCCESS \[\| FAILURE \[\| SKIPPED"'
+mvnc='grep --color=none "\[INFO] Building\|\[ERROR]\|\[WARN]\| SUCCESS \[\| FAILURE \[\| SKIPPED"'
 pushhops () {
 	pushd . &> /dev/null
 	echoColor "Hops"
@@ -131,18 +131,24 @@ checkouthops (){
 buildhops (){
 	pushd . &> /dev/null
 	start=`date +%s`
+	echoColor "Hops-gpu-management"
 	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml | $mvnc"
 
+	echoColor "Hops-gpu-management-impl-nvidia"
 	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml | $mvnc"
 
+	echoColor "Hops-metadata-dal"
 	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml | $mvnc"
 
+	echoColor "Hops-metadata-dal-impl-ndb"
 	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml | $mvnc"
 
+	echoColor "Hops"
 	eval "mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml | $mvnc"
 
 	#temporarily change pwd
 	cd ~/code/hops/hops 
+	echoColor "Hops Tests"
 	eval "mvn -T 1C $@ test-compile | $mvnc"
 	popd &> /dev/null 
 	end=`date +%s`
