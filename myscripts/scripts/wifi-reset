@@ -1,2 +1,3 @@
 #!/bin/bash
+notify-send "Resetting Wifi. Please wait."
 nmcli radio wifi off && sleep 5 && nmcli radio wifi on
