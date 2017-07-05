@@ -1,1 +1,0 @@
-ssh -p 8209 -L 8088:hadoop3:8088 -N hdp@ice 

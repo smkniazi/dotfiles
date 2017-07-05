@@ -1,4 +1,0 @@
-#!/bin/bash
-set DISPLAY=:0
-#xte 'keydown Shift_L' 'key F10' 'keyup Shift_L' 
-xmodmap -e "keycode  107 = Menu NoSymbol Menu"
