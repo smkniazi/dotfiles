@@ -12,6 +12,7 @@ export_to(){
 }
  
 export_to	PATH		~/usr/bin
+export_to	PATH		~/usr/bin/scripts
 export_to	PATH		~/usr/bin/jdk/bin
 export_to	PATH		~/usr/bin/maven/bin
 export_to	PATH		~/usr/bin/glark-1.7.10/bin

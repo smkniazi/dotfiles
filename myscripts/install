@@ -14,5 +14,8 @@ if [ -z "$BACKUP_DIR" ]; then
 fi
 
 echo "Installing My Scripts"
-mv ~/bin $BACKUP_DIR
-ln -s $SRC/bin ~/bin
+if [ ! -d "~/usr/bin" ]; then
+	mkdir -p ~/usr/bin
+fi
+mv ~/usr/bin/scripts $BACKUP_DIR
+ln -s $SRC/scripts ~/usr/bin/scripts
