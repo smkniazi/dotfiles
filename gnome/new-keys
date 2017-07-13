@@ -1,7 +1,7 @@
 custom	'wifi-rset'	'$HOME/usr/bin/scripts/wifi-reset '	'<Primary><Alt>w'
 custom	'brightness-inc'	'xbacklight -inc 5 '	'<Primary><Alt>b'
 custom	'brightness-dec'	'xbacklight -dec 5 '	'<Primary><Alt><Shift>b'
-custom	'transmission'	'$HOME/usr/bin/scripts/switch-app -t \'Transmission\' -f /tmp/transmission-index -c \'transmission-qt\''	'<Super>b'
+custom	'transmission'	'$HOME/usr/bin/scripts/switch-app -t \'Transmission\' -f /tmp/transmission-index -c \'transmission-gtk\''	'<Super>b'
 custom	'mpv'	'$HOME/usr/bin/scripts/switch-app -t \'mpv\' -f /tmp/mpv-index -c \'mpv --player-operation-mode=pseudo-gui\''	'<Super>v'
 custom	'chrome'	'$HOME/usr/bin/scripts/switch-app -t \'google chrome\' -f /tmp/chome-index -c google-chrome'	'<Super>c'
 custom	'firefox'	'$HOME/usr/bin/scripts/switch-app -t firefox -f /tmp/firefox-index -c firefox'	'<Super>f'
