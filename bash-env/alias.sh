@@ -191,4 +191,3 @@ ice () {
 c1 () { 
 	ssh nzo@cloud1.sics.se
 }
-
