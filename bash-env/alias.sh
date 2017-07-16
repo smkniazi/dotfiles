@@ -64,9 +64,9 @@ fi
 alias grep="grep --color=auto"
 
 # Listing
-alias ls="ls -F --color=auto"
-alias ll="ls -Fl --color=auto"
-alias lt="ls -Faltr --color=auto"
+alias ls="ls -h -F --color=auto"
+alias ll="ls -hFl --color=auto"
+alias lt="ls -Fhaltr --color=auto"
 
 #TMUX
 alias tmux="tmux -2"
