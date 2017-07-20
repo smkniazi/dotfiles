@@ -1,0 +1,11 @@
+
+NVIDIA 
+https://fedoraproject.org/wiki/Bumblebee
+http://www.akitaonrails.com/2017/03/14/enabling-optimus-nvidia-gpu-on-the-dell-xps-15-with-linux-even-on-battery
+
+
+Kernel
+pcie_port_pm=off acpi_backlight=none acpi_osi=Linux acpi_osi=! acpi_osi='Windows 2009'
+
+Sound
+disable sound in tlp /etc/default/tlp SOUND_POWER_SAVE_ON_BAT=0
