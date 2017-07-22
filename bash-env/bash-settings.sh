@@ -8,8 +8,5 @@
 
 #Bash Prompt
 #0;47;32m light gray background and green foreground
-export PS1="\[\033[32m\][\
-\u@\h \[\033[32m\]\W\
-\[\033[33m\]\\
-$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\
-\[\033[32m\]]$\[\033[00m\] "
+export PS1="\[\033[32m\][\u@\h \[\033[32m\]\W\[\033[33m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\033[32m\]]$\[\033[00m\] "
+
