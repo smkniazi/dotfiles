@@ -6,7 +6,10 @@
 #disable ctrl+s which freezes the terminal
 #stty -ixon
 
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+#Bash Prompt
+#0;47;32m light gray background and green foreground
+export PS1="\[\033[32m\][\
+\u@\h \[\033[32m\]\W\
+\[\033[33m\]\\
+$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\
+\[\033[32m\]]$\[\033[00m\] "

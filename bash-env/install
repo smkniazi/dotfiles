@@ -29,3 +29,6 @@ do
 	fi
 done
 
+echo "Installing Inputrc "
+mv ~/.inputrc $BACKUP_DIR
+ln -s $SRC/inputrc ~/.inputrc
