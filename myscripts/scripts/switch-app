@@ -17,7 +17,7 @@ function start_program(){
 	if [[ -n $1 ]]; then
 		log "Starting $1 ..." 
 		#notify-send "Starting $1"
-		$1 &
+		GDK_BACKEND=x11 $1 &
 	fi
 }
 
@@ -93,8 +93,14 @@ if [[ -n "$process_name" ]]; then
 	fi
 
 	log "Found the process $process_name with PID: $pid" 
-	readarray -t program_list <<< "$(wmctrl -l -p | grep -i "$pid" | cut -d ' ' -f1)"
+	program_list=(`wmctrl -l -p | grep -i "$pid" | awk '{print $1}'`)
+
+	if [[ "${#program_list[@]}" -eq 0 ]]; then
+		log "No window for $pid found."
+		start_program "$process_command" 
+	fi
 fi
+
 
 for i in `seq 1 ${#program_list[@]}`;
 do

@@ -191,3 +191,9 @@ ice () {
 c1 () { 
 	ssh nzo@cloud1.sics.se
 }
+
+# touch pad
+alias tpon='xinput set-prop 15 "Device Enabled" 1'
+alias tpoff='xinput set-prop 15 "Device Enabled" 0'
+alias tptapon='xinput set-prop 15 "libinput Tapping Enabled" 1'
+alias tptapoff='xinput set-prop 15 "libinput Tapping Enabled" 0'

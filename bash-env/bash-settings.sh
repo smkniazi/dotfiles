@@ -21,3 +21,8 @@ shopt -s histappend
 unset PROMPT_COMMAND
 export PROMPT_COMMAND="history -n;history -w;history -c;history -r;$PROMPT_COMMAND"
 
+
+# Change font when on a TTY
+if [ $TERM = linux ]; then
+    setfont /usr/lib/kbd/consolefonts/latarcyrheb-sun32.psfu.gz
+fi
