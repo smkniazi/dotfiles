@@ -219,6 +219,9 @@ let g:conoline_auto_enable = 0
 "let g:conoline_color_insert_light = 'ctermbg=black ctermfg=white'
 "let g:conoline_color_normal_light = 'ctermbg=black ctermfg=white'
 
+"LanguageTool
+let g:languagetool_jar = "/home/salman/usr/bin/languagetool/languagetool-standalone/target/LanguageTool-3.9-SNAPSHOT/LanguageTool-3.9-SNAPSHOT/languagetool-commandline.jar"
+"let g:languagetool_lang = "en_US"
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------
