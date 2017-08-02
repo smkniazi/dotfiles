@@ -175,7 +175,7 @@ set shiftwidth=4
 set tabstop=4
 
 " clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " not to break on words
 set formatoptions=1
