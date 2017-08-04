@@ -193,7 +193,6 @@ c1 () {
 }
 
 # touch pad
-alias tpon='xinput set-prop 15 "Device Enabled" 1'
-alias tpoff='xinput set-prop 15 "Device Enabled" 0'
-alias tptapon='xinput set-prop 15 "libinput Tapping Enabled" 1'
-alias tptapoff='xinput set-prop 15 "libinput Tapping Enabled" 0'
+alias tapon='gsettings set org.gnome.desktop.peripherals.touchpad "tap-to-click" "true"'
+alias tapoff='gsettings set org.gnome.desktop.peripherals.touchpad "tap-to-click" "false"'
+

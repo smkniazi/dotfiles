@@ -9,7 +9,7 @@ log "-f <index-file> file where the index of the window is stored."
 
 function log(){
 	message=$1
-	echo -e    $1
+#	echo -e    $1
 	echo -e    $1 >> /tmp/switcher.log
 }
 
