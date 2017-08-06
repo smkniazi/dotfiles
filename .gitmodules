@@ -25,3 +25,6 @@
 [submodule "vim/vim/bundle/vim-LanguageTool"]
 	path = vim/vim/bundle/vim-LanguageTool
 	url = https://github.com/dpelle/vim-LanguageTool
+[submodule "vim/vim/bundle/goyo.vim"]
+	path = vim/vim/bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
