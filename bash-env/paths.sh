@@ -22,7 +22,7 @@ export_to	PATH		~/usr/bin/idea/bin
 export_to	PATH		~/usr/bin/scala/bin
 export_to	PATH		~/usr/bin/sbt/bin
 export_to	PATH		~/usr/bin/latexdiff
-export_to	PATH		/usr/local/texlive/2016/bin/x86_64-linux
+export_to	PATH		/usr/local/texlive/2017/bin/x86_64-linux
 
 export_to 	LD_LIBRARY_PATH	~/usr/bin/protobuf/src/.libs
 export_to	LD_LIBRARY_PATH	~/usr/bin/clusterj/
