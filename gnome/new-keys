@@ -5,17 +5,17 @@ custom	'transmission'	'$HOME/usr/bin/scripts/switch-app -t \'Transmission\' -f /
 custom	'mpv'	'$HOME/usr/bin/scripts/switch-app -t \'mpv\' -f /tmp/mpv-index -c \'mpv --player-operation-mode=pseudo-gui\''	'<Super>v'
 custom	'chrome'	'$HOME/usr/bin/scripts/switch-app -t \'google chrome\' -f /tmp/chome-index -c google-chrome'	'<Super>c'
 custom	'firefox'	'$HOME/usr/bin/scripts/switch-app -t firefox -f /tmp/firefox-index -c firefox'	'<Super>f'
-custom	'firefox2'	'x11-backend-launch firefox'	'<Primary><Alt>f'
+custom	'firefox2'	'$HOME/usr/bin/scripts/x11-backend-launch firefox'	'<Primary><Alt>f'
 custom	'swith-gnome-termianl'	'$HOME/usr/bin/scripts/switch-app -n gnome-terminal -f /tmp/gnome-terminal-index -c gnome-terminal'	'<Super>t'
-custom	'gnome-termianl'	'x11-backend-launch gnome-terminal'	'<Primary><Alt>t'
+custom	'gnome-termianl'	'$HOME/usr/bin/scripts/x11-backend-launch gnome-terminal'	'<Primary><Alt>t'
 custom	'nautilus'	'$HOME/usr/bin/scripts/switch-app -n nautilus -f /tmp/nautilus-index -c nautilus'	'<Super>n'
 custom	'intellij'	'$HOME/usr/bin/scripts/switch-app -t Intellij -f /tmp/intellij-index -c idea.sh'	'<Super>i'
 custom	'lock-screen'	'lock-screen'	'<Primary><Alt>l'
 custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
 custom	'keepassxc'	'$HOME/usr/bin/scripts/switch-app -t keepassxc -f /tmp/kpx -c keepassxc'	'<Super>k'
-custom	'open-home-folder'	'x11-backend-launch nautilus /home/salman'	'<Primary><Alt>h'
-custom	'open-dropbox-folder'	'x11-backend-launch nautilus /home/salman/Downloads'	'<Primary><Alt>d'
-custom	'open-downloads-folder'	'x11-backend-launch nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
+custom	'open-home-folder'	'$HOME/usr/bin/scripts/x11-backend-launch nautilus /home/salman'	'<Primary><Alt>h'
+custom	'open-dropbox-folder'	'$HOME/usr/bin/scripts/x11-backend-launch nautilus /home/salman/Downloads'	'<Primary><Alt>d'
+custom	'open-downloads-folder'	'$HOME/usr/bin/scripts/x11-backend-launch nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
 org.gnome.desktop.wm.keybindings	switch-to-workspace-1	['<Super>1']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-2	['<Super>2']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-3	['<Super>3']
