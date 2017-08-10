@@ -13,13 +13,13 @@ export PS1="\[\033[32m\][\u@\h \[\033[32m\]\W\[\033[33m\]\$(git branch 2> /dev/n
 
 #combine history across multiple sessions
 #http://experimentswithlinuxrelatedtech.blogspot.se/2014/07/combine-bash-history-across-multiple.html
-export HISTFILE=~/.bash_history
-export HISTFILESIZE=500000
-export HISTSIZE=10000
-export HISTCONTROL=ignoredups:erasedups
-shopt -s histappend
-unset PROMPT_COMMAND
-export PROMPT_COMMAND="history -n;history -w;history -c;history -r;$PROMPT_COMMAND"
+#export HISTFILE=~/.bash_history
+#export HISTFILESIZE=500000
+#export HISTSIZE=10000
+#export HISTCONTROL=ignoredups:erasedups
+#shopt -s histappend
+#unset PROMPT_COMMAND
+#export PROMPT_COMMAND="history -n;history -w;history -c;history -r;$PROMPT_COMMAND"
 
 
 # Change font when on a TTY
