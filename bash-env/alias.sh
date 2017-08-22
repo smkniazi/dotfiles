@@ -101,7 +101,7 @@ alias blue-grep="GREP_COLOR='1;34'    grep --color=always --line-buffered"
 alias magenta-grep="GREP_COLOR='1;35' grep --color=always --line-buffered"
 alias cyan-grep="GREP_COLOR='1;36'    grep --color=always --line-buffered"
 alias white-grep="GREP_COLOR='1;37'   grep --color=always --line-buffered"
-mvnc='grep --line-buffered --color=none "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | red-grep  "^\|ERROR|WARN" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED"'
+mvnc='grep --line-buffered --color=always "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | red-grep  "^\|ERROR|WARN" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED"'
 #mvnc='grep --color=none "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | grey-grep "INFO"'
 pushhops () {
 	pushd . &> /dev/null
