@@ -45,12 +45,6 @@ alias gl="git log"
 alias gs="git status"
 alias gp="git pull"
 
-alias f="find . -iname "
-function fo(){
-	file=$1
-	find . -iname "$1" -exec vimx {} \;
-}
-
 
 # VIM
 hash vimx 2> /dev/null
@@ -60,6 +54,12 @@ if [ "$?" -eq "0" ]; then
 #else
 #	echo "You might want to install vimx for clipboard support"
 fi
+
+alias f="find . -iname "
+function fo(){
+	file=$1
+	find . -iname "$1" -exec vim {} \;
+}
 
 alias grep="grep --color=auto"
 
