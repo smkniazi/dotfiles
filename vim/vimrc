@@ -214,6 +214,9 @@ let g:hardtime_default_on = 1
 "nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
+" FZF
+map <C-p> :FZF<CR>
+
 "conoline
 let g:conoline_auto_enable = 0
 "let g:conoline_color_insert_light = 'ctermbg=black ctermfg=white'
