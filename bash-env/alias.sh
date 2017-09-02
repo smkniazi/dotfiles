@@ -57,8 +57,7 @@ fi
 
 alias f="find . -iname "
 function fo(){
-	file=$1
-	find . -iname "$1" -exec vim {} \;
+	vim $(fzf)
 }
 
 alias grep="grep --color=auto"
