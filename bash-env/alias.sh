@@ -1,3 +1,12 @@
+alias grey-grep="GREP_COLOR='1;30'    grep --color=always --line-buffered"
+alias red-grep="GREP_COLOR='1;31'     grep --color=always --line-buffered"
+alias green-grep="GREP_COLOR='1;32'   grep --color=always --line-buffered"
+alias yellow-grep="GREP_COLOR='1;33'  grep --color=always --line-buffered"
+alias blue-grep="GREP_COLOR='1;34'    grep --color=always --line-buffered"
+alias magenta-grep="GREP_COLOR='1;35' grep --color=always --line-buffered"
+alias cyan-grep="GREP_COLOR='1;36'    grep --color=always --line-buffered"
+alias white-grep="GREP_COLOR='1;37'   grep --color=always --line-buffered"
+
 echoColor() {
 	Black='\033[0;30m'        # Black
 	Red='\033[0;31m'          # Red
@@ -92,16 +101,6 @@ gcp (){
 	git push
 }
 
-alias grey-grep="GREP_COLOR='1;30'    grep --color=always --line-buffered"
-alias red-grep="GREP_COLOR='1;31'     grep --color=always --line-buffered"
-alias green-grep="GREP_COLOR='1;32'   grep --color=always --line-buffered"
-alias yellow-grep="GREP_COLOR='1;33'  grep --color=always --line-buffered"
-alias blue-grep="GREP_COLOR='1;34'    grep --color=always --line-buffered"
-alias magenta-grep="GREP_COLOR='1;35' grep --color=always --line-buffered"
-alias cyan-grep="GREP_COLOR='1;36'    grep --color=always --line-buffered"
-alias white-grep="GREP_COLOR='1;37'   grep --color=always --line-buffered"
-mvnc='grep --line-buffered --color=always "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | red-grep  "^\|ERROR|WARN" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED"'
-#mvnc='grep --color=none "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | grey-grep "INFO"'
 pushhops () {
 	pushd . &> /dev/null
 	echoColor "Hops"
@@ -137,27 +136,28 @@ checkouthops (){
 
 
 buildhops (){
+	set -e
 	pushd . &> /dev/null
 	start=`date +%s`
 	echoColor "Hops-gpu-management"
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml | $mvnc"
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml"
 
 	echoColor "Hops-gpu-management-impl-nvidia"
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml | $mvnc"
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml "
 
 	echoColor "Hops-metadata-dal"
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml | $mvnc"
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml "
 
 	echoColor "Hops-metadata-dal-impl-ndb"
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml | $mvnc"
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml "
 
 	echoColor "Hops"
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml | $mvnc"
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml "
 
 	#temporarily change pwd
 	cd ~/code/hops/hops 
 	echoColor "Hops Tests"
-	eval "mvn -T 1C $@ test-compile | $mvnc"
+	eval "mvn -T 1C $@ test-compile "
 	popd &> /dev/null 
 	end=`date +%s`
 
@@ -166,16 +166,16 @@ buildhops (){
 }
 
 mi () {
- 	eval	"mvn -T 1C $@ install -Dmaven.test.skip=true | $mvnc"
+ 	eval	"mvn -T 1C $@ install -Dmaven.test.skip=true "
 }
 
 mig () {
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -Pndb | $mvnc"
+	eval "mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -Pndb "
 }
 
 
 mtc () {
-   eval "mvn -T 1C test-compile | $mvnc"
+   eval "mvn -T 1C test-compile "
 }
 
 s2 () {
