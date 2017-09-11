@@ -135,30 +135,34 @@ checkouthops (){
 }
 
 #mvnc=' grep --line-buffered --color=always "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | red-grep  "^\|ERROR|WARN" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED"'
-#mvnc=' |  $mvnc && ((${PIPESTATUS[0]} == '0')) grep --line-buffered --color=always "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | red-grep  "^\|ERROR|WARN" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED"'
+mvnc=' grep --line-buffered --color=always "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED\|\[WARNING]\|Building.*" | red-grep  "^\|\[ERROR]\|\[WARN]" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED" | green-grep "^\|\[INFO]" | blue-grep "^\|Building.*"'
 
-buildhops (){
+buildhopsi (){
 #	set -e  # strange maven kill bash when there is a build failure
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
-	echoColor "Hops-gpu-management" && \
+	echoColor "Building Hops-gpu-management" && \
 	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml " && \
-	echoColor "Hops-gpu-management-impl-nvidia" && \
+	echoColor "Building Hops-gpu-management-impl-nvidia" && \
 	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml " && \
-	echoColor "Hops-metadata-dal" && \
+	echoColor "Building Hops-metadata-dal" && \
 	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml " && \
-	echoColor "Hops-metadata-dal-impl-ndb" && \
+	echoColor "Building Hops-metadata-dal-impl-ndb" && \
 	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml " && \
-	echoColor "Hops" && \
+	echoColor "Building Hops" && \
 	eval "mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml " && \
 	#temporarily change pwd
 	cd ~/code/hops/hops  && \
-	echoColor "Hops Tests" && \
+	echoColor "Building Hops Tests" && \
 	eval "mvn -T 1C $@ test-compile " && \
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
 	echoColor "Total compilation time is : $runtime sec(s)"
+}
+
+buildhops (){
+	eval "buildhopsi | $mvnc"
 }
 
 mi () {
