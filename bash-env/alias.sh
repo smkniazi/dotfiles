@@ -142,19 +142,19 @@ buildhopsi (){
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
 	echoColor "Building Hops-gpu-management" && \
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml " && \
+	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml " && \
 	echoColor "Building Hops-gpu-management-impl-nvidia" && \
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml " && \
+	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml " && \
 	echoColor "Building Hops-metadata-dal" && \
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml " && \
+	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml " && \
 	echoColor "Building Hops-metadata-dal-impl-ndb" && \
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml " && \
+	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml " && \
 	echoColor "Building Hops" && \
-	eval "mvn -T 1C $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml " && \
+	eval "mvn  $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml " && \
 	#temporarily change pwd
 	cd ~/code/hops/hops  && \
 	echoColor "Building Hops Tests" && \
-	eval "mvn -T 1C $@ test-compile " && \
+	eval "mvn  $@ test-compile " && \
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
