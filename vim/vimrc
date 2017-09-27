@@ -254,6 +254,8 @@ nmap <silent> <leader>t :diffthis <CR>
 nmap <silent> <leader>f :diffoff  <CR>
 nmap <silent> <leader>u :diffupdate <CR>
 
+" leader makes
+nmap <silent> <leader>m :make <CR>
 
 "---------------------------------------------------------
 "                    Leader Buffer Management                     
