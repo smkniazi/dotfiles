@@ -32,7 +32,7 @@ create_path_alias	 hm		 ~/code/hops/hops-metadata-dal
 create_path_alias	 hmi	 ~/code/hops/hops-metadata-dal-impl-ndb
 create_path_alias	 hb		 ~/code/hops/hammer-bench
 create_path_alias	 ds		 ~/code/hops/HopsFS-Deployment-Scripts
-create_path_alias	 sf		 ~/code/hops/hops-papers/hopsfs/hopsfs-small-files/draft
+create_path_alias	 sf		 ~/code/hops/hops-papers/hopsfs/hopsfs-small-files/small-files-fast-2018
 create_path_alias	 d		 ~/code/dotfiles
 
 
