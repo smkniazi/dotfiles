@@ -61,26 +61,26 @@ echo "$lc $mc $rc $su $sd"
 
 if [ "$lc" = true ] || [ "$mc" = true ] || [ "$rc" = true ] || [ "$su" = true ] || [ "$sd" = true ]; then
 	#wait for the modifiers to be released
-	sleep 1
+	sleep 0.7
 fi
 	if [ "$lc" = true ]; then
-		xdotool  click  1
+		xdotool  click --clearmodifiers  1
 	fi
 
 	if [ "$mc" = true ]; then
-		xdotool  click  2
+		xdotool  click --clearmodifiers  2
 	fi
 
 	if [ "$rc" = true ]; then
-		xdotool  click  3
+		xdotool  click --clearmodifiers  3
 		echo "3"
 	fi
 
 	if [ "$su" = true ]; then
-		xdotool  click  4
+		xdotool  click --clearmodifiers  4
 	fi
 
 	if [ "$sd" = true ]; then
-		xdotool  click  5
+		xdotool  click --clearmodifiers  5
 	fi
 
