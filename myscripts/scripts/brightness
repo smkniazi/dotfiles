@@ -1,2 +1,9 @@
 #!/bin/bash
-gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.freedesktop.DBus.Properties.Set org.gnome.SettingsDaemon.Power.Screen Brightness "<int32 $1>" &> /dev/null
+
+if [[ "$1" == "up" ]]; then
+	gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method  org.gnome.SettingsDaemon.Power.Screen.StepUp &> /dev/null
+elif  [[ "$1" == "down" ]]; then
+	gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method  org.gnome.SettingsDaemon.Power.Screen.StepDown &> /dev/null
+else
+	gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.freedesktop.DBus.Properties.Set org.gnome.SettingsDaemon.Power.Screen Brightness "<int32 $1>" &> /dev/null
+fi
