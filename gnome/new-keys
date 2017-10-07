@@ -1,4 +1,6 @@
 custom	'wifi-rset'	'$HOME/usr/bin/scripts/wifi-reset '	'<Primary><Alt>w'
+custom	'sound-up'	'$HOME/usr/bin/scripts/volume.sh 10%%+'	'<Super>s'
+custom	'sound-down'	'$HOME/usr/bin/scripts/volume.sh 10%%-'	'<Super><Shift>s'
 custom	'mouse-left'	'$HOME/usr/bin/scripts/mouse-ctrl -h -s 100'	'<Primary><Alt>h'
 custom	'mouse-right'	'$HOME/usr/bin/scripts/mouse-ctrl -l -s 100'	'<Primary><Alt>l'
 custom	'mouse-up'	'$HOME/usr/bin/scripts/mouse-ctrl -k -s 100'	'<Primary><Alt>k'
