@@ -7,3 +7,9 @@ elif  [[ "$1" == "down" ]]; then
 else
 	gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.freedesktop.DBus.Properties.Set org.gnome.SettingsDaemon.Power.Screen Brightness "<int32 $1>" &> /dev/null
 fi
+
+curval=$(gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.freedesktop.DBus.Properties.Get org.gnome.SettingsDaemon.Power.Screen Brightness | grep -o [0-9]*)
+
+pkill zenity
+message="Current brightness level is $curval"
+timeout 1 zenity --scale --text "$message" --title "$message" --min-value 0 --max-value 100 --value $curval
