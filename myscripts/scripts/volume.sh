@@ -1,6 +1,7 @@
 #!/bin/bash
 #example 10% , 10%+,  10%-
-amixer -q -D pulse sset Master $1
+#echo $1 >> /tmp/switcher.log
+amixer -q set Master $1
 #echo $1 >> /tmp/switcher.log
 curval=$(amixer sget Master | grep "Front Left.*[0-9]*%" | grep -oh "[0-9]*%" | grep -oh "[0-9]*")
 pkill zenity
