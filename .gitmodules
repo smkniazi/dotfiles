@@ -31,6 +31,3 @@
 [submodule "vim/vim/bundle/fzf"]
 	path = vim/vim/bundle/fzf
 	url = https://github.com/junegunn/fzf
-[submodule "vim/vim/bundle/syntastic"]
-	path = vim/vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic
