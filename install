@@ -22,5 +22,6 @@ source ./gitconfig/install $BACKUP_DIR
 source ./myscripts/install $BACKUP_DIR
 source ./bash-env/install $BACKUP_DIR
 source ./latexmk/install $BACKUP_DIR
+source ./freemind/install $BACKUP_DIR
 
 
