@@ -1,0 +1,2 @@
+xclip -selection primary -i ~/file
+xclip -selection clipboard -i ~/file
