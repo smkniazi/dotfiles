@@ -2,7 +2,7 @@
 #xclip -selection primary -i ~/file
 #xclip -selection clipboard -i ~/file
 
-sleep 1
+sleep 0.5
 text=$(cat ~/file)
 xdotool type --clearmodifiers "$text"
 #echo -e "\b"
