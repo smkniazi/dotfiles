@@ -1,5 +1,5 @@
 custom	'wifi-rset'	'$HOME/usr/bin/scripts/wifi-reset '	'<Primary><Alt>w'
-custom	'wifi-rset'	'$HOME/usr/bin/scripts/copy-to-clip '	'<Primary><Alt>p'
+custom	'wifi-rset'	'$HOME/usr/bin/scripts/type-text '	'<Primary><Alt>p'
 custom	'brightness-inc'	'$HOME/usr/bin/scripts/brightness up'	'<Super>s'
 custom	'brightness-dec'	'$HOME/usr/bin/scripts/brightness down'	'<Super><Shift>s'
 custom	'sound-up'	'$HOME/usr/bin/scripts/volume.sh 10%%+'	'<Super>a'
