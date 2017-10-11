@@ -1,2 +1,9 @@
-xclip -selection primary -i ~/file
-xclip -selection clipboard -i ~/file
+#!/bin/bash
+#xclip -selection primary -i ~/file
+#xclip -selection clipboard -i ~/file
+
+sleep 0.7
+text=$(cat ~/file)
+#xdottool type gasf
+#zenity --text-info --text gasf
+xdotool type --clearmodifiers --file  ~/file
