@@ -170,6 +170,10 @@ set incsearch
 " Be smart when using tabs ;)
 set smarttab
 
+" Tab completion for file names
+set wildmode=longest,list,full
+set wildmenu
+
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
@@ -260,10 +264,6 @@ nmap <silent> <leader>m :make <CR>
 "---------------------------------------------------------
 "                    Leader Buffer Management                     
 "---------------------------------------------------------
-
-"vim buffer management
-set wildchar=<Tab> wildmenu wildmode=full
-set wildcharm=<C-Z>
 
 " Mappings to access buffers (don't use "\p" because a
 " " delay before pressing "p" would accidentally paste).
