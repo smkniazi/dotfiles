@@ -206,3 +206,11 @@ if [ -n "$DISPLAY" ]; then
    	   alias mupdf="mupdf -r 400"
    fi
 fi
+
+tmux-pane-color(){
+  	tmux select-pane -t:.$1 -P "fg=$2,bg=$3"
+  	if [ "$?" -ne "0" ]; then
+  		echo "Usage command {pane-number} {fg-color} {bg-color} "
+  	fi
+}
+
