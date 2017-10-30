@@ -47,3 +47,4 @@ SSD
 JPA
 checkpointing
 timestamps
+transactional
