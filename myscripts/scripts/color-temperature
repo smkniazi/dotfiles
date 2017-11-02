@@ -1,5 +1,5 @@
 #!/bin/bash
 gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature $1 
 if [[ "$?" = 1 ]]; then
-	redshift -O $1
+	redshift -O $1 # -x to reset
 fi
