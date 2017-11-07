@@ -43,7 +43,7 @@ URxvt.internalBorder:  4
 
 !! Fonts
 #define NormalSize 16
-#define FontName dejavu sans mono
+#define FontName Palatino Linotype
 URxvt.font: xft:FontName:book:Book:pixelsize=NormalSize
 URxvt.boldFont: xft:FontName:Bold:pixelsize=NormalSize
 URxvt.italicFont: xft:FontName:Oblique:pixelsize=NormalSize
@@ -98,5 +98,5 @@ URxvt.matcher.button:       1
 !"\e[H": beginning-of-line
 !"\e[F": end-of-line
 
-#include "~/.XresourcesTheme"
+!#include "~/.XresourcesTheme"
 
