@@ -25,6 +25,9 @@ execute pathogen#infect()
 "---------------------------------------------------------
 "                    Visual Changes                    
 "---------------------------------------------------------
+" do not set the title of the window to vim buffer name. I have problems
+" switching to mlterm when titles are enabled
+set notitle
 
 " colors
 set t_Co=256
