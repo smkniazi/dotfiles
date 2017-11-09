@@ -1,2 +1,2 @@
 #!/bin/bash
-mlterm --title=mlterm -A -k esc -K alt
+mlterm -name=mlterm --title=mlterm -A -k esc -K alt
