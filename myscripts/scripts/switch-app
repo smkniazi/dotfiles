@@ -86,17 +86,18 @@ fi
 
 if [[ -n "$process_name" ]]; then
 	log "Using process name to switch windows"
-	pid="$(pgrep $process_name)"
+	pids="$(pgrep $process_name)"
 	if [ "$?" -eq "1" ]; then
 		start_program "$process_command" 
 		exit 1
 	fi
 
-	log "Found the process $process_name with PID: $pid" 
-	program_list=(`wmctrl -l -p | grep -i "$pid" | awk '{print $1}'`)
+	log "Found the process $process_name with PID(s): $pid" 
+	pidsn=$(echo $pids | sed "s/ /\|/g")
+	program_list=(`wmctrl -l -p | egrep "$pidsn" | awk '{print $1}'`)
 
 	if [[ "${#program_list[@]}" -eq 0 ]]; then
-		log "No window for $pid found."
+		log "No window for $pids found."
 		start_program "$process_command" 
 	fi
 fi
