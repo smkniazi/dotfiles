@@ -214,6 +214,8 @@ map <right> <nop>
 "---------------------------------------------------------
 "                    Plugins                    
 "---------------------------------------------------------
+" show list of buffer in the command bar
+let g:loaded_bufferline = 0 " disable it now 
 
 "" enable hard core mode
 let g:hardtime_default_on = 0
