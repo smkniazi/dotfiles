@@ -5,7 +5,6 @@ alias yellow-grep="GREP_COLOR='1;33'  grep --color=always --line-buffered"
 alias blue-grep="GREP_COLOR='1;34'    grep --color=always --line-buffered"
 alias magenta-grep="GREP_COLOR='1;35' grep --color=always --line-buffered"
 alias cyan-grep="GREP_COLOR='1;36'    grep --color=always --line-buffered"
-alias white-grep="GREP_COLOR='1;37'   grep --color=always --line-buffered"
 
 echoColor() {
 	Black='\033[0;30m'        # Black
