@@ -1,0 +1,19 @@
+# Insert your preferred key mappings here.
+#unmapAll
+unmap o
+unmap x
+unmap X
+unmap h
+unmap H
+unmap L
+unmap l
+map h goBack
+map l goForward
+map H scrollLeft
+map L scrollRight
+
+map q removeTab
+map Q restoreTab
+map i previousTab
+map o nextTab
+map a Vomnibar.activate
