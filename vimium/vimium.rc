@@ -17,3 +17,6 @@ map Q restoreTab
 map i previousTab
 map o nextTab
 map a Vomnibar.activate
+map D scrollFullPageDown
+map U scrollFullPageUp
+map x enterInsertMode
