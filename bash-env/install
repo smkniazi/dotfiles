@@ -15,20 +15,20 @@ if [ -z "$BACKUP_DIR" ]; then
 fi
 
 
+echo "Installing Bash config "
 script_names=("alias.sh" "bash-settings.sh" "paths.sh" "tmux-auto-start.sh")
 for script_name in "${script_names[@]}"
 do
-	grep "$script_name" ~/.bashrc
+	grep "$script_name" ~/.bashrc > /dev/null 2>&1 
 	exists=$?
-	if [ "$exists" -eq 0 ]; then
-		echo "$script_name is already installed in .bashrc "
-	else
+	if [ "$exists" -ne 0 ]; then
 		echo "Installing $script_name "
 		cp ~/.bashrc $BACKUP_DIR
 		echo "source $SRC/$script_name" >> ~/.bashrc
+	#else
+	#	echo "Already installed"
 	fi
 done
 
-echo "Installing Inputrc "
 mv ~/.inputrc $BACKUP_DIR
 ln -s $SRC/inputrc ~/.inputrc

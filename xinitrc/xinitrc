@@ -1,1 +1,2 @@
 xset r rate 500 40
+xrandr --dpi 196

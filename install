@@ -26,5 +26,6 @@ source ./freemind/install $BACKUP_DIR
 source ./mlterm/install $BACKUP_DIR
 source ./zathura/install $BACKUP_DIR
 source ./background/install $BACKUP_DIR
+source ./mpv/install $BACKUP_DIR
 
 
