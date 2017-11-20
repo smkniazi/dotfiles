@@ -126,6 +126,9 @@ if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
 
+" highlight python code
+let python_highlight_all=1
+
 "delay on escape
 set timeoutlen=1000 ttimeoutlen=0
 
@@ -150,11 +153,23 @@ set number
 set autoread
 
 " tabs 
+" for all files
 set smarttab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
 set expandtab
+set shiftwidth=4
+set tabstop=4 
+set softtabstop=4 
+"for python
+au FileType python 
+            \ setlocal shiftwidth=4 |
+            \ setlocal tabstop=4 |
+            \ setlocal softtabstop=4 |
+" for java
+au FileType java 
+            \setlocal tabstop=2  |
+            \setlocal softtabstop=2 |
+            \setlocal shiftwidth=2 |
+
 
 " text width
 set textwidth=79
@@ -252,6 +267,9 @@ let g:languagetool_jar = "/home/salman/usr/bin/languagetool/languagetool-standal
 
 " code folding for python
 let g:SimpylFold_docstring_preview=1
+
+" you complete me
+"let g:ycm_autoclose_preview_window_after_completion=1
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------
