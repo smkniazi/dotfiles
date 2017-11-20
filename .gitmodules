@@ -31,3 +31,9 @@
 [submodule "vim/vim/bundle/fzf"]
 	path = vim/vim/bundle/fzf
 	url = https://github.com/junegunn/fzf
+[submodule "vim/vim/bundle/SimpylFold"]
+	path = vim/vim/bundle/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold
+[submodule "vim/vim/bundle/YouCompleteMe"]
+	path = vim/vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe

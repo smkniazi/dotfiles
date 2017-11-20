@@ -149,6 +149,19 @@ set number
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" tabs 
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+
+" text width
+set textwidth=79
+
+" encoding
+set encoding=utf-8
+
 " auto ident
 set autoindent	
 set copyindent "copy the identation from the previous line
@@ -170,16 +183,9 @@ set incsearch
 " How many tenths of a second to blink when matching brackets
 " set mat=2
 
-" Be smart when using tabs ;)
-set smarttab
-
 " Tab completion for file names
 set wildmode=longest,list,full
 set wildmenu
-
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
 
 " clipboard
 set clipboard=unnamedplus
@@ -187,6 +193,14 @@ set clipboard=unnamedplus
 " not to break on words
 set formatoptions=1
 set linebreak
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+
+" file format
+set fileformat=unix
 
 "---------------------------------------------------------
 "                    Motions                    
@@ -234,6 +248,10 @@ let g:conoline_auto_enable = 1
 "LanguageTool
 let g:languagetool_jar = "/home/salman/usr/bin/languagetool/languagetool-standalone/target/LanguageTool-3.9-SNAPSHOT/LanguageTool-3.9-SNAPSHOT/languagetool-commandline.jar"
 "let g:languagetool_lang = "en_US"
+
+
+" code folding for python
+let g:SimpylFold_docstring_preview=1
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------
