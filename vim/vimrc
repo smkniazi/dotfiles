@@ -270,6 +270,12 @@ let g:SimpylFold_docstring_preview=1
 
 " you complete me
 "let g:ycm_autoclose_preview_window_after_completion=1
+
+
+" disable syntactic for tex
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["tex"] }
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------
