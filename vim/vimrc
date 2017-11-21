@@ -302,12 +302,14 @@ nmap <silent> <leader>k :wincmd k<CR>
 nmap <silent> <leader>l :wincmd l<CR>
 
 nmap <silent> <leader>t :diffthis <CR>
-nmap <silent> <leader>f :diffoff  <CR>
+"nmap <silent> <leader>f :diffoff  <CR>
 nmap <silent> <leader>u :diffupdate <CR>
 
 " leader makes
 nmap <silent> <leader>m :make <CR>
 
+" nerdtree file filter
+nnoremap <leader>f :call FilterFiles()<cr>
 "---------------------------------------------------------
 "                    Leader Buffer Management                     
 "---------------------------------------------------------
@@ -351,3 +353,19 @@ nmap <silent> <leader>c :set spell!<CR>
 
 " Auto correct mistakes
 iab filesystem file system
+
+
+"---------------------------------------------------------
+"                   Functions 
+"---------------------------------------------------------
+
+"filter files for nerdtree plugin
+function! FilterFiles()
+    call inputsave()
+    let extension = input('Enter File Extention To Filter:')
+    call inputrestore()
+    let test = "let g:NERDTreeIgnore += ['\\(\\.".extension."\\)\\@<!$[[file]]\']"
+    execute test
+endfunction
+
+
