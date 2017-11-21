@@ -17,6 +17,6 @@ echo "Installing Images"
 mkdir -p ~/Pictures
 for i in $SRC/*.jpg; do 
 	basen=$(basename $i)	
-	mv ~/Pictures/$basen ~/BACKUP_DIR 
+	mv ~/Pictures/$basen $BACKUP_DIR 
 	ln -s $i  ~/Pictures/$basen
 done
