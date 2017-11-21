@@ -25,7 +25,6 @@ create_path_alias(){
 	fi
 }
 
-create_path_alias	 hp		 ~/code/hops/hops-papers/hopsfs/
 create_path_alias	 h		 ~/code/hops/hops
 create_path_alias	 hm		 ~/code/hops/hops-metadata-dal
 create_path_alias	 hmi	 ~/code/hops/hops-metadata-dal-impl-ndb
