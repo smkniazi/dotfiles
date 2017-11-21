@@ -364,7 +364,7 @@ function! FilterFiles()
     call inputsave()
     let extension = input('Enter File Extention To Filter:')
     call inputrestore()
-    let test = "let g:NERDTreeIgnore += ['\\(\\.".extension."\\)\\@<!$[[file]]\']"
+    let test = "let g:NERDTreeIgnore = ['\\(\\.".extension."\\)\\@<!$[[file]]\']"
     execute test
 endfunction
 
