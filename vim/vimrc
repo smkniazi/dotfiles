@@ -213,10 +213,11 @@ set linebreak
 set foldmethod=indent
 set foldlevel=99
 
-
 " file format
 set fileformat=unix
 
+" enable mouse
+set mouse=a
 "---------------------------------------------------------
 "                    Motions                    
 "---------------------------------------------------------
