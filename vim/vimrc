@@ -49,6 +49,8 @@ highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 " show commands in at the bottom of the screen
 set showcmd
 
+" set line at 80 characters
+set colorcolumn=80
 
 ""status bar
 "set laststatus=2 
