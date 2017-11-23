@@ -1,2 +1,4 @@
 set first-page-column 1
 set selection-clipboard clipboard
+map - zoom out
+map = zoom in
