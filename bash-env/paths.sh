@@ -32,5 +32,3 @@ export_to	JAVA_HOME	~/usr/bin/jdk
 
 export_to	M2_HOME		~/usr/bin/maven
 export MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
-export GDK_SCALE=1
-
