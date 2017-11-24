@@ -1,0 +1,16 @@
+#!/bin/bash
+export GDK_SCALE=1
+export GDK_BACKEND=x11
+/usr/bin/zathura $@ 
+
+#/usr/bin/zathura $@ &
+#pID=$!
+#echo "pid $pID"
+#wmctrl -l -p 
+#echo "test"
+#wmctrl -l -p |& egrep "$pID"  
+#echo "test2"
+#exit 0
+#echo $str
+#wid=(`wmctrl -l -p | egrep $pID | awk '{print $1}'`)
+#echo "windowid $wid"
