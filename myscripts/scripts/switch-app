@@ -18,6 +18,9 @@ function start_program(){
 		log "Starting $1 ..." 
 		#notify-send "Starting $1"
 		GDK_BACKEND=x11 $1 &
+
+        pID=$!
+        fullscreen $pID
 	fi
 }
 

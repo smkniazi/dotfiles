@@ -4,12 +4,4 @@ export GDK_BACKEND=x11
 
 /usr/bin/zathura $@ &
 pID=$!
-while true 
-do 
-    wid=(`wmctrl -l -p | egrep $pID | awk '{print $1}'`)
-    if [ ! -z $wid ]; then
-        break
-    fi
-    sleep 0.10
-done
-wmctrl -i -a $wid -b toggle,fullscreen 
+fullscreen $pID
