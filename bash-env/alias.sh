@@ -190,14 +190,6 @@ c1 () {
 	ssh nzo@cloud1.sics.se
 }
 
-# touch pad
-alias tpon='gsettings set org.gnome.desktop.peripherals.touchpad "send-events" "enabled"'
-alias tpoff='gsettings set org.gnome.desktop.peripherals.touchpad "send-events" "disabled"'
-alias tapon='gsettings set org.gnome.desktop.peripherals.touchpad "tap-to-click" "true"'
-alias tapoff='gsettings set org.gnome.desktop.peripherals.touchpad "tap-to-click" "false"'
-
-
-
 if [ -n "$DISPLAY" ]; then
    Xaxis=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
    if [ "$Xaxis" -gt "2000" ]; then
