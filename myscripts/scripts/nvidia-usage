@@ -1,3 +1,0 @@
-#!/bin/bash
-export LD_PRELOAD=/usr/lib64/nvidia-bumblebee/libnvidia-ml.so
-watch -n1 nvidia-smi

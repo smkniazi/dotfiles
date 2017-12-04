@@ -1,5 +1,0 @@
-#!/bin/sh
-FontName="dejavu sans mono"
-printf "\033]710;xft:$FontName:pixelsize=$1:antialias=true\007\033]711;xft:$FontName:bold:pixelsize=$1:antialias=true\007\033]712;xft:$FontName:italic:pixelsize=$1:antialias=true\007\033]713;xft:$FontName:italic:bold:pixelsize=$1:antialias=true\007"
-
-

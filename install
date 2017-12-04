@@ -1,31 +1,20 @@
 #!/bin/bash
 #expects a dir location where the backup files are stored
 
-BACKUP_DIR=$1
-if [ -z "$BACKUP_DIR" ]; then
-	date=`date +'%B-%d-Time-%H-%M'`
-	BACKUP_DIR=~/dotfiles-backup
-	BACKUP_DIR="$BACKUP_DIR/dotfiles-$date.bak"
-	mkdir -p $BACKUP_DIR
-	echo "Usage ./install [backup-dir]"
-	echo "No backup dir specified. "
-	echo "Backup Dir is: $BACKUP_DIR" 
-fi
+stow -t ~ dircolors
+stow -t ~ tmux
+stow -t ~ vim
+stow -t ~ fonts
+stow -t ~ gtk-3.0
+stow -t ~ ranger
+stow -t ~ gitconfig
+stow -t ~ myscripts
+stow -t ~ latexmk
+stow -t ~ freemind
+stow -t ~ mlterm
+stow -t ~ zathura
+stow -t ~ background
+stow -t ~ mpv
+#stow -t ~ bash-env
 
-source ./dircolors/install $BACKUP_DIR
-source ./tmux/install $BACKUP_DIR
-source ./vim/install $BACKUP_DIR
-source ./fonts/install $BACKUP_DIR
-source ./gtk-3.0/install $BACKUP_DIR
-source ./ranger/install $BACKUP_DIR
-source ./gitconfig/install $BACKUP_DIR
-source ./myscripts/install $BACKUP_DIR
-source ./bash-env/install $BACKUP_DIR
-source ./latexmk/install $BACKUP_DIR
-source ./freemind/install $BACKUP_DIR
-source ./mlterm/install $BACKUP_DIR
-source ./zathura/install $BACKUP_DIR
-source ./background/install $BACKUP_DIR
-source ./mpv/install $BACKUP_DIR
-
-
+echo "Done"
