@@ -19,5 +19,5 @@ FPATH="./$FNAME"
 fi
 echo "DPATH = $DPATH"
 echo "FPATH = $FPATH" 
-feh -Z -F --start-at $FPATH $DPATH
+feh --auto-rotate -Z -F --start-at $FPATH $DPATH
 
