@@ -6,3 +6,4 @@ map - zoom out
 map = zoom in
 map D recolor 
 set recolor-keephue true
+set show-recent 20
