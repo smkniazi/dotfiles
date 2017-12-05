@@ -5,7 +5,6 @@ set -e
 
 stow -t ~ dircolors
 stow -t ~ tmux
-stow -t ~ vim
 stow -t ~ fonts
 stow -t ~ gtk-3.0
 stow -t ~ ranger
@@ -18,7 +17,7 @@ stow -t ~ zathura
 stow -t ~ background
 stow -t ~ mpv
 
-
+#bash
 stow -t ~ bash
 grep "mybashrc" ~/.bashrc > /dev/null 2>&1 
 exists=$?
@@ -26,7 +25,10 @@ if [ "$exists" -ne 0 ]; then
     echo "source ~/.mybashrc" >> ~/.bashrc
 fi
 
-
-#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+stow -t ~ vim
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+vim +PluginInstall +qall
 
 echo "Done"
