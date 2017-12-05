@@ -1,0 +1,23 @@
+#!/bin/bash
+# touch pad
+ttc=$(gsettings get org.gnome.desktop.peripherals.touchpad "tap-to-click")
+if [ "$ttc" = "true" ]; then 
+    gsettings set org.gnome.desktop.peripherals.touchpad "tap-to-click" "false"
+    timeout 1 zenity --info  --text "<span size=\"large\">Mouse Tap</span>\n<span size=\"xx-large\"><b>OFF</b></span>" --title "Mouse Tap OFF" 
+else
+    gsettings set org.gnome.desktop.peripherals.touchpad "tap-to-click" "true"
+    timeout 1 zenity --info  --text "<span size=\"large\">Mouse Tap</span>\n<span size=\"xx-large\"><b>ON</b></span>" --title "Mouse Tap ON" 
+fi
+
+exit 0
+
+#synclient VertEdgeScroll=1
+#synclient VertTwoFingerScroll=1
+#synclient TapButton1=1
+
+#alias tpon='gsettings set org.gnome.desktop.peripherals.touchpad "send-events" "enabled"'
+#alias tpoff='gsettings set org.gnome.desktop.peripherals.touchpad "send-events" "disabled"'
+
+
+
+

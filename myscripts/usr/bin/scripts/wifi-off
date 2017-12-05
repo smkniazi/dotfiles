@@ -1,0 +1,3 @@
+#!/bin/bash
+notify-send "Turning Off WiFi"
+nmcli radio wifi off 

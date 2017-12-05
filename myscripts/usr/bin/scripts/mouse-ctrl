@@ -1,0 +1,86 @@
+#!/bin/bash
+
+step=40
+# A POSIX variable
+OPTIND=1         # Reset in case getopts has been used previously in the shell.
+h=false
+j=false
+k=false
+l=false
+lc=false
+rc=false
+mc=false
+su=false
+sd=false
+while getopts "12345hjkls:" opt; do
+    case "$opt" in
+    s)  step=$OPTARG
+    	;;
+    h)  h=true
+        ;;
+    j)  j=true
+        ;;
+    k)  k=true
+        ;;
+    l)  l=true
+        ;;
+    1)  lc=true
+    	;;
+    2)  mc=true
+    	;;
+    3)  rc=true
+    	;;
+    4)  su=true
+    	;;
+    5)  sd=true
+    	;;
+    *)
+        echo "There is no help." 
+        exit 0
+        ;;
+    esac
+done
+
+if [ "$h" = true ]; then
+	xdotool mousemove_relative --sync -- -$step 0
+fi
+
+if [ "$j" = true ]; then
+	xdotool mousemove_relative --sync -- 0 $step
+fi
+
+if [ "$k" = true ]; then
+	xdotool mousemove_relative --sync -- 0 -$step
+fi
+
+if [ "$l" = true ]; then
+	xdotool mousemove_relative --sync -- $step 0 
+fi
+
+echo "$lc $mc $rc $su $sd"
+
+if [ "$lc" = true ] || [ "$mc" = true ] || [ "$rc" = true ] || [ "$su" = true ] || [ "$sd" = true ]; then
+	#wait for the modifiers to be released
+	sleep 0.7
+fi
+	if [ "$lc" = true ]; then
+		xdotool  click --clearmodifiers  1
+	fi
+
+	if [ "$mc" = true ]; then
+		xdotool  click --clearmodifiers  2
+	fi
+
+	if [ "$rc" = true ]; then
+		xdotool  click --clearmodifiers  3
+		echo "3"
+	fi
+
+	if [ "$su" = true ]; then
+		xdotool  click --clearmodifiers  4
+	fi
+
+	if [ "$sd" = true ]; then
+		xdotool  click --clearmodifiers  5
+	fi
+

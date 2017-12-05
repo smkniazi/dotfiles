@@ -1,0 +1,6 @@
+#!/bin/bash
+zenity --question --text "Do you want to start IntelliJ?"
+
+if (( "$?" == "0" )) ; then
+ /home/salman/usr/bin/idea/bin/idea.sh & 
+fi

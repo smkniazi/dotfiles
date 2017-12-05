@@ -1,0 +1,22 @@
+#!/bin/bash
+if [ -z $1 ]; then
+  echo "Supply distribution tar name"
+  exit
+fi
+
+pushd . 
+cd ~/code/hops/deployment-scripts/deployment-scripts
+./deploy-hadoop.sh
+cd ~/code/hops/hops
+rm *.tar
+tar cf $1 hadoop-dist
+copy-to-hadoop36 $1
+
+ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 rm -rf /home/tester/code/hops/hadoop-dist/"
+ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 rm -rf /home/tester/hadoop-dist/"
+ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 cp /tmp/$1 /home/tester/code/hops/"
+ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 tar xf /home/tester/code/hops/$1"
+ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 mv /home/tester/hadoop-dist /home/tester/code/hops/"
+
+popd
+

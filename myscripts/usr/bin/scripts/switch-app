@@ -1,0 +1,134 @@
+#!/bin/bash
+
+help(){
+log "-n <process-name>. This will be used to search for the process id using 'ps' and then the corresponding windows will be opened."
+log "-t <process-window-title> select a process using the title."
+log "-c <process-command> to start the application if the application is not running." 
+log "-f <index-file> file where the index of the window is stored."
+}
+
+function log(){
+	message=$1
+#	echo -e    $1
+	echo -e    $1 >> /tmp/switcher.log
+}
+
+function start_program(){
+	if [[ -n $1 ]]; then
+		log "Starting $1 ..." 
+		#notify-send "Starting $1"
+		GDK_BACKEND=x11 $1 &
+
+        pID=$!
+        fullscreen $pID
+	fi
+}
+
+log ""
+log "------------ Switcher App------------"
+
+process_window_title=""
+process_name=""
+process_command=""
+index_file=""
+
+# A POSIX variable
+OPTIND=1         # Reset in case getopts has been used previously in the shell.
+while getopts ":t:c:n:f:" opt; do
+    case "$opt" in
+    t)  process_window_title=$OPTARG
+        ;;
+    c)  process_command=$OPTARG
+        ;;
+    n)  process_name=$OPTARG
+        ;;
+    f)  index_file=$OPTARG
+        ;;
+    *)
+        help
+        exit 0
+        ;;
+    esac
+done
+shift $((OPTIND-1))
+[ "$1" = "--" ] && shift
+
+log "Parameters received are: -c '$process_command' -t '$process_window_title' -n '$process_name' -f '$index_file'"
+
+if [[ ( -z "$process_window_title" ) &&  ( -z "$process_name" ) ]]; then
+	log "Select a mechanism to switch windows" 
+	exit 1
+fi
+
+if [[ ( -n "$process_window_title" ) &&  ( -n "$process_name" ) ]]; then
+	log "You can select only one mechanism for selecting windows" 
+	exit 1
+fi
+
+#exit 0
+
+if [ -f $index_file ]; then
+	index=`cat $index_file`
+else
+	index=0
+	log "No Index File Found. Created File: $index_file" 
+fi
+
+if [[ -n "$process_window_title" ]]; then
+	log "Using process window title '$process_window_title' to switch windows"
+	output=`wmctrl -l | grep -i "0x.*$process_window_title"`
+	if [[ ( "$?" -eq 0 ) && ( -n $output ) ]]; then
+		readarray -t program_list <<< "$(wmctrl -l | grep -i "0x.*$process_window_title" | cut -d ' ' -f1)"
+		log "Found ${#program_list[@]} open windows"
+	else
+		log "No window with the title '$process_window_title' found"
+		start_program "$process_command" 
+		exit 1
+	fi
+fi
+
+if [[ -n "$process_name" ]]; then
+	log "Using process name to switch windows"
+	pids="$(pgrep $process_name)"
+	if [ "$?" -eq "1" ]; then
+		start_program "$process_command" 
+		exit 1
+	fi
+
+	log "Found the process $process_name with PID(s): $pid" 
+	pidsn=$(echo $pids | sed "s/ /\|/g")
+	program_list=(`wmctrl -l -p | egrep "$pidsn" | awk '{print $1}'`)
+
+	if [[ "${#program_list[@]}" -eq 0 ]]; then
+		log "No window for $pids found."
+		start_program "$process_command" 
+	fi
+fi
+
+
+for i in `seq 1 ${#program_list[@]}`;
+do
+	log "Current Index is: $index" 
+	if [ "$index" -ge "${#program_list[@]}" ]; then
+		index=0
+		log "Index Wrap Around. New index is : $index" 
+	fi
+    
+	currFocusId="$(xdotool getactivewindow getwindowfocus)"
+	toFocusIdInHex=${program_list[$index]} 
+	toFocusIdInDec="$(echo $(($toFocusIdInHex)))"
+
+	log "Currrent Focus Id is: $currFocusId"
+
+	if [ "$toFocusIdInDec" -eq "$currFocusId" ]; then
+		log "The application is already in focus. Continue ..." 
+		index=$(( $index + 1 ))
+		continue
+	fi
+
+	log "Setting Focus to:  Hex: $toFocusIdInHex  Decimal: $toFocusIdInDec"  
+	wmctrl -i -a $toFocusIdInDec
+ 	log "New Index is: $index"	 
+	echo "$index" > $index_file;
+	break
+done

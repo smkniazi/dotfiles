@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# make full screen
+pID=$1
+echo "Trying to set window for pid:$pID full screen" >> /tmp/switcher.log
+counter=1
+while true 
+do 
+    wid=(`wmctrl -l -p | egrep $pID | awk '{print $1}'`)
+    counter=$(echo "$counter + 1" | bc )
+    if [ ! -z $wid ]; then
+        echo "Found window for pid:$pID with wid:$wid" >> /tmp/switcher.log
+        wmctrl -i -a $wid -b toggle,fullscreen 
+        break
+    fi
+
+    if [ "$counter" -gt 20 ]; then # 2 sec
+        #echo "Unable to switch to fullscreen" >> /tmp/switcher.log
+        break;
+    fi
+    sleep 0.10
+done

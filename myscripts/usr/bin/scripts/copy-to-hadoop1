@@ -1,0 +1,2 @@
+#scp -P 8209 $1  hdp@ice:$2 
+rsync -av --progress -p 8209  hdp@ice:/tmp  

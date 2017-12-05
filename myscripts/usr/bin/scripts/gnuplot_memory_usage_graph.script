@@ -1,0 +1,12 @@
+set term png small size 800,600
+set output plotFile
+
+set ylabel "RSS (MB)"
+set xlabel "Seconds"
+
+set yrange [0:*]
+set xrange [0:*]
+
+set format y "%15.1f"
+
+plot dataFile using 1:2 title 'RSS' with lines

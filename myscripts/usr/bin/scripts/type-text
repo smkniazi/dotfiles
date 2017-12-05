@@ -1,0 +1,10 @@
+#!/bin/bash
+#xclip -selection primary -i ~/file
+#xclip -selection clipboard -i ~/file
+
+sleep 0.5
+text=$(cat ~/file)
+xdotool type --clearmodifiers "$text"
+#xdotool type  "$text"
+#echo -e "\b"
+#xdotool type --clearmodifiers --file  ~/file

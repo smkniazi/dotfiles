@@ -1,0 +1,6 @@
+set first-page-column 2
+set selection-clipboard clipboard
+set window-height 1080
+set window-width 1920
+map - zoom out
+map = zoom in
