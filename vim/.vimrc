@@ -1,3 +1,6 @@
+"---------------------------------------------------------
+"                    Vundle Setup                    
+"---------------------------------------------------------
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -26,6 +29,7 @@ Plugin 'vim-syntastic/syntastic'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 "---------------------------------------------------------
 "                    Themes                    
 "---------------------------------------------------------
@@ -276,7 +280,7 @@ map <right> <nop>
 let g:loaded_bufferline = 0 " disable it now 
 
 "" enable hard core mode
-let g:hardtime_default_on = 0
+let g:hardtime_default_on = 1
 
 "nerdtree
 map <C-n> :NERDTreeToggle<CR>
