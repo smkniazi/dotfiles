@@ -1,0 +1,5 @@
+for file in ~/.{bash_aliases,bash_exports,bash_prompt,bash_settings,bash_tmux_auto_start,bash_tty_font}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+

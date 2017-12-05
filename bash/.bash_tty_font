@@ -1,0 +1,4 @@
+# Change font when on a TTY
+if [ $TERM = linux ]; then
+    setfont /usr/lib/kbd/consolefonts/latarcyrheb-sun32.psfu.gz
+fi

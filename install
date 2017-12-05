@@ -1,6 +1,8 @@
 #!/bin/bash
 #expects a dir location where the backup files are stored
 
+set -e 
+
 stow -t ~ dircolors
 stow -t ~ tmux
 stow -t ~ vim
@@ -15,6 +17,13 @@ stow -t ~ mlterm
 stow -t ~ zathura
 stow -t ~ background
 stow -t ~ mpv
-#stow -t ~ bash-env
+
+
+stow -t ~ bash
+grep "mybashrc" ~/.bashrc > /dev/null 2>&1 
+exists=$?
+if [ "$exists" -ne 0 ]; then
+    echo "source ~/.mybashrc" >> ~/.bashrc
+fi
 
 echo "Done"
