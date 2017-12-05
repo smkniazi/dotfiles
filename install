@@ -16,6 +16,7 @@ stow -t ~ mlterm
 stow -t ~ zathura
 stow -t ~ background
 stow -t ~ mpv
+stow -t ~ feh
 
 #bash
 stow -t ~ bash
@@ -33,7 +34,7 @@ fi
 vim +PluginInstall +qall
 
 if [ -d ~/.vim/bundle/YouCompleteMe ]; then
-    read -p "Compile YouCompleteMe Binaries (y/n)? " -n 1 -r
+    read -p "Compile YouCompleteMe Binaries ([y])? " -n 1 -r
     echo    
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
@@ -42,7 +43,7 @@ if [ -d ~/.vim/bundle/YouCompleteMe ]; then
 fi
 
 if [ -d ~/.vim/bundle/fzf ]; then
-    read -p "Do you want to install fzf (y/n)? " -n 1 -r
+    read -p "Do you want to install fzf ([y])? " -n 1 -r
     echo    
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
