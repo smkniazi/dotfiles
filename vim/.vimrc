@@ -24,7 +24,8 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 
-
+call vundle#end()            " required
+filetype plugin indent on    " required
 "---------------------------------------------------------
 "                    Themes                    
 "---------------------------------------------------------
