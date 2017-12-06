@@ -204,7 +204,7 @@ au FileType java
 
 
 " text width
-set textwidth=79
+set textwidth=80
 
 " encoding
 set encoding=utf-8
@@ -381,6 +381,7 @@ nnoremap <leader>f :call FilterFiles()<cr>
 "set spell spelllang=en_us
 "setlocal spell spelllang=en_us
 autocmd BufRead *.tex setlocal spell spelllang=en_us
+autocmd BufRead *.tex set colorcolumn=0
 nmap <silent> <leader>c :set spell!<CR>
 
 
