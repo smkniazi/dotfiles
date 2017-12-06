@@ -1,6 +1,7 @@
 "---------------------------------------------------------
-"                    Vundle Setup                    
+"                    Plugins                    
 "---------------------------------------------------------
+"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -31,10 +32,50 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "---------------------------------------------------------
+"                    Plugin Setup
+"---------------------------------------------------------
+" show list of buffers in the command bar
+let g:loaded_bufferline = 0 " disable it now 
+
+" enable hard core mode
+let g:hardtime_default_on = 1
+" disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+"nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+" FZF
+map <C-p> :FZF<CR>
+
+"conoline
+let g:conoline_auto_enable = 1
+"let g:conoline_color_insert_light = 'ctermbg=black ctermfg=white'
+"let g:conoline_color_normal_light = 'ctermbg=black ctermfg=white'
+
+"LanguageTool
+let g:languagetool_jar = "/home/salman/usr/bin/languagetool/languagetool-standalone/target/LanguageTool-3.9-SNAPSHOT/LanguageTool-3.9-SNAPSHOT/languagetool-commandline.jar"
+"let g:languagetool_lang = "en_US"
+
+" code folding for python
+let g:SimpylFold_docstring_preview=1
+
+" you complete me
+let g:ycm_autoclose_preview_window_after_completion=1
+
+" disable syntactic for tex
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["tex"] }
+
+"---------------------------------------------------------
 "                    Themes                    
 "---------------------------------------------------------
 
-"current themes installed
+"current installed themes 
 "desertink molokai gruvbox hybrid
 
 " gruvbox
@@ -79,8 +120,8 @@ highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 " show commands in at the bottom of the screen
 set showcmd
 
-" set line at 80 characters
-set colorcolumn=80
+" set line at 81 characters
+set colorcolumn=81
 
 ""status bar
 "set laststatus=2 
@@ -130,12 +171,7 @@ hi StatusLineNC ctermfg=255 ctermbg=black cterm=none
 "                    Encryption                    
 "---------------------------------------------------------
 
-" blowfish2 was introduced in 7.4.399
-if v:version > 74399
-	" encryption
-	set cryptmethod=blowfish2
-endif
-
+set cryptmethod=blowfish2
 
 "---------------------------------------------------------
 "                    GVIM                    
@@ -150,10 +186,10 @@ set guitablabel=%N/\ %t\ %M
 "                    Misc                    
 "---------------------------------------------------------
 
+" Enable filetype plugins
+filetype plugin indent on
+
 " syntax highlighting
-if has('autocmd')
-  filetype plugin indent on
-endif
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
@@ -163,10 +199,6 @@ let python_highlight_all=1
 
 "delay on escape
 set timeoutlen=1000 ttimeoutlen=0
-
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
 
 " show partial lines 
 set display=lastline
@@ -226,11 +258,12 @@ set hlsearch
 set incsearch 
 
 " Show matching brackets when text indicator is over them
-"set showmatch 
+set showmatch 
+
 " How many tenths of a second to blink when matching brackets
 " set mat=2
 
-" Tab completion for file names
+" bash like tab completion for file names
 set wildmode=longest,list,full
 set wildmenu
 
@@ -250,18 +283,13 @@ set fileformat=unix
 
 " enable mouse
 set mouse=a
+
 "---------------------------------------------------------
 "                    Motions                    
 "---------------------------------------------------------
 
 "enter normal mode
 imap jj <Esc>
-
-" disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 
 " fixing up moving line by line in the paragraph
 "nnoremap j gj
@@ -273,42 +301,6 @@ map <right> <nop>
 "nnoremap n nzzzv
 "nnoremap N Nzzzv
 
-"---------------------------------------------------------
-"                    Plugins                    
-"---------------------------------------------------------
-" show list of buffer in the command bar
-let g:loaded_bufferline = 0 " disable it now 
-
-"" enable hard core mode
-let g:hardtime_default_on = 1
-
-"nerdtree
-map <C-n> :NERDTreeToggle<CR>
-
-" FZF
-map <C-p> :FZF<CR>
-
-"conoline
-let g:conoline_auto_enable = 1
-"let g:conoline_color_insert_light = 'ctermbg=black ctermfg=white'
-"let g:conoline_color_normal_light = 'ctermbg=black ctermfg=white'
-
-"LanguageTool
-let g:languagetool_jar = "/home/salman/usr/bin/languagetool/languagetool-standalone/target/LanguageTool-3.9-SNAPSHOT/LanguageTool-3.9-SNAPSHOT/languagetool-commandline.jar"
-"let g:languagetool_lang = "en_US"
-
-
-" code folding for python
-let g:SimpylFold_docstring_preview=1
-
-" you complete me
-"let g:ycm_autoclose_preview_window_after_completion=1
-
-
-" disable syntactic for tex
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "passive_filetypes": ["tex"] }
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------
@@ -381,9 +373,7 @@ nnoremap <leader>f :call FilterFiles()<cr>
 "set spell spelllang=en_us
 "setlocal spell spelllang=en_us
 autocmd BufRead *.tex setlocal spell spelllang=en_us
-autocmd BufRead *.tex set colorcolumn=0
 nmap <silent> <leader>c :set spell!<CR>
-
 
 " Auto correct mistakes
 iab filesystem file system
