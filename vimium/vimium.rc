@@ -20,3 +20,7 @@ map a Vomnibar.activate
 map D scrollFullPageDown
 map U scrollFullPageUp
 map x enterInsertMode
+unmap J
+unmap K
+map J scrollFullPageDown
+map K scrollFullPageUp
