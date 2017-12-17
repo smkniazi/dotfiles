@@ -1,26 +1,26 @@
-# Insert your preferred key mappings here.
-#unmapAll
-unmap o
-unmap x
-unmap X
-unmap h
-unmap H
-unmap L
-unmap l
-map h goBack
-map l goForward
-map H scrollLeft
-map L scrollRight
-
-map q removeTab
-map Q restoreTab
-map i previousTab
-map o nextTab
-map a Vomnibar.activate
-map D scrollFullPageDown
-map U scrollFullPageUp
-map x enterInsertMode
-unmap J
-unmap K
-map J scrollFullPageDown
-map K scrollFullPageUp
+{
+  "settingsVersion": "1.62.6",
+  "exclusionRules": [
+    {
+      "pattern": "https?://www.youtube.com/*",
+      "passKeys": "jkl"
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Insert your preferred key mappings here.\n#unmapAll\nunmap o\nunmap x\nunmap X\nunmap h\nunmap H\nunmap L\nunmap l\nmap h goBack\nmap l goForward\nmap H scrollLeft\nmap L scrollRight\n\nmap q removeTab\nmap Q restoreTab\nmap i previousTab\nmap o nextTab\nmap a Vomnibar.activate\nmap D scrollFullPageDown\nmap U scrollFullPageUp\nmap x enterInsertMode\nunmap J\nunmap K\nmap J scrollFullPageDown\nmap K scrollFullPageUp",
+  "linkHintCharacters": "abcdefghijklmnopqrstuvwxyz",
+  "linkHintNumbers": "abcdefghijklmnopqrstuvwxyz",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,â€º,â†’,Â»,â‰«,>>",
+  "previousPatterns": "prev,previous,back,older,<,â€¹,â†,Â«,â‰ª,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": true,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": ""
+}
