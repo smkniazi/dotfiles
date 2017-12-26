@@ -16,17 +16,17 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'takac/vim-hardtime'
 Plugin 'scrooloose/nerdtree'
-Plugin 'shime/vim-livedown'
 Plugin 'chrisbra/csv.vim'
-Plugin 'miyakogi/conoline.vim'
-Plugin 'bling/vim-bufferline'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'dpelle/vim-LanguageTool'
-Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/fzf'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
+"Plugin 'miyakogi/conoline.vim'
+"Plugin 'bling/vim-bufferline'
+"Plugin 'junegunn/goyo.vim'
+"Plugin 'shime/vim-livedown'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
