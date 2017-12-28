@@ -31,23 +31,31 @@ stow -t ~ vim
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
-vim +PluginInstall +qall
 
-if [ -d ~/.vim/bundle/YouCompleteMe ]; then
-    read -p "Compile YouCompleteMe Binaries ([y])? " -n 1 -r
-    echo    
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-        python ~/.vim/bundle/YouCompleteMe/install.py
+read -p "Do you want Vundle to install plugins now ([y])? " -n 1 -r
+echo    
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    vim +PluginInstall +qall
+
+    if [ -d ~/.vim/bundle/YouCompleteMe ]; then
+        read -p "Compile YouCompleteMe Binaries ([y])? " -n 1 -r
+        echo    
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            python ~/.vim/bundle/YouCompleteMe/install.py
+        fi
+    fi
+
+    if [ -d ~/.vim/bundle/fzf ]; then
+        read -p "Do you want to install fzf ([y])? " -n 1 -r
+        echo    
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            source ~/.vim/bundle/fzf/install
+        fi
     fi
 fi
 
-if [ -d ~/.vim/bundle/fzf ]; then
-    read -p "Do you want to install fzf ([y])? " -n 1 -r
-    echo    
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-        source ~/.vim/bundle/fzf/install
-    fi
-fi
+
 echo "Done"
