@@ -225,9 +225,9 @@ set tabstop=4
 set softtabstop=4 
 "for python
 au FileType python 
-            \ setlocal shiftwidth=4 |
-            \ setlocal tabstop=4 |
-            \ setlocal softtabstop=4 |
+            \ setlocal shiftwidth=2 |
+            \ setlocal tabstop=2 |
+            \ setlocal softtabstop=2 |
 " for java
 au FileType java 
             \setlocal tabstop=2  |
