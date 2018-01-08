@@ -33,7 +33,7 @@ set tabstop=2
 let mapleader = " "
 
 " Disable highlight when <leader><h> is pressed
-nmap <silent> <leader>n :nohl<CR>
+nmap <silent> <leader>/ :nohl<CR>
 
 " leader save
 nnoremap <silent> <leader>s :w<CR>

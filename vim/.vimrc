@@ -247,7 +247,7 @@ nmap <silent> <leader>r :redraw!<CR>
 nmap <leader>z :so ~/.vimrc<CR>
 
 " Disable highlight when <leader><h> is pressed
-nmap <silent> <leader>n :nohl<CR>
+nmap <silent> <leader>/ :nohl<CR>
 
 " leader save
 nmap <silent> <leader>s :w<CR>
