@@ -39,11 +39,6 @@ let g:loaded_bufferline = 0 " disable it now
 
 " enable hard core mode
 let g:hardtime_default_on = 1
-" disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 
 "nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -123,64 +118,11 @@ set showcmd
 " set line at 81 characters
 set colorcolumn=81
 
-""status bar
-"set laststatus=2 
-"set statusline+=%0*\ %02n\ \|                              "buffernr
-""set statusline+=[%{expand('%:h')}/]                       "parent folder
-"set statusline+=%0*\ %t\ \|                                "file name
-""set statusline+=%0*\ %<%h\                                "File+path
-""set statusline+=%0*\ %<%t\                                "File+path
-""set statusline+=%0*\ %y\                                  "FileType
-""set statusline+=%0*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
-""set statusline+=%0*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
-""set statusline+=%0*\ %{&ff}\                              "FileFormat (dos/unix..) 
-""set statusline+=%0*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
-"set statusline+=%0*\ %=\|\ col:%03c\ \|                    "Colnr
-"set statusline+=%0*\ \ %m%r%w\ %P\ \                       "Modified? Readonly? Top/bot.
-
-" Status line color
-hi StatusLine   ctermfg=232  ctermbg=3 cterm=bold 
-hi StatusLineNC ctermfg=255 ctermbg=black cterm=none 
-
-"change cursor color base on the mode
-"if &term =~ "xterm\\|rxvt"
-"  " use an orange cursor in insert mode
-"  let &t_SI = "\<Esc>]12;red\x7"
-"  " use a red cursor otherwise
-"  let &t_EI = "\<Esc>]12;orange\x7"
-"  silent !echo -ne "\033]12;red\007"
-"  " reset cursor when vim exits
-"  autocmd VimLeave * silent !echo -ne "\033]112\007"
-"  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
-"endif
-
-""change cursor shape based on mode
-""http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
-"if has("autocmd")
-"  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
-"  au InsertEnter,InsertChange *
-"    \ if v:insertmode == 'i' | 
-"    \   silent execute '!echo -ne "\e[6 q"' | redraw! |
-"    \ elseif v:insertmode == 'r' |
-"    \   silent execute '!echo -ne "\e[4 q"' | redraw! |
-"    \ endif
-"  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
-"endif
-
 "---------------------------------------------------------
 "                    Encryption                    
 "---------------------------------------------------------
 
 set cryptmethod=blowfish2
-
-"---------------------------------------------------------
-"                    GVIM                    
-"---------------------------------------------------------
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-set guitablabel=%N/\ %t\ %M
 
 "---------------------------------------------------------
 "                    Misc                    
@@ -257,6 +199,10 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch 
 
+" Keep search matches in the middle of the window.
+"nnoremap n nzzzv
+"nnoremap N Nzzzv
+
 " Show matching brackets when text indicator is over them
 set showmatch 
 
@@ -282,24 +228,10 @@ set foldlevel=99
 set fileformat=unix
 
 " enable mouse
-set mouse=a
-
-"---------------------------------------------------------
-"                    Motions                    
-"---------------------------------------------------------
+"set mouse=a
 
 "enter normal mode
 imap jj <Esc>
-
-" fixing up moving line by line in the paragraph
-"nnoremap j gj
-"nnoremap k gk
-"vnoremap j gj
-"vnoremap k gk
-
-" Keep search matches in the middle of the window.
-"nnoremap n nzzzv
-"nnoremap N Nzzzv
 
 "---------------------------------------------------------
 "                    Leader                     

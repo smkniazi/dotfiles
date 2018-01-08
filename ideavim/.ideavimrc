@@ -1,0 +1,69 @@
+"mode indicator
+set showmode
+
+"delay on escape
+set timeoutlen=1000 ttimeoutlen=0
+
+" Line numbers
+set relativenumber
+set number
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch 
+
+" clipboard
+set clipboard=unnamedplus,unnamed
+
+"enter normal mode
+inoremap jj <Esc>
+
+" tabs
+set tabstop=2
+
+" leader commands
+let mapleader = " "
+
+" Disable highlight when <leader><h> is pressed
+nmap <silent> <leader>n :nohl<CR>
+
+" leader save
+nnoremap <silent> <leader>s :w<CR>
+nnoremap <C-p>  :action GotoClass<CR>
+nnoremap <C-S-p>  :action SearchEverywhere<CR>
+nnoremap <C-]> :action GotoImplementation<CR>
+nnoremap <C-S-]> :action GotoDecleraction<CR>
+nnoremap <C-o> :action Back<CR>
+nnoremap <C-i> :action Forward<CR>
+nnoremap <C-g> : action ShowFilePath<CR>
+nnoremap <silent> <leader>z :action ReloadFromDisk<CR>
+
+nnoremap <leader>rf :action RecentFiles<CR>
+nnoremap <leader>ff :action FindInPath<cr>
+nnoremap <leader>fu :action FindUsages<cr>
+nnoremap <leader>su :action ShowUsages<cr>
+nnoremap <leader>ch :action CallHierarchy<cr>
+
+nnoremap <leader>bb :action ToggleLineBreakpoint<cr>
+nnoremap <leader>br :action ViewBreakpoints<cr>
+nnoremap <leader>ic :action InspectCode<cr>
+nnoremap <leader>oi :action OptimizeImports<cr>
+nnoremap <leader>re :action RenameElement<cr>
+nnoremap <leader>rf :action RenameFile<cr>
+nnoremap <leader>rc :action ReformatCode<cr>
+nnoremap <leader>dd :action Debug<cr>
+nnoremap <leader>dc :action ChooseDebugConfiguration<cr>
+nnoremap <leader>rr :action Run<cr>
+nnoremap <leader>rc :action ChooseRunConfiguration<cr>
+nnoremap <leader>ga :action GotoAction<cr>
+nnoremap <leader>gs :action GotoSuperMethod<cr>
+nnoremap ]e :action GotoNextError<cr>
+nnoremap [e :action GotoPreviousError<cr>
