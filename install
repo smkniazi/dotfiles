@@ -17,7 +17,7 @@ stow -t ~ zathura
 stow -t ~ background
 stow -t ~ mpv
 stow -t ~ feh
-stow -t ~ intellij/ideavim
+stow -t ~ -d  intellij -S ideavim
 
 #bash
 stow -t ~ bash
