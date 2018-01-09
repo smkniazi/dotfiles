@@ -36,6 +36,7 @@ let mapleader = " "
 nmap <silent> <leader>/ :nohl<CR>
 
 " leader save
+" :listactions to see all possible actions 
 nnoremap <silent> <leader>s :w<CR>
 nnoremap <C-p>  :action GotoClass<CR>
 nnoremap <C-S-p>  :action SearchEverywhere<CR>
