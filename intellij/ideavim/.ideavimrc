@@ -61,9 +61,11 @@ nnoremap <leader>re :action RenameElement<cr>
 nnoremap <leader>rf :action RenameFile<cr>
 nnoremap <leader>rc :action ReformatCode<cr>
 nnoremap <leader>dd :action Debug<cr>
-nnoremap <leader>dc :action ChooseDebugConfiguration<cr>
+"nnoremap <leader>dc :action ChooseDebugConfiguration<cr>
+nnoremap <leader>dc :action DebugClass<cr>
 nnoremap <leader>rr :action Run<cr>
-nnoremap <leader>rc :action ChooseRunConfiguration<cr>
+nnoremap <leader>rc :action RunClass<cr>
+"nnoremap <leader>rc :action ChooseRunConfiguration<cr>
 nnoremap <leader>gc :action Generate<cr>
 nnoremap <leader>ga :action GotoAction<cr>
 nnoremap <leader>gs :action GotoSuperMethod<cr>
