@@ -6,16 +6,16 @@ alias blue-grep="GREP_COLOR='1;34'    grep --color=always --line-buffered"
 alias magenta-grep="GREP_COLOR='1;35' grep --color=always --line-buffered"
 alias cyan-grep="GREP_COLOR='1;36'    grep --color=always --line-buffered"
 
+Black='\033[0;30m'        # Black
+Red='\033[0;31m'          # Red
+Green='\033[0;32m'        # Green
+Yellow='\033[0;33m'       # Yellow
+Blue='\033[0;34m'         # Blue
+Purple='\033[0;35m'       # Purple
+Cyan='\033[0;36m'         # Cyan
+White='\033[0;37m'        # White
+NC='\033[0m' # No Color
 echoColor() {
-	Black='\033[0;30m'        # Black
-	Red='\033[0;31m'          # Red
-	Green='\033[0;32m'        # Green
-	Yellow='\033[0;33m'       # Yellow
-	Blue='\033[0;34m'         # Blue
-	Purple='\033[0;35m'       # Purple
-	Cyan='\033[0;36m'         # Cyan
-	White='\033[0;37m'        # White
-	NC='\033[0m' # No Color
 	printf "${Cyan}$1${NC}\n"
 }
 
@@ -158,6 +158,31 @@ buildhopsi (){
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
 	echoColor "Total compilation time is : $runtime sec(s)"
+}
+
+ fetchhopsmaster(){
+#	set -e  # strange maven kill bash when there is a build failure
+    set -x
+	pushd . &> /dev/null && \
+	start=`date +%s` && \
+	echoColor "Fetching Hops-gpu-management" && \
+	cd ~/code/hops/hops-gpu-management && git pull && \
+	echoColor "Fetching Hops-gpu-management-impl-nvidia" && \
+	cd ~/code/hops/hops-gpu-management-impl-nvidia && git pull && \
+	echoColor "Fetching Hops-metadata-dal" && \
+	cd ~/code/hops/hops-metadata-dal && git stash && git fetch upstream && \
+	git checkout master && git merge upstream/master && git push && \
+	echoColor "Fetching Hops-metadata-dal-impl-ndb" && \
+	cd ~/code/hops/hops-metadata-dal-impl-ndb && git stash && git fetch upstream  && \
+	git checkout master && git merge upstream/master && git push && \
+	echoColor "Fetching Hops" && \
+	cd ~/code/hops/hops && git stash && git fetch upstream && \
+	git checkout master && git merge upstream/master && git push && \
+	popd &> /dev/null  && \
+	end=`date +%s` && \
+	runtime=$((end-start)) && \
+	echoColor "Total compilation time is : $runtime sec(s)"
+	set +x
 }
 
 buildhops (){
