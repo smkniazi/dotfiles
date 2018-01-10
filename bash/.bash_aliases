@@ -181,7 +181,7 @@ hops-build-verbose (){
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
-	echoColorCyan "Total compilation time is : $runtime sec(s)"
+	echoColorCyan "[INFO] Building Hops Took: $runtime sec(s)"
 }
 
  hops-merge-upstream-master(){
@@ -258,7 +258,7 @@ hops-status(){
 
 
 hops-build (){
-	eval "hops-build-verbose -T 2C | $mvnc"
+	eval "hops-build-verbose | $mvnc"
 }
 
 mi () {
