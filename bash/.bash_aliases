@@ -108,26 +108,26 @@ gcp (){
 hops-push() {
 	pushd . &> /dev/null 
 	echoColorCyan "Hops" && \
-	cd /home/salman/code/hops/hops && git push  && \
+	cd ~/code/hops/hops && git push  && \
 	echoColorCyan "Hops-Metadata-Dal" && \
-	cd /home/salman/code/hops/hops-metadata-dal && git push && \
+	cd ~/code/hops/hops-metadata-dal && git push && \
 	echoColorCyan "Hops-Metadata-Dal-Impl-NDB" && \
-	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git push  
+	cd ~/code/hops/hops-metadata-dal-impl-ndb && git push  
 	popd &> /dev/null 
 }
 
 hops-pull (){
 	pulld . &> /dev/null 
 	echoColorCyan "Hops" && \
-	cd /home/salman/code/hops/hops && git pull  && \
+	cd ~/code/hops/hops && git pull  && \
 	echoColorCyan "Hops-Metadata-Dal" && \
-	cd /home/salman/code/hops/hops-metadata-dal && git pull && \
+	cd ~/code/hops/hops-metadata-dal && git pull && \
 	echoColorCyan "Hops-Metadata-Dal-Impl-NDB" && \
-	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git pull && \
+	cd ~/code/hops/hops-metadata-dal-impl-ndb && git pull && \
 	echoColorCyan "Hops-Gpu-Mgm" && \
-	cd /home/salman/code/hops/hops-gpu-management && git pull && \
+	cd ~/code/hops/hops-gpu-management && git pull && \
 	echoColorCyan "Hops-Gpu-Mgm-Impl" && \
-	cd /home/salman/code/hops/hops-gpu-management-impl-nvidia && git pull 
+	cd ~/code/hops/hops-gpu-management-impl-nvidia && git pull 
 	popd &> /dev/null 
 }
 
@@ -138,11 +138,11 @@ hops-checkout-branch (){
     fi
 	pulld . &> /dev/null 
 	echoColorCyan "Hops" && \
-	cd /home/salman/code/hops/hops && git checkout $1  && \
+	cd ~/code/hops/hops && git checkout $1  && \
 	echoColorCyan "Hops-Metadata-Dal" && \
-	cd /home/salman/code/hops/hops-metadata-dal && git checkout $1 && \
+	cd ~/code/hops/hops-metadata-dal && git checkout $1 && \
 	echoColorCyan "Hops-Metadata-Dal-Impl-NDB" && \
-	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git checkout $1 
+	cd ~/code/hops/hops-metadata-dal-impl-ndb && git checkout $1 
 	popd &> /dev/null 
 }
 
