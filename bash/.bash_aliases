@@ -15,8 +15,13 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 White='\033[0;37m'        # White
 NC='\033[0m' # No Color
-echoColor() {
+echoColorCyan() {
 	printf "${Cyan}$1${NC}\n"
+}
+
+echoColorGreen() {
+	printf "${Green}$1${NC}\n"
+	eval "$1"
 }
 
 create_path_alias(){
@@ -102,33 +107,33 @@ gcp (){
 
 pushhops () {
 	pushd . &> /dev/null
-	echoColor "Hops"
+	echoColorCyan "Hops"
 	cd /home/salman/code/hops/hops && git push 
-	echoColor "Hops-Metadata-Dal"
+	echoColorCyan "Hops-Metadata-Dal"
 	cd /home/salman/code/hops/hops-metadata-dal && git push
-	echoColor "Hops-Metadata-Dal-Impl-NDB"
+	echoColorCyan "Hops-Metadata-Dal-Impl-NDB"
 	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git push
 	popd &> /dev/null 
 }
 
 pullhops (){
 	pushd . &> /dev/null
-	echoColor "Hops"
+	echoColorCyan "Hops"
 	cd /home/salman/code/hops/hops && git pull
-	echoColor "Hops-Metadata-Dal"
+	echoColorCyan "Hops-Metadata-Dal"
 	cd /home/salman/code/hops/hops-metadata-dal && git pull
-	echoColor "Hops-Metadata-Dal-Impl-NDB"
+	echoColorCyan "Hops-Metadata-Dal-Impl-NDB"
 	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git pull
 	popd &> /dev/null 
 }
 
 checkouthops (){
 	pushd . &> /dev/null
-	echoColor "Hops"
+	echoColorCyan "Hops"
 	cd /home/salman/code/hops/hops && git checkout $1
-	echoColor "Hops-Metadata-Dal"
+	echoColorCyan "Hops-Metadata-Dal"
 	cd /home/salman/code/hops/hops-metadata-dal && git checkout $1
-	echoColor "Hops-Metadata-Dal-Impl-NDB"
+	echoColorCyan "Hops-Metadata-Dal-Impl-NDB"
 	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git checkout $1
 	popd &> /dev/null 
 }
@@ -140,49 +145,47 @@ buildhopsi (){
 #	set -e  # strange maven kill bash when there is a build failure
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
-	echoColor "Building Hops-gpu-management" && \
+	echoColorCyan "Building Hops-gpu-management" && \
 	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml " && \
-	echoColor "Building Hops-gpu-management-impl-nvidia" && \
+	echoColorCyan "Building Hops-gpu-management-impl-nvidia" && \
 	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml " && \
-	echoColor "Building Hops-metadata-dal" && \
+	echoColorCyan "Building Hops-metadata-dal" && \
 	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml " && \
-	echoColor "Building Hops-metadata-dal-impl-ndb" && \
+	echoColorCyan "Building Hops-metadata-dal-impl-ndb" && \
 	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml " && \
-	echoColor "Building Hops" && \
+	echoColorCyan "Building Hops" && \
 	eval "mvn  $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml " && \
 	#temporarily change pwd
 	cd ~/code/hops/hops  && \
-	echoColor "Building Hops Tests" && \
+	echoColorCyan "Building Hops Tests" && \
 	eval "mvn  $@ test-compile " && \
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
-	echoColor "Total compilation time is : $runtime sec(s)"
+	echoColorCyan "Total compilation time is : $runtime sec(s)"
 }
 
  fetchhopsmaster(){
-#	set -e  # strange maven kill bash when there is a build failure
-    set -x
+	set -e  
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
-	echoColor "Fetching Hops-gpu-management" && \
-	cd ~/code/hops/hops-gpu-management && git pull && \
-	echoColor "Fetching Hops-gpu-management-impl-nvidia" && \
-	cd ~/code/hops/hops-gpu-management-impl-nvidia && git pull && \
-	echoColor "Fetching Hops-metadata-dal" && \
-	cd ~/code/hops/hops-metadata-dal && git stash && git fetch upstream && \
-	git checkout master && git merge upstream/master && git push && \
-	echoColor "Fetching Hops-metadata-dal-impl-ndb" && \
-	cd ~/code/hops/hops-metadata-dal-impl-ndb && git stash && git fetch upstream  && \
-	git checkout master && git merge upstream/master && git push && \
-	echoColor "Fetching Hops" && \
-	cd ~/code/hops/hops && git stash && git fetch upstream && \
-	git checkout master && git merge upstream/master && git push && \
+	echoColorCyan "FETCHING HOPS-GPU-MANAGEMENT" && \
+	cd ~/code/hops/hops-gpu-management && echoColorGreen "git pull" && \
+	echoColorCyan "FETCHING HOPS-GPU-MANAGEMENT-IMPL-NVIDIA" && \
+	cd ~/code/hops/hops-gpu-management-impl-nvidia && echoColorGreen "git pull" && \
+	echoColorCyan "FETCHING HOPS-METADATA-DAL" && \
+	cd ~/code/hops/hops-metadata-dal && echoColorGreen "git stash" && echoColorGreen "git fetch upstream" && \
+	echoColorGreen "git checkout master" && echoColorGreen "git merge upstream/master" && echoColorGreen "git push" && \
+	echoColorCyan "FETCHING HOPS-METADATA-DAL-IMPL-NDB" && \
+	cd ~/code/hops/hops-metadata-dal-impl-ndb && echoColorGreen "git stash" && echoColorGreen "git fetch upstream"  && \
+	echoColorGreen "git checkout master" && echoColorGreen "git merge upstream/master" && echoColorGreen "git push" && \
+	echoColorCyan "FETCHING HOPS" && \
+	cd ~/code/hops/hops && echoColorGreen "git stash" && echoColorGreen "git fetch upstream" && \
+	echoColorGreen "git checkout master" && echoColorGreen "git merge upstream/master" && echoColorGreen "git push" && \
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
-	echoColor "Total compilation time is : $runtime sec(s)"
-	set +x
+	echoColorCyan "TOTAL COMPILATION TIME IS : $runtime SEC(S)"
 }
 
 buildhops (){
