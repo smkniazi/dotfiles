@@ -146,6 +146,17 @@ hops-checkout-branch (){
 	popd &> /dev/null 
 }
 
+hops-commit-and-push (){
+	pulld . &> /dev/null 
+	echoColorCyan "Hops" && \
+	cd ~/code/hops/hops && gcp $@  && \
+	echoColorCyan "Hops-Metadata-Dal" && \
+	cd ~/code/hops/hops-metadata-dal && gcp $@ && \
+	echoColorCyan "Hops-Metadata-Dal-Impl-NDB" && \
+	cd ~/code/hops/hops-metadata-dal-impl-ndb && gcp $@ 
+	popd &> /dev/null 
+}
+
 #mvnc=' grep --line-buffered --color=always "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | red-grep  "^\|ERROR|WARN" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED"'
 mvnc=' grep --line-buffered --color=always "Installing\|Downloading\|\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED\|\[WARNING]\|Building.*" | red-grep  "^\|\[ERROR]\|\[WARN]" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED" | green-grep "^\|\[INFO]" | blue-grep "^\|Building.*" | grey-grep "^\|Installing\|Downloading"'
 
