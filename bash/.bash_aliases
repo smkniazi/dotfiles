@@ -12,7 +12,7 @@ Green='\033[0;32m'        # Green
 Yellow='\033[0;33m'       # Yellow
 Blue='\033[0;34m'         # Blue
 Purple='\033[0;35m'       # Purple
-Cyan='\033[0;36m'         # Cyan
+Cyan='\033[1;36m'         # Cyan
 White='\033[0;37m'        # White
 NC='\033[0m' # No Color
 echoColorCyan() {
@@ -105,43 +105,51 @@ gcp (){
 	git push
 }
 
-pushhops () {
-	pushd . &> /dev/null
-	echoColorCyan "Hops"
-	cd /home/salman/code/hops/hops && git push 
-	echoColorCyan "Hops-Metadata-Dal"
-	cd /home/salman/code/hops/hops-metadata-dal && git push
-	echoColorCyan "Hops-Metadata-Dal-Impl-NDB"
-	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git push
+hops-push() {
+	pushd . &> /dev/null 
+	echoColorCyan "Hops" && \
+	cd /home/salman/code/hops/hops && git push  && \
+	echoColorCyan "Hops-Metadata-Dal" && \
+	cd /home/salman/code/hops/hops-metadata-dal && git push && \
+	echoColorCyan "Hops-Metadata-Dal-Impl-NDB" && \
+	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git push  
 	popd &> /dev/null 
 }
 
-pullhops (){
-	pushd . &> /dev/null
-	echoColorCyan "Hops"
-	cd /home/salman/code/hops/hops && git pull
-	echoColorCyan "Hops-Metadata-Dal"
-	cd /home/salman/code/hops/hops-metadata-dal && git pull
-	echoColorCyan "Hops-Metadata-Dal-Impl-NDB"
-	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git pull
+hops-pull (){
+	pulld . &> /dev/null 
+	echoColorCyan "Hops" && \
+	cd /home/salman/code/hops/hops && git pull  && \
+	echoColorCyan "Hops-Metadata-Dal" && \
+	cd /home/salman/code/hops/hops-metadata-dal && git pull && \
+	echoColorCyan "Hops-Metadata-Dal-Impl-NDB" && \
+	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git pull && \
+	echoColorCyan "Hops-Gpu-Mgm" && \
+	cd /home/salman/code/hops/hops-gpu-management && git pull && \
+	echoColorCyan "Hops-Gpu-Mgm-Impl" && \
+	cd /home/salman/code/hops/hops-gpu-management-impl-nvidia && git pull 
 	popd &> /dev/null 
 }
 
-checkouthops (){
-	pushd . &> /dev/null
-	echoColorCyan "Hops"
-	cd /home/salman/code/hops/hops && git checkout $1
-	echoColorCyan "Hops-Metadata-Dal"
-	cd /home/salman/code/hops/hops-metadata-dal && git checkout $1
-	echoColorCyan "Hops-Metadata-Dal-Impl-NDB"
-	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git checkout $1
+hops-checkout-branch (){
+	if [ ! "$#" -eq 1 ]; then
+	    echo "Please enter new branch name"
+	    return 1
+    fi
+	pulld . &> /dev/null 
+	echoColorCyan "Hops" && \
+	cd /home/salman/code/hops/hops && git checkout $1  && \
+	echoColorCyan "Hops-Metadata-Dal" && \
+	cd /home/salman/code/hops/hops-metadata-dal && git checkout $1 && \
+	echoColorCyan "Hops-Metadata-Dal-Impl-NDB" && \
+	cd /home/salman/code/hops/hops-metadata-dal-impl-ndb && git checkout $1 
 	popd &> /dev/null 
 }
 
 #mvnc=' grep --line-buffered --color=always "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | red-grep  "^\|ERROR|WARN" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED"'
 mvnc=' grep --line-buffered --color=always "Installing\|Downloading\|\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED\|\[WARNING]\|Building.*" | red-grep  "^\|\[ERROR]\|\[WARN]" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED" | green-grep "^\|\[INFO]" | blue-grep "^\|Building.*" | grey-grep "^\|Installing\|Downloading"'
 
-buildhopsi (){
+hops-build-verbose (){
 #	set -e  # strange maven kill bash when there is a build failure
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
@@ -165,31 +173,81 @@ buildhopsi (){
 	echoColorCyan "Total compilation time is : $runtime sec(s)"
 }
 
- fetchhopsmaster(){
-	set -e  
+ hops-merge-upstream-master(){
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
 	echoColorCyan "FETCHING HOPS-GPU-MANAGEMENT" && \
-	cd ~/code/hops/hops-gpu-management && echoColorGreen "git pull" && \
+	    cd ~/code/hops/hops-gpu-management && \
+	    echoColorGreen "git pull" && \
 	echoColorCyan "FETCHING HOPS-GPU-MANAGEMENT-IMPL-NVIDIA" && \
-	cd ~/code/hops/hops-gpu-management-impl-nvidia && echoColorGreen "git pull" && \
+    	cd ~/code/hops/hops-gpu-management-impl-nvidia && \
+    	echoColorGreen "git pull" && \
 	echoColorCyan "FETCHING HOPS-METADATA-DAL" && \
-	cd ~/code/hops/hops-metadata-dal && echoColorGreen "git stash" && echoColorGreen "git fetch upstream" && \
-	echoColorGreen "git checkout master" && echoColorGreen "git merge upstream/master" && echoColorGreen "git push" && \
+	    cd ~/code/hops/hops-metadata-dal && \
+	    echoColorGreen "git fetch upstream" && \
+        echoColorGreen "git checkout master" && \
+        echoColorGreen "git merge upstream/master" && \
+        echoColorGreen "git push" && \
 	echoColorCyan "FETCHING HOPS-METADATA-DAL-IMPL-NDB" && \
-	cd ~/code/hops/hops-metadata-dal-impl-ndb && echoColorGreen "git stash" && echoColorGreen "git fetch upstream"  && \
-	echoColorGreen "git checkout master" && echoColorGreen "git merge upstream/master" && echoColorGreen "git push" && \
+	    cd ~/code/hops/hops-metadata-dal-impl-ndb && \
+	    echoColorGreen "git fetch upstream"  && \
+        echoColorGreen "git checkout master" && \
+        echoColorGreen "git merge upstream/master" && \
+        echoColorGreen "git push" && \
 	echoColorCyan "FETCHING HOPS" && \
-	cd ~/code/hops/hops && echoColorGreen "git stash" && echoColorGreen "git fetch upstream" && \
-	echoColorGreen "git checkout master" && echoColorGreen "git merge upstream/master" && echoColorGreen "git push" && \
+        cd ~/code/hops/hops && \
+        echoColorGreen "git fetch upstream" && \
+	    echoColorGreen "git checkout master" && \
+	    echoColorGreen "git merge upstream/master" && \
+	    echoColorGreen "git push" && \
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
 	echoColorCyan "TOTAL COMPILATION TIME IS : $runtime SEC(S)"
 }
 
-buildhops (){
-	eval "buildhopsi | $mvnc"
+hops-create-branch(){
+	if [ ! "$#" -eq 1 ]; then
+	    echo "Please enter new branch name"
+	    return 1
+    fi
+	pushd . &> /dev/null && \
+	start=`date +%s` && \
+	echoColorCyan "CREATING BRANCH $1 IN HOPS-METADATA-DAL" && \
+        cd ~/code/hops/hops-metadata-dal && \
+        echoColorGreen "git checkout -b $1" && \
+        echoColorGreen "git push origin -u $1" && \
+	echoColorCyan "CREATING BRANCH $1 HOPS-METADATA-DAL-IMPL-NDB" && \
+        cd ~/code/hops/hops-metadata-dal-impl-ndb && \
+        echoColorGreen "git checkout -b $1" && \
+        echoColorGreen "git push origin -u $1" && \
+	echoColorCyan "CREATING BRANCH $1 HOPS" && \
+        cd ~/code/hops/hops && \
+        echoColorGreen "git checkout -b $1" && \
+        echoColorGreen "git push origin -u $1" && \
+	popd &> /dev/null  && \
+	end=`date +%s` && \
+	runtime=$((end-start)) && \
+	echoColorCyan "TOTAL TIME IS : $runtime SEC(S)"
+}
+
+hops-status(){
+	pushd . &> /dev/null && \
+	echoColorCyan "HOPS-METADATA-DAL" && \
+        cd ~/code/hops/hops-metadata-dal && \
+        git status && \
+	echoColorCyan "HOPS-METADATA-DAL-IMPL-NDB" && \
+        cd ~/code/hops/hops-metadata-dal-impl-ndb && \
+        git status && \
+	echoColorCyan "HOPS" && \
+        cd ~/code/hops/hops && \
+        git status && \
+	popd &> /dev/null
+}
+
+
+hops-build (){
+	eval "hops-build-verbose -T 2C | $mvnc"
 }
 
 mi () {
