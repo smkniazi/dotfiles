@@ -233,6 +233,10 @@ set fileformat=unix
 "enter normal mode
 imap jj <Esc>
 
+" move scree without moving cursor
+"nnoremap <C-e> kzz
+"nnoremap <C-y> jzz
+
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------

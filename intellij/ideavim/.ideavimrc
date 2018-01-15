@@ -35,9 +35,11 @@ let mapleader = " "
 " Disable highlight when <leader><h> is pressed
 nmap <silent> <leader>/ :nohl<CR>
 
-" leader save
+" move scree without moving cursor
+nnoremap <C-e> kzz
+nnoremap <C-y> jzz
+
 " :listactions to see all possible actions 
-nnoremap <silent> <leader>s :w<CR>
 nnoremap <C-p>  :action GotoClass<CR>
 nnoremap <C-S-p>  :action SearchEverywhere<CR>
 nnoremap <C-]> :action GotoImplementation<CR>
@@ -47,10 +49,11 @@ nnoremap <C-i> :action Forward<CR>
 nnoremap <C-g> : action ShowFilePath<CR>
 nnoremap <silent> <leader>z :action ReloadFromDisk<CR>
 
+nnoremap <leader>s :w<CR>
 nnoremap <leader>rf :action RecentFiles<CR>
 nnoremap <leader>ff :action FindInPath<cr>
 nnoremap <leader>fu :action FindUsages<cr>
-nnoremap <leader>su :action ShowUsages<cr>
+nnoremap <leader>lu :action ShowUsages<cr>
 nnoremap <leader>ch :action CallHierarchy<cr>
 
 nnoremap <leader>bb :action ToggleLineBreakpoint<cr>
@@ -58,7 +61,6 @@ nnoremap <leader>br :action ViewBreakpoints<cr>
 nnoremap <leader>ic :action InspectCode<cr>
 nnoremap <leader>oi :action OptimizeImports<cr>
 nnoremap <leader>re :action RenameElement<cr>
-"nnoremap <leader>rf :action RenameFile<cr>
 nnoremap <leader>rc :action ReformatCode<cr>
 nnoremap <leader>dd :action Debug<cr>
 "nnoremap <leader>dc :action ChooseDebugConfiguration<cr>
