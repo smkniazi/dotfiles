@@ -309,7 +309,7 @@ ndb-stop-vm(){
     VBoxManage controlvm centos poweroff
 }
 
-ndb-vm-ssh(){
+ndb-ssh-vm(){
     ssh -p 2222 salman@localhost
 }
 
