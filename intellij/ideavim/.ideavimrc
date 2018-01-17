@@ -1,12 +1,13 @@
-"mode indicator
+""mode indicator
 set showmode
 
-"delay on escape
+""delay on escape
 set timeoutlen=1000 ttimeoutlen=0
 
-" Line numbers
-set relativenumber
-set number
+" Line numbers "https://youtrack.jetbrains.com/issue/VIM-1187
+" install thirdpary plugin for relative number 
+"set relativenumber
+"set number
 
 " Ignore case when searching
 set ignorecase
@@ -24,7 +25,7 @@ set incsearch
 set clipboard=unnamedplus,unnamed
 
 "enter normal mode
-inoremap jj <Esc>
+"inoremap jj <Esc>
 
 " tabs
 set tabstop=2
