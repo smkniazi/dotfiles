@@ -301,3 +301,18 @@ tmux-pane-color(){
   	fi
 }
 
+ndb-start-vm(){
+    VBoxManage startvm centos --type headless
+}
+
+ndb-stop-vm(){
+    VBoxManage controlvm centos poweroff
+}
+
+ndb-vm-ssh(){
+    ssh -p 2222 salman@localhost
+}
+
+ndb-mysql(){
+    mysql -uhop -p -hlocalhost -P3306 --protocol=TCP $@
+}
