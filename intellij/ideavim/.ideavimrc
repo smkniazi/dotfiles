@@ -40,11 +40,11 @@ nmap <silent> <leader>/ :nohl<CR>
 nnoremap <C-e> kzz
 nnoremap <C-y> jzz
 
-" :listactions to see all possible actions 
+" :actionlist to see all possible actions 
 nnoremap <C-p>  :action GotoClass<CR>
 nnoremap <C-S-p>  :action SearchEverywhere<CR>
 nnoremap <C-]> :action GotoImplementation<CR>
-nnoremap <C-S-]> :action GotoDecleraction<CR>
+nnoremap <C-S-}> :action GotoDecleration<CR>
 nnoremap <C-o> :action Back<CR>
 nnoremap <C-i> :action Forward<CR>
 nnoremap <C-g> : action ShowFilePath<CR>

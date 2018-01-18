@@ -306,7 +306,7 @@ ndb-start-vm(){
 }
 
 ndb-stop-vm(){
-    VBoxManage controlvm centos poweroff
+    VBoxManage controlvm centos acpipowerbutton
 }
 
 ndb-ssh-vm(){
