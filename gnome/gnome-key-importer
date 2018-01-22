@@ -98,7 +98,10 @@ sub import(){
 
     my $customcount=0;
 
-    while (my $line = <$fh>){
+DISCARD:    while (my $line = <$fh>){
+        if ($line =~ /^#/) {  # see note at end
+            next DISCARD;
+        }   
         chomp $line;
         if ($line){
             my @v = split(/\t/, $line);
