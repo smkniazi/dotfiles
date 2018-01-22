@@ -18,6 +18,7 @@ stow -t ~ background
 stow -t ~ mpv
 stow -t ~ feh
 stow -t ~ -d  intellij -S ideavim
+stow -t ~ ctags
 
 #bash
 stow -t ~ bash
