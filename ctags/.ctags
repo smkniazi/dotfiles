@@ -1,7 +1,7 @@
 --python-kinds=-i
+
 --exclude=build
 --exclude=dist
-
 --exclude=.git
 --exclude=.svn
 --exclude=.hg
