@@ -40,6 +40,12 @@ nmap <silent> <leader>/ :nohl<CR>
 nnoremap <C-e> kzz
 nnoremap <C-y> jzz
 
+" moving between splits
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+nnoremap <C-h> <C-W>h
+
 " :actionlist to see all possible actions 
 nnoremap <C-p>  :action GotoClass<CR>
 nnoremap <C-S-p>  :action SearchEverywhere<CR>
@@ -72,5 +78,6 @@ nnoremap <leader>rc :action RunClass<cr>
 nnoremap <leader>gc :action Generate<cr>
 nnoremap <leader>ga :action GotoAction<cr>
 nnoremap <leader>gs :action GotoSuperMethod<cr>
+nnoremap <leader>a :action Annotate<cr>
 nnoremap ]e :action GotoNextError<cr>
 nnoremap [e :action GotoPreviousError<cr>
