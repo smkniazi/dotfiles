@@ -1,5 +1,5 @@
 # dotfiles and scripts 
-The dot files are tested on fedora 25
+Dotfiles. Vim like keybindings everywhere. 
 
 ## Installation
 Run `update-git-submodules` to clone/pull latest submodules.
