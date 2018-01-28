@@ -19,5 +19,6 @@ FPATH="./$FNAME"
 fi
 echo "DPATH = $DPATH"
 echo "FPATH = $FPATH" 
-feh --auto-rotate -Z -F --start-at $FPATH $DPATH
+#feh --auto-rotate -Z -F --start-at $FPATH $DPATH
+feh --action1 ";cp $PWD/%F ~" --auto-rotate -Z -F --start-at $FPATH $DPATH 
 

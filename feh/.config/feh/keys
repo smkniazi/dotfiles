@@ -35,3 +35,6 @@ zoom_out j
 zoom_default f
 #zoom_fit s
 #
+#
+
+action_1 c 
