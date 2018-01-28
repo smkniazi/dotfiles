@@ -27,6 +27,7 @@ scroll_right Right
 ## File deletion
 #remove     d   Delete
 delete  Delete
+delete  d
 
 ## zooming
 zoom_in k 
