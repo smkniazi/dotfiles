@@ -37,8 +37,8 @@ let mapleader = " "
 nmap <silent> <leader>/ :nohl<CR>
 
 " move scree without moving cursor
-nnoremap <C-e> kzz
-nnoremap <C-y> jzz
+"nnoremap <C-e> kzz
+"nnoremap <C-y> jzz
 
 " moving between splits
 nnoremap <C-j> <C-W>j
