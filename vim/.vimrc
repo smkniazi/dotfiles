@@ -115,9 +115,6 @@ highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 " show commands in at the bottom of the screen
 set showcmd
 
-" set line at 81 characters
-set colorcolumn=81
-
 "---------------------------------------------------------
 "                    Encryption                    
 "---------------------------------------------------------
@@ -166,19 +163,13 @@ set shiftwidth=4
 set tabstop=4 
 set softtabstop=4 
 "for python
-au FileType python 
+au FileType python,java
             \ setlocal shiftwidth=2 |
             \ setlocal tabstop=2 |
             \ setlocal softtabstop=2 |
-" for java
-au FileType java 
-            \setlocal tabstop=2  |
-            \setlocal softtabstop=2 |
-            \setlocal shiftwidth=2 |
+            \ setlocal textwidth=80| 
+            \ setlocal colorcolumn=81|
 
-
-" text width
-set textwidth=80
 
 " encoding
 set encoding=utf-8
