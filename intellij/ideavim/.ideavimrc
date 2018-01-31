@@ -46,6 +46,9 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 
+"center function
+nnoremap <leader>mm mq[m2kzt`q
+
 " :actionlist to see all possible actions 
 nnoremap <C-p>  :action GotoClass<CR>
 nnoremap <C-S-p>  :action SearchEverywhere<CR>

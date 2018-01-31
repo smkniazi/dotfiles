@@ -329,3 +329,4 @@ function! FilterFiles()
 endfunction
 
 
+nnoremap <leader>mm mq[mzt`q
