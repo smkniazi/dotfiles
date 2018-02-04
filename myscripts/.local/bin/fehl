@@ -20,5 +20,5 @@ fi
 echo "DPATH = $DPATH"
 echo "FPATH = $FPATH" 
 #feh --auto-rotate -Z -F --start-at $FPATH $DPATH
-feh --action2 ";gsettings set org.gnome.desktop.background picture-uri  file://$PWD/%F" --action1 ";cp $PWD/%F ~" --auto-rotate -Z -F --start-at $FPATH $DPATH 
+feh --action2 ";readlink -f %F | xargs  gsettings set org.gnome.desktop.background picture-uri" --action1 ";readlink -f %F | xargs -i cp {} ~" --auto-rotate -Z -F --start-at $FPATH $DPATH 
 
