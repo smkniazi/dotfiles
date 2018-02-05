@@ -23,7 +23,7 @@ custom	'sound-up'	'$HOME/.local/bin/volume.sh 10%%+'	'<Super>a'
 custom	'sound-down'	'$HOME/.local/bin/volume.sh 10%%-'	'<Super><Shift>a'
 custom	'brightness-inc'	'xbacklight -inc 5 '	'[]'
 custom	'brightness-dec'	'xbacklight -dec 5 '	'[]'
-custom	'transmission'	'$HOME/.local/bin/switch-app -n zathura -f /tmp/zathura-index -c \'$HOME/.local/bin/zathuranoblur\''	'<Super>p'
+custom	'transmission'	'$HOME/.local/bin/switch-app -n zathura -f /tmp/zathura-index -c \'$HOME/.local/bin/zathuranoblur\''	'<Super>z'
 custom	'transmission'	'$HOME/.local/bin/switch-app -t \'Transmission\' -f /tmp/transmission-index -c \'transmission-gtk\''	'<Super>b'
 custom	'mpv'	'$HOME/.local/bin/switch-app -t \'mpv\' -f /tmp/mpv-index -c \'mpv --player-operation-mode=pseudo-gui\''	'<Super>v'
 custom	'chrome'	'$HOME/.local/bin/switch-app -t \'google chrome\' -f /tmp/chome-index -c google-chrome'	'<Super>c'
@@ -80,7 +80,7 @@ org.gnome.desktop.wm.keybindings	toggle-maximized	['<Super><Shift>f']
 org.gnome.desktop.wm.keybindings	show-desktop	        ['<Super>d']
 org.gnome.desktop.wm.keybindings	cycle-windows-backward	[]
 org.gnome.desktop.wm.keybindings	cycle-windows	        ['<Super>g']
-org.gnome.desktop.wm.keybindings	minimize	        []
+org.gnome.desktop.wm.keybindings	minimize	        ['<Super>m']
 org.gnome.desktop.wm.keybindings	unmaximize	        ['<Super>Down', '<Alt>F5']
 org.gnome.desktop.wm.keybindings	maximize	        []
 org.gnome.desktop.wm.keybindings	panel-main-menu	[]
