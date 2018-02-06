@@ -209,10 +209,10 @@ set incsearch
 "nnoremap N Nzzzv
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+"set showmatch 
 
 " How many tenths of a second to blink when matching brackets
-" set mat=2
+"set mat=2
 
 " bash like tab completion for file names
 set wildmode=longest,list,full

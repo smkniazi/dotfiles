@@ -15,6 +15,7 @@
 #custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super>m'
 #
 # MSIC
+custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super><Shift>m'
 custom	'wifi-rset'	'$HOME/.local/bin/wifi-reset '	'<Primary><Alt>w'
 custom	'type-text'	'$HOME/.local/bin/type-text '	'<Primary><Shift><Alt>p'
 custom	'brightness-inc'	'$HOME/.local/bin/brightness up'	'<Super>s'
