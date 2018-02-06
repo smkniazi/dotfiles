@@ -48,3 +48,4 @@ JPA
 checkpointing
 timestamps
 transactional
+NewSQL
