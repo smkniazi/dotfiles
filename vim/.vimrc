@@ -177,7 +177,7 @@ set shiftwidth=4
 set tabstop=4 
 set softtabstop=4 
 "for python
-au FileType python,java
+au FileType python,java,go
             \ setlocal shiftwidth=2 |
             \ setlocal tabstop=2 |
             \ setlocal softtabstop=2 |
