@@ -244,8 +244,8 @@ imap jj <Esc>
 
 " isert matching braces
 inoremap {<CR> {<CR>}<Esc>ko
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
+"inoremap ( ()<Esc>i
+"inoremap [ []<Esc>i
 
 "---------------------------------------------------------
 "                    Leader                     
