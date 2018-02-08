@@ -242,6 +242,11 @@ imap jj <Esc>
 "nnoremap <C-e> kzz
 "nnoremap <C-y> jzz
 
+" isert matching braces
+inoremap {<CR> {<CR>}<Esc>ko
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------
@@ -252,8 +257,11 @@ let mapleader = "\<Space>"
 " redraw screen
 nmap <silent> <leader>r :redraw!<CR>
 
+" reload current file 
+nmap <leader>z :e!<CR>
+
 " reload .vimrc
-nmap <leader>z :so ~/.vimrc<CR>
+nmap <leader>Z :so ~/.vimrc<CR>
 
 " Disable highlight when <leader><h> is pressed
 nmap <silent> <leader>/ :nohl<CR>
