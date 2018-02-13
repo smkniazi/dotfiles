@@ -39,7 +39,7 @@ filetype plugin indent on    " required
 let g:loaded_bufferline = 0 " disable it now 
 
 " enable hard core mode
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 
 "nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -128,6 +128,11 @@ highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 
 " show commands in at the bottom of the screen
 set showcmd
+
+
+"Status line color
+hi StatusLine   ctermfg=0  ctermbg=YELLOW cterm=bold 
+hi StatusLineNC ctermfg=255  ctermbg=0 cterm=bold 
 
 "---------------------------------------------------------
 "                    Encryption                    
@@ -276,7 +281,7 @@ nmap <silent> <leader>k :wincmd k<CR>
 nmap <silent> <leader>l :wincmd l<CR>
 
 nmap <silent> <leader>t :diffthis <CR>
-"nmap <silent> <leader>f :diffoff  <CR>
+nmap <silent> <leader>o :diffoff  <CR>
 nmap <silent> <leader>u :diffupdate <CR>
 
 " leader makes
@@ -295,8 +300,8 @@ nnoremap <leader>f :call FilterFiles()<cr>
 " " \1 \2 \3 : go to buffer 1/2/3 etc
  nnoremap <Leader>b :buffers<CR>:b<Space>
  "nnoremap <Leader>b :ls<CR>
- nnoremap <Leader>i :bp<CR>
- nnoremap <Leader>o :bn<CR>
+" nnoremap <Leader>i :bp<CR>
+" nnoremap <Leader>o :bn<CR>
  nnoremap <Leader>g :e#<CR>
  nnoremap <Leader>1 :1b<CR>
  nnoremap <Leader>2 :2b<CR>
@@ -343,3 +348,5 @@ endfunction
 
 
 nnoremap <leader>mm mq[mzt`q
+
+

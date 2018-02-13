@@ -49,3 +49,4 @@ checkpointing
 timestamps
 transactional
 NewSQL
+datacenter
