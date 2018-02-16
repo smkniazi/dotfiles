@@ -26,6 +26,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'fatih/vim-go'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-unimpaired'
 "Plugin 'miyakogi/conoline.vim'
 "Plugin 'bling/vim-bufferline'
 "Plugin 'junegunn/goyo.vim'
@@ -301,9 +303,6 @@ nnoremap <leader>f :call FilterFiles()<cr>
 " " \i \o \g : go back/forward/last-used
 " " \1 \2 \3 : go to buffer 1/2/3 etc
  nnoremap <Leader>b :buffers<CR>:b<Space>
- "nnoremap <Leader>b :ls<CR>
-" nnoremap <Leader>i :bp<CR>
-" nnoremap <Leader>o :bn<CR>
  nnoremap <Leader>g :e#<CR>
  nnoremap <Leader>1 :1b<CR>
  nnoremap <Leader>2 :2b<CR>
@@ -350,5 +349,3 @@ endfunction
 
 
 nnoremap <leader>mm mq[mzt`q
-
-
