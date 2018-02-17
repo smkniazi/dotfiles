@@ -264,20 +264,20 @@ execute "set <M-H>=\eH"
 execute "set <M-J>=\eJ"
 execute "set <M-K>=\eK"
 execute "set <M-L>=\eL"
-nnoremap <M-L> <C-w>> 
-nnoremap <M-H> <C-w>< 
-nnoremap <M-J> <C-w>+ 
-nnoremap <M-K> <C-w>- 
+nnoremap <M-L> <C-w>>
+nnoremap <M-H> <C-w><
+nnoremap <M-J> <C-w>+
+nnoremap <M-K> <C-w>-
 
 " moving between splits
 execute "set <M-h>=\eh"
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
 execute "set <M-l>=\el"
-nnoremap <M-l> :wincmd l<CR> 
-nnoremap <M-h> :wincmd h<CR> 
-nnoremap <M-j> :wincmd j<CR> 
-nnoremap <M-k> :wincmd k<CR> 
+nnoremap <M-l> :wincmd l<CR>
+nnoremap <M-h> :wincmd h<CR>
+nnoremap <M-j> :wincmd j<CR>
+nnoremap <M-k> :wincmd k<CR>
 
 "---------------------------------------------------------
 "                    Leader                     
