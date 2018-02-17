@@ -256,6 +256,18 @@ inoremap {<CR> {<CR>}<Esc>ko
 "inoremap ( ()<Esc>i
 "inoremap [ []<Esc>i
 
+" set the begenning of the function to the top of the window
+nnoremap <leader>mm mq[mzt`q
+
+" use same key binding for pane/split resize in vim and tmux
+execute "set <M-H>=\eH"
+execute "set <M-J>=\eJ"
+execute "set <M-K>=\eK"
+execute "set <M-L>=\eL"
+nnoremap <M-L> :vertical resize +2<CR>
+nnoremap <M-H> :vertical resize -2<CR>
+nnoremap <M-J> <C-w>- 
+nnoremap <M-K> <C-w>+ 
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------
@@ -348,4 +360,3 @@ function! FilterFiles()
 endfunction
 
 
-nnoremap <leader>mm mq[mzt`q
