@@ -16,7 +16,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'takac/vim-hardtime'
 Plugin 'scrooloose/nerdtree'
-Plugin 'chrisbra/csv.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'junegunn/fzf.vim'
@@ -28,11 +27,13 @@ Plugin 'fatih/vim-go'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'godlygeek/tabular'
 "Plugin 'ervandew/supertab'
 "Plugin 'miyakogi/conoline.vim'
 "Plugin 'bling/vim-bufferline'
 "Plugin 'junegunn/goyo.vim'
 "Plugin 'shime/vim-livedown'
+"Plugin 'chrisbra/csv.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
