@@ -59,6 +59,10 @@ alias gs="git status"
 alias gp="git pull"
 
 
+alias psn='ps -o pid,comm,pcpu,rss,stat,etime,args -C ' # By name
+alias psp='ps -o pid,comm,pcpu,rss,stat,etime,args -p ' # By PID
+alias psg='ps -ef | grep -i '
+
 # VIM
 hash vimx 2> /dev/null
 if [ "$?" -eq "0" ]; then
