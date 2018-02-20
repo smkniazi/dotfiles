@@ -38,6 +38,7 @@ create_path_alias	 ds		 ~/code/hops/HopsFS-Deployment-Scripts
 create_path_alias	 d		 ~/code/dotfiles
 create_path_alias    p       ~/code/hops/hops-papers/hopsfs
 create_path_alias    pt      ~/code/hops/hops-papers/hopsfs/salman-thesis
+create_path_alias    sf      ~/code/hops/hops-papers/hopsfs/hopsfs-small-files/small-files-vldb-2018/
 
 
 alias cd1="cd .."
