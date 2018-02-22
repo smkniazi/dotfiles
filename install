@@ -20,6 +20,11 @@ stow -t ~ feh
 stow -t ~ -d  intellij -S ideavim
 stow -t ~ ctags
 
+#set mlterm vaafont file
+if [ ! -f ~/.mlterm/vaafont ]; then
+    ln -s ~/.mlterm/vaafont.template ~/.mlterm/vaafont
+fi
+
 #bash
 stow -t ~ bash
 grep "mybashrc" ~/.bashrc > /dev/null 2>&1 
