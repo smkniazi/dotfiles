@@ -140,6 +140,11 @@ set showcmd
 hi StatusLine   ctermfg=0  ctermbg=YELLOW cterm=bold 
 hi StatusLineNC ctermfg=255  ctermbg=0 cterm=bold 
 
+" disable menu and tool bars for gvim
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L  "remove left-hand scroll bar
 "---------------------------------------------------------
 "                    Encryption                    
 "---------------------------------------------------------
