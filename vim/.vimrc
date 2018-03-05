@@ -115,6 +115,9 @@ let g:syntastic_mode_map = {
 " switching to mlterm when titles are enabled
 set notitle
 
+" true color
+set termguicolors
+
 " colors
 set t_Co=256
 set background=light
