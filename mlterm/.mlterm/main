@@ -11,3 +11,4 @@ screen_width_ratio = 50
 screen_height_ratio = 100
 letter_space = 0
 tabsize = 4
+bg_color = #ffffffffffff
