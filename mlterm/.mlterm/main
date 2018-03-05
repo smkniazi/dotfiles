@@ -1,7 +1,6 @@
 type_engine = xft
 bel_mode = none
 scrollbar_mode = none
-fontsize = 20
 use_anti_alias = true
 use_variable_column_width = true
 line_space = 0
