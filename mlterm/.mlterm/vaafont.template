@@ -1,5 +1,3 @@
 #Change the last number to font size
-#ISO10646_UCS4_1 = 20,Liberation Serif 14
-#ISO10646_UCS4_1 = 20,Bitstream Vera Serif 14
-#ISO10646_UCS4_1 = 20,Palatino Linotype 14
-ISO10646_UCS4_1 = 20,Palatino Linotype 14
+ISO10646_UCS4_1 = 16,Palatino Linotype 18
+
