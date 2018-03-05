@@ -1,10 +1,13 @@
 type_engine = xft
 bel_mode = none
 scrollbar_mode = none
-fontsize = 22
+fontsize = 20
 use_anti_alias = true
 use_variable_column_width = true
-line_space = 5
+line_space = 0
 use_multi_column_char = true
 col_size_of_width_a = 1
 screen_width_ratio = 50
+screen_height_ratio = 100
+letter_space = 0
+tabsize = 4
