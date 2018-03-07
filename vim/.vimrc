@@ -117,7 +117,7 @@ let g:syntastic_mode_map = {
 set notitle
 
 " true color
-set termguicolors
+"set termguicolors
 
 " colors
 set t_Co=256
