@@ -94,12 +94,6 @@ let g:syntastic_mode_map = {
 "current installed themes 
 "desertink molokai gruvbox hybrid
 
-" gruvbox
-"let g:gruvbox_italic=1
-"let g:gruvbox_termcolors=256
-"let g:gruvbox_bold=1
-"colorscheme gruvbox
-
 " Desert theme
 "colorscheme desertink 
 "highlight NonText ctermfg=59 ctermbg=NONE cterm=NONE guifg=#414e58 guibg=#232c31 gui=NONE
@@ -112,6 +106,15 @@ let g:syntastic_mode_map = {
 "---------------------------------------------------------
 "                    Visual Changes                    
 "---------------------------------------------------------
+" my theme
+hi SpellBad cterm=underline,italic ctermbg=none
+hi SpellRare cterm=underline,italic ctermbg=none
+hi SpellLocal cterm=underline,italic ctermbg=none
+hi SpellCaps cterm=underline,italic ctermbg=none
+hi Comment  cterm=italic ctermbg=none ctermfg=grey
+hi LineNr ctermfg=grey
+hi CursorLineNr cterm=bold ctermfg=grey
+
 " do not set the title of the window to vim buffer name. I have problems
 " switching to mlterm when titles are enabled
 set notitle
@@ -380,5 +383,4 @@ function! FilterFiles()
     let test = "let g:NERDTreeIgnore = ['\\(\\.".extension."\\)\\@<!$[[file]]\']"
     execute test
 endfunction
-
 
