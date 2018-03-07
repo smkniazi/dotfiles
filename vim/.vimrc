@@ -143,7 +143,6 @@ highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 " show commands in at the bottom of the screen
 set showcmd
 
-
 "Status line color
 hi StatusLine   ctermfg=0  ctermbg=YELLOW cterm=bold 
 hi StatusLineNC ctermfg=255  ctermbg=0 cterm=bold 
