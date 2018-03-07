@@ -125,6 +125,7 @@ hi SpellCap cterm=underline,italic ctermbg=none
 hi Comment  cterm=italic ctermbg=none ctermfg=grey
 hi LineNr ctermfg=grey
 hi CursorLineNr cterm=bold ctermfg=grey
+hi ColorColumn ctermbg=15
 
 "highlight colo
 highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guibg=yellow gui=none
