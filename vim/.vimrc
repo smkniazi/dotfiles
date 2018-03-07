@@ -106,28 +106,28 @@ let g:syntastic_mode_map = {
 "---------------------------------------------------------
 "                    Visual Changes                    
 "---------------------------------------------------------
-" my theme
-hi SpellBad cterm=underline,italic ctermbg=none
-hi SpellRare cterm=underline,italic ctermbg=none
-hi SpellLocal cterm=underline,italic ctermbg=none
-hi SpellCaps cterm=underline,italic ctermbg=none
-hi Comment  cterm=italic ctermbg=none ctermfg=grey
-hi LineNr ctermfg=grey
-hi CursorLineNr cterm=bold ctermfg=grey
 
 " do not set the title of the window to vim buffer name. I have problems
 " switching to mlterm when titles are enabled
 set notitle
 
-" true color
-"set termguicolors
-
 " colors
 set t_Co=256
 set background=light
 
+" true color
+"set termguicolors
+
+hi SpellBad cterm=underline,italic ctermbg=none
+hi SpellRare cterm=underline,italic ctermbg=none
+hi SpellLocal cterm=underline,italic ctermbg=none
+hi SpellCap cterm=underline,italic ctermbg=none
+hi Comment  cterm=italic ctermbg=none ctermfg=grey
+hi LineNr ctermfg=grey
+hi CursorLineNr cterm=bold ctermfg=grey
+
 "highlight colo
-highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guifg=white guibg=green gui=none
+highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guibg=yellow gui=none
 
 "mode indicator
 set showmode
@@ -152,6 +152,7 @@ hi StatusLineNC ctermfg=255  ctermbg=0 cterm=bold
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
 :set guioptions-=L  "remove left-hand scroll bar
+
 "---------------------------------------------------------
 "                    Encryption                    
 "---------------------------------------------------------
@@ -161,7 +162,6 @@ set cryptmethod=blowfish2
 "---------------------------------------------------------
 "                    Misc                    
 "---------------------------------------------------------
-
 " Enable filetype plugins
 filetype plugin indent on
 
