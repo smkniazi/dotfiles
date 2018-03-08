@@ -69,7 +69,7 @@ let g:SimpylFold_docstring_preview=1
 " you complete me
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_filetype_blacklist = {
-      \ 'tex' : 1,
+     \ 'tex' : 1,
       \ 'tagbar' : 1,
       \ 'qf' : 1,
       \ 'notes' : 1,

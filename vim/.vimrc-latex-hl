@@ -14,6 +14,7 @@ hi texAccent              ctermfg=black
 hi texRefZone             ctermfg=grey
 hi texHref                ctermfg=grey
 hi texCmdName            ctermfg=grey
+hi texCmdArgs             ctermfg=grey
 
 "hi texAbstract           ctermfg=grey
 "hi texMathError           ctermfg=grey
@@ -160,7 +161,6 @@ hi texCmdName            ctermfg=grey
 "hi texSyncMathZoneH       ctermfg=grey
 "hi texSyncMathZoneY       ctermfg=grey
 "hi texZoneMinted ctermfg=grey
-"hi texCmdArgs             ctermfg=grey
 "hi texError               ctermfg=grey
 "hi texMathDelimSet1       ctermfg=grey
 "hi texMathZoneFS          ctermfg=grey
