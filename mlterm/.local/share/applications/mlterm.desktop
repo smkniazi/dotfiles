@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Multilingual Terminal
+GenericName=
+Comment=Use Multi-Lingual Command Line
+Comment[ja]=国際化対応端末
+Icon=mlterm-icon-24colors-1
+Exec=/home/salman/.local/bin/ml
+Terminal=false
+Categories=System;Utility;TerminalEmulator;

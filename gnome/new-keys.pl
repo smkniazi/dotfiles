@@ -13,6 +13,8 @@
 #custom	'mouse-scroll-up'	'$HOME/.local/bin/mouse-ctrl -4'	'<Primary><Alt>4'
 #custom	'mouse-scroll-down'	'$HOME/.local/bin/mouse-ctrl -5'	'<Primary><Alt>5'
 #custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super>m'
+#custom	'swith-gnome-termianl'	'$HOME/.local/bin/switch-app -n gnome-terminal -f /tmp/gnome-terminal-index -c \'gnome-terminal --full-screen\''	'<Super>t'
+#custom	'swith-mlterm'	'$HOME/.local/bin/switch-app -t Terminal -f /tmp/terminal-index -c \'$HOME/.local/bin/ml\''	'<Super>w'
 #
 # MSIC
 custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super><Shift>m'
@@ -30,8 +32,8 @@ custom	'mpv'	'$HOME/.local/bin/switch-app -t \'mpv\' -f /tmp/mpv-index -c \'mpv 
 custom	'chrome'	'$HOME/.local/bin/switch-app -t \'google chrome\' -f /tmp/chome-index -c google-chrome'	'<Super>c'
 custom	'firefox'	'$HOME/.local/bin/switch-app -t firefox -f /tmp/firefox-index -c firefox'	'<Super>f'
 custom	'firefox2'	'$HOME/.local/bin/x11-backend-launch firefox'	'<Primary><Alt>f'
-custom	'swith-gnome-termianl'	'$HOME/.local/bin/switch-app -n gnome-terminal -f /tmp/gnome-terminal-index -c \'gnome-terminal --full-screen\''	'<Super>t'
-custom	'swith-mlterm'	'$HOME/.local/bin/switch-app -t mlterm -f /tmp/mlterm-index -c \'$HOME/.local/bin/ml\''	'<Super>w'
+custom	'swith-gnome-termianl'	'$HOME/.local/bin/switch-app -t Terminal -f /tmp/terminal-index -c \'gnome-terminal --full-screen\''	'<Super>t'
+custom	'swith-mlterm'	'$HOME/.local/bin/switch-app -t Terminal -f /tmp/terminal-index -c \'$HOME/.local/bin/ml\''	'<Super>w'
 custom	'gnome-termianl'	'$HOME/.local/bin/x11-backend-launch gnome-terminal'	'<Primary><Alt>t'
 custom	'nautilus'	'$HOME/.local/bin/switch-app -n nautilus -f /tmp/nautilus-index -c nautilus'	'<Super>n'
 custom	'intellij'	'$HOME/.local/bin/switch-app -t Intellij -f /tmp/intellij-index -c $HOME/.local/bin/start-idea'	'<Super>i'

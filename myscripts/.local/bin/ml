@@ -1,2 +1,2 @@
 #!/bin/bash
-mlterm -name=mlterm --title=mlterm -A -k esc -K alt &
+mlterm -name=Terminal --title=Terminal -A -k esc -K alt &
