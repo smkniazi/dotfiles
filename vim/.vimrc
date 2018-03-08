@@ -127,6 +127,9 @@ hi LineNr ctermfg=grey
 hi CursorLineNr cterm=bold ctermfg=grey
 hi ColorColumn ctermbg=15
 
+"latex highlights
+source ~/.vimrc-latex-hl
+
 "highlight colo
 highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guibg=yellow gui=none
 
@@ -383,4 +386,5 @@ function! FilterFiles()
     let test = "let g:NERDTreeIgnore = ['\\(\\.".extension."\\)\\@<!$[[file]]\']"
     execute test
 endfunction
+
 
