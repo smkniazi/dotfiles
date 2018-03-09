@@ -387,4 +387,4 @@ function! FilterFiles()
     execute test
 endfunction
 
-
+"au FileType tex syn region texStatement matchgroup=texStatement start="\\footnote{"  matchgroup=texStatement end="}" end="%stopzone\>"   contains=@texStatement 
