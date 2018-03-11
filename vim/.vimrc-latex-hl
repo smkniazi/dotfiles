@@ -1,4 +1,4 @@
-hi texSection             cterm=bold
+hi texSection             cterm=bold ctermfg=28 
 hi texUrl                 ctermfg=grey
 hi texStatement           ctermfg=grey " effects foot notes
 hi texBeginEndName        ctermfg=grey
