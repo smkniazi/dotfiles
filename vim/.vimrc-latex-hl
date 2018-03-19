@@ -1,20 +1,20 @@
 hi texSection             cterm=bold ctermfg=28 
-hi texUrl                 ctermfg=grey
-hi texStatement           ctermfg=grey " effects foot notes
-hi texBeginEndName        ctermfg=grey
-hi texDefParms            ctermfg=grey
-hi texNewCmd              ctermfg=grey
-hi texCite                ctermfg=grey
-hi texType                ctermfg=grey
-hi texBeginEnd            ctermfg=grey
-hi texDefName             ctermfg=grey
-hi texDefParm             ctermfg=grey
-hi texDelimiter           ctermfg=grey
+hi texUrl                 ctermfg=lightgrey
+hi texStatement           ctermfg=lightgrey " effects foot notes
+hi texBeginEndName        ctermfg=lightgrey
+hi texDefParms            ctermfg=lightgrey
+hi texNewCmd              ctermfg=lightgrey
+hi texCite                ctermfg=lightgrey
+hi texType                ctermfg=lightgrey
+hi texBeginEnd            ctermfg=lightgrey
+hi texDefName             ctermfg=lightgrey
+hi texDefParm             ctermfg=lightgrey
+hi texDelimiter           ctermfg=lightgrey
+hi texRefZone             ctermfg=lightgrey
+hi texHref                ctermfg=lightgrey
+hi texCmdName             ctermfg=lightgrey
+hi texCmdArgs             ctermfg=lightgrey
 hi texAccent              ctermfg=black
-hi texRefZone             ctermfg=grey
-hi texHref                ctermfg=grey
-hi texCmdName            ctermfg=grey
-hi texCmdArgs             ctermfg=grey
 
 "hi texAbstract           ctermfg=grey
 "hi texMathError           ctermfg=grey
