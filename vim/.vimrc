@@ -131,7 +131,8 @@ hi ColorColumn ctermbg=15
 source ~/.vimrc-latex-hl
 
 "highlight colo
-highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guibg=yellow gui=none
+highlight Visual ctermfg=NONE ctermbg=lightblue  cterm=NONE guibg=lightblue gui=none
+highlight Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE guibg=lightblue gui=none
 
 "mode indicator
 set showmode
