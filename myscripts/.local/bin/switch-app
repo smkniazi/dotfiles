@@ -20,7 +20,7 @@ function start_program(){
 		GDK_BACKEND=x11 $1 &
 
         pID=$!
-        fullscreen $pID
+        ~/.local/bin/fullscreen $pID
 	fi
 }
 
