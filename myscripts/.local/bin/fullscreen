@@ -10,7 +10,8 @@ do
     counter=$(echo "$counter + 1" | bc )
     if [ ! -z $wid ]; then
         echo "Found window for pid:$pID with wid:$wid" >> /tmp/switcher.log
-        wmctrl -i -a $wid -b toggle,fullscreen 
+        #wmctrl -i -a $wid -b toggle,fullscreen 
+        wmctrl -ir $wid -b add,maximized_vert,maximized_horz
         break
     fi
 
