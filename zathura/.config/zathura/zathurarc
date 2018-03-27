@@ -7,3 +7,4 @@ map = zoom in
 map D recolor 
 set recolor-keephue true
 set show-recent 20
+set scroll-page-aware true
