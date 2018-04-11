@@ -29,6 +29,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'godlygeek/tabular'
 Plugin 'lervag/vimtex'
+Plugin 'timakro/vim-searchant'
 "Plugin 'ervandew/supertab'
 "Plugin 'miyakogi/conoline.vim'
 "Plugin 'bling/vim-bufferline'
@@ -314,7 +315,11 @@ nmap <leader>z :e!<CR>
 nmap <leader>Z :so ~/.vimrc<CR>
 
 " Disable highlight when <leader><h> is pressed
-nmap <silent> <leader>/ :nohl<CR>
+"nmap <silent> <leader>/ :nohl<CR>
+
+"vim-searchant toggle 
+let g:searchant_map_stop = 0
+nmap <silent> <leader>/ <Plug>SearchantStop
 
 " leader save
 nmap <silent> <leader>s :w<CR>
