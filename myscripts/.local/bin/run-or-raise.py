@@ -10,6 +10,7 @@ focused_window_id_file=""
 focused_window_id=0
 window_classes=[]
 logs_dir="/tmp/switcher/"
+curr_desktop=""
 
 def logger(msg):
     filex = open(logs_dir+"log", 'a+')
@@ -41,6 +42,15 @@ def run_bash_command(cmd):
     process.stdout.close()
     return out
 
+def get_desktop():
+    output = []
+    cmd = ["xdotool", "get_desktop"]
+    output = output + run_bash_command(cmd).split('\n')
+    if len(output) > 0:
+        return output[0]
+    else:
+        return "0"
+
 def get_curr_focus_id():
     output = []
     cmd = ["xdotool", "getactivewindow", "getwindowfocus"]
@@ -56,7 +66,7 @@ def get_curr_focus_id():
 def get_matching_class_winids():
     output = []
     for wndclass in window_classes:
-        cmd = ["xdotool", "search", "--class", wndclass]
+        cmd = ["xdotool", "search", "--desktop", curr_desktop, "--class", wndclass]
         output = output + run_bash_command(cmd).split('\n')
     for x in range(0, output.count('')):
         output.remove('')
@@ -105,6 +115,7 @@ def main():
     global focused_window_id_file
     global focused_window_id
     global raise_command
+    global curr_desktop
     #raise_command = "GDK_BACKEND=x11 "+sys.argv[1]+" &"
     raise_command = sys.argv[1]
     window_classes = sys.argv[2:]
@@ -113,7 +124,10 @@ def main():
     if not os.path.isdir(logs_dir):
           os.mkdir(logs_dir)
 
-    focused_window_id_file =  int(hashlib.sha256(sys.argv[1].encode('utf-8')).hexdigest(), 16) % 10**8
+    curr_desktop = get_desktop()
+    #logger("Current desktop is: "+", ".join(output))
+
+    focused_window_id_file =  int(hashlib.sha256((raise_command+curr_desktop).encode('utf-8')).hexdigest(), 16) % 10**8
     focused_window_id_file = logs_dir+str(focused_window_id_file)
     focused_window_id = get_focused_window_id_from_disk()
 
