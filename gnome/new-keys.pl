@@ -32,7 +32,7 @@ custom	'mpv'	'$HOME/.local/bin/run-or-raise.py \'mpv --player-operation-mode=pse
 custom	'chrome'	'$HOME/.local/bin/run-or-raise.py google-chrome Google-chrome'	'<Super>c'
 custom	'firefox'	'$HOME/.local/bin/run-or-raise.py firefox Firefox Google-chrome'	'<Super>f'
 custom	'firefox2'	'$HOME/.local/bin/x11-backend-launch firefox'	'<Primary><Alt>f'
-custom	'swith-gnome-termianl'	'$HOME/.local/bin/run-or-raise.py gnome-terminal Gnome-terminal terminal'	'<Super>t'
+custom	'swith-gnome-termianl'	'$HOME/.local/bin/run-or-raise.py gnome-terminal Gnome-terminal terminal mlterm'	'<Super>t'
 custom	'swith-mlterm'	'$HOME/.local/bin/run-or-raise.py mlterm Terminal'	'<Super>w'
 custom	'gnome-termianl'	'$HOME/.local/bin/x11-backend-launch gnome-terminal'	'<Primary><Alt>t'
 custom	'nautilus'	'$HOME/.local/bin/run-or-raise.py nautilus Nautilus '	'<Super>n'
