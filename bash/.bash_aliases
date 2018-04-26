@@ -36,9 +36,12 @@ create_path_alias	 hmi	 ~/code/hops/hops-metadata-dal-impl-ndb
 create_path_alias	 hb		 ~/code/hops/hammer-bench
 create_path_alias	 ds		 ~/code/hops/HopsFS-Deployment-Scripts
 create_path_alias	 d		 ~/code/dotfiles
-create_path_alias    p       ~/code/hops/hops-papers/hopsfs
-create_path_alias    pt      ~/code/hops/hops-papers/hopsfs/salman-thesis
-create_path_alias    sf      ~/code/hops/hops-papers/hopsfs/hopsfs-small-files/small-files-middleware-2018/
+create_path_alias    p       ~/code/papers
+create_path_alias    pt      ~/code/papers/salman-thesis
+create_path_alias    sf      ~/code/papers/hopsfs-small-files/small-files-middleware-2018/
+#create_path_alias    p       ~/code/hops/hops-papers/hopsfs
+#create_path_alias    pt      ~/code/hops/hops-papers/hopsfs/salman-thesis
+#create_path_alias    sf      ~/code/hops/hops-papers/hopsfs/hopsfs-small-files/small-files-middleware-2018/
 
 
 alias cd1="cd .."
