@@ -97,8 +97,8 @@ ta (){
 
 
 gc() {
-	if [ "$#" -eq 1 ]; then
-		git commit -am "$1" && git push
+	if [ "$#" -ne 0 ]; then
+		git commit -am "$@" && git push
 	else
 		joke=""
 		#joke="$(wget 'http://api.icndb.com/jokes/random' -qO- | grep -Po '"joke":.*?[^\\]",' |  sed -e 's/\"//g' | sed -e 's/joke: //g' | sed -e 's/\"//g')"
@@ -109,7 +109,7 @@ gc() {
 }
 
 gcp (){
-	gc $@
+	gc "$@"
 	git push
 }
 
