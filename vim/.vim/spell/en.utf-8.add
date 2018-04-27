@@ -19,7 +19,7 @@ HAR
 datanode's
 Riak
 MongoDB
-HopsFS
+#opsFS
 inodes
 scalable
 namenodes
@@ -51,3 +51,4 @@ transactional
 NewSQL
 datacenter
 scalability
+HopsFS/!

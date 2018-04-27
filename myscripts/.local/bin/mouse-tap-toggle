@@ -2,10 +2,16 @@
 # touch pad
 ttc=$(gsettings get org.gnome.desktop.peripherals.touchpad "tap-to-click")
 if [ "$ttc" = "true" ]; then 
+    #works on wayland
     gsettings set org.gnome.desktop.peripherals.touchpad "tap-to-click" "false"
+    #works on X11
+    synclient TapButton1=0
     timeout 1 zenity --info  --text "<span size=\"large\">Mouse Tap</span>\n<span size=\"xx-large\"><b>OFF</b></span>" --title "Mouse Tap OFF" 
 else
+    #works on wayland
     gsettings set org.gnome.desktop.peripherals.touchpad "tap-to-click" "true"
+    #works on X11
+    synclient TapButton1=1
     timeout 1 zenity --info  --text "<span size=\"large\">Mouse Tap</span>\n<span size=\"xx-large\"><b>ON</b></span>" --title "Mouse Tap ON" 
 fi
 

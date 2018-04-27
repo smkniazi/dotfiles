@@ -19,7 +19,7 @@
 # MSIC
 custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super><Shift>m'
 custom	'wifi-rset'	'$HOME/.local/bin/wifi-reset '	'<Primary><Alt>w'
-custom	'type-text'	'$HOME/.local/bin/type-text '	'<Primary><Shift><Alt>p'
+custom	'type-text'	'$HOME/.local/bin/type-text '	'<Primary><Alt>p'
 custom	'brightness-inc'	'$HOME/.local/bin/brightness up'	'<Super>s'
 custom	'brightness-dec'	'$HOME/.local/bin/brightness down'	'<Super><Shift>s'
 custom	'sound-up'	'$HOME/.local/bin/volume.sh 10%%+'	'<Super>a'
