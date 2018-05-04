@@ -8,3 +8,7 @@ map D recolor
 set recolor-keephue true
 set show-recent 20
 set scroll-page-aware true
+#set default-bg "#FFFFFF"
+set smooth-scroll "true"
+set adjust-open "best-fit"
+
