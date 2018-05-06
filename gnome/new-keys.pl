@@ -39,7 +39,7 @@ custom	'nautilus'	'$HOME/.local/bin/run-or-raise.py nautilus Nautilus '	'<Super>
 custom	'intellij'	'$HOME/.local/bin/run-or-raise.py $HOME/.local/bin/start-idea jetbrains-idea-ce'	'<Super>i'
 custom	'lock-screen'	'$HOME/.local/bin/lock-screen'	'<Primary><Super><Alt>l'
 custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
-custom	'keepassxc'	'$HOME/.local/bin/run-or-raise.py keepassxc keepassxc'	'<Super>k'
+custom	'keepassxc'	'$HOME/.local/bin/run-or-raise.py keepassxc keepassxc'	'<Primary><Alt>p'
 custom	'open-dropbox-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Downloads'	'<Primary><Alt>d'
 custom	'open-downloads-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
 # GNOME
@@ -87,8 +87,8 @@ org.gnome.desktop.wm.keybindings	minimize	        ['<Super>m']
 org.gnome.desktop.wm.keybindings	unmaximize	        ['<Super>Down', '<Alt>F5']
 org.gnome.desktop.wm.keybindings	maximize	        ['<Super><Shift>f']
 org.gnome.desktop.wm.keybindings	panel-main-menu	[]
-org.gnome.mutter.keybindings	toggle-tiled-left	        ['<Super>h']
-org.gnome.mutter.keybindings	toggle-tiled-right	        ['<Super>l']
+org.gnome.mutter.keybindings	toggle-tiled-left	        []
+org.gnome.mutter.keybindings	toggle-tiled-right	        []
 org.gnome.desktop.wm.keybindings	close	['<Alt>F4','<Super>q']
 org.gnome.mutter	overlay-key	[]
 org.gnome.shell.keybindings	toggle-overview	[]
