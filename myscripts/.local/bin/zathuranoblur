@@ -2,6 +2,7 @@
 export GDK_SCALE=1
 export GDK_BACKEND=x11
 
-/usr/bin/zathura $@ &
+echo $@ >> /tmp/switcher/log
+/usr/bin/zathura "$@" &
 pID=$!
 fullscreen $pID
