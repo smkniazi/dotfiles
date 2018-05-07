@@ -15,10 +15,10 @@ Move to top left corner     : Ctrl+Super+1
 Move to bottom right corner : Ctrl+Super+4
 Move to bottom right corner : Ctrl+Super+3
 
-Move to top                 : Ctrl+Super+K
-Move to right               : Ctrl+Super+L
-Move to bottom              : Ctrl+Super+J
-Move to left                : Ctrl+Super+H
+Move to top                 : Shift+Super+K
+Move to right               : Shift+Super+L
+Move to bottom              : Shift+Super+J
+Move to left                : Shift+Super+H
 
 Move to the right screen    : Shift+Ctrl+Super+L
 Move to the left screen     : Shift+Ctrl+Super+H
