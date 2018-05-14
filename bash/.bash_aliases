@@ -291,6 +291,10 @@ ice () {
 	ssh -p 8209 hdp@ice $@
 }
 
+ice-test () {
+    ssh -p 8209 hdp@ice -t ssh tester@10.0.208.1
+}
+
 c1 () { 
 	ssh nzo@cloud1.sics.se
 }
