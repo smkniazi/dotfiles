@@ -13,8 +13,6 @@
 #custom	'mouse-scroll-up'	'$HOME/.local/bin/mouse-ctrl -4'	'<Primary><Alt>4'
 #custom	'mouse-scroll-down'	'$HOME/.local/bin/mouse-ctrl -5'	'<Primary><Alt>5'
 #custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super>m'
-#custom	'swith-gnome-termianl'	'$HOME/.local/bin/switch-app -n gnome-terminal -f /tmp/gnome-terminal-index -c \'gnome-terminal --full-screen\''	'<Super>t'
-#custom	'swith-mlterm'	'$HOME/.local/bin/switch-app -t Terminal -f /tmp/terminal-index -c \'$HOME/.local/bin/ml\''	'<Super>w'
 #
 # MSIC
 custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super><Shift>m'
@@ -29,7 +27,6 @@ custom	'brightness-dec'	'xbacklight -dec 5 '	'[]'
 custom	'transmission'	'$HOME/.local/bin/run-or-raise.py \'$HOME/.local/bin/zathuranoblur\' Zathura evince okular'	'<Super>z'
 custom	'transmission'	'$HOME/.local/bin/run-or-raise.py transmission-gtk Transmission-gtk'	'<Super>b'
 custom	'mpv'	'$HOME/.local/bin/run-or-raise.py \'mpv --player-operation-mode=pseudo-gui\' mpv'	'<Super>v'
-custom	'chrome'	'$HOME/.local/bin/run-or-raise.py google-chrome Google-chrome'	'<Super>c'
 custom	'firefox'	'$HOME/.local/bin/run-or-raise.py firefox Firefox Google-chrome'	'<Super>f'
 custom	'firefox2'	'$HOME/.local/bin/x11-backend-launch firefox'	'<Primary><Alt>f'
 custom	'swith-gnome-termianl'	'$HOME/.local/bin/run-or-raise.py gnome-terminal Gnome-terminal terminal mlterm'	'<Super>t'
@@ -39,7 +36,7 @@ custom	'nautilus'	'$HOME/.local/bin/run-or-raise.py nautilus Nautilus '	'<Super>
 custom	'intellij'	'$HOME/.local/bin/run-or-raise.py $HOME/.local/bin/start-idea jetbrains-idea-ce'	'<Super>i'
 custom	'lock-screen'	'$HOME/.local/bin/lock-screen'	'<Primary><Super><Alt>l'
 custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
-custom	'keepassxc'	'$HOME/.local/bin/run-or-raise.py keepassxc keepassxc'	'<Primary><Alt>p'
+custom	'keepassxc'	'$HOME/.local/bin/run-or-raise.py keepassxc keepassxc'	'<Super>c'
 custom	'open-dropbox-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Downloads'	'<Primary><Alt>d'
 custom	'open-downloads-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
 # GNOME
