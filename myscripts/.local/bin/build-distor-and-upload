@@ -10,13 +10,17 @@ cd ~/code/hops/deployment-scripts/deployment-scripts
 cd ~/code/hops/hops
 rm *.tar
 tar cf $1 hadoop-dist
-copy-to-hadoop36 $1
+copy-to-hdptest1 $1
 
-ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 rm -rf /home/tester/code/hops/hadoop-dist/"
-ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 rm -rf /home/tester/hadoop-dist/"
-ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 cp /tmp/$1 /home/tester/code/hops/"
-ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 tar xf /home/tester/code/hops/$1"
-ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 mv /home/tester/hadoop-dist /home/tester/code/hops/"
+#ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 rm -rf /home/tester/code/hops/hadoop-dist/"
+#ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 rm -rf /home/tester/hadoop-dist/"
+#ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 cp /tmp/$1 /home/tester/code/hops/"
+#ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 tar xf /home/tester/code/hops/$1"
+#ssh  -p 8209 -l hdp ice "ssh tester@hadoop36 mv /home/tester/hadoop-dist /home/tester/code/hops/"
 
+ssh  -p 8209 -l hdp ice "ssh tester@10.0.208.1 rm -rf /home/tester/code/hops/hadoop-dist/"
+ssh  -p 8209 -l hdp ice "ssh tester@10.0.208.1 cp /tmp/$1 /home/tester/code/hops/"
+ssh  -p 8209 -l hdp ice "ssh tester@10.0.208.1 tar xf /home/tester/code/hops/$1"
+ssh  -p 8209 -l hdp ice "ssh tester@10.0.208.1 mv /home/tester/hadoop-dist /home/tester/code/hops/"
 popd
 
