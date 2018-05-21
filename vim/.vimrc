@@ -298,6 +298,9 @@ nnoremap <M-h> :wincmd h<CR>
 nnoremap <M-j> :wincmd j<CR>
 nnoremap <M-k> :wincmd k<CR>
 
+" comment
+" C-_ is actuall C-/ because C-/ generate C-_
+nnoremap <C-_> mz0I//<Esc>j  
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------
