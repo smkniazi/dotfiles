@@ -23,13 +23,14 @@ Plugin 'junegunn/fzf'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'fatih/vim-go'
+Plugin 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'godlygeek/tabular'
 Plugin 'lervag/vimtex'
 Plugin 'timakro/vim-searchant'
+Plugin 'majutsushi/tagbar'
 "Plugin 'ervandew/supertab'
 "Plugin 'miyakogi/conoline.vim'
 "Plugin 'bling/vim-bufferline'
@@ -300,7 +301,7 @@ nnoremap <M-k> :wincmd k<CR>
 
 " comment
 " C-_ is actuall C-/ because C-/ generate C-_
-nnoremap <C-_> mz0I//<Esc>j  
+nnoremap <C-_> mz0i//<Esc>j  
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------

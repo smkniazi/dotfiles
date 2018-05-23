@@ -110,6 +110,7 @@ gc() {
 }
 
 gcp (){
+    set +x
 	gc "$@"
 	git push
 }
