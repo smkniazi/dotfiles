@@ -127,7 +127,7 @@ hops-push() {
 }
 
 hops-pull (){
-	pulld . &> /dev/null 
+	pushd . &> /dev/null 
 	exe_and_display_cyan "Hops" && \
 	cd ~/code/hops/hops && git pull  && \
 	exe_and_display_cyan "Hops-Metadata-Dal" && \
@@ -146,7 +146,7 @@ hops-checkout-branch (){
 	    echo "Please enter new branch name"
 	    return 1
     fi
-	pulld . &> /dev/null 
+	pushd . &> /dev/null 
 	exe_and_display_cyan "Hops" && \
 	cd ~/code/hops/hops && git checkout $1  && \
 	exe_and_display_cyan "Hops-Metadata-Dal" && \
@@ -157,13 +157,13 @@ hops-checkout-branch (){
 }
 
 hops-commit-and-push (){
-	pulld . &> /dev/null 
+	pushd . &> /dev/null 
 	exe_and_display_cyan "Hops" && \
-	cd ~/code/hops/hops && gcp $@  && \
+	cd ~/code/hops/hops && gcp "$@"  && \
 	exe_and_display_cyan "Hops-Metadata-Dal" && \
-	cd ~/code/hops/hops-metadata-dal && gcp $@ && \
+	cd ~/code/hops/hops-metadata-dal && gcp "$@" && \
 	exe_and_display_cyan "Hops-Metadata-Dal-Impl-NDB" && \
-	cd ~/code/hops/hops-metadata-dal-impl-ndb && gcp $@ 
+	cd ~/code/hops/hops-metadata-dal-impl-ndb && gcp "$@" 
 	popd &> /dev/null 
 }
 
