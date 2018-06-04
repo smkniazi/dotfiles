@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [ "$#" -lt 2 ]; then
+    echo "Usage command {search-term} [search-terms] {filename}"
+    exit
+fi
+
+
+firstpart="grep --line-buffered --color=always \""
+secondpart=""
+colors=(
+"GREP_COLOR='1;36'    grep --color=always --line-buffered"
+"GREP_COLOR='1;35' grep --color=always --line-buffered"
+"GREP_COLOR='1;34'    grep --color=always --line-buffered"
+"GREP_COLOR='1;33'  grep --color=always --line-buffered"
+"GREP_COLOR='1;32'   grep --color=always --line-buffered"
+"GREP_COLOR='1;31'     grep --color=always --line-buffered"
+)
+
+size=`expr $# - 1`
+fileIndex="$#"
+
+for i in $(seq 1 $size);
+do
+    if [[ "$i" -ne 1 && "$i" -le $size ]]; then
+        secondpart="$secondpart|"
+        firstpart="$firstpart\|"
+    fi
+
+    grp=${colors[$i%${#colors[@]}]}
+    secondpart="$secondpart $grp \"^\|${!i}\" "
+    firstpart="$firstpart${!i}"
+done
+firstpart="$firstpart\" ${!fileIndex}  "
+command="$firstpart | $secondpart "
+echo "$command"
+eval $command
+
+
