@@ -338,10 +338,10 @@ ssh-web-tunnel(){
     ssh -fND 127.0.0.1:8080 nzo@cloud1
 }
 
-sync-backup-laptop-to-salman2(){
+rsync-backup-laptop-to-salman2(){
     rsync -arzvh /home/salman/backup-encrypted salman@salman2/home/salman/disk2
 }
 
-sync-backup-laptop-to-salman2-dryrun(){
+rsync-backup-laptop-to-salman2-dryrun(){
     rsync -arzvhn /home/salman/backup-encrypted salman@salman2/home/salman/disk2
 }
