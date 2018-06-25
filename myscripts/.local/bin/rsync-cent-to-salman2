@@ -1,2 +1,2 @@
 #!/bin/bash
-rsync -arv -e "ssh -A -t nzo@cloud1.sics.se ssh -A -t salman@salman2.sics.se" $1 ":"$2
+rsync -arv -e "ssh -A -t nzo@cloud1 ssh -A -t salman@salman2" $1 ":"$2
