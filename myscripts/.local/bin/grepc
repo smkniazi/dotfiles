@@ -53,7 +53,7 @@ do
 done
 firstpart="$firstpart\" ${!fileIndex}  "
 command="$firstpart | $secondpart "
-echo "$command"
+#echo "$command"
 eval $command
 
 
