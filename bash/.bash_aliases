@@ -339,9 +339,9 @@ ssh-web-tunnel(){
 }
 
 rsync-backup-laptop-to-salman2(){
-    rsync -arzvh /home/salman/backup-encrypted salman@salman2/home/salman/disk2
+    rsync -arzvh /home/salman/backup-encrypted salman@salman2:/home/salman/disk2
 }
 
 rsync-backup-laptop-to-salman2-dryrun(){
-    rsync -arzvhn /home/salman/backup-encrypted salman@salman2/home/salman/disk2
+    rsync -arzvhn /home/salman/backup-encrypted salman@salman2:/home/salman/disk2
 }
