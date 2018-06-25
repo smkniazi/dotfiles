@@ -332,3 +332,16 @@ ndb-ssh-vm(){
 ndb-mysql(){
     mysql -uhop -p -hlocalhost -P3306 --protocol=TCP $@
 }
+
+ssh-web-tunnel(){
+    # https://superuser.com/questions/62303/how-can-i-tunnel-all-of-my-network-traffic-through-ssh
+    ssh -fND 127.0.0.1:8080 nzo@cloud1
+}
+
+sync-backup-laptop-to-salman2(){
+    rsync -arzvh /home/salman/backup-encrypted salman@salman2/home/salman/disk2
+}
+
+sync-backup-laptop-to-salman2-dryrun(){
+    rsync -arzvhn /home/salman/backup-encrypted salman@salman2/home/salman/disk2
+}
