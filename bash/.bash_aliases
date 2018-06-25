@@ -335,7 +335,9 @@ ndb-mysql(){
 
 ssh-web-tunnel(){
     # https://superuser.com/questions/62303/how-can-i-tunnel-all-of-my-network-traffic-through-ssh
-    ssh -fND 127.0.0.1:8080 nzo@cloud1
+    # use -f to run the session in the background
+    #ssh -fND 127.0.0.1:8080 nzo@cloud1
+    ssh -ND 127.0.0.1:8080 nzo@cloud1
 }
 
 rsync-backup-laptop-to-salman2(){
@@ -344,4 +346,8 @@ rsync-backup-laptop-to-salman2(){
 
 rsync-backup-laptop-to-salman2-dryrun(){
     rsync -arzvhn /home/salman/backup-encrypted salman@salman2:/home/salman/disk2
+}
+
+chrome-with-proxy(){
+    chromium-browser http://google.com  --proxy-server="socks://localhost:8080"
 }
