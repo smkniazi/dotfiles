@@ -189,7 +189,7 @@ hops-build-verbose (){
 	#temporarily change pwd
 	cd ~/code/hops/hops  && \
 	exe_and_display_cyan "Building Hops Tests" && \
-	eval "mvn  $@ test-compile " && \
+	eval "mvn  $@ test-compile -Pndb " && \
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
