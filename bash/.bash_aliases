@@ -348,6 +348,25 @@ rsync-backup-laptop-to-salman2-dryrun(){
     rsync -arzvhn /home/salman/backup-encrypted salman@salman2:/home/salman/disk2
 }
 
+get-chrome(){
+    hash chromium-browser 2> /dev/null
+    if [ "$?" -eq "0" ]; then
+        eval "$1='chromium-browser'"
+        return
+    fi 
+
+    hash google-chrome 2> /dev/null
+    if [ "$?" -eq "0" ]; then
+        eval "$1='google-chrome'"
+        return
+    fi
+}
+
 chrome-with-proxy(){
-    chromium-browser http://google.com  --proxy-server="socks://localhost:8080"
+    browser=""
+    echo $browser
+    get-chrome browser
+    command="$browser https://www.iplocation.net/find-ip-address  --proxy-server=\"socks://localhost:8080\""
+    echo $command
+    eval "$command"
 }
