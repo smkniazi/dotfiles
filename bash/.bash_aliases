@@ -189,7 +189,7 @@ hops-build-verbose (){
 	#temporarily change pwd
 	cd ~/code/hops/hops  && \
 	exe_and_display_cyan "Building Hops Tests" && \
-	eval "mvn  $@ test-compile -Pndb " && \
+	eval "mvn  $@ test-compile " && \
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
@@ -278,7 +278,7 @@ mi () {
 }
 
 mig () {
-	eval "mvn $@ install -Dmaven.test.skip=true generate-sources -Pndb "
+	eval "mvn $@ install -Dmaven.test.skip=true generate-sources"
 }
 
 
