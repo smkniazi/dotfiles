@@ -143,6 +143,21 @@ hops-pull (){
 	popd &> /dev/null 
 }
 
+hops-fetch (){
+	pushd . &> /dev/null 
+	exe_and_display_cyan "Hops" && \
+	cd ~/code/hops/hops && git pull  && \
+	exe_and_display_cyan "Hops-Metadata-Dal" && \
+	cd ~/code/hops/hops-metadata-dal && git fetch && \
+	exe_and_display_cyan "Hops-Metadata-Dal-Impl-NDB" && \
+	cd ~/code/hops/hops-metadata-dal-impl-ndb && git fetch && \
+	exe_and_display_cyan "Hops-Gpu-Mgm" && \
+	cd ~/code/hops/hops-gpu-management && git fetch && \
+	exe_and_display_cyan "Hops-Gpu-Mgm-Impl" && \
+	cd ~/code/hops/hops-gpu-management-impl-nvidia && git fetch 
+	popd &> /dev/null 
+}
+
 hops-checkout-branch (){
 	if [ ! "$#" -eq 1 ]; then
 	    echo "Please enter new branch name"

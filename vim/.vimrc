@@ -343,6 +343,8 @@ nmap <silent> <leader>m :make <CR>
 
 " nerdtree file filter
 nnoremap <leader>f :call FilterFiles()<cr>
+
+nmap <silent> <leader>a :Gblame <CR>
 "---------------------------------------------------------
 "                    Leader Buffer Management                     
 "---------------------------------------------------------
