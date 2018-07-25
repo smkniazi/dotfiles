@@ -1,13 +1,10 @@
 #!/bin/bash
 
-if [ "$#" -lt 2 ]; then
-    echo "Usage command {search-term} [search-terms] {filename}"
+if [[ ( "$1" = "-i" && "$#" -lt 3 ) ||  ( "$#" -lt 2 ) ]]; then
+    echo "Usage command [-i] {search-term} [search-terms] {filename}"
     exit
 fi
 
-
-firstpart="grep --line-buffered --color=always \""
-secondpart=""
 
 #Color	Foreground	Background
 #Black	    30	               40
@@ -39,10 +36,22 @@ colors=(
 
 size=`expr $# - 1`
 fileIndex="$#"
+caseInsensitive=""
 
-for i in $(seq 1 $size);
+if [[ "$1" == "-i" ]]; then
+    index=2
+    caseInsensitive="-i"
+else
+    index=1
+fi
+
+firstpart="grep $caseInsensitive --line-buffered --color=always \""
+secondpart=""
+
+
+for i in $(seq $index $size);
 do
-    if [[ "$i" -ne 1 && "$i" -le $size ]]; then
+    if [[ "$i" -ne $index && "$i" -le $size ]]; then
         secondpart="$secondpart|"
         firstpart="$firstpart\|"
     fi
