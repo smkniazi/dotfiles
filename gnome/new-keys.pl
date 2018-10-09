@@ -78,7 +78,7 @@ org.gnome.desktop.wm.keybindings	switch-applications-backward	['<Shift><Super>Ta
 org.gnome.desktop.wm.keybindings	toggle-fullscreen	[]
 org.gnome.desktop.wm.keybindings	toggle-maximized	['<Super><Shift>f']
 org.gnome.desktop.wm.keybindings	show-desktop	        ['<Super>d']
-org.gnome.desktop.wm.keybindings	cycle-windows-backward	[]
+org.gnome.desktop.wm.keybindings	cycle-windows-backward	['<Super><Shift>g']
 org.gnome.desktop.wm.keybindings	cycle-windows	        ['<Super>g']
 org.gnome.desktop.wm.keybindings	minimize	        ['<Super>m']
 org.gnome.desktop.wm.keybindings	unmaximize	        ['<Super>Down', '<Alt>F5']
