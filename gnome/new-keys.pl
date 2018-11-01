@@ -33,7 +33,7 @@ custom	'swith-gnome-termianl'	'$HOME/.local/bin/run-or-raise.py gnome-terminal G
 custom	'swith-mlterm'	'$HOME/.local/bin/run-or-raise.py $HOME/.local/bin/ml Terminal'	'<Super>w'
 custom	'gnome-termianl'	'$HOME/.local/bin/x11-backend-launch gnome-terminal'	'<Primary><Alt>t'
 custom	'nautilus'	'$HOME/.local/bin/run-or-raise.py nautilus Nautilus '	'<Super>n'
-custom	'intellij'	'$HOME/.local/bin/run-or-raise.py $HOME/.local/bin/start-idea jetbrains-idea-ce'	'<Super>i'
+custom	'intellij'	'$HOME/.local/bin/run-or-raise.py $HOME/.local/bin/start-idea jetbrains-idea-ce jetbrains-idea' 	'<Super>i'
 custom	'lock-screen'	'$HOME/.local/bin/lock-screen'	'<Primary><Super><Alt>l'
 custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
 custom	'keepassxc'	'$HOME/.local/bin/run-or-raise.py keepassxc keepassxc'	'<Super>c'
