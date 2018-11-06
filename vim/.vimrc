@@ -30,7 +30,6 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'godlygeek/tabular'
 Plugin 'lervag/vimtex'
 Plugin 'timakro/vim-searchant'
-Plugin 'majutsushi/tagbar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/taglist.vim'
 "Plugin 'ervandew/supertab'
@@ -155,6 +154,7 @@ set showcmd
 hi StatusLine   ctermfg=0  ctermbg=YELLOW cterm=bold 
 hi StatusLineNC ctermfg=255  ctermbg=0 cterm=bold 
 
+"show function name in the status line. tagline plugin needed
 set statusline +=\ %{Tlist_Get_Tagname_By_Line()}
 
 " disable menu and tool bars for gvim
