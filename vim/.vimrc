@@ -32,6 +32,7 @@ Plugin 'lervag/vimtex'
 Plugin 'timakro/vim-searchant'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/taglist.vim'
 "Plugin 'ervandew/supertab'
 "Plugin 'miyakogi/conoline.vim'
 "Plugin 'bling/vim-bufferline'
@@ -153,6 +154,8 @@ set showcmd
 "Status line color
 hi StatusLine   ctermfg=0  ctermbg=YELLOW cterm=bold 
 hi StatusLineNC ctermfg=255  ctermbg=0 cterm=bold 
+
+set statusline +=\ %{Tlist_Get_Tagname_By_Line()}
 
 " disable menu and tool bars for gvim
 :set guioptions-=m  "remove menu bar
@@ -385,7 +388,6 @@ nmap <silent> <leader>c :set spell!<CR>
 
 " Auto correct mistakes
 iab filesystem file system
-
 
 "---------------------------------------------------------
 "                   Functions 
