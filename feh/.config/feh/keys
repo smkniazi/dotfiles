@@ -15,8 +15,8 @@
 #menu_select space Return
 
 ## Same for image navigation ...
-next_img l 
-prev_img h 
+next_img l j
+prev_img h k
 
 ## and image movement
 scroll_up   Up 
@@ -30,9 +30,9 @@ scroll_right Right
 #delete  d
 
 ## zooming
-zoom_in k 
-zoom_out j 
-zoom_default f
+zoom_in equal 
+zoom_out minus 
+zoom_default 0 f
 #zoom_fit s
 #
 #
