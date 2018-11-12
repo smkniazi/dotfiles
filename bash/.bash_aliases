@@ -244,6 +244,24 @@ hops-build-verbose (){
 	exe_and_display_cyan "TOTAL COMPILATION TIME IS : $runtime SEC(S)"
 }
 
+hops-rebase-master(){
+	pushd . &> /dev/null && \
+	start=`date +%s` && \
+	exe_and_display_cyan "Rebasing HOPS-METADATA-DAL" && \
+	    cd ~/code/hops/hops-metadata-dal && \
+	    exe_and_display_green "git rebase master" && \
+	exe_and_display_cyan "Rebasing HOPS-METADATA-DAL-IMPL-NDB" && \
+	    cd ~/code/hops/hops-metadata-dal-impl-ndb && \
+	    exe_and_display_green "git rebase master"  && \
+	exe_and_display_cyan "Rebasing HOPS" && \
+        cd ~/code/hops/hops && \
+        exe_and_display_green "git rebase master" && \
+	popd &> /dev/null  && \
+	end=`date +%s` && \
+	runtime=$((end-start)) && \
+	exe_and_display_cyan "TOTAL REBASE TIME IS : $runtime SEC(S)"
+}
+
 hops-create-branch(){
 	if [ ! "$#" -eq 1 ]; then
 	    echo "Please enter new branch name"
