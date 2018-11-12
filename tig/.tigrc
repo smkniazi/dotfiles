@@ -1,2 +1,5 @@
 bind generic D !git difftool -y %(commit)~1 %(commit) %(file)
 
+#vim keybindings
+source ~/.tigrc.vim
+
