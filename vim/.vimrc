@@ -32,6 +32,7 @@ Plugin 'lervag/vimtex'
 Plugin 'timakro/vim-searchant'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'NLKNguyen/papercolor-theme'
 "Plugin 'ervandew/supertab'
 "Plugin 'miyakogi/conoline.vim'
 "Plugin 'bling/vim-bufferline'
@@ -117,7 +118,14 @@ set notitle
 " colors
 set t_Co=256
 set background=light
-
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
+colorscheme PaperColor
 " true color
 "set termguicolors
 
