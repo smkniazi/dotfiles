@@ -120,11 +120,11 @@ gcp (){
 hops-push() {
 	pushd . &> /dev/null 
 	exe_and_display_cyan "Hops" && \
-	cd ~/code/hops/hops && git push  && \
+	cd ~/code/hops/hops && git push $@  && \
 	exe_and_display_cyan "Hops-Metadata-Dal" && \
-	cd ~/code/hops/hops-metadata-dal && git push && \
+	cd ~/code/hops/hops-metadata-dal && git push $@ && \
 	exe_and_display_cyan "Hops-Metadata-Dal-Impl-NDB" && \
-	cd ~/code/hops/hops-metadata-dal-impl-ndb && git push  
+	cd ~/code/hops/hops-metadata-dal-impl-ndb && git push $@ 
 	popd &> /dev/null 
 }
 
