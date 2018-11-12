@@ -1,2 +1,2 @@
-bind generic D !git difftool %(commit)~1 %(commit) %(file)
+bind generic D !git difftool -y %(commit)~1 %(commit) %(file)
 
