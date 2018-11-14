@@ -414,6 +414,6 @@ endfunction
 
 "au FileType tex syn region texStatement matchgroup=texStatement start="\\footnote{"  matchgroup=texStatement end="}" end="%stopzone\>"   contains=@texStatement 
 "highlight DiffAdd    cterm=bold ctermfg=0 ctermbg=15 gui=none guifg=bg guibg=Red
-highlight DiffDelete cterm=bold ctermfg=0 ctermbg=15 gui=none guifg=bg guibg=Red
-highlight DiffChange cterm=bold ctermfg=0 ctermbg=15 gui=none guifg=bg guibg=Red
-highlight DiffText   cterm=italic ctermfg=0 ctermbg=11 gui=none guifg=bg guibg=Red
+"highlight DiffDelete cterm=bold ctermfg=0 ctermbg=15 gui=none guifg=bg guibg=Red
+"highlight DiffChange cterm=bold ctermfg=0 ctermbg=15 gui=none guifg=bg guibg=Red
+"highlight DiffText   cterm=italic ctermfg=0 ctermbg=11 gui=none guifg=bg guibg=Red
