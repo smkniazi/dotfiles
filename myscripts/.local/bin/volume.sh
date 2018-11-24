@@ -1,11 +1,9 @@
 #!/bin/bash
 #example 10% , 10%+,  10%-
-#echo $1 >> /tmp/switcher.log
 
-echo "/usr/bin/amixer -q set Master $1  " >> /tmp/switcher.log
 /usr/bin/amixer -q set Master $1  
-
 #echo $1 >> /tmp/switcher.log
+
 curval=$(/usr/bin/amixer sget Master | grep "Front Left.*[0-9]*%" | grep -oh "[0-9]*%" | grep -oh "[0-9]*")
 pkill zenity
 message="Current volume level is $curval"
