@@ -6,8 +6,8 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " Line numbers "https://youtrack.jetbrains.com/issue/VIM-1187
 " install thirdpary plugin for relative number 
-"set relativenumber
-"set number
+set relativenumber
+set number
 
 " Ignore case when searching
 set ignorecase

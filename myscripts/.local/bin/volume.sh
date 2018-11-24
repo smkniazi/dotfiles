@@ -1,21 +1,18 @@
 #!/bin/bash
 #example 10% , 10%+,  10%-
 #echo $1 >> /tmp/switcher.log
-amixer -q set Master $1
+
+echo "/usr/bin/amixer -q set Master $1  " >> /tmp/switcher.log
+/usr/bin/amixer -q set Master $1  
+
 #echo $1 >> /tmp/switcher.log
-curval=$(amixer sget Master | grep "Front Left.*[0-9]*%" | grep -oh "[0-9]*%" | grep -oh "[0-9]*")
+curval=$(/usr/bin/amixer sget Master | grep "Front Left.*[0-9]*%" | grep -oh "[0-9]*%" | grep -oh "[0-9]*")
 pkill zenity
 message="Current volume level is $curval"
 #timeout 1 zenity --scale --text "<span size=\"xx-large\">$message</span>" --title "$message" --min-value 0 --max-value 100 --value $curval
 
-if [[ -e /tmp/message.pid ]]; then
-    pid=`cat /tmp/message.pid`
-    kill $pid
-fi
-
 timeout 0.5 zenity --info  --text "<span size=\"large\">Volume</span>\n<span size=\"xx-large\"><b>$curval%</b></span>" --title "$message" --ellipsize 
 #--width=80 --height=40
 
+exit 
 
-pid=$!
-echo $pid > /tmp/message.pid
