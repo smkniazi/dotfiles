@@ -200,7 +200,7 @@ hops-build-verbose (){
 	exe_and_display_cyan "Building Hops-metadata-dal-impl-ndb" && \
 	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml " && \
 	exe_and_display_cyan "Building Hops" && \
-	eval "mvn  $@ install -Dmaven.test.skip=true generate-sources -f ~/code/hops/hops/pom.xml " && \
+	eval "mvn  $@ install generate-sources -Dmaven.test.skip=true -f ~/code/hops/hops/pom.xml " && \
 	#temporarily change pwd
 	cd ~/code/hops/hops  && \
 	exe_and_display_cyan "Building Hops Tests" && \
