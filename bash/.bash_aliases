@@ -192,15 +192,15 @@ hops-build-verbose (){
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
 	exe_and_display_cyan "Building Hops-gpu-management" && \
-	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management/pom.xml " && \
+	eval "mvn  $@ install -DskipTests -f ~/code/hops/hops-gpu-management/pom.xml " && \
 	exe_and_display_cyan "Building Hops-gpu-management-impl-nvidia" && \
-	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml " && \
+	eval "mvn  $@ install -DskipTests -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml " && \
 	exe_and_display_cyan "Building Hops-metadata-dal" && \
-	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal/pom.xml " && \
+	eval "mvn  $@ install -DskipTests -f ~/code/hops/hops-metadata-dal/pom.xml " && \
 	exe_and_display_cyan "Building Hops-metadata-dal-impl-ndb" && \
-	eval "mvn  $@ install -Dmaven.test.skip=true -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml " && \
+	eval "mvn  $@ install -DskipTests -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml " && \
 	exe_and_display_cyan "Building Hops" && \
-	eval "mvn  $@ install generate-sources -Dmaven.test.skip=true -f ~/code/hops/hops/pom.xml " && \
+	eval "mvn  $@ install generate-sources -DskipTests -f ~/code/hops/hops/pom.xml " && \
 	#temporarily change pwd
 	cd ~/code/hops/hops  && \
 	exe_and_display_cyan "Building Hops Tests" && \
