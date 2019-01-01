@@ -26,8 +26,8 @@ if [ ! -f ~/.mlterm/vaafont ]; then
     ln -s ~/.mlterm/vaafont.template ~/.mlterm/vaafont
 fi
 
-#bash
-stow -t ~ bash
+#shell
+stow -t ~ shell
 grep "mybashrc" ~/.bashrc > /dev/null 2>&1 
 exists=$?
 if [ "$exists" -ne 0 ]; then
