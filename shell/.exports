@@ -1,15 +1,16 @@
-export PATH="$PATH:~/usr/bin"
-export PATH="$PATH:~/.local/bin"
-export PATH="$PATH:/usr/local/texlive/2017/bin/x86_64-linux"
+export PATH=$PATH:~/usr/bin
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/usr/bin/maven/bin
+export PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-linux
 
-export GOROOT="$GOROOT:~/usr/bin/go"
+export GOROOT=$GOROOT:~/usr/bin/go
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/usr/bin/protobuf/src/.libs"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/usr/bin/clusterj/"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protobuf/src/.libs
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/clusterj/
 
-export LIBNDBPATH="$LIBNDBPATH:~/usr/bin/clusterj"
+export LIBNDBPATH=$LIBNDBPATH:~/usr/bin/clusterj
 
-export JAVA_HOME="~/usr/bin/jdk"
+export JAVA_HOME=~/usr/bin/jdk/
 
-export M2_HOME="~/usr/bin/maven"
+export M2_HOME=~/usr/bin/maven
 export MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
