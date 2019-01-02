@@ -1,0 +1,14 @@
+source ~/.bash/.prompt
+source ~/.bash/.settings
+source ~/.bash/.functions
+source ~/.bash/.git-functions
+source ~/.bash/.maven-functions
+source ~/.bash/.path-functions
+source ~/.bash/.ssh-tunnel-functions
+source ~/.bash/.tmux-functions
+source ~/.bash/.work-related-functions
+
+
+source ~/.genericrc
+
+

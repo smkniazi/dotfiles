@@ -1,0 +1,17 @@
+#!/bin/bash
+#TMUX
+alias tmux="tmux -2"
+alias t="tmux -2"
+
+#tmux attach
+ta (){
+	tmux a -dt $@
+}
+
+tmux-pane-color(){
+  	tmux select-pane -t:.$1 -P "fg=$2,bg=$3"
+  	if [ "$?" -ne "0" ]; then
+  		echo "Usage command {pane-number} {fg-color} {bg-color} "
+  	fi
+}
+

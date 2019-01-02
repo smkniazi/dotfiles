@@ -1,0 +1,30 @@
+#!/bin/bash
+ssh-web-tunnel(){
+    # https://superuser.com/questions/62303/how-can-i-tunnel-all-of-my-network-traffic-through-ssh
+    # use -f to run the session in the background
+    #ssh -fND 127.0.0.1:8080 nzo@cloud1
+    ssh -ND 127.0.0.1:8080 nzo@cloud1
+}
+
+get-chrome(){
+    hash chromium-browser 2> /dev/null
+    if [ "$?" -eq "0" ]; then
+        eval "$1='chromium-browser'"
+        return
+    fi 
+
+    hash google-chrome 2> /dev/null
+    if [ "$?" -eq "0" ]; then
+        eval "$1='google-chrome'"
+        return
+    fi
+}
+
+chrome-with-proxy(){
+    browser=""
+    echo $browser
+    get-chrome browser
+    command="$browser https://www.iplocation.net/find-ip-address  --proxy-server=\"socks://localhost:8080\""
+    echo $command
+    eval "$command"
+}

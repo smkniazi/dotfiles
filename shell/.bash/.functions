@@ -1,0 +1,53 @@
+#!/bin/bash
+#cd
+alias cd1="cd .."
+alias cd2="cd ../.."
+alias cd3="cd ../../.."
+alias cd4="cd ../../../.."
+alias cd5="cd ../../../../.."
+alias cd6="cd ../../../../../.."
+alias cd7="cd ../../../../../../.."
+alias cd8="cd ../../../../../../../.."
+alias cd9="cd ../../../../../../../../.."
+
+#alias open="xdg-open"
+
+
+#ps
+alias psn='ps -o pid,comm,pcpu,rss,stat,etime,args -C ' # By name
+alias psp='ps -o pid,comm,pcpu,rss,stat,etime,args -p ' # By PID
+alias psg='ps -ef | grep -i '
+
+# VIM
+hash vimx 2> /dev/null
+if [ "$?" -eq "0" ]; then
+	alias vim=vimx
+	alias vi=vimx
+#else
+#	echo "You might want to install vimx for clipboard support"
+fi
+
+#find
+alias f="find . -iname "
+
+#grep
+alias grep="grep --color=auto"
+
+# Listing
+alias ls="ls -h -F --color=auto"
+alias ll="ls -hFl --color=auto"
+alias lt="ls -Fhaltr --color=auto"
+
+#find and open
+function fo(){
+	vim $(fzf)
+}
+
+#if [ -n "$DISPLAY" ]; then
+#   Xaxis=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
+#   if [ "$Xaxis" -gt "2000" ]; then
+#   	   alias mupdf="mupdf -r 400"
+#   fi
+#fi
+
+

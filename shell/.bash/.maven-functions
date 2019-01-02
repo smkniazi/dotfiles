@@ -1,0 +1,13 @@
+#!/bin/bash
+mi () {
+ 	eval	"mvn $@ install -Dmaven.test.skip=true "
+}
+
+mig () {
+	eval "mvn $@ install -Dmaven.test.skip=true generate-sources"
+}
+
+
+mtc () {
+   eval "mvn test-compile "
+}

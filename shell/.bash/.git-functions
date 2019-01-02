@@ -1,0 +1,26 @@
+#!/bin/bash
+alias gb="git branch"
+alias gd="git diff"
+alias gl="git log"
+alias gs="git status"
+alias gp="git pull"
+
+#git commit
+gc() {
+	if [ "$#" -ne 0 ]; then
+		git commit -am "$@" && git push
+	else
+		joke=""
+		#joke="$(wget 'http://api.icndb.com/jokes/random' -qO- | grep -Po '"joke":.*?[^\\]",' |  sed -e 's/\"//g' | sed -e 's/joke: //g' | sed -e 's/\"//g')"
+
+		joke="Auto generated commit msg.  $joke"
+		git commit -am "$joke" 
+	fi
+}
+
+gcp (){
+    set +x
+	gc "$@"
+	git push
+}
+
