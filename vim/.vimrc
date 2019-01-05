@@ -22,7 +22,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -85,11 +85,6 @@ let g:ycm_filetype_blacklist = {
       \ 'infolog' : 1,
       \ 'mail' : 1
       \}
-
-" disable syntactic for tex
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "passive_filetypes": ["tex"] }
 
 "---------------------------------------------------------
 "                    Themes                    
