@@ -256,7 +256,11 @@ set wildmode=longest,list,full
 set wildmenu
 
 " clipboard
-set clipboard=unnamedplus
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
 
 " not to break on words
 set formatoptions=1
