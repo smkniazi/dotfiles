@@ -1,0 +1,27 @@
+{
+  "themes": {
+    "simple": {
+      "commandName": "bold, underline",
+      "mainDescription": "bold",
+      "exampleDescription": "",
+      "exampleCode": "",
+      "exampleToken": "underline"
+    },
+    "base16": {
+      "commandName": "bold",
+      "mainDescription": "",
+      "exampleDescription": "green",
+      "exampleCode": "red",
+      "exampleToken": "cyan"
+    },
+    "ocean": {
+      "commandName": "bold, cyan",
+      "mainDescription": "",
+      "exampleDescription": "green",
+      "exampleCode": "cyan",
+      "exampleToken": "dim"
+    }
+  },
+  "theme": "base16",
+  "platform": "linux"
+}
