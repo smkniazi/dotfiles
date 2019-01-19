@@ -1,4 +1,5 @@
 export PATH=$PATH:~/usr/bin
+export PATH=$PATH:~/usr/bin/ssh
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/usr/bin/maven/bin
 export PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-linux
