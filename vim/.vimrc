@@ -129,10 +129,16 @@ hi SpellBad cterm=underline,italic ctermbg=none
 hi SpellRare cterm=underline,italic ctermbg=none
 hi SpellLocal cterm=underline,italic ctermbg=none
 hi SpellCap cterm=underline,italic ctermbg=none
-hi Comment  cterm=italic ctermbg=none ctermfg=grey
 hi LineNr ctermfg=grey
 hi CursorLineNr cterm=bold ctermfg=grey
 hi ColorColumn ctermbg=15
+
+hi Comment  cterm=italic ctermbg=none ctermfg=grey
+if system('uname -s') == "Darwin\n" "iterm fix to show italics
+    let &t_ZH="\e[3m"
+    let &t_ZR="\e[23m"
+endif
+
 
 "latex highlights
 source ~/.vimrc-latex-hl
@@ -415,3 +421,4 @@ endfunction
 "highlight DiffDelete cterm=bold ctermfg=0 ctermbg=15 gui=none guifg=bg guibg=Red
 "highlight DiffChange cterm=bold ctermfg=0 ctermbg=15 gui=none guifg=bg guibg=Red
 "highlight DiffText   cterm=italic ctermfg=0 ctermbg=11 gui=none guifg=bg guibg=Red
+"
