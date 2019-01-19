@@ -134,10 +134,9 @@ hi CursorLineNr cterm=bold ctermfg=grey
 hi ColorColumn ctermbg=15
 
 hi Comment  cterm=italic ctermbg=none ctermfg=grey
-if system('uname -s') == "Darwin\n" "iterm fix to show italics
-    let &t_ZH="\e[3m"
-    let &t_ZR="\e[23m"
-endif
+" Need the following two lines for iterm
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 
 
 "latex highlights
