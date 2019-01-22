@@ -31,6 +31,7 @@
 #		 cmd = meld $LOCAL $MERGED $REMOTE
 
 [diff]
-	        tool = vimdiff
+            tool = vimdiff
+            renameLimit = 10000
 [branch]
 	        autosetuprebase = always
