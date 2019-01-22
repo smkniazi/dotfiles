@@ -1,5 +1,15 @@
 bind generic D !tigdiff.sh %(commit) %(file)
 
+set main-view-id = yes
+set main-view-id-width = 5
+
+set main-view-date = custom
+set main-view-date-format = "%Y-%m-%d"
+
+set main-view-author-width = 8
+
+set split-view-width = 65%
+
 #vim keybindings
 source ~/.tigrc.vim
 
