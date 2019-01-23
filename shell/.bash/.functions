@@ -52,6 +52,6 @@ function fo(){
 
 # for taking notes
 function n() {
-    vim ~/.mynotes.txt
+    vim ~/.mynotes.md
 }
     
