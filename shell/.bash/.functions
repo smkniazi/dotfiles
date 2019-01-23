@@ -50,4 +50,8 @@ function fo(){
 #   fi
 #fi
 
-
+# for taking notes
+function n() {
+    vim ~/.mynotes.txt
+}
+    

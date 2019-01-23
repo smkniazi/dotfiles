@@ -21,6 +21,7 @@ stow -t ~ -d  intellij -S ideavim
 stow -t ~ ctags
 stow -t ~ tig
 stow -t ~ tldr
+stow -t ~ notes
 
 #set mlterm vaafont file
 if [ ! -f ~/.mlterm/vaafont ]; then
