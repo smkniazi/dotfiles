@@ -1,3 +1,6 @@
 [submodule "xkb/xkb-vim-like-custom-keyboard"]
 	path = xkb/xkb-vim-like-custom-keyboard
 	url = https://github.com/smkniazi/xkb-vim-like-custom-keyboard
+[submodule "9a9a81827dfe02aa2ff21d0e132eeb00"]
+	path = 9a9a81827dfe02aa2ff21d0e132eeb00
+	url = https://gist.github.com/9a9a81827dfe02aa2ff21d0e132eeb00.git
