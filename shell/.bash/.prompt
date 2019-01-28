@@ -29,6 +29,6 @@ __prompt_command() {
         fi
     fi
    
-    PS1+="${Blu}\u@\h${RCol} ${Gre}\W${RCol}${Red}$branch${RCol} \$ "
+    PS1+="${Blu}\u@\h${RCol} ${Gre}\W${RCol}${Pur}$branch${RCol} \$ "
     OLD_CMD="$CUR_CMD"
 }
