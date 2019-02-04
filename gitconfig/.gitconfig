@@ -9,7 +9,7 @@
 	default = simple
 
 [alias]
-    log1 = log --color --graph --date=short --pretty=format:'%Cred%h%Creset %Cgreen[%ad %Cgreen%cr] %C(bold blue)%an%Creset %s' --abbrev-commit --
+    log1 = log --color --graph --date=short --pretty=format:'%Cred%h%Creset %Cgreen[%ad %Cgreen%cr] %C(bold blue)%an%Creset %s \n' --abbrev-commit --
 
 [color]
 	ui = true
