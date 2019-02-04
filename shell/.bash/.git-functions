@@ -1,7 +1,7 @@
 #!/bin/bash
 alias gb="git branch"
 alias gd="git diff"
-alias gl="git log2"
+alias gl="git log1"
 alias gs="git status"
 alias gp="git pull"
 
