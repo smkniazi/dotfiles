@@ -21,7 +21,8 @@ Plugin 'dpelle/vim-LanguageTool'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -83,7 +84,8 @@ let g:ycm_filetype_blacklist = {
       \ 'vimwiki' : 1,
       \ 'pandoc' : 1,
       \ 'infolog' : 1,
-      \ 'mail' : 1
+      \ 'mail' : 1,
+      \ 'java' : 1
       \}
 
 "---------------------------------------------------------
