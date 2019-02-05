@@ -1,7 +1,8 @@
 # This is Git's per-user configuration file.
 [core]
 	editor = vim
-	pager = less -S 
+    #pager = less -S 
+    pager = diff-so-fancy | less -S --tabs=4 -RFX
 [user]
 	name = Salman Niazi
 	email = smkniazi@kth.se
