@@ -323,6 +323,10 @@ nnoremap <M-k> :wincmd k<CR>
 " comment
 " C-_ is actuall C-/ because C-/ generate C-_
 nnoremap <C-_> mz0i//<Esc>j  
+
+
+"Quit All
+nnoremap QA :qa<CR>
 "---------------------------------------------------------
 "                    Leader                     
 "---------------------------------------------------------

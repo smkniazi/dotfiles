@@ -1,5 +1,6 @@
 bind generic D !tigdiff.sh %(commit) %(file)
 bind generic e !tigview.sh %(commit) %(file)
+bind main C !git difftool -d %(commit)
 
 set main-view-id = yes
 set main-view-id-width = 5
@@ -13,4 +14,4 @@ set split-view-width = 65%
 
 #vim keybindings
 source ~/.tigrc.vim
-
+set diff-view	= line-number:yes,interval=5 text:yes,commit-title-overflow=no
