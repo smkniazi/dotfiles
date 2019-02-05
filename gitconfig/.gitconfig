@@ -1,17 +1,12 @@
-# This is Git's per-user configuration file.
 [core]
 	editor = vim
     #pager = less -S 
-    pager = diff-so-fancy | less -S --tabs=4 -RFX
+    #pager = diff-so-fancy | less -S --tabs=4 -RFX
 [user]
 	name = Salman Niazi
 	email = smkniazi@kth.se
 [push]
 	default = simple
-
-[alias]
-    log1 = log --color --date=short --pretty=format:'%Cred%h%Creset %Cgreen[%ad %Cgreen%cr] %C(bold blue)%<(12,trunc)%aN%Creset %s \n' --abbrev-commit --
-    #%<(500,trunc)%s
 
 [color]
 	ui = true
@@ -24,12 +19,7 @@
 	decorate = auto
 	showbranch = auto
 [merge]
-#	        tool = mydiff
-	        tool = vimdiff
-
-#[mergetool "mydiff"]
-#		 #cmd = meld $LOCAL $BASE $REMOTE
-#		 cmd = meld $LOCAL $MERGED $REMOTE
+	tool = vimdiff
 
 [diff]
     tool = vimdiff
