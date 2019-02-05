@@ -433,6 +433,6 @@ highlight DiffDelete     cterm=none ctermfg=15 ctermbg=none
 "changed lines
 highlight DiffChange     cterm=none ctermfg=none ctermbg=none 
 "changed text
-highlight DiffText       cterm=none ctermfg=1 ctermbg=none 
+highlight DiffText       cterm=bold ctermfg=1 ctermbg=none 
 autocmd BufEnter * if &diff | set syntax=off | endif
 
