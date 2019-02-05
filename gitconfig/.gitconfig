@@ -31,10 +31,11 @@
 #		 cmd = meld $LOCAL $MERGED $REMOTE
 
 [diff]
-            tool = vimdiff
-            renameLimit = 10000
+    tool = vimdiff
+    guitool = meld
+    renameLimit = 10000
 [branch]
-	        autosetuprebase = always
+    autosetuprebase = always
 [diff-so-fancy]
 	stripLeadingSymbols = false
 	markEmptyLines = false

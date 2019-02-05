@@ -34,6 +34,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'rickhowe/diffchar.vim'
 "Plugin 'ervandew/supertab'
 "Plugin 'miyakogi/conoline.vim'
 "Plugin 'bling/vim-bufferline'
@@ -419,8 +420,15 @@ function! FilterFiles()
 endfunction
 
 "au FileType tex syn region texStatement matchgroup=texStatement start="\\footnote{"  matchgroup=texStatement end="}" end="%stopzone\>"   contains=@texStatement 
-"highlight DiffAdd    cterm=bold ctermfg=0 ctermbg=15 gui=none guifg=bg guibg=Red
-"highlight DiffDelete cterm=bold ctermfg=0 ctermbg=15 gui=none guifg=bg guibg=Red
-"highlight DiffChange cterm=bold ctermfg=0 ctermbg=15 gui=none guifg=bg guibg=Red
-"highlight DiffText   cterm=italic ctermfg=0 ctermbg=11 gui=none guifg=bg guibg=Red
-"
+
+"Making diff more readable
+"added lines
+highlight DiffAdd        cterm=none ctermfg=2 ctermbg=none 
+"deleted lines
+highlight DiffDelete     cterm=none ctermfg=15 ctermbg=none 
+"changed lines
+highlight DiffChange     cterm=none ctermfg=none ctermbg=none 
+"changed text
+highlight DiffText       cterm=none ctermfg=1 ctermbg=none 
+autocmd BufEnter * if &diff | set syntax=off | endif
+
