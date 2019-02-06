@@ -28,6 +28,7 @@
 	algorithm = patience
 [branch]
     autosetuprebase = always
-[diff-so-fancy]
-	stripLeadingSymbols = false
-	markEmptyLines = false
+[difftool]
+	trustExitCode = true
+[mergetool]
+	trustExitCode = true
