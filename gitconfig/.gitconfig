@@ -25,7 +25,7 @@
     tool = vimdiff
     guitool = meld
     renameLimit = 10000
-	algorithm = patience
+	algorithm = histogram
 [branch]
     autosetuprebase = always
 [diff-so-fancy]

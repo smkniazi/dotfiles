@@ -35,6 +35,7 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'rickhowe/diffchar.vim'
+Plugin 'chrisbra/vim-diff-enhanced'
 "Plugin 'ervandew/supertab'
 "Plugin 'miyakogi/conoline.vim'
 "Plugin 'bling/vim-bufferline'
@@ -435,4 +436,9 @@ highlight DiffChange     cterm=bold ctermfg=none ctermbg=none
 "changed text
 highlight DiffText       cterm=bold ctermfg=1 ctermbg=none 
 autocmd BufEnter * if &diff | set syntax=off | endif
+
+" started In Diff-Mode set diffexpr (plugin not loaded yet)
+if &diff
+    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+endif
 
