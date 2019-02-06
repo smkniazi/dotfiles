@@ -427,11 +427,11 @@ endfunction
 
 "Making diff more readable
 "added lines
-highlight DiffAdd        cterm=none ctermfg=2 ctermbg=none 
+highlight DiffAdd        cterm=bold ctermfg=2 ctermbg=none 
 "deleted lines
-highlight DiffDelete     cterm=none ctermfg=15 ctermbg=none 
+highlight DiffDelete     cterm=bold ctermfg=15 ctermbg=none 
 "changed lines
-highlight DiffChange     cterm=none ctermfg=none ctermbg=none 
+highlight DiffChange     cterm=bold ctermfg=none ctermbg=none 
 "changed text
 highlight DiffText       cterm=bold ctermfg=1 ctermbg=none 
 autocmd BufEnter * if &diff | set syntax=off | endif
