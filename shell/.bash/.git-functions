@@ -1,7 +1,7 @@
 #!/bin/bash
 alias gb="git branch"
 alias gd="PAGER='diff-so-fancy | less --tabs=4 -RFX' git diff"
-alias gl="PAGER='less -S' git log --color --date=short --pretty=format:'%Cred%h%Creset %Cgreen[%ad %Cgreen%cr] %C(bold blue)%<(12,trunc)%aN%Creset %s ' --abbrev-commit --"
+alias gl="PAGER='less -S' git log --color --date=short --pretty=format:'%Cred%h%Creset %Cgreen[%ad %Cgreen%cr] %C(bold blue)%<(12,trunc)%aN%Creset %s %n ' --abbrev-commit --"
 alias gs="git status"
 alias gp="git pull"
 
