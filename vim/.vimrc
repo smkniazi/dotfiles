@@ -132,9 +132,12 @@ hi SpellBad cterm=underline,italic ctermbg=none
 hi SpellRare cterm=underline,italic ctermbg=none
 hi SpellLocal cterm=underline,italic ctermbg=none
 hi SpellCap cterm=underline,italic ctermbg=none
+
+"line highlight
 hi LineNr ctermfg=grey
-hi CursorLineNr cterm=bold ctermfg=grey
-hi ColorColumn ctermbg=15
+"set cursorline
+"hi cursorline cterm=none
+hi cursorlinenr cterm=bold ctermfg=black ctermbg=none
 
 hi Comment  cterm=italic ctermbg=none ctermfg=grey
 " Need the following two lines for iterm
