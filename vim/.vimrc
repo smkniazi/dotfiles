@@ -430,13 +430,13 @@ endfunction
 
 "Making diff more readable
 "added lines
-highlight DiffAdd        cterm=bold ctermfg=2 ctermbg=none 
+highlight DiffAdd        cterm=bold ctermfg=2 ctermbg=15 
 "deleted lines
 highlight DiffDelete     cterm=bold ctermfg=15 ctermbg=none 
 "changed lines
-highlight DiffChange     cterm=bold ctermfg=none ctermbg=none 
+highlight DiffChange     cterm=bold ctermfg=none ctermbg=15 
 "changed text
-highlight DiffText       cterm=bold ctermfg=1 ctermbg=none 
+highlight DiffText       cterm=bold ctermfg=1 ctermbg=15 
 autocmd BufEnter * if &diff | set syntax=off | endif
 
 " started In Diff-Mode set diffexpr (plugin not loaded yet)
