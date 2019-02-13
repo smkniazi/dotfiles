@@ -273,6 +273,9 @@ else
   set clipboard=unnamedplus "Linux
 endif
 
+"prevent vim from clearing clipboard on exit
+autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
+
 " not to break on words
 set formatoptions=1
 set linebreak
