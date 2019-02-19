@@ -432,6 +432,7 @@ endfunction
 "au FileType tex syn region texStatement matchgroup=texStatement start="\\footnote{"  matchgroup=texStatement end="}" end="%stopzone\>"   contains=@texStatement 
 
 "Making diff more readable
+set diffopt+=iwhite
 "added lines
 highlight DiffAdd        cterm=bold ctermfg=2 ctermbg=15 
 "deleted lines
