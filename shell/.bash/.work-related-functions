@@ -273,6 +273,9 @@ ndb-ssh-vm(){
 }
 
 ndb-mysql(){
-    mycli -uhop -p -hlocalhost -P3306 
+   ssh -p 2222 -t salman@localhost "/home/salman/.mysql/ndb/scripts/mysql"
 }
 
+ndb-mycli(){
+   ssh -p 2222 -t salman@localhost "/home/salman/.mysql/ndb/scripts/mycli"
+}
