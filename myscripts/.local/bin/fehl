@@ -20,6 +20,6 @@ fi
 echo "DPATH = $DPATH"
 echo "FPATH = $FPATH" 
 #feh --auto-rotate -Z -F --start-at $FPATH $DPATH
-feh --action3 "gvfs-trash '%f'" --action2 ";readlink -f %F | xargs  gsettings set org.gnome.desktop.background picture-uri" --action1 ";readlink -f %F | xargs -i cp {} ~" --auto-rotate -Z -F --start-at $FPATH $DPATH 
+feh --action3 "trash-put '%f'" --action2 ";readlink -f %F | xargs  gsettings set org.gnome.desktop.background picture-uri" --action1 ";readlink -f %F | xargs -i cp {} ~" --auto-rotate -Z -F --start-at $FPATH $DPATH 
 
 
