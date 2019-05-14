@@ -36,6 +36,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'powerman/vim-plugin-AnsiEsc'
+Plugin 'vim-scripts/ZoomWin'
 "Plugin 'ervandew/supertab'
 "Plugin 'miyakogi/conoline.vim'
 "Plugin 'bling/vim-bufferline'
@@ -311,10 +312,12 @@ execute "set <M-H>=\eH"
 execute "set <M-J>=\eJ"
 execute "set <M-K>=\eK"
 execute "set <M-L>=\eL"
+execute "set <M-F>=\eF"
 nnoremap <M-L> <C-w>>
 nnoremap <M-H> <C-w><
 nnoremap <M-J> <C-w>+
 nnoremap <M-K> <C-w>-
+nnoremap <M-F> :ZoomWin<CR>
 
 " moving between splits
 execute "set <M-h>=\eh"
