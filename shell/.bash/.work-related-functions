@@ -181,6 +181,31 @@ hops-rebase-master(){
 	exe_and_display_cyan "TOTAL REBASE TIME IS : $runtime SEC(S)"
 }
 
+hops-delete-branch(){
+	if [ ! "$#" -eq 1 ]; then
+	    echo "Please enter branch name"
+	    return 1
+    fi
+	pushd . &> /dev/null && \
+	start=`date +%s` && \
+	exe_and_display_cyan "DELETING BRANCH $1 IN HOPS-METADATA-DAL" && \
+        cd ~/code/hops/hops-metadata-dal && \
+        exe_and_display_green "git branch -D $1" && \
+        exe_and_display_green "git push --delete origin  $1" && \
+	exe_and_display_cyan "DELETING BRANCH $1 HOPS-METADATA-DAL-IMPL-NDB" && \
+        cd ~/code/hops/hops-metadata-dal-impl-ndb && \
+        exe_and_display_green "git branch -D $1" && \
+        exe_and_display_green "git push --delete origin  $1" && \
+	exe_and_display_cyan "DELETING BRANCH $1 HOPS" && \
+        cd ~/code/hops/hops && \
+        exe_and_display_green "git branch -D $1" && \
+        exe_and_display_green "git push --delete origin  $1" && \
+	popd &> /dev/null  && \
+	end=`date +%s` && \
+	runtime=$((end-start)) && \
+	exe_and_display_cyan "TOTAL TIME IS : $runtime SEC(S)"
+}
+
 hops-create-branch(){
 	if [ ! "$#" -eq 1 ]; then
 	    echo "Please enter new branch name"
