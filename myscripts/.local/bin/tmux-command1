@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#tmux set-buffer $(cat ~/file) 
+tmux send-keys -t 1 "su hdp" Enter
+sleep 0.2
+tmux send-keys -t 1 $(cat ~/.local/bin/.file | base64 -d)  Enter
+sleep 0.2
+tmux send-keys -t 1 "sudo su"  Enter
+sleep 0.2
+tmux send-keys -t 1 $(cat ~/.local/bin/.file | base64 -d)  Enter
+
