@@ -26,16 +26,16 @@ gcp (){
 
 gb (){
 refs="refs/heads refs/remotes/origin"
-number=50
+lines=" | tail -20 "
 if [[ -n $1 ]]; then 
     if [[ "$1" = "all" ]]; then
         refs=""
+        lines=""
     else 
         echo "Usage gb [all]"
         exit 1
     fi
 fi
-#echo $refs
-#exit 0
-git for-each-ref  --color=always --sort=committerdate  $refs --format=' %(color:yellow)%(refname:short)%(color:reset),|,%(color:green)%(committerdate:relative)%(color:reset),|,%(contents:subject)'  |  tac |  column -s, -t | less -r -S
+command="git for-each-ref  --color=always --sort=committerdate  $refs --format=' %(color:yellow)%(refname:short)%(color:reset),|,%(color:green)%(committerdate:relative)%(color:reset),|,%(contents:subject)'  $lines | tac |  column -s, -t | less -r -S --quit-if-one-screen"
+eval $command
 }
