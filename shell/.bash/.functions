@@ -12,6 +12,7 @@ alias cd9="cd ../../../../../../../../.."
 
 #alias open="xdg-open"
 
+alias ag="ag --hidden"
 
 #ps
 alias psn='ps -o pid,comm,pcpu,rss,stat,etime,args -C ' # By name

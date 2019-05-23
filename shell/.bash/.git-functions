@@ -37,5 +37,6 @@ if [[ -n $1 ]]; then
     fi
 fi
 command="git for-each-ref  --color=always --sort=committerdate  $refs --format=' %(color:yellow)%(refname:short)%(color:reset),|,%(color:green)%(committerdate:relative)%(color:reset),|,%(contents:subject)'  $lines | tac |  column -s, -t | less -r -S --quit-if-one-screen"
+echo $command
 eval $command
 }
