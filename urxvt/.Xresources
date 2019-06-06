@@ -1,0 +1,90 @@
+! xrdb -load ~/.Xresources
+!
+
+!Xft.dpi: 157
+!https://awesome.naquadah.org/wiki/Better_Font_Rendering
+!Xft.dpi: 96
+Xft.rgba: rgb
+Xft.hinting: false
+Xft.antialias: true
+Xft.hintstyle: hintnone
+
+! Fonts
+URxvt.utf8: true
+URxvt.locale: true
+URxvt.utf8Title: true
+URxvt.renderFont: true
+URxvt.preeditType: Root
+URxvt.allow_bold: on
+URxvt.allow_italic: on
+URxvt.letterSpace: -1
+
+#define NormalSize 32 !font-size ext does not like variables
+#define FontName Ubuntu Mono 
+URxvt.font: xft:FontName:pixelsize=32
+URxvt.boldFont: xft:FontName:Bold:pixelsize=32
+URxvt.italicFont: xft:FontName:Oblique:pixelsize=32
+URxvt.boldItalicFont: xft:FontName:Bold Oblique:pixelsize=32
+
+! Cursor
+Xcursor.theme : Vanilla-DMZ-AA
+URxvt.pointerColor: red
+URxvt.pointerColorBackground: black
+URxvt.cursorColor: #ff4500
+URxvt.cursorBlink: true
+
+! general settings
+!URxvt*termName: rxvt-unicode-256color 
+URxvt.loginShell: true
+URxvt.geometry: 120x40
+URxvt.saveLines: 500
+URxvt.scrollBar: false
+URxvt.bellIsUrgent: true
+URxvt.visualBell: true
+URxvt.internalBorder:  4
+URxvt.fading:  35
+URxvt.fadeColor: grey 
+URxvt.dynamicColors: on
+
+! trim trailing spaces
+URxvt.trimSelection: true
+
+! fix alt-key inputting
+URxvt.eightBitInput: false
+URxvt.metaSendsEscape: true
+
+! copy, paste and search
+! install xclip and 
+! https://github.com/muennich/urxvt-perls/
+URxvt.perl-lib: {USER}/.urxvt/ext
+URxvt.perl-ext-common: default,matcher,font-size,keyboard-select
+
+! keyboad selection
+URxvt.keyboard-select.clipboard: true
+URxvt.keysym.M-C-v: perl:keyboard-select:activate
+URxvt.keysym.M-C-f: perl:keyboard-select:search
+
+! cut copy paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! URLS
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.keysym.M-Delete:    matcher:list
+URxvt*colorUL:            blue 
+URxvt*underlineColor:     blue
+
+!https://incenp.org/notes/2013/urxvt-keyboard-problems.html
+!for home and end keys to work. uncomment it and put it in the .inputrc
+!"\e[1~": beginning-of-line
+!"\e[4~": end-of-line
+!"\e[7~": beginning-of-line
+!"\e[8~": end-of-line
+!"\eOH": beginning-of-line
+!"\eOF": end-of-line
+!"\e[H": beginning-of-line
+!"\e[F": end-of-line
+
+#include "/home/salman/.Xresources-themes/.Xresources.tango"
+
