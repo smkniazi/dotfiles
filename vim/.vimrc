@@ -37,6 +37,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/ZoomWin'
+Plugin 'fcpg/vim-osc52'
 "Plugin 'ervandew/supertab'
 "Plugin 'miyakogi/conoline.vim'
 "Plugin 'bling/vim-bufferline'
@@ -451,4 +452,6 @@ autocmd BufEnter * if &diff | set syntax=off | endif
 if &diff
     let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 endif
+
+nnoremap <leader>y :call SendViaOSC52(getreg('"'))<cr>
 
