@@ -14,21 +14,16 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'takac/vim-hardtime'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'dpelle/vim-LanguageTool'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf'
-Plugin 'tmhedberg/SimpylFold'
 "Plugin 'w0rp/ale'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-unimpaired'
 Plugin 'godlygeek/tabular'
-Plugin 'lervag/vimtex'
 Plugin 'timakro/vim-searchant'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/taglist.vim'
@@ -37,10 +32,12 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/ZoomWin'
-Plugin 'fcpg/vim-osc52'
+"Plugin 'lervag/vimtex'
+"Plugin 'tpope/vim-unimpaired'
+"Plugin 'tmhedberg/SimpylFold'
+"Plugin 'dpelle/vim-LanguageTool'
+"Plugin 'takac/vim-hardtime'
 "Plugin 'ervandew/supertab'
-"Plugin 'miyakogi/conoline.vim'
-"Plugin 'bling/vim-bufferline'
 "Plugin 'shime/vim-livedown'
 "Plugin 'chrisbra/csv.vim'
 
@@ -453,5 +450,4 @@ if &diff
     let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 endif
 
-nnoremap <leader>y :call SendViaOSC52(getreg('"'))<cr>
 
