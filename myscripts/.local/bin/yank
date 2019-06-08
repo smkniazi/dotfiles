@@ -1,6 +1,6 @@
 #!/bin/bash
-
-set -eu
+#set -eu
+#set -e
 
 is_app_installed() {
   type "$1" &>/dev/null
@@ -24,7 +24,9 @@ fi
 # if copy backend is resolved, copy and exit
 if [ -n "$copy_backend" ]; then
   printf "$buf" | eval "$copy_backend" 
-  tmux display-message "Copied to system clipboard"
+  if [ -n $TMUX ];  then
+    tmux display-message "Copied to system clipboard"
+  fi
   exit;
 fi
 
@@ -50,10 +52,22 @@ esc="\033]52;c;$( printf %s "$buf" | head -c $maxlen | base64 | tr -d '\r\n' )\a
 # resolve target terminal to send escape sequence
 # if we are on remote machine, send directly to SSH_TTY to transport escape sequence
 # to terminal on local machine, so data lands in clipboard on our local machine
-pane_active_tty=$(tmux list-panes -F "#{pane_active} #{pane_tty}" | awk '$1=="1" { print $2 }')
-target_tty="${SSH_TTY:-$pane_active_tty}"
+if [ ! -z $SSH_TTY ]; then
+  target_tty=$SSH_TTY
+else 
+  if [ ! -z $TMUX ]; then
+    target_tty=$(tmux list-panes -F "#{pane_active} #{pane_tty}" | awk '$1=="1" { print $2 }')
+  else
+    target_tty=$(ps hotty $$) 
+    target_tty="/dev/$target_tty"
+  fi
+fi
 
 printf "$esc" > "$target_tty"
 
-tmux display-message "Copied to system clipboard tty -> $target_tty"
+if [ -n $TMUX ]; then
+  tmux display-message "Copied to system clipboard tty -> $target_tty"
+else 
+  echo "Yanked to $target_tty"
+fi
 
