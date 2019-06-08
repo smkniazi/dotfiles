@@ -57,12 +57,11 @@ URxvt.metaSendsEscape: true
 ! install xclip and 
 ! https://github.com/muennich/urxvt-perls/
 URxvt.perl-lib: {USER}/.urxvt/ext
-URxvt.perl-ext-common: default,matcher,font-size,keyboard-select,osc52
+URxvt.perl-ext-common: default,matcher,font-size,keyboard-select,osc52,fullscreen
 
 ! keyboad selection
 URxvt.keyboard-select.clipboard: true
 URxvt.keysym.M-C-v: perl:keyboard-select:activate
-URxvt.keysym.M-C-f: perl:keyboard-select:search
 
 ! cut copy paste
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
@@ -74,6 +73,9 @@ URxvt.matcher.button: 1
 URxvt.keysym.M-Delete:    matcher:list
 URxvt*colorUL:            blue 
 URxvt*underlineColor:     blue
+
+! Full screen toggle
+URxvt.keysym.M-Return: perl:fullscreen:switch
 
 !https://incenp.org/notes/2013/urxvt-keyboard-problems.html
 !for home and end keys to work. uncomment it and put it in the .inputrc
