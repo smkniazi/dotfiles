@@ -453,6 +453,6 @@ endif
 vnoremap <leader>y "zy:call Osc52Yank()<cr>
 function! Osc52Yank()
      let buffer=@z
-     execute  "!echo ".shellescape(buffer, 1)." | yank"
+     execute  "!echo -ne ".shellescape(buffer, 1)." | yank"
 endfunction
 
