@@ -39,10 +39,11 @@ URxvt.loginShell: true
 URxvt.geometry: 120x40
 URxvt.saveLines: 500
 URxvt.scrollBar: false
-URxvt.bellIsUrgent: true
-URxvt.visualBell: true
-URxvt.internalBorder:  4
-URxvt.fading:  35
+URxvt.urgentOnBell: true
+URxvt.visualBell: false
+URxvt.internalBorder:  2
+
+URxvt.fading:  30
 URxvt.fadeColor: grey 
 URxvt.dynamicColors: on
 
@@ -71,7 +72,7 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.keysym.M-Delete:    matcher:list
-URxvt*colorUL:            blue 
+URxvt*colorUL:            blue
 URxvt*underlineColor:     blue
 
 ! Full screen toggle
