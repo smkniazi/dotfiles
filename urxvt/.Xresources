@@ -42,6 +42,7 @@ URxvt.scrollBar: false
 URxvt.urgentOnBell: true
 URxvt.visualBell: false
 URxvt.internalBorder:  2
+URxvt.depth: 24
 
 URxvt.fading:  30
 URxvt.fadeColor: grey 
