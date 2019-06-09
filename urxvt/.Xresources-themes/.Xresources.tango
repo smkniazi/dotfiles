@@ -1,8 +1,5 @@
 ! tango color scheme
-!xterm*background: #181818
-!xterm*background: #300A24 
 xterm*background: black
-!xterm*background: #001900
 xterm*foreground: white
 
 !xterm*color0: #1e1e1e

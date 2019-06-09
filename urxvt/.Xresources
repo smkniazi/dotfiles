@@ -90,5 +90,14 @@ URxvt.keysym.M-Return: perl:fullscreen:switch
 !"\e[H": beginning-of-line
 !"\e[F": end-of-line
 
+
 #include "/home/salman/.Xresources-themes/.Xresources.tango"
+
+! True Transparency
+!URxvt.depth:32
+!URxvt.background: rgba:FFFF/FFFF/FFFF/0c00
+
+! Backgroud Texture 
+URxvt.backgroundPixmap: /home/salman/Pictures/white.png; style=tiled
+
 
