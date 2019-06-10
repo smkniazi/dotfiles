@@ -66,6 +66,9 @@ URxvt.keyboard-select.clipboard: true
 URxvt.keysym.M-C-v: perl:keyboard-select:activate
 
 ! cut copy paste
+! disable picture insert mode
+URxvt.iso14755: false 
+URxvt.iso14755_52: false
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
