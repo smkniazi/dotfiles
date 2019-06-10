@@ -42,7 +42,7 @@ URxvt.scrollBar: false
 URxvt.urgentOnBell: true
 URxvt.visualBell: false
 URxvt.internalBorder:  2
-URxvt.depth: 24
+URxvt.depth: 32
 
 URxvt.fading:  30
 URxvt.fadeColor: grey 
@@ -97,9 +97,8 @@ URxvt.keysym.M-Return: perl:fullscreen:switch
 #include "/home/salman/.Xresources-themes/.Xresources.tango"
 
 ! True Transparency
-!URxvt.depth:32
-!URxvt.background: rgba:FFFF/FFFF/FFFF/0c00
-
+!URxvt.background: rgba:FFFF/FFFF/FFFF/F000
+ 
 ! Backgroud Texture 
 URxvt.backgroundPixmap: /home/salman/Pictures/white.png; style=tiled
 
