@@ -1,6 +1,6 @@
 ! PaperColor Theme
-URxvt.foreground: #4D4D4C
-URxvt.background: #E7E8EB
+URxvt.foreground: #000000
+URxvt.background: #FFFFFF
 ! black
 URxvt.color0: #EDEDED
 URxvt.color8: #969694
