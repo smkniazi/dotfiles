@@ -94,7 +94,7 @@ URxvt.keysym.M-Return: perl:fullscreen:switch
 !"\e[F": end-of-line
 
 
-#include "/home/salman/.Xresources-themes/.Xresources.tango"
+#include "/home/salman/.Xresources-themes/.Xresources.papercolor"
 
 ! True Transparency
 !URxvt.background: rgba:FFFF/FFFF/FFFF/F000
