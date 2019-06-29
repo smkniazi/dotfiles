@@ -18,26 +18,25 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf'
-"Plugin 'w0rp/ale'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'godlygeek/tabular'
 Plugin 'timakro/vim-searchant'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/ZoomWin'
+
+"Plugin 'w0rp/ale'
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'vim-ruby/vim-ruby'
+"Plugin 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 "Plugin 'lervag/vimtex'
 "Plugin 'tpope/vim-unimpaired'
 "Plugin 'tmhedberg/SimpylFold'
 "Plugin 'dpelle/vim-LanguageTool'
-"Plugin 'takac/vim-hardtime'
-"Plugin 'ervandew/supertab'
 "Plugin 'shime/vim-livedown'
 "Plugin 'chrisbra/csv.vim'
 
@@ -91,27 +90,6 @@ let g:ycm_filetype_blacklist = {
 "---------------------------------------------------------
 "                    Themes                    
 "---------------------------------------------------------
-
-"current installed themes 
-"desertink molokai gruvbox hybrid
-
-" Desert theme
-"colorscheme desertink 
-"highlight NonText ctermfg=59 ctermbg=NONE cterm=NONE guifg=#414e58 guibg=#232c31 gui=NONE
-
-" hybrid
-"let g:hybrid_custom_term_colors = 1
-"let g:hybrid_reduced_contrast = 0
-"colorscheme hybrid
-
-"---------------------------------------------------------
-"                    Visual Changes                    
-"---------------------------------------------------------
-
-" do not set the title of the window to vim buffer name. I have problems
-" switching to mlterm when titles are enabled
-set notitle
-
 " colors
 set t_Co=256
 set background=light
@@ -128,6 +106,15 @@ colorscheme PaperColor
 " true color
 "set termguicolors
 
+
+"---------------------------------------------------------
+"                    Visual Changes                    
+"---------------------------------------------------------
+
+" do not set the title of the window to vim buffer name. I have problems
+" switching to mlterm when titles are enabled
+set notitle
+
 hi SpellBad cterm=underline,italic ctermbg=none
 hi SpellRare cterm=underline,italic ctermbg=none
 hi SpellLocal cterm=underline,italic ctermbg=none
@@ -139,11 +126,8 @@ hi LineNr ctermfg=grey
 "hi cursorline cterm=none
 hi cursorlinenr cterm=bold ctermfg=black ctermbg=none
 
+"hilight comments
 hi Comment  cterm=italic ctermbg=none ctermfg=grey
-" Need the following two lines for iterm
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-
 
 "latex highlights
 source ~/.vimrc-latex-hl
@@ -177,6 +161,10 @@ set statusline +=\ %{Tlist_Get_Tagname_By_Line()}
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
 :set guioptions-=L  "remove left-hand scroll bar
+
+" Need the following two lines for iterm to support italics
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 
 "---------------------------------------------------------
 "                    Encryption                    
