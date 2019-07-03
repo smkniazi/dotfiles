@@ -257,7 +257,7 @@ hops-status(){
 
 
 hops-build (){
-	eval "hops-build-verbose | $mvnc"
+	eval "hops-build-verbose $@| $mvnc"
 }
 
 
