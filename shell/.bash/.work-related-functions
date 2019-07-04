@@ -106,21 +106,31 @@ hops-build-verbose (){
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
 	display_in_cyan "Building Hops-gpu-management" && \
-	eval "mvn  $@ install -DskipTests -f ~/code/hops/hops-gpu-management/pom.xml " && \
+    cd ~/code/hops/hops-gpu-management && \
+	eval "mvn  $@ install -DskipTests " && \
+
 	display_in_cyan "Building Hops-gpu-management-impl-nvidia" && \
-	eval "mvn  $@ install -DskipTests -f ~/code/hops/hops-gpu-management-impl-nvidia/pom.xml " && \
+    cd ~/code/hops/hops-gpu-management-impl-nvidia && \
+	eval "mvn  $@ install -DskipTests " && \
+
 	display_in_cyan "Building Hops-gpu-management-impl-amd" && \
-	eval "mvn  $@ install -DskipTests -f ~/code/hops/hops-gpu-management-impl-amd/pom.xml " && \
+	cd ~/code/hops/hops-gpu-management-impl-amd && \
+	eval "mvn  $@ install -DskipTests " && \
+
 	display_in_cyan "Building Hops-metadata-dal" && \
-	eval "mvn  $@ install -DskipTests -f ~/code/hops/hops-metadata-dal/pom.xml " && \
+	cd ~/code/hops/hops-metadata-dal && \
+	eval "mvn  $@ install -DskipTests " && \
+
 	display_in_cyan "Building Hops-metadata-dal-impl-ndb" && \
-	eval "mvn  $@ install -DskipTests -f ~/code/hops/hops-metadata-dal-impl-ndb/pom.xml " && \
+	cd ~/code/hops/hops-metadata-dal-impl-ndb && \
+	eval "mvn  $@ install -DskipTests " && \
+
 	display_in_cyan "Building Hops" && \
-	eval "mvn  $@ install generate-sources -DskipTests -f ~/code/hops/hops/pom.xml " && \
-	#temporarily change pwd
-	cd ~/code/hops/hops  && \
+	cd ~/code/hops/hops && \
+	eval "mvn  $@ install generate-sources -DskipTests " && \
 	display_in_cyan "Building Hops Tests" && \
 	eval "mvn  $@ test-compile " && \
+
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
@@ -247,7 +257,7 @@ hops-status(){
 
 
 hops-build (){
-	eval "hops-build-verbose | $mvnc"
+	eval "hops-build-verbose $@| $mvnc"
 }
 
 
