@@ -4,7 +4,7 @@
     #pager = diff-so-fancy | less -S --tabs=4 -RFX
 [user]
 	name = Salman Niazi
-	email = smkniazi@kth.se
+	email = salman@logicalclocks.com
 [push]
 	default = simple
 
