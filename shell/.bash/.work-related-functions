@@ -18,57 +18,79 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[1;36m'         # Cyan
 White='\033[0;37m'        # White
 NC='\033[0m' # No Color
-display_in_cyan() {
-    printf "${Cyan}$1${NC}\n"
+
+display_colored_msg() {
+    printf "\n${Cyan}$@${NC}\n"
+    linelen=$(expr length "$@")
+    line=""
+    for i in $(seq 1 $linelen); do
+        line="$line="
+    done
+    printf "${Cyan}$line${NC}\n"
 }
 
-exe_and_display_green() {
-    printf "${Green}$1${NC}\n"
-    eval "$1"
+exe_and_display() {
+    printf "${Green}$@${NC}\n"
+    eval "$@"
 }
 
 hops-push() {
 	pushd . &> /dev/null 
-	display_in_cyan "Hops" && \
-	cd ~/code/hops/hops && git push $@  && \
-	display_in_cyan "Hops-Metadata-Dal" && \
-	cd ~/code/hops/hops-metadata-dal && git push $@ && \
-	display_in_cyan "Hops-Metadata-Dal-Impl-NDB" && \
-	cd ~/code/hops/hops-metadata-dal-impl-ndb && git push $@ 
+	display_colored_msg "Hops" && \
+	exe_and_display "cd ~/code/hops/hops && git push $@"  && \
+
+	display_colored_msg "Hops-Metadata-Dal" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal && git push $@" && \
+
+	display_colored_msg "Hops-Metadata-Dal-Impl-NDB" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && git push $@" 
 	popd &> /dev/null 
 }
 
 hops-pull (){
 	pushd . &> /dev/null 
-	display_in_cyan "Hops" && \
-	cd ~/code/hops/hops && git pull  && \
-	display_in_cyan "Hops-Metadata-Dal" && \
-	cd ~/code/hops/hops-metadata-dal && git pull && \
-	display_in_cyan "Hops-Metadata-Dal-Impl-NDB" && \
-	cd ~/code/hops/hops-metadata-dal-impl-ndb && git pull && \
-	display_in_cyan "Hops-Gpu-Mgm" && \
-	cd ~/code/hops/hops-gpu-management && git pull && \
-	display_in_cyan "Hops-Gpu-Mgm-Impl-Nvidia" && \
-	cd ~/code/hops/hops-gpu-management-impl-nvidia && git pull && \
-	display_in_cyan "Hops-Gpu-Mgm-Impl-AMD" && \
-	cd ~/code/hops/hops-gpu-management-impl-amd && git pull 
+
+	display_colored_msg "Hops" && \
+	exe_and_display "cd ~/code/hops/hops && git pull $@"  && \
+
+	display_colored_msg "Hops-Metadata-Dal" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal && git pull $@" && \
+
+	display_colored_msg "Hops-Metadata-Dal-Impl-NDB" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && git pull $@" && \
+
+	display_colored_msg "Hops-Gpu-Mgm" && \
+	exe_and_display "cd ~/code/hops/hops-gpu-management && git pull $@" && \
+
+	display_colored_msg "Hops-Gpu-Mgm-Impl-Nvidia" && \
+	exe_and_display "cd ~/code/hops/hops-gpu-management-impl-nvidia && git pull $@" && \
+
+	display_colored_msg "Hops-Gpu-Mgm-Impl-AMD" && \
+	exe_and_display "cd ~/code/hops/hops-gpu-management-impl-amd && git pull $@" 
+
 	popd &> /dev/null 
 }
 
 hops-fetch (){
 	pushd . &> /dev/null 
-	display_in_cyan "Hops" && \
-	cd ~/code/hops/hops && git pull  && \
-	display_in_cyan "Hops-Metadata-Dal" && \
-	cd ~/code/hops/hops-metadata-dal && git fetch && \
-	display_in_cyan "Hops-Metadata-Dal-Impl-NDB" && \
-	cd ~/code/hops/hops-metadata-dal-impl-ndb && git fetch && \
-	display_in_cyan "Hops-Gpu-Mgm" && \
-	cd ~/code/hops/hops-gpu-management && git fetch && \
-	display_in_cyan "Hops-Gpu-Mgm-Impl-Nvidia" && \
-	cd ~/code/hops/hops-gpu-management-impl-nvidia && git fetch && \
-	display_in_cyan "Hops-Gpu-Mgm-Impl-AMD" && \
-	cd ~/code/hops/hops-gpu-management-impl-amd && git fetch 
+	display_colored_msg "Hops" && \
+	exe_and_display "cd ~/code/hops/hops && git fetch $@"  && \
+
+	display_colored_msg "Hops-Metadata-Dal" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal && git fetch $@" && \
+
+	display_colored_msg "Hops-Metadata-Dal-Impl-NDB" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && git fetch $@" && \
+
+	display_colored_msg "Hops-Gpu-Mgm" && \
+	exe_and_display "cd ~/code/hops/hops-gpu-management && git fetch $@" && \
+
+	display_colored_msg "Hops-Gpu-Mgm-Impl-Nvidia" && \
+	exe_and_display "cd ~/code/hops/hops-gpu-management-impl-nvidia && git fetch $@" && \
+
+	display_colored_msg "Hops-Gpu-Mgm-Impl-AMD" && \
+	exe_and_display "cd ~/code/hops/hops-gpu-management-impl-amd && git fetch $@"
+
 	popd &> /dev/null 
 }
 
@@ -77,118 +99,110 @@ hops-checkout-branch (){
 	    echo "Please enter new branch name"
 	    return 1
     fi
+
 	pushd . &> /dev/null 
-	display_in_cyan "Hops" && \
-	cd ~/code/hops/hops && git checkout $1  && \
-	display_in_cyan "Hops-Metadata-Dal" && \
-	cd ~/code/hops/hops-metadata-dal && git checkout $1 && \
-	display_in_cyan "Hops-Metadata-Dal-Impl-NDB" && \
-	cd ~/code/hops/hops-metadata-dal-impl-ndb && git checkout $1 
+	display_colored_msg "Hops" && \
+	exe_and_display "cd ~/code/hops/hops && git checkout $1"  && \
+
+	display_colored_msg "Hops-Metadata-Dal" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal && git checkout $1" && \
+
+	display_colored_msg "Hops-Metadata-Dal-Impl-NDB" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && git checkout $1 "
 	popd &> /dev/null 
 }
 
 hops-commit-and-push (){
 	pushd . &> /dev/null 
-	display_in_cyan "Hops" && \
-	cd ~/code/hops/hops && gcp "$@"  && \
-	display_in_cyan "Hops-Metadata-Dal" && \
-	cd ~/code/hops/hops-metadata-dal && gcp "$@" && \
-	display_in_cyan "Hops-Metadata-Dal-Impl-NDB" && \
-	cd ~/code/hops/hops-metadata-dal-impl-ndb && gcp "$@" 
+	display_colored_msg "Hops" && \
+	exe_and_display "cd ~/code/hops/hops && gcp $@"  && \
+
+	display_colored_msg "Hops-Metadata-Dal" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal && gcp $@" && \
+
+	display_colored_msg "Hops-Metadata-Dal-Impl-NDB" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && gcp $@" 
+
 	popd &> /dev/null 
 }
 
-#mvnc=' grep --line-buffered --color=always "\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED" | red-grep  "^\|ERROR|WARN" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED"'
-mvnc=' grep --line-buffered --color=always "Installing\|Downloading\|\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED\|\[WARNING]\|Building.*" | red-grep  "^\|\[ERROR]\|\[WARN]" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED" | green-grep "^\|\[INFO]" | blue-grep "^\|Building.*" | grey-grep "^\|Installing\|Downloading"'
+#mvnc=' grep --line-buffered --color=always "Installing\|Downloading\|\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED\|\[WARNING]\|Building.*" | red-grep  "^\|\[ERROR]\|\[WARN]" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED" | green-grep "^\|\[INFO]" | blue-grep "^\|Building.*" | grey-grep "^\|Installing\|Downloading"'
+mvnc=' grep --line-buffered --color=always "cd ~.*\|===.*\|Downloading\|\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED\|\[WARNING]\|Building.*" | red-grep  "^\|\[ERROR]\|\[WARN]" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED" | green-grep "^\|\[INFO]" | blue-grep "^\|Building.*" | grey-grep "^\|Installing\|Downloading" | red-grep "^\|cd ~.*" | blue-grep "^\|===.*" '
 
 hops-build-verbose (){
 #	set -e  # strange maven kill bash when there is a build failure
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
-	display_in_cyan "Building Hops-gpu-management" && \
-    cd ~/code/hops/hops-gpu-management && \
-	eval "mvn  $@ install -DskipTests " && \
+	display_colored_msg "Building Hops-gpu-management" && \
+    exe_and_display "cd ~/code/hops/hops-gpu-management && mvn  $@ install -DskipTests " && \
 
-	display_in_cyan "Building Hops-gpu-management-impl-nvidia" && \
-    cd ~/code/hops/hops-gpu-management-impl-nvidia && \
-	eval "mvn  $@ install -DskipTests " && \
+	display_colored_msg "Building Hops-gpu-management-impl-nvidia" && \
+    exe_and_display "cd ~/code/hops/hops-gpu-management-impl-nvidia && mvn  $@ install -DskipTests " && \
 
-	display_in_cyan "Building Hops-gpu-management-impl-amd" && \
-	cd ~/code/hops/hops-gpu-management-impl-amd && \
-	eval "mvn  $@ install -DskipTests " && \
+	display_colored_msg "Building Hops-gpu-management-impl-amd" && \
+	exe_and_display "cd ~/code/hops/hops-gpu-management-impl-amd && mvn  $@ install -DskipTests " && \
 
-	display_in_cyan "Building Hops-metadata-dal" && \
-	cd ~/code/hops/hops-metadata-dal && \
-	eval "mvn  $@ install -DskipTests " && \
+	display_colored_msg "Building Hops-metadata-dal" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal && mvn  $@ install -DskipTests " && \
 
-	display_in_cyan "Building Hops-metadata-dal-impl-ndb" && \
-	cd ~/code/hops/hops-metadata-dal-impl-ndb && \
-	eval "mvn  $@ install -DskipTests " && \
+	display_colored_msg "Building Hops-metadata-dal-impl-ndb" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && mvn  $@ install -DskipTests " && \
 
-	display_in_cyan "Building Hops" && \
-	cd ~/code/hops/hops && \
-	eval "mvn  $@ install generate-sources -DskipTests " && \
-	display_in_cyan "Building Hops Tests" && \
-	eval "mvn  $@ test-compile " && \
+	display_colored_msg "Building Hops" && \
+	exe_and_display "cd ~/code/hops/hops && mvn  $@ install generate-sources -DskipTests " && \
+
+	display_colored_msg "Building Hops Tests" && \
+	exe_and_display "mvn test-compile " && \
 
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
-	display_in_cyan "[INFO] Building Hops Took: $runtime sec(s)"
+	display_colored_msg "[INFO] Building Hops Took: $runtime sec(s)"
 }
 
- hops-rebase-upstream-master(){
+hops-rebase-upstream-master(){
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
-	display_in_cyan "FETCHING HOPS-GPU-MANAGEMENT" && \
-	    cd ~/code/hops/hops-gpu-management && \
-	    exe_and_display_green "git pull" && \
-	display_in_cyan "FETCHING HOPS-GPU-MANAGEMENT-IMPL-NVIDIA" && \
-    	cd ~/code/hops/hops-gpu-management-impl-nvidia && \
-    	exe_and_display_green "git pull" && \
-	display_in_cyan "FETCHING HOPS-GPU-MANAGEMENT-IMPL-AMD" && \
-    	cd ~/code/hops/hops-gpu-management-impl-amd && \
-    	exe_and_display_green "git pull" && \
-	display_in_cyan "FETCHING HOPS-METADATA-DAL" && \
-	    cd ~/code/hops/hops-metadata-dal && \
-	    exe_and_display_green "git fetch upstream" && \
-        exe_and_display_green "git checkout master" && \
-        exe_and_display_green "git rebase upstream/master" && \
-        exe_and_display_green "git push" && \
-	display_in_cyan "FETCHING HOPS-METADATA-DAL-IMPL-NDB" && \
-	    cd ~/code/hops/hops-metadata-dal-impl-ndb && \
-	    exe_and_display_green "git fetch upstream"  && \
-        exe_and_display_green "git checkout master" && \
-        exe_and_display_green "git rebase upstream/master" && \
-        exe_and_display_green "git push" && \
-	display_in_cyan "FETCHING HOPS" && \
-        cd ~/code/hops/hops && \
-        exe_and_display_green "git fetch upstream" && \
-	    exe_and_display_green "git checkout master" && \
-	    exe_and_display_green "git rebase upstream/master" && \
-	    exe_and_display_green "git push" && \
+	display_colored_msg "FETCHING HOPS-GPU-MANAGEMENT" && \
+    exe_and_display "cd ~/code/hops/hops-gpu-management && git pull" && \ 
+
+	display_colored_msg "FETCHING HOPS-GPU-MANAGEMENT-IMPL-NVIDIA" && \
+    exe_and_display "cd ~/code/hops/hops-gpu-management-impl-nvidia && git pull" && \
+
+	display_colored_msg "FETCHING HOPS-GPU-MANAGEMENT-IMPL-AMD" && \
+    exe_and_display "cd ~/code/hops/hops-gpu-management-impl-amd && git pull" && \
+
+	display_colored_msg "FETCHING HOPS-METADATA-DAL" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal && git fetch upstream && git checkout master && git rebase upstream/master && git push" && \
+
+	display_colored_msg "FETCHING HOPS-METADATA-DAL-IMPL-NDB" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && git fetch upstream && git checkout master && git rebase upstream/master && git push" && \
+
+	display_colored_msg "FETCHING HOPS" && \
+	exe_and_display "cd ~/code/hops/hops && git fetch upstream && git checkout master && git rebase upstream/master && git push" && \
+
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
-	display_in_cyan "TOTAL COMPILATION TIME IS : $runtime SEC(S)"
+	display_colored_msg "TOTAL COMPILATION TIME IS : $runtime SEC(S)"
 }
 
 hops-rebase-master(){
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
-	display_in_cyan "Rebasing HOPS-METADATA-DAL" && \
-	    cd ~/code/hops/hops-metadata-dal && \
-	    exe_and_display_green "git rebase master" && \
-	display_in_cyan "Rebasing HOPS-METADATA-DAL-IMPL-NDB" && \
-	    cd ~/code/hops/hops-metadata-dal-impl-ndb && \
-	    exe_and_display_green "git rebase master"  && \
-	display_in_cyan "Rebasing HOPS" && \
-        cd ~/code/hops/hops && \
-        exe_and_display_green "git rebase master" && \
+	display_colored_msg "Rebasing HOPS-METADATA-DAL" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal && git rebase master" && \
+
+	display_colored_msg "Rebasing HOPS-METADATA-DAL-IMPL-NDB" && \
+	exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && git rebase master" && \
+
+	display_colored_msg "Rebasing HOPS" && \
+	exe_and_display "cd ~/code/hops/hops && git rebase master" && \
+
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
-	display_in_cyan "TOTAL REBASE TIME IS : $runtime SEC(S)"
+	display_colored_msg "TOTAL REBASE TIME IS : $runtime SEC(S)"
 }
 
 hops-delete-branch(){
@@ -198,22 +212,19 @@ hops-delete-branch(){
     fi
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
-	display_in_cyan "DELETING BRANCH $1 IN HOPS-METADATA-DAL" && \
-        cd ~/code/hops/hops-metadata-dal && \
-        exe_and_display_green "git branch -D $1" && \
-        exe_and_display_green "git push --delete origin  $1" && \
-	display_in_cyan "DELETING BRANCH $1 HOPS-METADATA-DAL-IMPL-NDB" && \
-        cd ~/code/hops/hops-metadata-dal-impl-ndb && \
-        exe_and_display_green "git branch -D $1" && \
-        exe_and_display_green "git push --delete origin  $1" && \
-	display_in_cyan "DELETING BRANCH $1 HOPS" && \
-        cd ~/code/hops/hops && \
-        exe_and_display_green "git branch -D $1" && \
-        exe_and_display_green "git push --delete origin  $1" && \
+	display_colored_msg "DELETING BRANCH $1 IN HOPS-METADATA-DAL" && \
+    exe_and_display "cd ~/code/hops/hops-metadata-dal && git branch -D $1 && git push --delete origin  $1" && \
+
+	display_colored_msg "DELETING BRANCH $1 HOPS-METADATA-DAL-IMPL-NDB" && \
+    exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && git branch -D $1 && git push --delete origin  $1" && \
+
+	display_colored_msg "DELETING BRANCH $1 HOPS" && \
+    exe_and_display "cd ~/code/hops/hops && git branch -D $1 && git push --delete origin  $1" && \
+
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
-	display_in_cyan "TOTAL TIME IS : $runtime SEC(S)"
+	display_colored_msg "TOTAL TIME IS : $runtime SEC(S)"
 }
 
 hops-create-branch(){
@@ -223,35 +234,32 @@ hops-create-branch(){
     fi
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
-	display_in_cyan "CREATING BRANCH $1 IN HOPS-METADATA-DAL" && \
-        cd ~/code/hops/hops-metadata-dal && \
-        exe_and_display_green "git checkout -b $1" && \
-        exe_and_display_green "git push origin -u $1" && \
-	display_in_cyan "CREATING BRANCH $1 HOPS-METADATA-DAL-IMPL-NDB" && \
-        cd ~/code/hops/hops-metadata-dal-impl-ndb && \
-        exe_and_display_green "git checkout -b $1" && \
-        exe_and_display_green "git push origin -u $1" && \
-	display_in_cyan "CREATING BRANCH $1 HOPS" && \
-        cd ~/code/hops/hops && \
-        exe_and_display_green "git checkout -b $1" && \
-        exe_and_display_green "git push origin -u $1" && \
+	display_colored_msg "CREATING BRANCH $1 IN HOPS-METADATA-DAL" && \
+    exe_and_display "cd ~/code/hops/hops-metadata-dal && git checkout -b $1 && git push origin -u $1" && \
+
+	display_colored_msg "CREATING BRANCH $1 HOPS-METADATA-DAL-IMPL-NDB" && \
+    exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && git checkout -b $1 && git push origin -u $1" && \
+
+	display_colored_msg "CREATING BRANCH $1 HOPS" && \
+    exe_and_display "cd ~/code/hops/hops && git checkout -b $1 && git push origin -u $1" && \
+
 	popd &> /dev/null  && \
 	end=`date +%s` && \
 	runtime=$((end-start)) && \
-	display_in_cyan "TOTAL TIME IS : $runtime SEC(S)"
+	display_colored_msg "TOTAL TIME IS : $runtime SEC(S)"
 }
 
 hops-status(){
 	pushd . &> /dev/null && \
-	display_in_cyan "HOPS-METADATA-DAL" && \
-        cd ~/code/hops/hops-metadata-dal && \
-        git status && \
-	display_in_cyan "HOPS-METADATA-DAL-IMPL-NDB" && \
-        cd ~/code/hops/hops-metadata-dal-impl-ndb && \
-        git status && \
-	display_in_cyan "HOPS" && \
-        cd ~/code/hops/hops && \
-        git status && \
+	display_colored_msg "HOPS-METADATA-DAL" && \
+    exe_and_display "cd ~/code/hops/hops-metadata-dal && git status $@" && \
+
+	display_colored_msg "HOPS-METADATA-DAL-IMPL-NDB" && \
+    exe_and_display "cd ~/code/hops/hops-metadata-dal-impl-ndb && git status $@" && \
+
+	display_colored_msg "HOPS" && \
+    exe_and_display "cd ~/code/hops/hops && git status $@" && \
+
 	popd &> /dev/null
 }
 
@@ -262,22 +270,23 @@ hops-build (){
 
 
 hops-build-distro (){
-	display_in_cyan "Building Distribution" && \
-    cd ~/code/hops/hops && \
-    mvn package -Pdist -DskipTests -Dtar -Dmaven.javadoc.skip=true 
+	pushd . &> /dev/null && \
+	display_colored_msg "Building Distribution" && \
+    exe_and_display "cd ~/code/hops/hops && mvn package -Pdist -DskipTests -Dtar -Dmaven.javadoc.skip=true" && \
+	popd &> /dev/null
 }
 
 mi () {
- 	eval	"mvn $@ install -Dmaven.test.skip=true "
+ 	exe_and_display "mvn $@ install -Dmaven.test.skip=true "
 }
 
 mig () {
-	eval "mvn $@ install -Dmaven.test.skip=true generate-sources"
+	exe_and_display "mvn $@ install -Dmaven.test.skip=true generate-sources"
 }
 
 
 mtc () {
-   eval "mvn test-compile "
+   exe_and_display "mvn test-compile "
 }
 
 s2 () {
