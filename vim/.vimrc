@@ -8,7 +8,6 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
@@ -30,7 +29,9 @@ Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/ZoomWin'
 
 "Plugin 'w0rp/ale'
+Plugin 'rust-lang/rust.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
 "Plugin 'vim-ruby/vim-ruby'
 "Plugin 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 "Plugin 'lervag/vimtex'
@@ -87,6 +88,23 @@ let g:ycm_filetype_blacklist = {
       \ 'java' : 1
       \}
 
+"Syntastic setup
+"let g:syntastic_mode_map = {
+"    \ "mode": "active",
+"    \ "active_filetypes": ["rust", "bash"],
+"    \ "passive_filetypes": ["puppet"] }
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"Vim rust
+let g:rustfmt_autosave = 1
 "---------------------------------------------------------
 "                    Themes                    
 "---------------------------------------------------------
@@ -405,6 +423,7 @@ nmap <silent> <leader>c :set spell!<CR>
 
 " Auto correct mistakes
 iab filesystem file system
+
 
 "---------------------------------------------------------
 "                   Functions 
