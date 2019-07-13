@@ -378,12 +378,15 @@ nmap <silent> <leader>o :diffoff  <CR>
 nmap <silent> <leader>u :diffupdate <CR>
 
 " leader makes
-nmap <silent> <leader>m :make <CR>
+map <silent> <leader>m :w<CR>  :!make <CR>
 
 " nerdtree file filter
 nnoremap <leader>f :call FilterFiles()<cr>
 
 nmap <silent> <leader>a :Gblame <CR>
+
+"https://vim.fandom.com/wiki/View_text_file_in_two_columns
+:noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 "---------------------------------------------------------
 "                    Leader Buffer Management                     
 "---------------------------------------------------------
