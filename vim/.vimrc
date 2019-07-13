@@ -89,18 +89,18 @@ let g:ycm_filetype_blacklist = {
       \}
 
 "Syntastic setup
-"let g:syntastic_mode_map = {
-"    \ "mode": "active",
-"    \ "active_filetypes": ["rust", "bash"],
-"    \ "passive_filetypes": ["puppet"] }
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": ["rust", "bash"],
+    \ "passive_filetypes": ["puppet"] }
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 "Vim rust
@@ -183,6 +183,23 @@ set statusline +=\ %{Tlist_Get_Tagname_By_Line()}
 " Need the following two lines for iterm to support italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
+
+"Making diff more readable
+set diffopt+=iwhite
+"added lines
+highlight DiffAdd        cterm=bold ctermfg=2 ctermbg=15 
+"deleted lines
+highlight DiffDelete     cterm=bold ctermfg=15 ctermbg=none 
+"changed lines
+highlight DiffChange     cterm=bold ctermfg=none ctermbg=15 
+"changed text
+highlight DiffText       cterm=bold ctermfg=1 ctermbg=15 
+autocmd BufEnter * if &diff | set syntax=off | endif
+
+" started In Diff-Mode set diffexpr (plugin not loaded yet)
+if &diff
+    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+endif
 
 "---------------------------------------------------------
 "                    Encryption                    
@@ -387,6 +404,9 @@ nmap <silent> <leader>a :Gblame <CR>
 
 "https://vim.fandom.com/wiki/View_text_file_in_two_columns
 :noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
+
+nmap <silent> <leader>e :call SyntasticToggle()<CR>
+nmap <silent> <leader>E :lclose<CR>
 "---------------------------------------------------------
 "                    Leader Buffer Management                     
 "---------------------------------------------------------
@@ -443,26 +463,22 @@ endfunction
 
 "au FileType tex syn region texStatement matchgroup=texStatement start="\\footnote{"  matchgroup=texStatement end="}" end="%stopzone\>"   contains=@texStatement 
 
-"Making diff more readable
-set diffopt+=iwhite
-"added lines
-highlight DiffAdd        cterm=bold ctermfg=2 ctermbg=15 
-"deleted lines
-highlight DiffDelete     cterm=bold ctermfg=15 ctermbg=none 
-"changed lines
-highlight DiffChange     cterm=bold ctermfg=none ctermbg=15 
-"changed text
-highlight DiffText       cterm=bold ctermfg=1 ctermbg=15 
-autocmd BufEnter * if &diff | set syntax=off | endif
-
-" started In Diff-Mode set diffexpr (plugin not loaded yet)
-if &diff
-    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
-endif
-
 vnoremap <leader>y "zy:call Osc52Yank()<cr>
 function! Osc52Yank()
      let buffer=@z
      execute  "!echo -ne ".shellescape(buffer, 1)." | yank"
 endfunction
 
+
+let g:syntastic_is_open = 0  
+    function! SyntasticToggle()
+    if g:syntastic_is_open == 1
+        lclose
+        let g:syntastic_is_open = 0 
+    else
+        w
+        SyntasticCheck
+        lopen
+        let g:syntastic_is_open = 1 
+    endif
+    endfunction
