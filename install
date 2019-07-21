@@ -23,7 +23,7 @@ stow -t ~ tig
 stow -t ~ tldr
 stow -t ~ notes
 stow -t ~ urxvt
-
+stow -t ~ vim
 
 #set extentions for urxvt
 mkdir -p ~/.urxvt/ext
@@ -43,36 +43,11 @@ if [ "$exists" -ne 0 ]; then
     echo "source ~/.mybashrc" >> ~/.bashrc
 fi
 
-#install vim plugins and fzf
-stow -t ~ vim
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-
-read -p "Do you want Vundle to install plugins now ([y])? " -n 1 -r
+read -p "Do you want Vim Plug? " -n 1 -r
 echo    
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    vim +PluginInstall +qall
-
-    if [ -d ~/.vim/bundle/YouCompleteMe ]; then
-        read -p "Compile YouCompleteMe Binaries ([y])? " -n 1 -r
-        echo    
-        if [[ $REPLY =~ ^[Yy]$ ]]
-        then
-            python ~/.vim/bundle/YouCompleteMe/install.py
-        fi
-    fi
-
-    if [ -d ~/.vim/bundle/fzf ]; then
-        read -p "Do you want to install fzf ([y])? " -n 1 -r
-        echo    
-        if [[ $REPLY =~ ^[Yy]$ ]]
-        then
-            source ~/.vim/bundle/fzf/install
-        fi
-    fi
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
-
 
 echo "Done"

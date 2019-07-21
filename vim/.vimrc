@@ -1,57 +1,45 @@
-"---------------------------------------------------------
-"                    Plugins                    
-"---------------------------------------------------------
-"
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" set leader key
+let mapleader = "\<Space>"
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-"call vundle#begin('~/some/path/here')
+"##########################################################
+"################### Plugins ##############################                    
+"##########################################################
+call plug#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
+Plug 'timakro/vim-searchant'
+Plug 'vim-scripts/taglist.vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'chrisbra/vim-diff-enhanced'
+Plug 'powerman/vim-plugin-AnsiEsc'
+Plug 'vim-scripts/ZoomWin'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/fzf'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'godlygeek/tabular'
-Plugin 'timakro/vim-searchant'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'chrisbra/vim-diff-enhanced'
-Plugin 'powerman/vim-plugin-AnsiEsc'
-Plugin 'vim-scripts/ZoomWin'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'w0rp/ale'
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'vim-ruby/vim-ruby'
+"Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
+"Plug 'lervag/vimtex'
+"Plug 'tpope/vim-unimpaired'
+"Plug 'tmhedberg/SimpylFold'
+"Plug 'dpelle/vim-LanguageTool'
+"Plug 'shime/vim-livedown'
+"Plug 'chrisbra/csv.vim'
 
-"Plugin 'w0rp/ale'
-Plugin 'rust-lang/rust.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
-"Plugin 'vim-ruby/vim-ruby'
-"Plugin 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
-"Plugin 'lervag/vimtex'
-"Plugin 'tpope/vim-unimpaired'
-"Plugin 'tmhedberg/SimpylFold'
-"Plugin 'dpelle/vim-LanguageTool'
-"Plugin 'shime/vim-livedown'
-"Plugin 'chrisbra/csv.vim'
+call plug#end()
 
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-"---------------------------------------------------------
-"                    Plugin Setup
-"---------------------------------------------------------
-" show list of buffers in the command bar
-let g:loaded_bufferline = 0 " disable it now 
-
-" enable hard core mode
-let g:hardtime_default_on = 0
+"##########################################################
+"################### Plugins' setup #######################                    
+"##########################################################
 
 "nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -59,55 +47,19 @@ map <C-n> :NERDTreeToggle<CR>
 " FZF
 map <C-p> :FZF<CR>
 
-"conoline
-let g:conoline_auto_enable = 1
-"let g:conoline_color_insert_light = 'ctermbg=black ctermfg=white'
-"let g:conoline_color_normal_light = 'ctermbg=black ctermfg=white'
+"syntastic 
+"source ~/.syntasticrc
 
-"LanguageTool
-let g:languagetool_jar = "/home/salman/usr/bin/languagetool/languagetool-standalone/target/LanguageTool-3.9-SNAPSHOT/LanguageTool-3.9-SNAPSHOT/languagetool-commandline.jar"
-"let g:languagetool_lang = "en_US"
+"coc-vim
+source ~/.cocvimrc
 
-" code folding for python
-let g:SimpylFold_docstring_preview=1
+" rust.vim
+let g:autofmt_autosave = 1
 
-" you complete me
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_filetype_blacklist = {
-     \ 'tex' : 1,
-      \ 'tagbar' : 1,
-      \ 'qf' : 1,
-      \ 'notes' : 1,
-      \ 'markdown' : 1,
-      \ 'unite' : 1,
-      \ 'text' : 1,
-      \ 'vimwiki' : 1,
-      \ 'pandoc' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1,
-      \ 'java' : 1
-      \}
+"##########################################################
+"################### Themes ###############################                    
+"##########################################################
 
-"Syntastic setup
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": ["rust", "bash"],
-    \ "passive_filetypes": ["puppet"] }
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-"Vim rust
-let g:rustfmt_autosave = 1
-"---------------------------------------------------------
-"                    Themes                    
-"---------------------------------------------------------
 " colors
 set t_Co=256
 set background=light
@@ -121,48 +73,42 @@ let g:PaperColor_Theme_Options = {
   \   }
   \ }
 colorscheme PaperColor
-" true color
 "set termguicolors
 
+"##########################################################
+"################### Visual Changes #######################                    
+"##########################################################
 
-"---------------------------------------------------------
-"                    Visual Changes                    
-"---------------------------------------------------------
-
-" do not set the title of the window to vim buffer name. I have problems
-" switching to mlterm when titles are enabled
+" do not set the title of the window to vim buffer name.
+" I had problems switching to mlterm when titles are enabled
 set notitle
 
-hi SpellBad cterm=underline,italic ctermbg=none
-hi SpellRare cterm=underline,italic ctermbg=none
-hi SpellLocal cterm=underline,italic ctermbg=none
-hi SpellCap cterm=underline,italic ctermbg=none
+highlight   SpellBad     cterm=underline,italic   ctermbg=none
+highlight   SpellRare    cterm=underline,italic   ctermbg=none
+highlight   SpellLocal   cterm=underline,italic   ctermbg=none
+highlight   SpellCap     cterm=underline,italic   ctermbg=none
 
 "line highlight
-hi LineNr ctermfg=grey
-"set cursorline
-"hi cursorline cterm=none
-hi cursorlinenr cterm=bold ctermfg=black ctermbg=none
+highlight cursorlinenr cterm=none ctermfg=gray ctermbg=none
+highlight CursorLineNr cterm=none ctermfg=gray ctermbg=none
 
 "hilight comments
-hi Comment  cterm=italic ctermbg=none ctermfg=grey
+highlight Comment  cterm=italic ctermbg=none ctermfg=gray
 
 "latex highlights
 source ~/.vimrc-latex-hl
 
 "highlight colo
-highlight Visual ctermfg=NONE ctermbg=yellow  cterm=NONE guibg=yellow gui=none
-highlight Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE guibg=lightgreen gui=none
+highlight   Visual ctermfg=NONE ctermbg=yellow      cterm=NONE   guibg=yellow       gui=none
+highlight   Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE   guibg=lightgreen   gui=none
 
 "mode indicator
 set showmode
+highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 "set noshowmode
 
 " Add a bit extra margin to the left
 set foldcolumn=0
-
-"mode indicator color
-highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
 
 " show commands in at the bottom of the screen
 set showcmd
@@ -173,12 +119,6 @@ hi StatusLineNC ctermfg=255  ctermbg=0 cterm=bold
 
 "show function name in the status line. tagline plugin needed
 set statusline +=\ %{Tlist_Get_Tagname_By_Line()}
-
-" disable menu and tool bars for gvim
-:set guioptions-=m  "remove menu bar
-:set guioptions-=T  "remove toolbar
-:set guioptions-=r  "remove right-hand scroll bar
-:set guioptions-=L  "remove left-hand scroll bar
 
 " Need the following two lines for iterm to support italics
 let &t_ZH="\e[3m"
@@ -201,15 +141,17 @@ if &diff
     let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 endif
 
-"---------------------------------------------------------
-"                    Encryption                    
-"---------------------------------------------------------
+
+"##########################################################
+"################### Encryption ###########################                    
+"##########################################################
 
 set cryptmethod=blowfish2
 
-"---------------------------------------------------------
-"                    Misc                    
-"---------------------------------------------------------
+"##########################################################
+"#################### Misc ################################                    
+"##########################################################
+"
 " Enable filetype plugins
 filetype plugin indent on
 
@@ -217,9 +159,6 @@ filetype plugin indent on
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
-
-" highlight python code
-let python_highlight_all=1
 
 "delay on escape
 set timeoutlen=1000 ttimeoutlen=0
@@ -248,7 +187,7 @@ set shiftwidth=4
 set tabstop=4 
 set softtabstop=4 
 "for python
-au FileType python,java,go
+au FileType python,java,go,rust
             \ setlocal shiftwidth=2 |
             \ setlocal tabstop=2 |
             \ setlocal softtabstop=2 |
@@ -296,9 +235,6 @@ else
   set clipboard=unnamedplus "Linux
 endif
 
-"prevent vim from clearing clipboard on exit
-autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
-
 " not to break on words
 set formatoptions=1
 set linebreak
@@ -325,9 +261,16 @@ inoremap {<CR> {<CR>}<Esc>ko
 "inoremap ( ()<Esc>i
 "inoremap [ []<Esc>i
 
+
+
+"##########################################################
+"################### Key Bindings #########################                    
+"##########################################################
+
 " set the begenning of the function to the top of the window
 nnoremap <leader>mm mq[mzt`q
 
+" resize splits 
 " use same key binding for pane/split resize in vim and tmux
 execute "set <M-H>=\eH"
 execute "set <M-J>=\eJ"
@@ -358,12 +301,6 @@ nnoremap <C-_> mz0i//<Esc>j
 "Quit All
 nnoremap QA :qa<CR>
 nnoremap CQ :cq<CR>
-"---------------------------------------------------------
-"                    Leader                     
-"---------------------------------------------------------
-
-" leader commands
-let mapleader = "\<Space>"
 
 " redraw screen
 nmap <silent> <leader>r :redraw!<CR>
@@ -390,6 +327,7 @@ nmap <silent> <leader>j :wincmd j<CR>
 nmap <silent> <leader>k :wincmd k<CR>
 nmap <silent> <leader>l :wincmd l<CR>
 
+"diff 
 nmap <silent> <leader>t :diffthis <CR>
 nmap <silent> <leader>o :diffoff  <CR>
 nmap <silent> <leader>u :diffupdate <CR>
@@ -402,14 +340,13 @@ nnoremap <leader>f :call FilterFiles()<cr>
 
 nmap <silent> <leader>a :Gblame <CR>
 
+"synchronized split
 "https://vim.fandom.com/wiki/View_text_file_in_two_columns
 :noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 
-nmap <silent> <leader>e :call SyntasticToggle()<CR>
-nmap <silent> <leader>E :lclose<CR>
-"---------------------------------------------------------
-"                    Leader Buffer Management                     
-"---------------------------------------------------------
+"##########################################################
+"################### Buffer Mgm  ##########################                    
+"##########################################################
 
 " Mappings to access buffers (don't use "\p" because a
 " " delay before pressing "p" would accidentally paste).
@@ -433,11 +370,11 @@ nmap <silent> <leader>E :lclose<CR>
  " ignore unsaved files while switching buffers
  "set hidden
 
+"##########################################################
+"################### Spell Check ##########################                    
+"################### Auto Correct #########################                    
+"##########################################################
  
-"---------------------------------------------------------
-"                    Spell Check & Correct                     
-"                    Auto Correct                     
-"---------------------------------------------------------
 " spell checking
 "set spell spelllang=en_us
 "setlocal spell spelllang=en_us
@@ -447,10 +384,9 @@ nmap <silent> <leader>c :set spell!<CR>
 " Auto correct mistakes
 iab filesystem file system
 
-
-"---------------------------------------------------------
-"                   Functions 
-"---------------------------------------------------------
+"##########################################################
+"################### Functions ############################                    
+"##########################################################
 
 "filter files for nerdtree plugin
 function! FilterFiles()
@@ -461,24 +397,10 @@ function! FilterFiles()
     execute test
 endfunction
 
-"au FileType tex syn region texStatement matchgroup=texStatement start="\\footnote{"  matchgroup=texStatement end="}" end="%stopzone\>"   contains=@texStatement 
 
+"osc 52 yank
 vnoremap <leader>y "zy:call Osc52Yank()<cr>
 function! Osc52Yank()
      let buffer=@z
      execute  "!echo -ne ".shellescape(buffer, 1)." | yank"
 endfunction
-
-
-let g:syntastic_is_open = 0  
-    function! SyntasticToggle()
-    if g:syntastic_is_open == 1
-        lclose
-        let g:syntastic_is_open = 0 
-    else
-        w
-        SyntasticCheck
-        lopen
-        let g:syntastic_is_open = 1 
-    endif
-    endfunction

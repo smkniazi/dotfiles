@@ -1,0 +1,7 @@
+{
+  "diagnostic.enable": true,
+  "diagnostic.errorSign": "✖",
+  "diagnostic.hintSign": "·",
+  "diagnostic.infoSign": "·",
+  "diagnostic.warningSign": "·"
+}
