@@ -53,8 +53,9 @@ map <C-p> :FZF<CR>
 "coc-vim
 source ~/.cocvimrc
 
+
 " rust.vim
-let g:autofmt_autosave = 1
+let g:rustfmt_autosave = 1
 
 "##########################################################
 "################### Themes ###############################                    
@@ -88,9 +89,11 @@ highlight   SpellRare    cterm=underline,italic   ctermbg=none
 highlight   SpellLocal   cterm=underline,italic   ctermbg=none
 highlight   SpellCap     cterm=underline,italic   ctermbg=none
 
-"line highlight
-highlight cursorlinenr cterm=none ctermfg=gray ctermbg=none
-highlight CursorLineNr cterm=none ctermfg=gray ctermbg=none
+"line number colors 
+highlight LineNr        cterm=none ctermfg=gray ctermbg=none
+highlight FoldColumn    cterm=none ctermfg=gray ctermbg=none
+highlight SignColumn    cterm=none ctermfg=gray ctermbg=none
+highlight CursorLineNr  cterm=none ctermfg=gray ctermbg=none
 
 "hilight comments
 highlight Comment  cterm=italic ctermbg=none ctermfg=gray
