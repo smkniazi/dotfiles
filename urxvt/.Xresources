@@ -59,7 +59,7 @@ URxvt.metaSendsEscape: true
 ! install xclip and 
 ! https://github.com/muennich/urxvt-perls/
 URxvt.perl-lib: {USER}/.urxvt/ext
-URxvt.perl-ext-common: matcher,font-size,keyboard-select,osc52,fullscreen
+URxvt.perl-ext-common: default,matcher,font-size,keyboard-select,osc52,fullscreen
 
 ! keyboad selection
 URxvt.keyboard-select.clipboard: true
