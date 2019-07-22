@@ -20,7 +20,8 @@ URxvt.allow_italic: on
 URxvt.letterSpace: -1
 
 #define NormalSize 32 !font-size ext does not like variables
-#define FontName Ubuntu Mono 
+!#define FontName Ubuntu Mono 
+#define FontName Fantasque Sans Mono
 URxvt.font: xft:FontName:pixelsize=30
 !URxvt.boldFont: xft:FontName:Bold:pixelsize=32
 !Rxvt.italicFont: xft:FontName:Oblique:pixelsize=32
