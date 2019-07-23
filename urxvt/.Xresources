@@ -1,6 +1,8 @@
 ! xrdb -load ~/.Xresources
 !
 
+#include "/home/salman/.Xresources-themes/.Xresources.mytheme"
+
 !Xft.dpi: 157
 !https://awesome.naquadah.org/wiki/Better_Font_Rendering
 !Xft.dpi: 96
@@ -51,6 +53,11 @@ URxvt.fading:  30
 URxvt.fadeColor: grey 
 URxvt.dynamicColors: on
 
+!selection color
+URxvt.highlightColor: #3E999F
+!URxvt.highlightTextColor: red
+
+
 ! trim trailing spaces
 URxvt.trimSelection: true
 
@@ -96,13 +103,9 @@ URxvt.keysym.M-Return: perl:fullscreen:switch
 !"\e[H": beginning-of-line
 !"\e[F": end-of-line
 
-
-#include "/home/salman/.Xresources-themes/.Xresources.mytheme"
-
 ! True Transparency
 !URxvt.background: rgba:FFFF/FFFF/FFFF/F000
  
 ! Backgroud Texture 
 URxvt.backgroundPixmap: /home/salman/Pictures/white.png; style=tiled
-
 
