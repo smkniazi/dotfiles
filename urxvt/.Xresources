@@ -15,9 +15,11 @@ URxvt.locale: true
 URxvt.utf8Title: true
 URxvt.renderFont: true
 URxvt.preeditType: Root
-URxvt.allow_bold: on
 URxvt.allow_italic: on
 URxvt.letterSpace: -1
+URxvt.allow_bold: on
+!set intensityStyles to flase to that bold is printed in default color
+URxvt.intensityStyles: false 
 
 #define NormalSize 32 !font-size ext does not like variables
 !#define FontName Ubuntu Mono 
