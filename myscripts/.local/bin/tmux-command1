@@ -1,13 +1,11 @@
 #!/bin/bash
 
-#tmux set-buffer $(cat ~/file) 
-#-t 0  --> current pane
 #-t ! --> last active pane
-tmux send-keys -t 0 "su hdp" Enter
+tmux send-keys -t $1 "su hdp" Enter
 sleep 0.2
-tmux send-keys -t 0 $(cat ~/.file | base64 -d)  Enter
+tmux send-keys -t $1 $(cat ~/.file | base64 -d)  Enter
 sleep 0.2
-tmux send-keys -t 0 "sudo su"  Enter
+tmux send-keys -t $1 "sudo su"  Enter
 sleep 0.2
-tmux send-keys -t 0 $(cat ~/.file | base64 -d)  Enter
+tmux send-keys -t $1 $(cat ~/.file | base64 -d)  Enter
 
