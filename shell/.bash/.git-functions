@@ -26,7 +26,7 @@ gcp (){
 
 gb (){
 refs="refs/heads refs/remotes/origin"
-lines=" | tail -20 "
+lines=" | tail -50 "
 if [[ -n $1 ]]; then 
     if [[ "$1" = "all" ]]; then
         refs=""
@@ -36,7 +36,8 @@ if [[ -n $1 ]]; then
         exit 1
     fi
 fi
-command="git for-each-ref  --color=always --sort=committerdate  $refs --format=' %(color:yellow)%(refname:short)%(color:reset),|,%(color:green)%(committerdate:relative)%(color:reset),|,%(contents:subject)'  $lines | tac |  column -s, -t | less -r -S --quit-if-one-screen"
-echo $command
+#command="git for-each-ref  --color=always --sort=committerdate  $refs --format=' %(color:yellow)%(refname:short)%(color:reset),|,%(color:green)%(committerdate:relative)%(color:reset),|,%(contents:subject)'  $lines | tac |  column -s, -t | less -r -S --quit-if-one-screen"
+command="git for-each-ref  --color=always --sort=committerdate  $refs --format='%(contents:subject)%0a%(color:yellow)%(refname:short)%(color:reset) [%(color:green)%(committerdate:relative)%(color:reset)]%0a'  $lines | tac | less -r -S --quit-if-one-screen"
+#echo $command
 eval $command
 }
