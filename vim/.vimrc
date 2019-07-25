@@ -118,9 +118,10 @@ set showcmd
 
 "Status line color
 hi StatusLine   ctermfg=0  ctermbg=YELLOW cterm=bold 
-hi StatusLineNC ctermfg=255  ctermbg=0 cterm=bold 
+hi StatusLineNC ctermfg=255  ctermbg=GRAY cterm=bold 
 
 "show function name in the status line. tagline plugin needed
+"set laststatus=2
 set statusline +=\ %{Tlist_Get_Tagname_By_Line()}
 
 " Need the following two lines for iterm to support italics
@@ -323,6 +324,7 @@ nmap <silent> <leader>/ <Plug>SearchantStop
 
 " leader save
 nmap <silent> <leader>s :w<CR>
+nmap <silent> <leader><space> :w<CR>
 
 " window selection 
 nmap <silent> <leader>h :wincmd h<CR>
