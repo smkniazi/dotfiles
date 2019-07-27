@@ -54,7 +54,7 @@ URxvt.fadeColor: grey
 URxvt.dynamicColors: on
 
 !selection color
-URxvt.highlightColor: #3E999F
+URxvt.highlightColor: #03A9F4
 !URxvt.highlightTextColor: red
 
 
