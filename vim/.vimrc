@@ -20,6 +20,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'vim-scripts/ZoomWin'
+Plug 'tpope/vim-commentary'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
@@ -306,7 +307,10 @@ nnoremap <M-k> :wincmd k<CR>
 
 " comment
 " C-_ is actuall C-/ because C-/ generate C-_
-nnoremap <C-_> mz^i//<Esc>j  
+"nnoremap <C-_> mz^i//<Esc>j  
+nnoremap <C-_> :Commentary<CR>j
+vnoremap <C-_> :Commentary<CR>
+
 
 
 "Quit All
