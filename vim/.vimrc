@@ -190,7 +190,7 @@ set expandtab
 set shiftwidth=4
 set tabstop=4 
 set softtabstop=4 
-"for python
+"two space identation 
 au FileType python,java,go,rust
             \ setlocal shiftwidth=2 |
             \ setlocal tabstop=2 |
@@ -198,6 +198,13 @@ au FileType python,java,go,rust
             \ setlocal textwidth=100| 
             \ setlocal colorcolumn=101|
 
+"four space identation 
+au FileType rust,sh
+            \ setlocal shiftwidth=4 |
+            \ setlocal tabstop=4 |
+            \ setlocal softtabstop=4 |
+            \ setlocal textwidth=100| 
+            \ setlocal colorcolumn=101|
 
 " encoding
 set encoding=utf-8
@@ -299,7 +306,7 @@ nnoremap <M-k> :wincmd k<CR>
 
 " comment
 " C-_ is actuall C-/ because C-/ generate C-_
-nnoremap <C-_> mz0i//<Esc>j  
+nnoremap <C-_> mz^i//<Esc>j  
 
 
 "Quit All
