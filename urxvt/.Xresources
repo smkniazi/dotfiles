@@ -82,7 +82,7 @@ URxvt.underlineColor:     #0087af
 
 URxvt.matcher.pattern.1:  ([ ]+rm[ ]+)
 URxvt.matcher.pattern.2:  ([ ]+rm[ ]+-rf[ ]+)
-URxvt.matcher.pattern.2:  ([ ]+sudo[ ]+)
+URxvt.matcher.pattern.2:  ([ ]+mv[ ]+)
 
 ! Full screen toggle
 URxvt.keysym.M-Return: perl:fullscreen:switch
