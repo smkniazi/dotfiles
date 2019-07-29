@@ -77,8 +77,10 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.keysym.M-Delete:    matcher:list
-URxvt*colorUL:            blue
-URxvt*underlineColor:     blue
+URxvt.colorUL:            blue
+URxvt.underlineColor:     blue
+!match both file paths and urls
+!URxvt.matcher.pattern.1:  ((^(~|\/)|\s(~|\/))([A-z0-9-_+]+\/)*([-/.~_A-z0-9]+)|\bwww\.[\w-]+\.[\w./?&@#-]*[\w/-])
 
 ! Full screen toggle
 URxvt.keysym.M-Return: perl:fullscreen:switch
