@@ -60,7 +60,7 @@ URxvt.metaSendsEscape: true
 ! install xclip and 
 ! https://github.com/muennich/urxvt-perls/
 URxvt.perl-lib: {USER}/.urxvt/ext
-URxvt.perl-ext-common: default,-searchable-scrollback,matcher,font-size,keyboard-select,osc52,fullscreen
+URxvt.perl-ext-common: default,-searchable-scrollback,matcher,font-size,keyboard-select,osc52,fullscreen,mymatcher
 
 ! keyboad selection
 URxvt.keyboard-select.clipboard: true
@@ -80,7 +80,7 @@ URxvt.keysym.M-Delete:    matcher:list
 URxvt.colorUL:            #0087af
 URxvt.underlineColor:     #0087af
 !match both file paths and urls
-!URxvt.matcher.pattern.1:  ((^(~|\/)|\s(~|\/))([A-z0-9-_+]+\/)*([-/.~_A-z0-9]+)|\bwww\.[\w-]+\.[\w./?&@#-]*[\w/-])
+URxvt.matcher.pattern.1:  ((^(~|\/)|\s(~|\/))([A-z0-9-_+]+\/)*([-/.~_A-z0-9]+)|\bwww\.[\w-]+\.[\w./?&@#-]*[\w/-])
 
 ! Full screen toggle
 URxvt.keysym.M-Return: perl:fullscreen:switch
