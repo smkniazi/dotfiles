@@ -23,14 +23,6 @@ URxvt.allow_bold: on
 !set intensityStyles to flase to that bold is printed in default color
 URxvt.intensityStyles: false 
 
-#define NormalSize 32 !font-size ext does not like variables
-!#define FontName Ubuntu Mono 
-#define FontName Fantasque Sans Mono
-URxvt.font: xft:FontName:pixelsize=30
-!URxvt.boldFont: xft:FontName:Bold:pixelsize=32
-!Rxvt.italicFont: xft:FontName:Oblique:pixelsize=32
-!Rxvt.boldItalicFont: xft:FontName:Bold Oblique:pixelsize=32
-
 ! Cursor
 Xcursor.theme : Vanilla-DMZ-AA
 URxvt.pointerColor: red
@@ -56,7 +48,6 @@ URxvt.dynamicColors: on
 !selection color
 URxvt.highlightColor: #03A9F4
 !URxvt.highlightTextColor: red
-
 
 ! trim trailing spaces
 URxvt.trimSelection: true
@@ -108,4 +99,10 @@ URxvt.keysym.M-Return: perl:fullscreen:switch
  
 ! Backgroud Texture 
 URxvt.backgroundPixmap: /home/salman/Pictures/white.png; style=tiled
+
+!change font if .Xresources.font exist
+!#define FontName Ubuntu Mono 
+#define FontName Fantasque Sans Mono
+URxvt.font: xft:FontName:pixelsize=18
+#include "/home/salman/.Xresources-themes/.Xresources.font"
 

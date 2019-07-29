@@ -1,0 +1,4 @@
+URxvt.font: xft:FontName:pixelsize=32
+!URxvt.boldFont: xft:FontName:Bold:pixelsize=32
+!Rxvt.italicFont: xft:FontName:Oblique:pixelsize=32
+!Rxvt.boldItalicFont: xft:FontName:Bold Oblique:pixelsize=32
