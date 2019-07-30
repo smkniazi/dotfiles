@@ -84,7 +84,7 @@ URxvt.underlineColor:     #0087af
 URxvt.matcher.pattern.1:  ([ ]+rm[ ]+)
 URxvt.matcher.pattern.2:  ([ ]+rm[ ]+-rf[ ]+)
 URxvt.matcher.pattern.3:  ([ ]+mv[ ]+)
-URxvt.matcher.pattern.4:  (~|\/)[-\/~_.a-zA-Z0-9]+[\.](java|cpp|rs|sh|go)
+URxvt.matcher.pattern.4:  (~|\/)[-\/~_.a-zA-Z0-9]+[\.](java|rs|sh|go)
 
 ! Full screen toggle
 URxvt.keysym.M-Return: perl:fullscreen:switch
