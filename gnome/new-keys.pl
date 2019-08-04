@@ -29,7 +29,7 @@ custom	'transmission'	'$HOME/.local/bin/run-or-raise.py transmission-gtk Transmi
 custom	'mpv'	'$HOME/.local/bin/run-or-raise.py \'mpv --player-operation-mode=pseudo-gui\' mpv'	'<Super>v'
 custom	'firefox'	'$HOME/.local/bin/run-or-raise.py firefox Firefox Google-chrome'	'<Super>f'
 custom	'firefox2'	'$HOME/.local/bin/x11-backend-launch firefox'	'<Primary><Alt>f'
-custom	'swith-gnome-termianl'	'$HOME/.local/bin/run-or-raise.py urxvt256c urxvt terminal mlterm'	'<Super>t'
+custom	'swith-gnome-termianl'	'$HOME/.local/bin/run-or-raise.py urxvt256c urxvt terminal mlterm kitty'	'<Super>t'
 custom	'swith-mlterm'	'$HOME/.local/bin/run-or-raise.py $HOME/.local/bin/ml Terminal'	'<Super>w'
 custom	'gnome-termianl'	'$HOME/.local/bin/x11-backend-launch urxvt256c'	'<Primary><Alt>t'
 custom	'nautilus'	'$HOME/.local/bin/run-or-raise.py nautilus Nautilus '	'<Super>n'
