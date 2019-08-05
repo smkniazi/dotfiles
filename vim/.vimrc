@@ -103,8 +103,8 @@ highlight Comment  cterm=italic ctermbg=none ctermfg=gray
 source ~/.vimrc-latex-hl
 
 "highlight colo
-highlight   Visual ctermfg=NONE ctermbg=yellow      cterm=NONE   guibg=yellow       gui=none
-highlight   Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE   guibg=lightgreen   gui=none
+highlight   Visual ctermfg=NONE ctermbg=39      cterm=NONE   
+highlight   Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE   
 
 "mode indicator
 set showmode
