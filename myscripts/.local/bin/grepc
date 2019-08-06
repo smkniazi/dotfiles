@@ -36,16 +36,16 @@ colors=(
 
 size=`expr $# - 1`
 fileIndex="$#"
-caseInsensitive=""
+params=""
 
-if [[ "$1" == "-i" ]]; then
+if [[ "$1" == -* ]]; then
     index=2
-    caseInsensitive="-i"
+    params="$1"
 else
     index=1
 fi
 
-firstpart="grep $caseInsensitive --line-buffered --color=always \""
+firstpart="grep $params --line-buffered --color=always \""
 secondpart=""
 
 
