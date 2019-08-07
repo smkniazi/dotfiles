@@ -16,14 +16,14 @@ fi
 #Cyan	    36	               46
 #White	    37	               47
 colors=(
-"GREP_COLOR='1;37;40'    grep --color=always --line-buffered"
-"GREP_COLOR='1;37;41'    grep --color=always --line-buffered"
-"GREP_COLOR='1;37;42'    grep --color=always --line-buffered"
-"GREP_COLOR='1;37;43'    grep --color=always --line-buffered"
-"GREP_COLOR='1;37;44'    grep --color=always --line-buffered"
-"GREP_COLOR='1;37;45'    grep --color=always --line-buffered"
-"GREP_COLOR='1;37;46'    grep --color=always --line-buffered"
-"GREP_COLOR='1;37;47'    grep --color=always --line-buffered"
+"GREP_COLOR='1;30'    grep --color=always --line-buffered"
+"GREP_COLOR='1;31'    grep --color=always --line-buffered"
+"GREP_COLOR='1;32'    grep --color=always --line-buffered"
+"GREP_COLOR='1;33'    grep --color=always --line-buffered"
+"GREP_COLOR='1;34'    grep --color=always --line-buffered"
+"GREP_COLOR='1;35'    grep --color=always --line-buffered"
+"GREP_COLOR='1;36'    grep --color=always --line-buffered"
+"GREP_COLOR='1;37'    grep --color=always --line-buffered"
 )
 #colors=(
 #"GREP_COLOR='1;36'    grep --color=always --line-buffered"
