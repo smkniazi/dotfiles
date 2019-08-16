@@ -259,7 +259,7 @@ set foldlevel=99
 set fileformat=unix
 
 " enable mouse
-"set mouse=a
+set mouse=a
 
 "enter normal mode
 imap jj <Esc>
