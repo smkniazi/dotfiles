@@ -25,6 +25,7 @@ stow -t ~ notes
 stow -t ~ urxvt
 stow -t ~ vim
 stow -t ~ kitty
+stow -t ~ mycli
 
 #set extentions for urxvt
 mkdir -p ~/.urxvt/ext
