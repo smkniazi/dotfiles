@@ -71,7 +71,7 @@ login_path_as_host = False
 auto_vertical_output = False
 
 # keyword casing preference. Possible values "lower", "upper", "auto"
-keyword_casing = upper
+keyword_casing = auto 
 
 # disabled pager on startup
 enable_pager = True
@@ -103,6 +103,8 @@ bottom-toolbar.transaction.failed = "bg:#222222 #ff005f bold"
 output.header = "#008888 bold"
 output.odd-row = ""
 output.even-row = ""
+
+Token.Prompt = '#0087af bold'
 
 # Favorite queries.
 [favorite_queries]
