@@ -87,13 +87,13 @@ hops-fetch (){
 	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && git fetch $@" && \
 
 	display_colored_msg "Hops-Gpu-Mgm" && \
-	exe_and_display "cd $base_folder/hops-gpu-management && git fetch $@" && \
+	exe_and_display "cd $base_folder/hops-gpu-management && git fetch " && \
 
 	display_colored_msg "Hops-Gpu-Mgm-Impl-Nvidia" && \
-	exe_and_display "cd $base_folder/hops-gpu-management-impl-nvidia && git fetch $@" && \
+	exe_and_display "cd $base_folder/hops-gpu-management-impl-nvidia && git fetch " && \
 
 	display_colored_msg "Hops-Gpu-Mgm-Impl-AMD" && \
-	exe_and_display "cd $base_folder/hops-gpu-management-impl-amd && git fetch $@"
+	exe_and_display "cd $base_folder/hops-gpu-management-impl-amd && git fetch "
 
 	popd &> /dev/null 
 }
@@ -172,6 +172,9 @@ hops-rebase-upstream-master(){
 	pushd . &> /dev/null && \
     base_folder="~/code/hops"
 
+    echo "TODO : Fix for EE and SE"
+    exit 1
+
 	start=`date +%s` && \
 	display_colored_msg "FETCHING HOPS-GPU-MANAGEMENT" && \
     exe_and_display "cd $base_folder/hops-gpu-management && git pull" && \ 
@@ -202,6 +205,9 @@ hops-rebase-master(){
 	start=`date +%s` && \
     base_folder="~/code/hops"
 
+    echo "TODO : Fix for EE and SE"
+    exit 1
+
 	display_colored_msg "Rebasing HOPS-METADATA-DAL" && \
 	exe_and_display "cd $base_folder/hops-metadata-dal && git rebase master" && \
 
@@ -225,6 +231,9 @@ hops-delete-branch(){
 	pushd . &> /dev/null && \
     base_folder="~/code/hops"
 
+    echo "TODO : Fix for EE and SE"
+    exit 1
+
 	start=`date +%s` && \
 	display_colored_msg "DELETING BRANCH $1 IN HOPS-METADATA-DAL" && \
     exe_and_display "cd $base_folder/hops-metadata-dal && git branch -D $1 && git push --delete origin  $1" && \
@@ -246,6 +255,8 @@ hops-create-branch(){
 	    echo "Please enter new branch name"
 	    return 1
     fi
+    echo "TODO : Fix for EE and SE"
+    exit 1
     base_folder="~/code/hops"
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
