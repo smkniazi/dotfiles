@@ -28,7 +28,7 @@ log_level = WARNING
 # audit_log = ~/.mycli-audit.log
 
 # Timing of sql statments and table rendering.
-timing = False
+timing = False 
 
 # Table format. Possible values: ascii, double, github,
 # psql, plain, simple, grid, fancy_grid, pipe, orgtbl, rst, mediawiki, html,
