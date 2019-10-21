@@ -114,6 +114,7 @@ all = 'select id as "id", parent_id as "PID", name as "name", partition_id as "p
 allsf = 'select inode_id, sys.format_bytes(char_length(data)) as "length" from hdfs_inmemory_file_inode_data order by inode_id ASC; select inode_id, sys.format_bytes(char_length(data)) as "length" from hdfs_ondisk_small_file_inode_data order by inode_id ASC; select inode_id, sys.format_bytes(char_length(data)) as "length" from hdfs_ondisk_medium_file_inode_data order by inode_id ASC; select inode_id, sys.format_bytes(char_length(data)) as "length" from hdfs_ondisk_large_file_inode_data order by inode_id ASC'
 allr = "select * from hdfs_replica_under_constructions order by inode_id ASC, block_id ASC; select * from hdfs_under_replicated_blocks order by inode_id ASC, block_id ASC; select * from hdfs_pending_blocks order by inode_id ASC, block_id ASC; select * from hdfs_excess_replicas order by inode_id ASC, block_id ASC; select * from hdfs_corrupt_replicas order by inode_id ASC, block_id ASC; select * from hdfs_invalidated_blocks order by inode_id ASC, block_id ASC"
 r = "select * from hdfs_replicas order by inode_id ASC, block_id ASC"
+s = "select * from hdfs_storage_id_map,hdfs_storages where hdfs_storage_id_map.sid = hdfs_storages.storage_id order by sid"
 
 # Use the -d option to reference a DSN.
 [alias_dsn]
