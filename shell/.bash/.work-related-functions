@@ -306,7 +306,7 @@ hops-build-distro (){
 	popd &> /dev/null
 }
 
-hops-unit-test{
+hops-unit-test (){
 	pushd . &> /dev/null && \
 	base_folder="~/code/hops"
 	display_colored_msg "Unit Testing $1" && \
