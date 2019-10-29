@@ -251,23 +251,22 @@ hops-delete-branch(){
 }
 
 hops-create-branch(){
-	if [ ! "$#" -eq 1 ]; then
-	    echo "Please enter new branch name"
+	if [ ! "$#" -eq 2 ]; then
+	    echo "Please enter new branch name and remote name"
+	    echo "./command {branch} {remote}"
 	    return 1
     fi
-    echo "TODO : Fix for EE and SE"
-    exit 1
     base_folder="~/code/hops"
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
 	display_colored_msg "CREATING BRANCH $1 IN HOPS-METADATA-DAL" && \
-    exe_and_display "cd $base_folder/hops-metadata-dal && git checkout -b $1 && git push origin -u $1" && \
+    exe_and_display "cd $base_folder/hops-metadata-dal && git checkout -b $1 && git push $2 -u $1" && \
 
 	display_colored_msg "CREATING BRANCH $1 HOPS-METADATA-DAL-IMPL-NDB" && \
-    exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && git checkout -b $1 && git push origin -u $1" && \
+    exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && git checkout -b $1 && git push $2 -u $1" && \
 
 	display_colored_msg "CREATING BRANCH $1 HOPS" && \
-    exe_and_display "cd $base_folder/hops && git checkout -b $1 && git push origin -u $1" && \
+    exe_and_display "cd $base_folder/hops && git checkout -b $1 && git push $2 -u $1" && \
 
 	popd &> /dev/null  && \
 	end=`date +%s` && \
