@@ -26,18 +26,18 @@ gcp (){
 
 gb (){
 refs="refs/heads refs/remotes/origin"
-lines=" | tail -50 "
+#lines=" | tail -n 50 "
+lines=""
 if [[ -n $1 ]]; then 
     if [[ "$1" = "all" ]]; then
         refs=""
         lines=""
     else 
         echo "Usage gb [all]"
-        exit 1
+        return 
     fi
 fi
-#command="git for-each-ref  --color=always --sort=committerdate  $refs --format=' %(color:yellow)%(refname:short)%(color:reset),|,%(color:green)%(committerdate:relative)%(color:reset),|,%(contents:subject)'  $lines | tac |  column -s, -t | less -r -S --quit-if-one-screen"
-command="git for-each-ref  --color=always --sort=committerdate  $refs --format='%(contents:subject)%0a%(color:yellow)%(refname:short)%(color:reset) [%(color:green)%(committerdate:relative)%(color:reset)]%0a'  $lines | tac | less -r -S --quit-if-one-screen"
-#echo $command
+#command="git for-each-ref  --color=always --sort=committerdate  $refs --format='%(contents:subject)%0a%(color:yellow)%(refname:short)%(color:reset) [%(color:green)%(committerdate:relative)%(color:reset)]%0a'  $lines | tac | less -r -S --quit-if-one-screen"
+command="git for-each-ref  --color=always --sort=committerdate  $refs --format='%(contents:subject)%0a%(color:yellow)%(refname:short)%(color:reset) [%(color:green)%(committerdate:relative)%(color:reset)]%0a'  $lines | tac | less -r -S "
 eval $command
 }
