@@ -117,6 +117,7 @@ allsf = 'select inode_id, sys.format_bytes(char_length(data)) as "length" from h
 allr = "select * from hdfs_replica_under_constructions order by inode_id ASC, block_id ASC; select * from hdfs_under_replicated_blocks order by inode_id ASC, block_id ASC; select * from hdfs_pending_blocks order by inode_id ASC, block_id ASC; select * from hdfs_excess_replicas order by inode_id ASC, block_id ASC; select * from hdfs_corrupt_replicas order by inode_id ASC, block_id ASC; select * from hdfs_invalidated_blocks order by inode_id ASC, block_id ASC"
 r = "select * from hdfs_replicas order by inode_id ASC, block_id ASC"
 s = "select * from hdfs_storage_id_map,hdfs_storages where hdfs_storage_id_map.sid = hdfs_storages.storage_id order by sid"
+loadprocs = " drop procedure if exists inodepath; CREATE PROCEDURE getpath (IN inode_id BIGINT) BEGIN DECLARE mypid BIGINT; DECLARE myname VARCHAR(256); DECLARE mypath VARCHAR(8000) default ''; select name into myname from hdfs_inodes where id=inode_id; select parent_id into mypid from hdfs_inodes where id=inode_id; select concat(myname,  mypath) into mypath; WHILE mypid != 0 && myname IS NOT NULL  DO select name into myname from hdfs_inodes where id=mypid; select parent_id into mypid from hdfs_inodes where id=mypid; select concat(myname, '/',   mypath) into mypath; END WHILE; select mypath as path; END"
 
 # Use the -d option to reference a DSN.
 [alias_dsn]
