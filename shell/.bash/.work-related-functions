@@ -322,6 +322,10 @@ tmux-pane-color(){
 
 ndb-start-vm(){
     VBoxManage startvm centos --type headless
+    echo "Starting VM ..."
+    sleep 15
+    echo "Starting Starting NDB ..."
+    ssh -p 2222 salman@localhost ./start-cluster
 }
 
 ndb-stop-vm(){
