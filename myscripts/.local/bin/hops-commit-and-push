@@ -1,0 +1,15 @@
+#!/bin/bash
+
+    set -e
+	pushd . &> /dev/null 
+    base_folder="~/code/hops"
+	display_colored_msg "Hops" 
+	exe_and_display "cd $base_folder/hops && gcp $@"  
+
+	display_colored_msg "Hops-Metadata-Dal" 
+	exe_and_display "cd $base_folder/hops-metadata-dal && gcp $@" 
+
+	display_colored_msg "Hops-Metadata-Dal-Impl-NDB" 
+	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && gcp $@" 
+
+	popd &> /dev/null 

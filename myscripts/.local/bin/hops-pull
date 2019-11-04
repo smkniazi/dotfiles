@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+	pushd . &> /dev/null 
+    base_folder="~/code/hops"
+
+	display_colored_msg "Hops" 
+	exe_and_display "cd $base_folder/hops && git pull $@"  
+
+	display_colored_msg "Hops-Metadata-Dal" 
+	exe_and_display "cd $base_folder/hops-metadata-dal && git pull $@" 
+
+	display_colored_msg "Hops-Metadata-Dal-Impl-NDB" 
+	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && git pull $@" 
+
+	display_colored_msg "Hops-Gpu-Mgm" 
+	exe_and_display "cd $base_folder/hops-gpu-management && git pull $@" 
+
+	display_colored_msg "Hops-Gpu-Mgm-Impl-Nvidia" 
+	exe_and_display "cd $base_folder/hops-gpu-management-impl-nvidia && git pull $@" 
+
+	display_colored_msg "Hops-Gpu-Mgm-Impl-AMD" 
+	exe_and_display "cd $base_folder/hops-gpu-management-impl-amd && git pull $@" 
+
+	popd &> /dev/null 

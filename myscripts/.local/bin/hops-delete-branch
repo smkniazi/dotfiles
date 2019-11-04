@@ -1,0 +1,25 @@
+#!/bin/bash
+    set -e
+
+	if [ ! "$#" -eq 2 ]; then
+	    echo "Please enter branch name and remote name"
+	    echo "./command {branch} {remote}"
+	    return 1
+    fi
+	pushd . &> /dev/null 
+    base_folder="~/code/hops"
+
+	start=`date +%s` 
+	display_colored_msg "DELETING BRANCH $1 IN HOPS-METADATA-DAL" 
+    exe_and_display "cd $base_folder/hops-metadata-dal && git branch -D $1 && git push --delete $2  $1" 
+
+	display_colored_msg "DELETING BRANCH $1 HOPS-METADATA-DAL-IMPL-NDB" 
+    exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && git branch -D $1 && git push --delete $2  $1" 
+
+	display_colored_msg "DELETING BRANCH $1 HOPS" 
+    exe_and_display "cd $base_folder/hops && git branch -D $1 && git push --delete $2  $1" 
+
+	popd &> /dev/null  
+	end=`date +%s` 
+	runtime=$((end-start)) 
+	display_colored_msg "TOTAL TIME IS : $runtime SEC(S)"
