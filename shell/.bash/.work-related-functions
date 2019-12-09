@@ -47,7 +47,7 @@ hops-build-verbose (){
 	exe_and_display "cd $base_folder/hops && mvn  $@ install generate-sources -DskipTests " && \
 
 	display_colored_msg "Building Hops Tests" && \
-	exe_and_display "mvn test-compile " && \
+	exe_and_display "cd $base_folder/hops && mvn test-compile " && \
 
 	popd &> /dev/null  && \
 	end=`date +%s` && \

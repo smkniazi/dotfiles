@@ -38,6 +38,6 @@ if [[ -n $1 ]]; then
     fi
 fi
 #command="git for-each-ref  --color=always --sort=committerdate  $refs --format='%(contents:subject)%0a%(color:yellow)%(refname:short)%(color:reset) [%(color:green)%(committerdate:relative)%(color:reset)]%0a'  $lines | tac | less -r -S --quit-if-one-screen"
-command="git for-each-ref  --color=always --sort=committerdate  $refs --format='%(contents:subject)%0a%(color:yellow)%(refname:short)%(color:reset) [%(color:green)%(committerdate:relative)%(color:reset)]%0a'  $lines | tac | less -r -S "
+command="git for-each-ref  --sort=committerdate  $refs --format='%(contents:subject)%0a%(color:yellow)%(refname:short)%(color:reset) [%(color:green)%(committerdate:relative)%(color:reset)]%0a'  $lines | tac | less -r -S "
 eval $command
 }

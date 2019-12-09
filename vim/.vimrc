@@ -130,7 +130,7 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
 "Making diff more readable
-set diffopt+=iwhite
+"set diffopt+=iwhite
 "added lines
 highlight DiffAdd        cterm=bold ctermfg=2 ctermbg=15 
 "deleted lines
