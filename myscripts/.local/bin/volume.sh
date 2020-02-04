@@ -1,7 +1,8 @@
 #!/bin/bash
 #example 10% , 10%+,  10%-
+set -x
 
-/usr/bin/amixer -q set Master $1  
+/usr/bin/amixer -q sset Master $1  
 #echo $1 >> /tmp/switcher.log
 
 curval=$(/usr/bin/amixer sget Master | grep "Front Left.*[0-9]*%" | grep -oh "[0-9]*%" | grep -oh "[0-9]*")
