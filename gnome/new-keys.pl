@@ -36,7 +36,8 @@ custom	'nautilus'	'$HOME/.local/bin/run-or-raise.py nautilus Nautilus '	'<Super>
 custom	'intellij'	'$HOME/.local/bin/run-or-raise.py $HOME/.local/bin/start-idea jetbrains-idea-ce jetbrains-idea' 	'<Super>i'
 custom	'lock-screen'	'$HOME/.local/bin/lock-screen'	'<Primary><Super><Alt>l'
 custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
-custom	'keepassxc'	'$HOME/.local/bin/run-or-raise.py keepassxc keepassxc'	'<Super>c'
+custom	'keepassxc'	'$HOME/.local/bin/run-or-raise.py code code'	'<Super>c'
+custom	'keepassxc'	'$HOME/.local/bin/run-or-raise.py keepassxc keepassxc'	'<Super><Super>c'
 custom	'open-dropbox-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Downloads'	'<Primary><Alt>d'
 custom	'open-downloads-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
 # GNOME

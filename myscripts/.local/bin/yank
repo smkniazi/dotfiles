@@ -30,6 +30,7 @@ if [ -n "$copy_backend" ]; then
   exit;
 fi
 
+exit
 
 # Copy via OSC 52 ANSI escape sequence to controlling terminal
 buflen=$( printf %s "$buf" | wc -c )
