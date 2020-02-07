@@ -1,0 +1,46 @@
+#!/bin/bash
+user=hop
+password=hop
+
+mysql="mysql -u$user -p$password --protocol=TCP "
+
+updates=(
+~/code/hops/hops-metadata-dal-impl-ndb/schema.sql
+~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.1_to_2.8.2.2.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.2_to_2.8.2.3.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.3_to_2.8.2.4.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.4_to_2.8.2.5.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.5_to_2.8.2.6.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.6_to_2.8.2.7.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.7_to_2.8.2.8.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.8_to_2.8.2.9.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.9_to_2.8.2.10.sql 
+)
+
+#set -x
+#set -e
+
+echo "Dropping Schema" 
+eval "$mysql -e 'DROP DATABASE IF EXISTS hop_salman'"
+
+echo "Creating Schema" 
+eval "$mysql -e 'CREATE DATABASE hop_salman'"
+
+echo "Dropping and Recreating disk table data files" 
+eval "$mysql -e 'ALTER TABLESPACE ts_1 drop datafile \"ts_1_data_file_0.dat\" ENGINE ndbcluster'"
+eval "$mysql -e 'DROP TABLESPACE ts_1 ENGINE ndbcluster'"
+eval "$mysql -e 'DROP LOGFILE GROUP lg_1 ENGINE ndbcluster'"
+
+
+
+echo "Applying Schema updates" 
+for update_file in ${updates[@]}; do
+    echo "Applying $update_file"
+    eval "$mysql hop_salman < $update_file"
+    ret=$?
+    if [ "$ret" != "0" ]; then
+        echo 
+        echo "Failed to apply all updates".
+        exit 1
+    fi
+done
