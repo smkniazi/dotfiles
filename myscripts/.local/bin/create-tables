@@ -5,16 +5,16 @@ password=hop
 mysql="mysql -u$user -p$password --protocol=TCP "
 
 updates=(
-~/code/hops/hops-metadata-dal-impl-ndb/schema.sql
-~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.1_to_2.8.2.2.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.2_to_2.8.2.3.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.3_to_2.8.2.4.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.4_to_2.8.2.5.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.5_to_2.8.2.6.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.6_to_2.8.2.7.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.7_to_2.8.2.8.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.8_to_2.8.2.9.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/update-schema_2.8.2.9_to_2.8.2.10.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/schema.sql
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.1_to_2.8.2.2.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.2_to_2.8.2.3.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.3_to_2.8.2.4.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.4_to_2.8.2.5.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.5_to_2.8.2.6.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.6_to_2.8.2.7.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.7_to_2.8.2.8.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.8_to_2.8.2.9.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.9_to_2.8.2.10.sql 
 )
 
 #set -x
