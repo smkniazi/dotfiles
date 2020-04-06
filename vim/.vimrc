@@ -247,6 +247,9 @@ else
   set clipboard=unnamedplus "Linux
 endif
 
+" paste
+set paste
+
 " not to break on words
 set formatoptions=1
 set linebreak
