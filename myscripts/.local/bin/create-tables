@@ -15,6 +15,7 @@ updates=(
 ~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.7_to_2.8.2.8.sql 
 ~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.8_to_2.8.2.9.sql 
 ~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.9_to_2.8.2.10.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.10_to_3.2.0.0.sql
 )
 
 #set -x

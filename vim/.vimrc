@@ -188,9 +188,9 @@ set autoread
 " for all files
 set smarttab
 set expandtab
-set shiftwidth=4
-set tabstop=4 
-set softtabstop=4 
+set shiftwidth=2
+set tabstop=2 
+set softtabstop=2 
 "two space identation 
 au FileType python,java,go,rust
             \ setlocal shiftwidth=2 |
