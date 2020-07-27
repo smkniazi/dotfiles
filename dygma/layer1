@@ -1,4 +1,5 @@
 {
+
   "keymap": [
     {
       "keyCode": 53,
@@ -293,8 +294,8 @@
       "verbose": "Left Alt"
     },
     {
-      "keyCode": 17451,
-      "label": "1",
+      "keyCode": 17452,
+      "label": "2",
       "extraLabel": "SHIFTTO"
     },
     {
@@ -303,20 +304,19 @@
       "verbose": "Disabled"
     },
     {
-      "keyCode": 17408,
-      "label": "0",
-      "extraLabel": "LockTo"
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
     },
     {
-      "keyCode": 17409,
+      "keyCode": 17493,
       "label": "1",
-      "extraLabel": "LockTo"
+      "extraLabel": "MOVETO"
     },
     {
-      "keyCode": 65535,
-      "label": "",
-      "extraLabel": "TRANS",
-      "verbose": "Transparent"
+      "keyCode": 17494,
+      "label": "2",
+      "extraLabel": "MOVETO"
     },
     {
       "keyCode": 65535,
@@ -388,7 +388,7 @@
     4,
     4,
     1,
-    4,
+    0,
     4,
     5,
     4,

@@ -3,7 +3,6 @@ user=hop
 password=hop
 
 mysql="mysql -u$user -p$password --protocol=TCP "
-
 updates=(
 ~/code/hops/hops-metadata-dal-impl-ndb/schema/schema.sql
 ~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.1_to_2.8.2.2.sql 
@@ -15,6 +14,8 @@ updates=(
 ~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.7_to_2.8.2.8.sql 
 ~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.8_to_2.8.2.9.sql 
 ~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.9_to_2.8.2.10.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.9_to_2.8.2.9.1.sql 
+~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.9.1_to_2.8.2.10.sql 
 ~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.10_to_3.2.0.0.sql
 )
 
@@ -36,12 +37,16 @@ eval "$mysql -e 'DROP LOGFILE GROUP lg_1 ENGINE ndbcluster'"
 
 echo "Applying Schema updates" 
 for update_file in ${updates[@]}; do
-    echo "Applying $update_file"
-    eval "$mysql hop_salman < $update_file"
-    ret=$?
-    if [ "$ret" != "0" ]; then
-        echo 
-        echo "Failed to apply all updates".
-        exit 1
-    fi
+	if [ -f $update_file ]; then
+		echo "Applying $update_file"
+		eval "$mysql -f hop_salman < $update_file"
+		ret=$?
+		if [ "$ret" != "0" ]; then
+			echo 
+			echo "Failed to apply all updates".
+			#exit 1
+		fi
+	else
+		echo "$update_file does not exist"
+	fi
 done

@@ -86,9 +86,9 @@
       "label": "ESC"
     },
     {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
+      "keyCode": 20546,
+      "label": "RIGHT",
+      "extraLabel": "M.Btn"
     },
     {
       "keyCode": 0,
@@ -106,22 +106,24 @@
       "verbose": "Disabled"
     },
     {
-      "keyCode": 75,
-      "label": "PAGE UP",
-      "verbose": "Page Up"
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
     },
     {
-      "keyCode": 75,
-      "label": "PAGE UP",
-      "verbose": "Page Up"
+      "keyCode": 20497,
+      "label": "UP",
+      "extraLabel": "M.Wheel"
     },
     {
-      "keyCode": 74,
-      "label": "HOME"
+      "keyCode": 20500,
+      "label": "LEFT",
+      "extraLabel": "M.Wheel"
     },
     {
-      "keyCode": 77,
-      "label": "END"
+      "keyCode": 20504,
+      "label": "RIGHT",
+      "extraLabel": "M.Wheel"
     },
     {
       "keyCode": 76,
@@ -148,21 +150,6 @@
       "verbose": "Transparent"
     },
     {
-      "keyCode": 57,
-      "label": "CAPSLOCK",
-      "verbose": "Caps Lock"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 78,
-      "label": "PAGE DOWN",
-      "verbose": "Page Down"
-    },
-    {
       "keyCode": 0,
       "label": "NO KEY",
       "verbose": "Disabled"
@@ -173,9 +160,14 @@
       "verbose": "Disabled"
     },
     {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
+      "keyCode": 20498,
+      "label": "DOWN",
+      "extraLabel": "M.Wheel"
+    },
+    {
+      "keyCode": 20545,
+      "label": "LEFT",
+      "extraLabel": "M.Btn"
     },
     {
       "keyCode": 0,
@@ -188,112 +180,127 @@
       "verbose": "Disabled"
     },
     {
-      "keyCode": 80,
-      "label": "←"
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
     },
     {
-      "keyCode": 81,
-      "label": "↓"
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 20484,
+      "label": "LEFT",
+      "extraLabel": "Mouse"
+    },
+    {
+      "keyCode": 20482,
+      "label": "DOWN",
+      "extraLabel": "Mouse"
+    },
+    {
+      "keyCode": 20481,
+      "label": "UP",
+      "extraLabel": "Mouse"
+    },
+    {
+      "keyCode": 20488,
+      "label": "RIGHT",
+      "extraLabel": "Mouse"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "extraLabel": "TRANS",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "extraLabel": "TRANS",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 20548,
+      "label": "MIDDLE",
+      "extraLabel": "M.Btn"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
+    },
+    {
+      "keyCode": 0,
+      "label": "NO KEY",
+      "verbose": "Disabled"
     },
     {
       "keyCode": 82,
       "label": "↑"
     },
     {
-      "keyCode": 79,
-      "label": "→"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 65535,
-      "label": "",
-      "extraLabel": "TRANS",
-      "verbose": "Transparent"
-    },
-    {
-      "keyCode": 65535,
-      "label": "",
-      "extraLabel": "TRANS",
-      "verbose": "Transparent"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 101,
-      "label": "APP"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 0,
-      "label": "NO KEY",
-      "verbose": "Disabled"
-    },
-    {
-      "keyCode": 82,
-      "label": "↑"
-    },
-    {
       "keyCode": 65535,
       "label": "",
       "extraLabel": "TRANS",
@@ -335,16 +342,14 @@
       "verbose": "Disabled"
     },
     {
-      "keyCode": 65535,
-      "label": "",
-      "extraLabel": "TRANS",
-      "verbose": "Transparent"
+      "keyCode": 17492,
+      "label": "0",
+      "extraLabel": "MOVETO"
     },
     {
-      "keyCode": 65535,
-      "label": "",
-      "extraLabel": "TRANS",
-      "verbose": "Transparent"
+      "keyCode": 17493,
+      "label": "1",
+      "extraLabel": "MOVETO"
     },
     {
       "keyCode": 65535,
@@ -457,6 +462,7 @@
     4,
     4,
     4,
+    0,
     4,
     4,
     4,
@@ -519,8 +525,7 @@
     4,
     4,
     4,
-    4,
-    5
+    4
   ],
   "palette": [
     {

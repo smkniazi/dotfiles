@@ -28,14 +28,14 @@ hops-build-verbose (){
     base_folder="~/code/hops"
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
-	display_colored_msg "Building Hops-gpu-management" && \
-    exe_and_display "cd $base_folder/hops-gpu-management && mvn  $@ install -DskipTests " && \
+	# display_colored_msg "Building Hops-gpu-management" && \
+    # exe_and_display "cd $base_folder/hops-gpu-management && mvn  $@ install -DskipTests " && \
 
-	display_colored_msg "Building Hops-gpu-management-impl-nvidia" && \
-    exe_and_display "cd $base_folder//hops-gpu-management-impl-nvidia && mvn  $@ install -DskipTests " && \
+	# display_colored_msg "Building Hops-gpu-management-impl-nvidia" && \
+    # exe_and_display "cd $base_folder//hops-gpu-management-impl-nvidia && mvn  $@ install -DskipTests " && \
 
-	display_colored_msg "Building Hops-gpu-management-impl-amd" && \
-	exe_and_display "cd $base_folder/hops-gpu-management-impl-amd && mvn  $@ install -DskipTests " && \
+	# display_colored_msg "Building Hops-gpu-management-impl-amd" && \
+	# exe_and_display "cd $base_folder/hops-gpu-management-impl-amd && mvn  $@ install -DskipTests " && \
 
 	display_colored_msg "Building Hops-metadata-dal" && \
 	exe_and_display "cd $base_folder/hops-metadata-dal && mvn  $@ install -DskipTests " && \
@@ -44,7 +44,7 @@ hops-build-verbose (){
 	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && mvn  $@ install -DskipTests " && \
 
 	display_colored_msg "Building Hops" && \
-	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true" && \
+	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources install -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true" && \
 
 	display_colored_msg "Building Hops Tests" && \
 	exe_and_display "cd $base_folder/hops && mvn test-compile " && \
@@ -85,7 +85,7 @@ mi () {
 }
 
 mig () {
-	exe_and_display "mvn $@ install generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true"
+	exe_and_display "mvn $@ install generate-sources install -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true"
 }
 
 
