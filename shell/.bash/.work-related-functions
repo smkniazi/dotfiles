@@ -141,9 +141,9 @@ ndb-ssh-vm(){
 }
 
 ndb-mysql(){
-   ssh -p 2222 -t salman@localhost "/home/salman/.mysql/ndb/scripts/mysql"
+   ssh -p 2222 -t salman@localhost "/home/salman/.mysql/ndb/scripts/mysql $@"
 }
 
 ndb-mycli(){
-   ssh -p 2222 -t salman@localhost "/home/salman/.mysql/ndb/scripts/mycli"
+   ssh -p 2222 -t salman@localhost "/home/salman/.mysql/ndb/scripts/mycli $@"
 }
