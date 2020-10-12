@@ -5,7 +5,6 @@ export PATH=$PATH:~/usr/bin/maven/bin
 export PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-linux
 export PATH=$PATH:~/usr/bin/jdk/bin
 export PATH=$PATH:~/usr/bin/protobuf/src
-export PATH=$PATH:~/usr/bin/kitty/bin
 
 #export GOROOT=$GOROOT:~/usr/bin/go
 

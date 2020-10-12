@@ -67,7 +67,7 @@ hops-build-distro (){
     base_folder="~/code/hops"
 
 	display_colored_msg "Building Distribution" && \
-    exe_and_display "cd $base_folder/hops && mvn clean install package -Pdist -DskipTests -Dtar -Dmaven.javadoc.skip=true" && \
+    exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist,native -Dtar -DskipTests -Dmaven.javadoc.skip=true" && \
 	popd &> /dev/null
 }
 
