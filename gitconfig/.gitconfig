@@ -14,7 +14,7 @@
 	status = auto
 	branch = auto
 	interactive = auto
-	pager = true
+	#pager = true
 	grep = auto
 	decorate = auto
 	showbranch = auto

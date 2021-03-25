@@ -9,6 +9,8 @@ create_path_alias	 h		 ~/code/hops/hops
 create_path_alias	 hm		 ~/code/hops/hops-metadata-dal
 create_path_alias	 hmi	 ~/code/hops/hops-metadata-dal-impl-ndb
 create_path_alias	 hmis	 ~/code/hops/hops-metadata-dal-impl-ndb/schema
+create_path_alias	 hw 	 ~/code/hops/hopsworks-cloud
+create_path_alias	 ei 	 ~/code/hops/ec2-init
 
 create_path_alias	 gh		 ~/code/hops/gitlab/hops
 create_path_alias	 ghm     ~/code/hops/gitlab/hops-metadata-dal

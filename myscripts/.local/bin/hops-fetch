@@ -13,13 +13,4 @@
 	display_colored_msg "Hops-Metadata-Dal-Impl-NDB" 
 	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && git fetch $@" 
 
-	display_colored_msg "Hops-Gpu-Mgm" 
-	exe_and_display "cd $base_folder/hops-gpu-management && git fetch " 
-
-	display_colored_msg "Hops-Gpu-Mgm-Impl-Nvidia" 
-	exe_and_display "cd $base_folder/hops-gpu-management-impl-nvidia && git fetch " 
-
-	display_colored_msg "Hops-Gpu-Mgm-Impl-AMD" 
-	exe_and_display "cd $base_folder/hops-gpu-management-impl-amd && git fetch "
-
 	popd &> /dev/null 

@@ -2,31 +2,24 @@
 user=hop
 password=hop
 
-mysql="mysql -u$user -p$password --protocol=TCP "
-updates=(
-~/code/hops/hops-metadata-dal-impl-ndb/schema/schema.sql
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.1_to_2.8.2.2.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.2_to_2.8.2.3.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.3_to_2.8.2.4.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.4_to_2.8.2.5.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.5_to_2.8.2.6.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.6_to_2.8.2.7.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.7_to_2.8.2.8.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.8_to_2.8.2.9.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.9_to_2.8.2.10.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.9_to_2.8.2.9.1.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.9.1_to_2.8.2.10.sql 
-~/code/hops/hops-metadata-dal-impl-ndb/schema/update-schema_2.8.2.10_to_3.2.0.0.sql
-)
+if [ "$#" -ne 1 ]; then
+  database="hops"
+else
+  database=$1;
+fi
 
-#set -x
+echo "Using Database $database"
+
+mysql="mysql -u$user -p$password --protocol=TCP "
+
+set -x
 #set -e
 
 echo "Dropping Schema" 
-eval "$mysql -e 'DROP DATABASE IF EXISTS hop_salman'"
+eval "$mysql -e 'DROP DATABASE IF EXISTS $database'"
 
 echo "Creating Schema" 
-eval "$mysql -e 'CREATE DATABASE hop_salman'"
+eval "$mysql -e 'CREATE DATABASE $database'"
 
 echo "Dropping and Recreating disk table data files" 
 eval "$mysql -e 'ALTER TABLESPACE ts_1 drop datafile \"ts_1_data_file_0.dat\" ENGINE ndbcluster'"
@@ -36,17 +29,5 @@ eval "$mysql -e 'DROP LOGFILE GROUP lg_1 ENGINE ndbcluster'"
 
 
 echo "Applying Schema updates" 
-for update_file in ${updates[@]}; do
-	if [ -f $update_file ]; then
-		echo "Applying $update_file"
-		eval "$mysql -f hop_salman < $update_file"
-		ret=$?
-		if [ "$ret" != "0" ]; then
-			echo 
-			echo "Failed to apply all updates".
-			#exit 1
-		fi
-	else
-		echo "$update_file does not exist"
-	fi
-done
+cd ~/code/hops/hops-metadata-dal-impl-ndb/schema
+./create-tables.sh 127.0.0.1 3306 hop hop $database

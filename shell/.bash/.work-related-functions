@@ -66,8 +66,17 @@ hops-build-distro (){
 	pushd . &> /dev/null && \
     base_folder="~/code/hops"
 
+	display_colored_msg "Building Hops-metadata-dal" && \
+	exe_and_display "cd $base_folder/hops-metadata-dal && mvn install -DskipTests " && \
+
+	display_colored_msg "Building Hops-metadata-dal-impl-ndb" && \
+	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && mvn  install -DskipTests " && \
+
 	display_colored_msg "Building Distribution" && \
-    exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist,native -Dtar -DskipTests -Dmaven.javadoc.skip=true" && \
+    exe_and_display "cd $base_folder/hops && mvn clean" && \
+
+	display_colored_msg "Building Distribution" && \
+    exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true" && \
 	popd &> /dev/null
 }
 

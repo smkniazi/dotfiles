@@ -21,6 +21,7 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-commentary'
+Plug 'shime/vim-livedown'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
@@ -33,7 +34,6 @@ Plug 'rust-lang/rust.vim'
 "Plug 'tpope/vim-unimpaired'
 "Plug 'tmhedberg/SimpylFold'
 "Plug 'dpelle/vim-LanguageTool'
-"Plug 'shime/vim-livedown'
 "Plug 'chrisbra/csv.vim'
 
 call plug#end()
