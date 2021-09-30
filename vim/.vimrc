@@ -21,15 +21,15 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-commentary'
-Plug 'shime/vim-livedown'
+"Plug 'shime/vim-livedown'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rust-lang/rust.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'rust-lang/rust.vim'
+" Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 "Plug 'vim-syntastic/syntastic'
 "Plug 'w0rp/ale'
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'vim-ruby/vim-ruby'
-"Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 "Plug 'lervag/vimtex'
 "Plug 'tpope/vim-unimpaired'
 "Plug 'tmhedberg/SimpylFold'
@@ -52,7 +52,7 @@ map <C-p> :FZF<CR>
 "source ~/.syntasticrc
 
 "coc-vim
-source ~/.cocvimrc
+"source ~/.cocvimrc
 
 
 " rust.vim

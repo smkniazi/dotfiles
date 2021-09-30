@@ -13,6 +13,8 @@
 #custom	'mouse-scroll-up'	'$HOME/.local/bin/mouse-ctrl -4'	'<Primary><Alt>4'
 #custom	'mouse-scroll-down'	'$HOME/.local/bin/mouse-ctrl -5'	'<Primary><Alt>5'
 #custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super>m'
+#custom	'sound-up'	'$HOME/.local/bin/volume.sh inc'	'<Super>a'
+#custom	'sound-down'	'$HOME/.local/bin/volume.sh dec'	'<Super><Shift>a'
 #
 # MSIC
 custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super><Shift>m'
@@ -20,8 +22,6 @@ custom	'wifi-rset'	'$HOME/.local/bin/wifi-reset '	'<Primary><Alt>w'
 custom	'type-text'	'$HOME/.local/bin/type-text '	'<Primary><Alt>p'
 custom	'brightness-inc'	'$HOME/.local/bin/brightness up'	'<Super>s'
 custom	'brightness-dec'	'$HOME/.local/bin/brightness down'	'<Super><Shift>s'
-custom	'sound-up'	'$HOME/.local/bin/volume.sh 10%+'	'<Super>a'
-custom	'sound-down'	'$HOME/.local/bin/volume.sh 10%-'	'<Super><Shift>a'
 custom	'brightness-inc'	'xbacklight -inc 5 '	'[]'
 custom	'brightness-dec'	'xbacklight -dec 5 '	'[]'
 custom	'transmission'	'$HOME/.local/bin/run-or-raise.py \'$HOME/.local/bin/zathuranoblur\' Zathura evince okular'	'<Super>z'
@@ -93,3 +93,10 @@ org.gnome.shell.keybindings	toggle-overview	[]
 org.gnome.shell.keybindings	focus-active-notification	[]
 org.gnome.shell.keybindings	toggle-message-tray	['<Primary><Alt>m']
 org.gnome.shell.keybindings	toggle-application-view	[]
+org.gnome.settings-daemon.plugins.media-keys	volume-down	        ['<Shift><Super>a']
+org.gnome.settings-daemon.plugins.media-keys	volume-up	          ['<Super>a']
+org.gnome.mutter.keybindings	toggle-tiled-right	['<Primary><Super>l', '<Super>Right']
+org.gnome.mutter.keybindings	toggle-tiled-left	['<Primary><Super>h', '<Super>Left']
+org.gnome.desktop.wm.keybindings	maximize-horizontally	['<Primary><Super>j', '<Super>Down']
+org.gnome.desktop.wm.keybindings	maximize-vertically	['<Primary><Super>k', '<Super>Up']
+org.gnome.settings-daemon.plugins.media-keys	screensaver	[]

@@ -32,3 +32,11 @@
 	trustExitCode = true
 [mergetool]
 	trustExitCode = true
+#[index]
+#	threads = 3
+#[pack]
+#	threads = 3
+#[format]
+#	threads = 3
+#[grep]
+#	threads = 3

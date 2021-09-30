@@ -70,7 +70,7 @@ hops-build-distro (){
 	exe_and_display "cd $base_folder/hops-metadata-dal && mvn install -DskipTests " && \
 
 	display_colored_msg "Building Hops-metadata-dal-impl-ndb" && \
-	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && mvn  install -DskipTests " && \
+	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && mvn clean assembly:assembly -DskipTests " && \
 
 	display_colored_msg "Building Distribution" && \
     exe_and_display "cd $base_folder/hops && mvn clean" && \
