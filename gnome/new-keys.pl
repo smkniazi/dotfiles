@@ -42,6 +42,9 @@ custom	'open-dropbox-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home
 custom	'open-downloads-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
 custom	'movet-win-to-left'	'$HOME/.local/bin/resize-window -d l'	'<Primary><Super>h'
 custom	'movet-win-to-right'	'$HOME/.local/bin/resize-window -d r'	'<Primary><Super>l'
+custom	'fullscreen'	'$HOME/.local/bin/resize-window -f'	'<Primary><Super>f'
+custom	'fullscreen2'	'$HOME/.local/bin/resize-window -f'	'<Super><Shift>f'
+custom	'center'	'$HOME/.local/bin/resize-window -c'	'<Primary><Super>m'
 # GNOME
 org.gnome.desktop.wm.keybindings	switch-to-workspace-1	['<Super>1']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-2	['<Super>2']
@@ -79,13 +82,13 @@ org.gnome.desktop.wm.keybindings	move-to-monitor-up	[]
 org.gnome.desktop.wm.keybindings	switch-applications	['<Super>Tab', '<Alt>Tab']
 org.gnome.desktop.wm.keybindings	switch-applications-backward	['<Shift><Super>Tab', '<Shift><Alt>Tab']
 org.gnome.desktop.wm.keybindings	toggle-fullscreen	[]
-org.gnome.desktop.wm.keybindings	toggle-maximized	['<Super><Shift>f']
+org.gnome.desktop.wm.keybindings	toggle-maximized	[]
 org.gnome.desktop.wm.keybindings	show-desktop	        ['<Super>d']
 org.gnome.desktop.wm.keybindings	cycle-windows-backward	['<Super><Shift>g']
 org.gnome.desktop.wm.keybindings	cycle-windows	        ['<Super>g']
 org.gnome.desktop.wm.keybindings	minimize	        ['<Super>m']
 org.gnome.desktop.wm.keybindings	unmaximize	        ['<Super>Down', '<Alt>F5']
-org.gnome.desktop.wm.keybindings	maximize	        ['<Super><Shift>f']
+org.gnome.desktop.wm.keybindings	maximize	        []
 org.gnome.desktop.wm.keybindings	panel-main-menu	[]
 org.gnome.mutter.keybindings	toggle-tiled-left	        []
 org.gnome.mutter.keybindings	toggle-tiled-right	        []
