@@ -1,0 +1,85 @@
+#!/bin/bash
+
+help(){
+log "-d <direction> select the direction.  l,r for left, and right respectively"
+}
+
+function log(){
+	message=$1
+	echo -e    $1
+	#echo -e    $1 >> /tmp/switcher/log
+}
+
+# A POSIX variable
+OPTIND=1         # Reset in case getopts has been used previously in the shell.
+direction="l"
+while getopts ":d:" opt; do
+    case "$opt" in
+    d)  direction=$OPTARG
+        ;;
+    *)
+        help
+        exit 0
+        ;;
+    esac
+done
+shift $((OPTIND-1))
+[ "$1" = "--" ] && shift
+
+log "Parameters received are: -d '$direction'"
+
+if [ $direction != "l" ] &&  [ $direction != "r" ] ; then
+	log "Only moving window to left and right is supported for now" 
+	exit 1
+fi
+
+resolution=($(xdpyinfo | grep -ioh "dimensions.*[0-9x]*pixels" | grep -ioh [0-9]*))
+resolution_width=${resolution[0]}
+resolution_height=${resolution[1]}
+sizes=()
+
+scales=("1.0" "0.62" "0.5" "0.38")
+for scale in "${scales[@]}"
+do
+	size_float=$(bc <<< "scale=0; $resolution_width*$scale")
+	size_int=$(printf "%.0f" $size_float)
+	sizes+=($size_int)
+done
+echo "Sizes: ${sizes[@]}"
+
+geometry=($(xdotool getwindowfocus getwindowgeometry | grep "Geometry" | grep -ioh [0-9]* ))
+geometryx=${geometry[0]}
+geometryy=${geometry[1]}
+echo "Current Geometry $geometryx, $geometryy" 
+
+i=0
+while [ $i -ne ${#sizes[@]} ]
+do
+
+	echo "${sizes[$i]}   ==  $geometryx"
+    if [ "${sizes[$i]}" == "$geometryx" ]; then
+		echo "Found Size: ${sizes[$i]}"
+		i=$(($i+1))
+		break	
+	fi
+
+	i=$(($i+1))
+done
+
+next_size=$(( ($i) % ${#sizes[@]} ))
+echo "Next size. index: $next_size, size: ${sizes[$next_size]}"
+
+if [ "$direction" == "l" ]; then 
+    echo "Resizing to left"
+	xdotool getactivewindow windowmove 0 0 
+	xdotool getactivewindow windowsize ${sizes[$next_size]} $resolution_height
+fi
+
+if [ "$direction" == "r" ]; then 
+    echo "Resizing to right"
+	movex=$(($resolution_width-${sizes[$next_size]}))
+	movey=0
+    echo "Move x, y $movex, $movey"
+	xdotool getactivewindow windowsize ${sizes[$next_size]} $resolution_height 
+	xdotool getactivewindow windowmove  $movex $movey 
+fi

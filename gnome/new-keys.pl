@@ -40,6 +40,8 @@ custom	'code'	'$HOME/.local/bin/run-or-raise.py code code'	'<Super>c'
 custom	'keepassxc'	'$HOME/.local/bin/run-or-raise.py keepassxc keepassxc'	'<Super><Shift>c'
 custom	'open-dropbox-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Downloads'	'<Primary><Alt>d'
 custom	'open-downloads-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
+custom	'movet-win-to-left'	'$HOME/.local/bin/resize-window -d l'	'<Primary><Super>h'
+custom	'movet-win-to-right'	'$HOME/.local/bin/resize-window -d r'	'<Primary><Super>l'
 # GNOME
 org.gnome.desktop.wm.keybindings	switch-to-workspace-1	['<Super>1']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-2	['<Super>2']
@@ -95,8 +97,8 @@ org.gnome.shell.keybindings	toggle-message-tray	['<Primary><Alt>m']
 org.gnome.shell.keybindings	toggle-application-view	[]
 org.gnome.settings-daemon.plugins.media-keys	volume-down	        ['<Shift><Super>a']
 org.gnome.settings-daemon.plugins.media-keys	volume-up	          ['<Super>a']
-org.gnome.mutter.keybindings	toggle-tiled-right	['<Primary><Super>l', '<Super>Right']
-org.gnome.mutter.keybindings	toggle-tiled-left	['<Primary><Super>h', '<Super>Left']
+org.gnome.mutter.keybindings	toggle-tiled-right	['<Super>Right']
+org.gnome.mutter.keybindings	toggle-tiled-left	['<Super>Left']
 org.gnome.desktop.wm.keybindings	maximize-horizontally	['<Primary><Super>j', '<Super>Down']
 org.gnome.desktop.wm.keybindings	maximize-vertically	['<Primary><Super>k', '<Super>Up']
 org.gnome.settings-daemon.plugins.media-keys	screensaver	[]
