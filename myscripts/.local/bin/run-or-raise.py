@@ -21,7 +21,7 @@ def logger(msg):
 
 def get_matches():
     all_wnd_ids = get_matching_class_winids()
-    logger("all window ids matching the class \""+ ", ".join(window_classes)  +"\":"+ ", ".join(all_wnd_ids))
+    logger("all window ids matching the class \""+ ", ".join(window_classes)  +"\": "+ ", ".join(all_wnd_ids))
     visible_wnd_ids = get_visible_winids()
     logger("all visible windows: "+ ", ".join(visible_wnd_ids))
 
@@ -64,14 +64,18 @@ def get_curr_focus_id():
         return "0"
 
 def get_matching_class_winids():
-    output = []
-    for wndclass in window_classes:
-        #cmd = ["xdotool", "search", "--desktop", curr_desktop, "--class", wndclass]
-        cmd = ["xdotool", "search",  "--class", wndclass]
-        output = output + run_bash_command(cmd).split('\n')
-    for x in range(0, output.count('')):
-        output.remove('')
-    return output
+    ret = []
+
+    cmd = ["wmctrl", "-p",  "-l", "-x"]
+    outpulines = run_bash_command(cmd).splitlines()
+    for line in outpulines :
+        tokens = line.split()
+        wndclass=tokens[3]
+
+        for wc in window_classes:
+            if wc.lower() in str(wndclass).lower() :
+                ret = ret + [str(int(tokens[0], base=16))]
+    return ret 
 
 def get_visible_winids():
     winids_temp = []

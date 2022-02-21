@@ -16,16 +16,16 @@ Plug 'godlygeek/tabular'
 Plug 'timakro/vim-searchant'
 Plug 'vim-scripts/taglist.vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'chrisbra/vim-diff-enhanced'
-Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-commentary'
-"Plug 'shime/vim-livedown'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'powerman/vim-plugin-AnsiEsc'
+"Plug 'dhruvasagar/vim-table-mode'
+"Plug 'shime/vim-livedown'
 " Plug 'rust-lang/rust.vim'
-" Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 "Plug 'vim-syntastic/syntastic'
 "Plug 'w0rp/ale'
 "Plug 'Valloric/YouCompleteMe'
@@ -52,11 +52,7 @@ map <C-p> :FZF<CR>
 "source ~/.syntasticrc
 
 "coc-vim
-"source ~/.cocvimrc
-
-
-" rust.vim
-let g:rustfmt_autosave = 1
+source ~/.cocvimrc
 
 "##########################################################
 "################### Themes ###############################                    
@@ -98,9 +94,6 @@ highlight CursorLineNr  cterm=none ctermfg=gray ctermbg=none
 
 "hilight comments
 highlight Comment  cterm=italic ctermbg=none ctermfg=gray
-
-"latex highlights
-source ~/.vimrc-latex-hl
 
 "highlight colo
 highlight   Visual ctermfg=NONE ctermbg=39      cterm=NONE   
@@ -146,13 +139,6 @@ if &diff
     let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 endif
 
-
-"##########################################################
-"################### Encryption ###########################                    
-"##########################################################
-
-set cryptmethod=blowfish2
-
 "##########################################################
 "#################### Misc ################################                    
 "##########################################################
@@ -192,18 +178,10 @@ set shiftwidth=2
 set tabstop=2 
 set softtabstop=2 
 "two space identation 
-au FileType python,java,go,rust
+au FileType python,java,go,rust,sh
             \ setlocal shiftwidth=2 |
             \ setlocal tabstop=2 |
             \ setlocal softtabstop=2 |
-            \ setlocal textwidth=100| 
-            \ setlocal colorcolumn=101|
-
-"four space identation 
-au FileType rust,sh
-            \ setlocal shiftwidth=4 |
-            \ setlocal tabstop=4 |
-            \ setlocal softtabstop=4 |
             \ setlocal textwidth=100| 
             \ setlocal colorcolumn=101|
 
@@ -226,16 +204,6 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch 
 
-" Keep search matches in the middle of the window.
-"nnoremap n nzzzv
-"nnoremap N Nzzzv
-
-" Show matching brackets when text indicator is over them
-"set showmatch 
-
-" How many tenths of a second to blink when matching brackets
-"set mat=2
-
 " bash like tab completion for file names
 set wildmode=longest,list,full
 set wildmenu
@@ -248,7 +216,7 @@ else
 endif
 
 " paste
-set paste
+"set paste
 
 " not to break on words
 set formatoptions=1
@@ -259,7 +227,7 @@ set foldmethod=indent
 set foldlevel=99
 
 " file format
-set fileformat=unix
+"set fileformat=unix
 
 " enable mouse
 set mouse=a
@@ -270,13 +238,6 @@ imap jj <Esc>
 " move scree without moving cursor
 "nnoremap <C-e> kzz
 "nnoremap <C-y> jzz
-
-" isert matching braces
-inoremap {<CR> {<CR>}<Esc>ko
-"inoremap ( ()<Esc>i
-"inoremap [ []<Esc>i
-
-
 
 "##########################################################
 "################### Key Bindings #########################                    
@@ -357,7 +318,7 @@ map <silent> <leader>m :w<CR>  :!make <CR>
 " nerdtree file filter
 nnoremap <leader>f :call FilterFiles()<cr>
 
-nmap <silent> <leader>a :Gblame <CR>
+nmap <silent> <leader>a :Git blame <CR>
 
 "synchronized split
 "https://vim.fandom.com/wiki/View_text_file_in_two_columns
@@ -403,23 +364,23 @@ nmap <silent> <leader>c :set spell!<CR>
 " Auto correct mistakes
 iab filesystem file system
 
-"##########################################################
-"################### Functions ############################                    
-"##########################################################
-
-"filter files for nerdtree plugin
-function! FilterFiles()
-    call inputsave()
-    let extension = input('Enter File Extention To Filter:')
-    call inputrestore()
-    let test = "let g:NERDTreeIgnore = ['\\(\\.".extension."\\)\\@<!$[[file]]\']"
-    execute test
-endfunction
-
-
-"osc 52 yank
-vnoremap <leader>y "zy:call Osc52Yank()<cr>
-function! Osc52Yank()
-     let buffer=@z
-     execute  "!echo -ne ".shellescape(buffer, 1)." | yank"
-endfunction
+""##########################################################
+""################### Functions ############################                    
+""##########################################################
+"
+""filter files for nerdtree plugin
+"function! FilterFiles()
+"    call inputsave()
+"    let extension = input('Enter File Extention To Filter:')
+"    call inputrestore()
+"    let test = "let g:NERDTreeIgnore = ['\\(\\.".extension."\\)\\@<!$[[file]]\']"
+"    execute test
+"endfunction
+"
+"
+""osc 52 yank
+"vnoremap <leader>y "zy:call Osc52Yank()<cr>
+"function! Osc52Yank()
+"     let buffer=@z
+"     execute  "!echo -ne ".shellescape(buffer, 1)." | yank"
+"endfunction

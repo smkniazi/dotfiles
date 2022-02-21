@@ -49,7 +49,7 @@ if  [ "$direction" == "" ] &&  ( [ $centre == true ] &&  [ $fullscreen == true ]
 	exit 1
 fi
 
-resolution=($(xdpyinfo | grep -ioh "dimensions.*[0-9x]*pixels" | grep -ioh [0-9]*))
+resolution=($(xdpyinfo | grep -ioh "dimensions.*[0-9x]*pixels" | grep -ioh "[0-9]*"))
 resolution_width=${resolution[0]}
 resolution_height=${resolution[1]}
 
@@ -68,9 +68,9 @@ do
 	size_int=$(printf "%.0f" $size_float)
 	sizes+=($size_int)
 done
-#log "Sizes: ${sizes[@]}"
+log "Sizes: ${sizes[*]}"
 
-geometry=($(xdotool getwindowfocus getwindowgeometry | grep "Geometry" | grep -ioh [0-9]* ))
+geometry=($(xdotool getwindowfocus getwindowgeometry | grep "Geometry" | grep -ioh "[0-9]*" ))
 geometryx=${geometry[0]}
 geometryy=${geometry[1]}
 #log "Current Geometry $geometryx, $geometryy" 
