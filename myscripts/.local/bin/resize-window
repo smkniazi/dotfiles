@@ -61,7 +61,7 @@ if [ $fullscreen == true ]; then
 fi
 
 sizes=()
-scales=("0.62" "0.5" "0.38")
+scales=("0.7" "0.62" "0.5" "0.38" "0.3")
 for scale in "${scales[@]}"
 do
 	size_float=$(bc <<< "scale=0; $resolution_width*$scale")
