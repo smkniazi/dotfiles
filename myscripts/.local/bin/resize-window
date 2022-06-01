@@ -49,7 +49,7 @@ if  [ "$direction" == "" ] &&  ( [ $centre == true ] &&  [ $fullscreen == true ]
 	exit 1
 fi
 
-resolution=($(xdpyinfo | grep -ioh "dimensions.*[0-9x]*pixels" | grep -ioh "[0-9]*"))
+resolution=($(xdpyinfo | grep -ioh "dimensions.*[0-9x]*pixels" | grep -ioh [0-9]*))
 resolution_width=${resolution[0]}
 resolution_height=${resolution[1]}
 
@@ -70,7 +70,7 @@ do
 done
 log "Sizes: ${sizes[*]}"
 
-geometry=($(xdotool getwindowfocus getwindowgeometry | grep "Geometry" | grep -ioh "[0-9]*" ))
+geometry=($(xdotool getwindowfocus getwindowgeometry | grep "Geometry" | grep -ioh [0-9]* ))
 geometryx=${geometry[0]}
 geometryy=${geometry[1]}
 #log "Current Geometry $geometryx, $geometryy" 
@@ -111,6 +111,8 @@ if [ "$centre" == true ]; then
     sizey=$resolution_height
 fi
 
+p=$(xdotool getactivewindow)
+log $p
 log "Start: ($movex,$movey) Size: ($sizex x $sizey)"
 xdotool getactivewindow windowsize $sizex $sizey 
 xdotool getactivewindow windowmove $movex $movey 
@@ -120,6 +122,8 @@ adjustment=($(xwininfo  -id $(xdotool getactivewindow) | grep "geometry" | grep 
 adjustment=${adjustment[1]}
 log "Adjustment $adjustment"
 if [ "$adjustment" != "0" ]; then
-	sizey=$((sizey-$adjustment))
+	sizey=$(($sizey-$adjustment))
+  #wmctrl -ir $(xdotool getactivewindow) -b toggle,maximized_vert,maximized_horz
+  wmctrl -ir $(xdotool getactivewindow) -b remove,maximized_vert,maximized_horz
 	xdotool getactivewindow windowsize $sizex $sizey 
 fi
