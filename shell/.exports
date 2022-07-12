@@ -23,3 +23,7 @@ export MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
 #export GOROOT=~/usr/bin/go
 #export PATH=$PATH:$GOROOT/bin
 #export GOPATH=~/code/gocode
+
+#FZF ag respects the .gitignore
+export FZF_DEFAULT_COMMAND='ag -g ""'
+

@@ -30,10 +30,10 @@ starttmux() {
 
     echo "tmux new-window "ssh $user@${hosts[0]}""
     
-    tmux new-window "ssh $user@${hosts[0]}"
+    tmux new-window "ssh -i ~/code/lc-dev.pem $user@${hosts[0]}"
     unset hosts[0];
     for i in "${hosts[@]}"; do
-        tmux split-window -h  "ssh $user@$i"
+        tmux split-window -h  "ssh -i ~/code/lc-dev.pem $user@$i"
         tmux select-layout tiled > /dev/null
     done
     tmux select-pane -t 0

@@ -1,4 +1,4 @@
-" set leader key
+"Plugin" set leader key
 let mapleader = "\<Space>"
 
 "##########################################################
@@ -15,13 +15,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
 Plug 'timakro/vim-searchant'
 Plug 'vim-scripts/taglist.vim'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
-
+Plug 'rhysd/vim-clang-format'
+Plug 'iamcco/markdown-preview.nvim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'NLKNguyen/papercolor-theme'
 "Plug 'powerman/vim-plugin-AnsiEsc'
 "Plug 'dhruvasagar/vim-table-mode'
 "Plug 'shime/vim-livedown'
@@ -43,16 +45,20 @@ call plug#end()
 "##########################################################
 
 "nerdtree
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 
 " FZF
 map <C-p> :FZF<CR>
+" map <C-g> :GFiles<CR>
 
 "syntastic 
 "source ~/.syntasticrc
 
 "coc-vim
 source ~/.cocvimrc
+
+" comment style
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 "##########################################################
 "################### Themes ###############################                    
@@ -61,16 +67,6 @@ source ~/.cocvimrc
 " colors
 set t_Co=256
 set background=light
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default': {
-  \       'transparent_background': 1,
-  \       'allow_italic': 1,
-  \       'allow_bold': 1
-  \     }
-  \   }
-  \ }
-colorscheme PaperColor
 "set termguicolors
 
 "##########################################################
@@ -98,6 +94,9 @@ highlight Comment  cterm=italic ctermbg=none ctermfg=gray
 "highlight colo
 highlight   Visual ctermfg=NONE ctermbg=39      cterm=NONE   
 highlight   Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE   
+
+"color column
+highlight ColorColumn ctermfg=NONE ctermbg=lightgray  cterm=NONE   
 
 "mode indicator
 set showmode
@@ -178,7 +177,7 @@ set shiftwidth=2
 set tabstop=2 
 set softtabstop=2 
 "two space identation 
-au FileType python,java,go,rust,sh
+au FileType python,java,go,rust,sh,c,cpp
             \ setlocal shiftwidth=2 |
             \ setlocal tabstop=2 |
             \ setlocal softtabstop=2 |
@@ -298,7 +297,7 @@ let g:searchant_map_stop = 0
 nmap <silent> <leader>/ <Plug>SearchantStop
 
 " leader save
-nmap <silent> <leader>s :w<CR>
+nmap <silent> <leader>s :wa<CR>
 nmap <silent> <leader><space> :w<CR>
 
 " window selection 
@@ -315,8 +314,10 @@ nmap <silent> <leader>u :diffupdate <CR>
 " leader makes
 map <silent> <leader>m :w<CR>  :!make <CR>
 
-" nerdtree file filter
-nnoremap <leader>f :call FilterFiles()<cr>
+" format code 
+autocmd FileType c    nnoremap <buffer><silent><leader>f :ClangFormat<CR>
+autocmd FileType cpp  nnoremap <buffer><silent><leader>f :ClangFormat<CR>
+autocmd FileType taglist set norelativenumber
 
 nmap <silent> <leader>a :Git blame <CR>
 
@@ -333,7 +334,7 @@ nmap <silent> <leader>a :Git blame <CR>
 " " \l       : list buffers
 " " \i \o \g : go back/forward/last-used
 " " \1 \2 \3 : go to buffer 1/2/3 etc
- nnoremap <Leader>b :buffers<CR>:b<Space>
+ nnoremap <Leader>b :Buffers<CR>
  nnoremap <Leader>g :e#<CR>
  nnoremap <Leader>1 :1b<CR>
  nnoremap <Leader>2 :2b<CR>
