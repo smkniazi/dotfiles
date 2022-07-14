@@ -23,6 +23,7 @@ Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 Plug 'rhysd/vim-clang-format'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'liuchengxu/vista.vim'
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'powerman/vim-plugin-AnsiEsc'
 "Plug 'dhruvasagar/vim-table-mode'
@@ -89,14 +90,27 @@ highlight SignColumn    cterm=none ctermfg=gray ctermbg=none
 highlight CursorLineNr  cterm=none ctermfg=gray ctermbg=none
 
 "hilight comments
-highlight Comment  cterm=italic ctermbg=none ctermfg=gray
+"highlight Comment  cterm=italic ctermbg=none ctermfg=darkgray
 
 "highlight colo
 highlight   Visual ctermfg=NONE ctermbg=39      cterm=NONE   
 highlight   Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE   
 
-"color column
-highlight ColorColumn ctermfg=NONE ctermbg=lightgray  cterm=NONE   
+" split divider line 
+set fillchars+=vert:\▏
+highlight VertSplit cterm=NONE
+
+"color column if line length exceeds lenght
+autocmd BufEnter * highlight OverLength cterm=underline ctermbg=lightred 
+" autocmd  BufEnter * match OverLength /\%101v/
+autocmd BufEnter * if &ft ==# 'c'
+      \ || &ft ==# 'cpp'
+      \ || &ft ==# 'cc'
+      \ || &ft ==# 'h'
+      \ || &ft ==# 'hpp'
+      \ || &ft ==# 'go'
+      \ || &ft ==# 'sh' 
+      \ | match OverLength /\%101v/ | endif
 
 "mode indicator
 set showmode
@@ -112,10 +126,7 @@ set showcmd
 "Status line color
 hi StatusLine   ctermfg=0  ctermbg=YELLOW cterm=bold 
 hi StatusLineNC ctermfg=255  ctermbg=GRAY cterm=bold 
-
-"show function name in the status line. tagline plugin needed
-"set laststatus=2
-set statusline +=\ %{Tlist_Get_Tagname_By_Line()}
+set statusline=
 
 " Need the following two lines for iterm to support italics
 let &t_ZH="\e[3m"
@@ -182,7 +193,6 @@ au FileType python,java,go,rust,sh,c,cpp
             \ setlocal tabstop=2 |
             \ setlocal softtabstop=2 |
             \ setlocal textwidth=100| 
-            \ setlocal colorcolumn=101|
 
 " encoding
 set encoding=utf-8
@@ -241,9 +251,6 @@ imap jj <Esc>
 "##########################################################
 "################### Key Bindings #########################                    
 "##########################################################
-
-" set the begenning of the function to the top of the window
-nnoremap <leader>mm mq[mzt`q
 
 " resize splits 
 " use same key binding for pane/split resize in vim and tmux
@@ -319,7 +326,15 @@ autocmd FileType c    nnoremap <buffer><silent><leader>f :ClangFormat<CR>
 autocmd FileType cpp  nnoremap <buffer><silent><leader>f :ClangFormat<CR>
 autocmd FileType taglist set norelativenumber
 
-nmap <silent> <leader>a :Git blame <CR>
+" git blame
+function! s:ToggleBlame()
+    if &l:filetype ==# 'fugitiveblame'
+        close
+    else
+        Git blame
+    endif
+endfunction
+nmap <silent> <leader>a :call <SID>ToggleBlame()<CR>
 
 "synchronized split
 "https://vim.fandom.com/wiki/View_text_file_in_two_columns
@@ -336,16 +351,16 @@ nmap <silent> <leader>a :Git blame <CR>
 " " \1 \2 \3 : go to buffer 1/2/3 etc
  nnoremap <Leader>b :Buffers<CR>
  nnoremap <Leader>g :e#<CR>
- nnoremap <Leader>1 :1b<CR>
- nnoremap <Leader>2 :2b<CR>
- nnoremap <Leader>3 :3b<CR>
- nnoremap <Leader>4 :4b<CR>
- nnoremap <Leader>5 :5b<CR>
- nnoremap <Leader>6 :6b<CR>
- nnoremap <Leader>7 :7b<CR>
- nnoremap <Leader>8 :8b<CR>
- nnoremap <Leader>9 :9b<CR>
- nnoremap <Leader>0 :10b<CR>
+" nnoremap <Leader>1 :1b<CR>
+" nnoremap <Leader>2 :2b<CR>
+" nnoremap <Leader>3 :3b<CR>
+" nnoremap <Leader>4 :4b<CR>
+" nnoremap <Leader>5 :5b<CR>
+" nnoremap <Leader>6 :6b<CR>
+" nnoremap <Leader>7 :7b<CR>
+" nnoremap <Leader>8 :8b<CR>
+" nnoremap <Leader>9 :9b<CR>
+" nnoremap <Leader>0 :10b<CR>
  "set autowriteall
  set confirm
  " ignore unsaved files while switching buffers
@@ -365,23 +380,11 @@ nmap <silent> <leader>c :set spell!<CR>
 " Auto correct mistakes
 iab filesystem file system
 
-""##########################################################
-""################### Functions ############################                    
-""##########################################################
-"
-""filter files for nerdtree plugin
-"function! FilterFiles()
-"    call inputsave()
-"    let extension = input('Enter File Extention To Filter:')
-"    call inputrestore()
-"    let test = "let g:NERDTreeIgnore = ['\\(\\.".extension."\\)\\@<!$[[file]]\']"
-"    execute test
-"endfunction
-"
-"
-""osc 52 yank
-"vnoremap <leader>y "zy:call Osc52Yank()<cr>
-"function! Osc52Yank()
-"     let buffer=@z
-"     execute  "!echo -ne ".shellescape(buffer, 1)." | yank"
-"endfunction
+let g:vista_default_executive = 'coc'
+let g:vista#renderer#enable_icon = 0
+
+nmap <leader>7  :Vista!!<CR>
+nmap <leader>so :Vista finder<CR>
+nmap <leader>sl :Lines<CR>
+
+
