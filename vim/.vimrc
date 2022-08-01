@@ -1,4 +1,4 @@
-"Plugin" set leader key
+" set leader key
 let mapleader = "\<Space>"
 
 "##########################################################
@@ -24,6 +24,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'liuchengxu/vista.vim'
+Plug 'm-pilia/vim-ccls'
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'powerman/vim-plugin-AnsiEsc'
 "Plug 'dhruvasagar/vim-table-mode'
@@ -59,7 +60,7 @@ map <C-p> :FZF<CR>
 source ~/.cocvimrc
 
 " comment style
-autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+autocmd FileType go,c,cpp,cs,java setlocal commentstring=//\ %s
 
 "##########################################################
 "################### Themes ###############################                    
@@ -101,7 +102,7 @@ set fillchars+=vert:\▏
 highlight VertSplit cterm=NONE
 
 "color column if line length exceeds lenght
-autocmd BufEnter * highlight OverLength cterm=underline ctermbg=lightred 
+autocmd BufEnter * highlight OverLength cterm=none ctermbg=lightred 
 " autocmd  BufEnter * match OverLength /\%101v/
 autocmd BufEnter * if &ft ==# 'c'
       \ || &ft ==# 'cpp'
@@ -114,7 +115,7 @@ autocmd BufEnter * if &ft ==# 'c'
 
 "mode indicator
 set showmode
-highlight ModeMsg ctermbg=DARKRED ctermfg=WHITE
+highlight ModeMsg ctermbg=none ctermfg=DARKRED
 "set noshowmode
 
 " Add a bit extra margin to the left
@@ -244,6 +245,9 @@ set mouse=a
 "enter normal mode
 imap jj <Esc>
 
+autocmd FileType go,c,cpp,cs,java imap  { {<Space>}<Left><Left>
+autocmd FileType go,c,cpp,cs,java imap  [ [<Space>]<Left><Left>
+
 " move scree without moving cursor
 "nnoremap <C-e> kzz
 "nnoremap <C-y> jzz
@@ -322,8 +326,10 @@ nmap <silent> <leader>u :diffupdate <CR>
 map <silent> <leader>m :w<CR>  :!make <CR>
 
 " format code 
-autocmd FileType c    nnoremap <buffer><silent><leader>f :ClangFormat<CR>
-autocmd FileType cpp  nnoremap <buffer><silent><leader>f :ClangFormat<CR>
+autocmd FileType c      nnoremap <buffer><silent><leader>f :ClangFormat<CR>
+autocmd FileType cpp    nnoremap <buffer><silent><leader>f :ClangFormat<CR>
+autocmd FileType proto  nnoremap <buffer><silent><leader>f :ClangFormat<CR>
+
 autocmd FileType taglist set norelativenumber
 
 " git blame

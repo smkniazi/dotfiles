@@ -1,10 +1,10 @@
 #!/bin/bash
-zenity --question --text "Do you want to start IntelliJ?"
 
 source ~/.aws/azure
 export GOOGLE_APPLICATION_CREDENTIALS="/home/salman/.aws.work/google-cloud-perm.json"
 export CLUSTERJ_LOGGER_FACTORY=io.hops.metadata.ndb.wrapper.HopsLoggerFactory
 
+zenity --question --text "Do you want to start IntelliJ?"
 if (( "$?" == "0" )) ; then
  /home/salman/usr/bin/idea/bin/idea.sh & 
 fi
