@@ -1,0 +1,50 @@
+{
+    "workbench.colorTheme": "Default Light+",
+    "editor.lineNumbers": "relative",
+    "vim.useSystemClipboard": true,
+    "go.formatTool": "goimports",
+    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.shell.linux": "/bin/sh",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "python.languageServer": "Pylance",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "workbench.editor.untitled.hint": "hidden",
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "go.toolsManagement.autoUpdate": true,
+    "editor.tabSize": 2,
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "l", "u"],
+            "commands": [
+                "references-view.findReferences"
+            ]
+        },
+        {
+            "before": ["<leader>", "r", "e"],
+            "commands": [
+                "editor.action.rename"
+            ]
+        }
+    ],
+"editor.renderLineHighlight": "all",
+"workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#d3d3d3",
+    "editor.lineHighlightBorder": "#d3d3d3"
+}
+}
