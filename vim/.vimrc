@@ -91,7 +91,8 @@ highlight SignColumn    cterm=none ctermfg=gray ctermbg=none
 highlight CursorLineNr  cterm=none ctermfg=gray ctermbg=none
 
 "hilight comments
-"highlight Comment  cterm=italic ctermbg=none ctermfg=darkgray
+highlight Comment  cterm=italic 
+"ctermbg=none ctermfg=none
 
 "highlight colo
 highlight   Visual ctermfg=NONE ctermbg=39      cterm=NONE   
