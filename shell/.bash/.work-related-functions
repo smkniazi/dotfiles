@@ -76,7 +76,7 @@ hops-build-distro (){
     exe_and_display "cd $base_folder/hops && mvn clean" && \
 
 	display_colored_msg "Building Distribution" && \
-    exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true" && \
+    exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist,native -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
 	popd &> /dev/null
 }
 
@@ -134,11 +134,13 @@ tmux-pane-color(){
 }
 
 ndb-start-vm(){
+    pushd .; cd /tmp
     VBoxManage startvm centos --type headless
     echo "Starting VM ..."
     sleep 15
     echo "Starting Starting NDB ..."
     ssh -p 2222 salman@localhost ./start-cluster
+    popd
 }
 
 ndb-stop-vm(){

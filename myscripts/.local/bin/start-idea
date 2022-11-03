@@ -2,7 +2,7 @@
 
 source ~/.aws/azure
 export GOOGLE_APPLICATION_CREDENTIALS="/home/salman/.aws.work/google-cloud-perm.json"
-export CLUSTERJ_LOGGER_FACTORY=io.hops.metadata.ndb.wrapper.HopsLoggerFactory
+#export CLUSTERJ_LOGGER_FACTORY=io.hops.metadata.ndb.wrapper.HopsLoggerFactory
 
 zenity --question --text "Do you want to start IntelliJ?"
 if (( "$?" == "0" )) ; then

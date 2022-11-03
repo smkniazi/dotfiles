@@ -5,27 +5,23 @@ create_path_alias(){
 	fi
 }
 
-create_path_alias	 h		 ~/code/hops/hops
-create_path_alias	 hm		 ~/code/hops/hops-metadata-dal
-create_path_alias	 hmi	 ~/code/hops/hops-metadata-dal-impl-ndb
-create_path_alias	 hmis	 ~/code/hops/hops-metadata-dal-impl-ndb/schema
-create_path_alias	 hw 	 ~/code/hops/hopsworks-cloud
-create_path_alias	 ei 	 ~/code/hops/ec2-init
+create_path_alias	 h		      ~/code/hops/hops
+create_path_alias	 hm		      ~/code/hops/hops-metadata-dal
+create_path_alias	 hmi	      ~/code/hops/hops-metadata-dal-impl-ndb
+create_path_alias	 hmis	      ~/code/hops/hops-metadata-dal-impl-ndb/schema
+create_path_alias	 hw 	      ~/code/hops/hopsworks-cloud
+create_path_alias	 ei 	      ~/code/hops/ec2-init
 
-create_path_alias	 gh		 ~/code/hops/gitlab/hops
-create_path_alias	 ghm     ~/code/hops/gitlab/hops-metadata-dal
-create_path_alias	 ghmi	 ~/code/hops/gitlab/hops-metadata-dal-impl-ndb
-create_path_alias	 ghmis	 ~/code/hops/gitlab/hops-metadata-dal-impl-ndb/schema
+create_path_alias	 gh		      ~/code/hops/gitlab/hops
+create_path_alias	 ghm        ~/code/hops/gitlab/hops-metadata-dal
+create_path_alias	 ghmi	      ~/code/hops/gitlab/hops-metadata-dal-impl-ndb
+create_path_alias	 ghmis      ~/code/hops/gitlab/hops-metadata-dal-impl-ndb/schema
 
-create_path_alias	 hb		 ~/code/hops/hammer-bench
-create_path_alias	 ds		 ~/code/hops/HopsFS-Deployment-Scripts
-create_path_alias	 d		 ~/code/dotfiles
-create_path_alias	 D		 ~/Downloads
-create_path_alias    p       ~/code/papers
-create_path_alias    pt      ~/code/papers/salman-thesis
-create_path_alias    sf      ~/code/papers/hopsfs-small-files/small-files-middleware-2018/
-create_path_alias    rest    ~/code/hops/rondb-rest-api-server
-create_path_alias    rondb    ~/code/hops/rondb
-#create_path_alias    p       ~/code/hops/hops-papers/hopsfs
-#create_path_alias    pt      ~/code/hops/hops-papers/hopsfs/salman-thesis
-#create_path_alias    sf      ~/code/hops/hops-papers/hopsfs/hopsfs-small-files/small-files-middleware-2018/
+create_path_alias	 hb		      ~/code/hops/hammer-bench
+create_path_alias	 ds		      ~/code/hops/HopsFS-Deployment-Scripts
+create_path_alias	 d		      ~/code/dotfiles
+create_path_alias	 D		      ~/Downloads
+create_path_alias  rest       ~/code/hops/rondb-rest-api-server
+create_path_alias  rondb21      ~/code/hops/rondb21
+create_path_alias  rondb22      ~/code/hops/rondb22
+create_path_alias  hmnt       ~/code/hops/hopsfs-go/hopsfs-go-mount
