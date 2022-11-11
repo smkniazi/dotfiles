@@ -76,7 +76,8 @@ hops-build-distro (){
     exe_and_display "cd $base_folder/hops && mvn clean" && \
 
 	display_colored_msg "Building Distribution" && \
-    exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist,native -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
+    #exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist,native -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
+    exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
 	popd &> /dev/null
 }
 
