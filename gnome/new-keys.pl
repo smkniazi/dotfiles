@@ -27,13 +27,13 @@
 #custom	'intellij'	'$HOME/.local/bin/run-or-raise.py $HOME/.local/bin/start-idea jetbrains-idea-ce jetbrains-idea' 	'<Super>i'
 #custom	'code'	'$HOME/.local/bin/run-or-raise.py code code'	'<Super>c'
 #custom	'keepassxc'	'$HOME/.local/bin/run-or-raise.py keepassxc keepassxc'	'<Super><Shift>c'
+#custom	'type-text-u'	'$HOME/.local/bin/type-text $HOME/.file1'	'<Primary><Alt>u'
+#custom	'type-text-p'	'$HOME/.local/bin/type-text $HOME/.file2'	'<Primary><Alt>p'
+#custom	'type-text-s'	'$HOME/.local/bin/type-text $HOME/.file3'	'<Primary><Alt>s'
 
 # MSIC
 custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super><Shift>m'
 custom	'wifi-rset'	'$HOME/.local/bin/wifi-reset '	'<Primary><Alt>w'
-custom	'type-text-u'	'$HOME/.local/bin/type-text $HOME/.file1'	'<Primary><Alt>u'
-custom	'type-text-p'	'$HOME/.local/bin/type-text $HOME/.file2'	'<Primary><Alt>p'
-custom	'type-text-p'	'$HOME/.local/bin/type-text $HOME/.file3'	'<Primary><Alt>s'
 custom	'brightness-inc'	'$HOME/.local/bin/brightness up'	'<Super>s'
 custom	'brightness-dec'	'$HOME/.local/bin/brightness down'	'<Super><Shift>s'
 custom	'brightness-inc'	'xbacklight -inc 5 '	'[]'

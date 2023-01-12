@@ -22,6 +22,10 @@ create_path_alias	 ds		      ~/code/hops/HopsFS-Deployment-Scripts
 create_path_alias	 d		      ~/code/dotfiles
 create_path_alias	 D		      ~/Downloads
 create_path_alias  rest       ~/code/hops/rondb-rest-api-server
-create_path_alias  rondb21      ~/code/hops/rondb21
-create_path_alias  rondb22      ~/code/hops/rondb22
+create_path_alias  rondb21    ~/code/hops/rondb21
+create_path_alias  rondb22    ~/code/hops/rondb22
+create_path_alias  rest21     ~/code/hops/rondb21/storage/ndb/rest-server
+create_path_alias  rest22     ~/code/hops/rondb22/storage/ndb/rest-server
+create_path_alias  build21    ~/code/hops/build21
+create_path_alias  build22    ~/code/hops/build22
 create_path_alias  hmnt       ~/code/hops/hopsfs-go/hopsfs-go-mount

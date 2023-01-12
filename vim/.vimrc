@@ -25,6 +25,8 @@ Plug 'iamcco/markdown-preview.nvim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'liuchengxu/vista.vim'
 Plug 'm-pilia/vim-ccls'
+Plug 'will133/vim-dirdiff'
+
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'powerman/vim-plugin-AnsiEsc'
 "Plug 'dhruvasagar/vim-table-mode'
@@ -128,7 +130,11 @@ set showcmd
 "Status line color
 hi StatusLine   ctermfg=0  ctermbg=YELLOW cterm=bold 
 hi StatusLineNC ctermfg=255  ctermbg=GRAY cterm=bold 
-set statusline=
+set laststatus=2
+"set statusline^=%{coc#status()}
+autocmd User CocStatusChange redrawstatus
+
+
 
 " Need the following two lines for iterm to support italics
 let &t_ZH="\e[3m"
