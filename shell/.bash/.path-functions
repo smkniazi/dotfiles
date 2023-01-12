@@ -28,4 +28,6 @@ create_path_alias  rest21     ~/code/hops/rondb21/storage/ndb/rest-server
 create_path_alias  rest22     ~/code/hops/rondb22/storage/ndb/rest-server
 create_path_alias  build21    ~/code/hops/build21
 create_path_alias  build22    ~/code/hops/build22
+create_path_alias  mtr21      ~/code/hops/build21/mysql-test
+create_path_alias  mtr22      ~/code/hops/build22/mysql-test
 create_path_alias  hmnt       ~/code/hops/hopsfs-go/hopsfs-go-mount
