@@ -132,6 +132,7 @@ hi StatusLine   ctermfg=0  ctermbg=YELLOW cterm=bold
 hi StatusLineNC ctermfg=255  ctermbg=GRAY cterm=bold 
 set laststatus=2
 "set statusline^=%{coc#status()}
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}][TYPE=%Y]%=[%{coc#status()}]%=[POS=%04l,%04v][%p%%][LEN=%L]
 autocmd User CocStatusChange redrawstatus
 
 
@@ -250,10 +251,10 @@ set foldlevel=99
 set mouse=a
 
 "enter normal mode
-imap jj <Esc>
+"imap jj <Esc>
 
-autocmd FileType go,c,cpp,cs,java imap  { {<Space>}<Left><Left>
-autocmd FileType go,c,cpp,cs,java imap  [ [<Space>]<Left><Left>
+"autocmd FileType go,c,cpp,cs,java imap  { {<Space>}<Left><Left>
+"autocmd FileType go,c,cpp,cs,java imap  [ [<Space>]<Left><Left>
 
 " move scree without moving cursor
 "nnoremap <C-e> kzz
