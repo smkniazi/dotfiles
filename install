@@ -26,6 +26,7 @@ stow -t ~ urxvt
 stow -t ~ vim
 stow -t ~ kitty
 stow -t ~ mycli
+stow -t ~ karabiner
 
 #set extentions for urxvt
 mkdir -p ~/.urxvt/ext
