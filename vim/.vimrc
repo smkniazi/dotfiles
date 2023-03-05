@@ -21,7 +21,7 @@ Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 Plug 'rhysd/vim-clang-format'
-Plug 'iamcco/markdown-preview.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'liuchengxu/vista.vim'
 Plug 'm-pilia/vim-ccls'
