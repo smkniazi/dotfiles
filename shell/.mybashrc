@@ -1,3 +1,4 @@
+#!/bin/bash
 source ~/.bash/.prompt
 source ~/.bash/.settings
 source ~/.bash/.functions
@@ -11,5 +12,3 @@ source ~/.bash/.bash-settings
 
 
 source ~/.genericrc
-
-

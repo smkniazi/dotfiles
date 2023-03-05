@@ -13,7 +13,7 @@
         "filetypes": ["go"]
       },
       "ccls": {
-        "command": "ccls",
+        "command": "clangd",
         "filetypes": ["c", "cc", "cpp", "c++", "hpp"],
         "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
         "initializationOptions": {
