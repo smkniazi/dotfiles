@@ -1,11 +1,11 @@
-export PATH=$PATH:~/usr/bin
-export PATH=$PATH:~/usr/bin/ssh
-export PATH=$PATH:~/.local/bin
-export PATH=$PATH:~/usr/bin/maven/bin
-export PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-linux
-export PATH=$PATH:~/usr/bin/jdk/bin
-export PATH=$PATH:~/usr/bin/protobuf/src
-export PATH=$PATH:~/go/bin
+export PATH=~/usr/bin:$PATH
+export PATH=~/usr/bin/ssh:$PATH
+export PATH=~/.local/bin:$PATH
+export PATH=~/usr/bin/maven/bin:$PATH
+export PATH=/usr/local/texlive/2017/bin/x86_64-linux:$PATH
+export PATH=~/usr/bin/jdk/bin:$PATH
+export PATH=~/usr/bin/protobuf/src:$PATH
+export PATH=~/go/bin:$PATH
 
 #export GOROOT=$GOROOT:~/usr/bin/go
 
@@ -21,7 +21,7 @@ export MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
 
 
 #export GOROOT=~/usr/bin/go
-#export PATH=$PATH:$GOROOT/bin
+#export PATH=$GOROOT/bin:$PATH
 #export GOPATH=~/code/gocode
 
 #FZF ag respects the .gitignore

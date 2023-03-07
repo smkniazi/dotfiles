@@ -382,8 +382,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": ["right_command"]
+                                        "key_code": "delete_forward"
                                     }
                                 ],
                                 "type": "basic"
