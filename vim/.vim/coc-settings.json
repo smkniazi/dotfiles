@@ -1,5 +1,6 @@
 //https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt
 {
+  "inlayHint.enable": false,
   "notification.border": true,
   "diagnostic.enable": true,
   "diagnostic.errorSign": "▶",
