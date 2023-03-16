@@ -22,11 +22,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 Plug 'rhysd/vim-clang-format'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'liuchengxu/vista.vim'
 Plug 'm-pilia/vim-ccls'
 Plug 'will133/vim-dirdiff'
 
+"Plug 'octol/vim-cpp-enhanced-highlight'
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'powerman/vim-plugin-AnsiEsc'
 "Plug 'dhruvasagar/vim-table-mode'
@@ -135,7 +135,8 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}][TYPE=%Y]%=[%{coc#status()}]%=[POS=%04l,%04v][%p%%][LEN=%L]
 autocmd User CocStatusChange redrawstatus
 
-
+"SignColumn
+set signcolumn=auto
 
 " Need the following two lines for iterm to support italics
 let &t_ZH="\e[3m"
