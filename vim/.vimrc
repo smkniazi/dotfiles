@@ -101,7 +101,7 @@ highlight   Visual ctermfg=NONE ctermbg=39      cterm=NONE
 highlight   Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE   
 
 " split divider line 
-set fillchars+=vert:\▏
+"set fillchars+=vert:\▏
 highlight VertSplit cterm=NONE
 
 "color column if line length exceeds lenght
@@ -132,7 +132,7 @@ hi StatusLine   ctermfg=0  ctermbg=YELLOW cterm=bold
 hi StatusLineNC ctermfg=255  ctermbg=GRAY cterm=bold 
 set laststatus=2
 "set statusline^=%{coc#status()}
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}][TYPE=%Y]%=[%{coc#status()}]%=[POS=%04l,%04v][%p%%][LEN=%L]
+set statusline=%t%m%r%h%w\ %=[%{coc#status()}]%=[%04l,\ %04v][%p%%][LOC=%L]
 autocmd User CocStatusChange redrawstatus
 
 "SignColumn
