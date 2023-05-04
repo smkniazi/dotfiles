@@ -3,6 +3,7 @@ alias gd="PAGER='diff-so-fancy | less --tabs=4 -RFX' git diff"
 alias gl="PAGER='less -S' git log --color --date=format:'%d-%b-%Y' --pretty=format:'%Cred%h%Creset %Cgreen[%ad] %C(bold blue)%<(12,trunc)%aN%Creset %s %n ' --abbrev-commit --"
 alias gs="git status"
 alias gp="git pull"
+alias tig="tig --after=2020"
 
 #git commit
 gc() {
