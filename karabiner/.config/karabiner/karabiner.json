@@ -28,8 +28,7 @@
                                             "right_command",
                                             "shift"
                                         ],
-                                        "optional": [
-                                        ]
+                                        "optional": []
                                     }
                                 },
                                 "to": [
@@ -47,8 +46,7 @@
                                             "right_command",
                                             "shift"
                                         ],
-                                        "optional": [
-                                        ]
+                                        "optional": []
                                     }
                                 },
                                 "to": [
@@ -66,8 +64,7 @@
                                             "right_command",
                                             "shift"
                                         ],
-                                        "optional": [
-                                        ]
+                                        "optional": []
                                     }
                                 },
                                 "to": [
@@ -85,8 +82,7 @@
                                             "right_command",
                                             "shift"
                                         ],
-                                        "optional": [
-                                        ]
+                                        "optional": []
                                     }
                                 },
                                 "to": [
@@ -103,15 +99,13 @@
                                         "mandatory": [
                                             "right_command"
                                         ],
-                                        "optional": [
-                                        ]
+                                        "optional": []
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "volume_increment",
-                                        "modifiers": [
-                                        ]
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
@@ -122,17 +116,15 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command",
-                                          "right_shift"
+                                            "right_shift"
                                         ],
-                                        "optional": [
-                                        ]
+                                        "optional": []
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "volume_decrement",
-                                        "modifiers": [
-                                        ]
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
@@ -144,15 +136,13 @@
                                         "mandatory": [
                                             "right_command"
                                         ],
-                                        "optional": [
-                                        ]
+                                        "optional": []
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "display_brightness_increment",
-                                        "modifiers": [
-                                        ]
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
@@ -165,15 +155,13 @@
                                             "right_command",
                                             "right_shift"
                                         ],
-                                        "optional": [
-                                        ]
+                                        "optional": []
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "display_brightness_decrement",
-                                        "modifiers": [
-                                        ]
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
@@ -241,7 +229,9 @@
                                             "right_shift",
                                             "right_option"
                                         ],
-                                        "optional":["left_option"]
+                                        "optional": [
+                                            "left_option"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -261,7 +251,9 @@
                                             "right_shift",
                                             "right_option"
                                         ],
-                                        "optional":["left_option"]
+                                        "optional": [
+                                            "left_option"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -281,7 +273,9 @@
                                             "right_shift",
                                             "right_option"
                                         ],
-                                        "optional":["left_option"]
+                                        "optional": [
+                                            "left_option"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -301,7 +295,9 @@
                                             "right_shift",
                                             "right_option"
                                         ],
-                                        "optional":["left_option"]
+                                        "optional": [
+                                            "left_option"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -631,6 +627,48 @@
                         "is_pointing_device": true,
                         "product_id": 640,
                         "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 0,
+                        "vendor_id": 0
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 0,
+                        "vendor_id": 0
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 45088,
+                        "vendor_id": 1133
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
