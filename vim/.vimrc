@@ -406,3 +406,12 @@ nmap <leader>so :Vista finder<CR>
 nmap <leader>sl :Lines<CR>
 
 
+"edit file in xdd
+":%!xxd
+":%!xxd -r
+
+"remove new line char at the endof file
+":set binary
+":set noeol
+":w
+"

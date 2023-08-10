@@ -27,6 +27,10 @@
     "codelenses": {
       "test": true
     },
+  "go.goplsOptions": {
+    "codelenses": {
+      "test": true
+    },
     "experimentalPostfixCompletions": true,
     "semanticTokens": true,
     "linksInHover": false,
@@ -41,5 +45,8 @@
     },
     "usePlaceholders": true,
     "staticcheck": true
-  }
+    },
+    "yaml.schemas": {
+      "kubernetes": "/*.yaml"
+    }
 }
