@@ -1,3 +1,4 @@
+//https://github.com/hanleylee/dotvim/blob/main/coc-settings.json
 {
   "inlayHint.enable": false,
   "notification.border": true,
@@ -6,27 +7,13 @@
   "diagnostic.hintSign": "▷",
   "diagnostic.infoSign": "▷",
   "diagnostic.warningSign": "▷",
-  "languageserver": {
-      "golang": {
-        "command": "gopls",
-        "rootPatterns": ["go.mod"],
-        "filetypes": ["go"]
-      },
-      "ccls": {
-        "command": "clangd",
-        "filetypes": ["c", "cc", "cpp", "c++", "hpp"],
-        "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
-        "initializationOptions": {
-        "cache": {
-          "directory": ".ccls"
-        }
-      }
-  }
- },
-  "go.goplsOptions": {
-    "codelenses": {
-      "test": true
-    },
+
+  // coc-clangd
+  "clangd.enabled": true,
+  "clangd.path": "clangd",
+  "clangd.arguments": [],
+  "clangd.trace.file": "",
+
   "go.goplsOptions": {
     "codelenses": {
       "test": true
@@ -45,8 +32,9 @@
     },
     "usePlaceholders": true,
     "staticcheck": true
-    },
-    "yaml.schemas": {
-      "kubernetes": "/*.yaml"
-    }
+  },
+
+  "yaml.schemas": {
+    "kubernetes": "/*.yaml"
+  }
 }
