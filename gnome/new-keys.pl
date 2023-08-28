@@ -32,23 +32,24 @@
 #custom	'type-text-s'	'$HOME/.local/bin/type-text $HOME/.file3'	'<Primary><Alt>s'
 
 # MSIC
-custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super><Shift>m'
-custom	'wifi-rset'	'$HOME/.local/bin/wifi-reset '	'<Primary><Alt>w'
-custom	'brightness-inc'	'$HOME/.local/bin/brightness up'	'<Super>s'
-custom	'brightness-dec'	'$HOME/.local/bin/brightness down'	'<Super><Shift>s'
-custom	'brightness-inc'	'xbacklight -inc 5 '	'[]'
-custom	'brightness-dec'	'xbacklight -dec 5 '	'[]'
-custom	'firefox2'	'$HOME/.local/bin/x11-backend-launch firefox'	'<Primary><Alt>f'
-custom	'gnome-termianl'	'$HOME/.local/bin/x11-backend-launch kitty'	'<Primary><Alt>t'
+# custom	'mouse-tap-toggle'	'$HOME/.local/bin/mouse-tap-toggle'	'<Super><Shift>m'
+# custom	'wifi-rset'	'$HOME/.local/bin/wifi-reset '	'<Primary><Alt>w'
+# custom	'brightness-inc'	'xbacklight -inc 5 '	'[]'
+# custom	'brightness-dec'	'xbacklight -dec 5 '	'[]'
+# custom	'firefox2'	'$HOME/.local/bin/x11-backend-launch firefox'	'<Primary><Alt>f'
+# custom	'gnome-termianl'	'$HOME/.local/bin/x11-backend-launch kitty'	'<Primary><Alt>t'
+# custom	'open-dropbox-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Downloads'	'<Primary><Alt>d'
+# custom	'open-downloads-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
+# custom	'movet-win-to-left'	'$HOME/.local/bin/resize-window -d l'	'<Primary><Super>h'
+# custom	'movet-win-to-right'	'$HOME/.local/bin/resize-window -d r'	'<Primary><Super>l'
+# custom	'fullscreen'	'$HOME/.local/bin/resize-window -f'	'<Primary><Super>f'
+# custom	'fullscreen2'	'$HOME/.local/bin/resize-window -f'	'<Super><Shift>f'
+# custom	'center'	'$HOME/.local/bin/resize-window -c'	'<Primary><Super>m'
+
+custom	'brightness-inc'	'$HOME/.local/bin/brightness up'	'<Super>b'
+custom	'brightness-dec'	'$HOME/.local/bin/brightness down'	'<Super><Shift>b'
 custom	'lock-screen'	'$HOME/.local/bin/lock-screen'	'<Primary><Super><Alt>l'
-custom	'gvim-temp-buffer'	'gvim-temp-buffer'	'<Primary><Alt>e'
-custom	'open-dropbox-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Downloads'	'<Primary><Alt>d'
-custom	'open-downloads-folder'	'$HOME/.local/bin/x11-backend-launch nautilus /home/salman/Dropbox'	'<Primary><Shift><Alt>d'
-custom	'movet-win-to-left'	'$HOME/.local/bin/resize-window -d l'	'<Primary><Super>h'
-custom	'movet-win-to-right'	'$HOME/.local/bin/resize-window -d r'	'<Primary><Super>l'
-custom	'fullscreen'	'$HOME/.local/bin/resize-window -f'	'<Primary><Super>f'
-custom	'fullscreen2'	'$HOME/.local/bin/resize-window -f'	'<Super><Shift>f'
-custom	'center'	'$HOME/.local/bin/resize-window -c'	'<Primary><Super>m'
+
 # GNOME
 org.gnome.desktop.wm.keybindings	switch-to-workspace-1	['<Super><Shift>1']
 org.gnome.desktop.wm.keybindings	switch-to-workspace-2	['<Super><Shift>2']
@@ -94,12 +95,12 @@ org.gnome.desktop.wm.keybindings	move-to-monitor-right	[]
 org.gnome.desktop.wm.keybindings	move-to-monitor-up	[]
 org.gnome.desktop.wm.keybindings	switch-applications	['<Super>Tab', '<Alt>Tab']
 org.gnome.desktop.wm.keybindings	switch-applications-backward	['<Shift><Super>Tab', '<Shift><Alt>Tab']
-org.gnome.desktop.wm.keybindings	toggle-fullscreen	[]
+org.gnome.desktop.wm.keybindings	toggle-fullscreen	['<Super>m']
 org.gnome.desktop.wm.keybindings	toggle-maximized	[]
 org.gnome.desktop.wm.keybindings	show-desktop	        ['<Super>d']
 org.gnome.desktop.wm.keybindings	cycle-windows-backward	['<Super><Shift>g']
 org.gnome.desktop.wm.keybindings	cycle-windows	        ['<Super>g']
-org.gnome.desktop.wm.keybindings	minimize	        ['<Super>m']
+org.gnome.desktop.wm.keybindings	minimize	        []
 org.gnome.desktop.wm.keybindings	unmaximize	        ['<Super>Down', '<Alt>F5']
 org.gnome.desktop.wm.keybindings	maximize	        []
 org.gnome.desktop.wm.keybindings	panel-main-menu	[]
@@ -111,8 +112,8 @@ org.gnome.shell.keybindings	toggle-overview	[]
 org.gnome.shell.keybindings	focus-active-notification	[]
 org.gnome.shell.keybindings	toggle-message-tray	['<Primary><Alt>m']
 org.gnome.shell.keybindings	toggle-application-view	[]
-org.gnome.settings-daemon.plugins.media-keys	volume-down	        ['<Shift><Super>a']
-org.gnome.settings-daemon.plugins.media-keys	volume-up	          ['<Super>a']
+org.gnome.settings-daemon.plugins.media-keys	volume-down	['<Super><Shift>s']
+org.gnome.settings-daemon.plugins.media-keys	volume-up	['<Super>s']
 org.gnome.mutter.keybindings	toggle-tiled-right	['<Super>Right']
 org.gnome.mutter.keybindings	toggle-tiled-left	['<Super>Left']
 org.gnome.desktop.wm.keybindings	maximize-horizontally	['<Primary><Super>j', '<Super>Down']
