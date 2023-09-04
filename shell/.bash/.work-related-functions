@@ -174,5 +174,5 @@ ndb-mycli(){
 }
 
 b() {
-  time ~/.local/bin/build-rondb
+  ~/.local/bin/build-rondb
 }
