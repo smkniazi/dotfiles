@@ -172,3 +172,7 @@ ndb-mysql(){
 ndb-mycli(){
    ssh -p 2222 -t salman@localhost "/home/salman/.mysql/ndb/scripts/mycli $@"
 }
+
+b() {
+  time ../build_scripts/build_script_debug.sh $@
+}
