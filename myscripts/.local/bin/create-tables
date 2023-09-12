@@ -1,6 +1,11 @@
 #!/bin/bash
-user=hop
-password=hop
+# user=hop
+# password=hop
+# port=3306
+#
+user=root
+password=
+port=13001
 
 if [ "$#" -ne 1 ]; then
   database="hops"
@@ -10,7 +15,22 @@ fi
 
 echo "Using Database $database"
 
-mysql="mysql -u$user -p$password --protocol=TCP "
+
+
+if [ -n "$password" ]; then
+  mysql="mysql -P $port -u$user -p$password --protocol=TCP "
+else
+  mysql="mysql -P $port -u$user --protocol=TCP "
+fi
+
+echo "Creating user"
+eval "$mysql -e 'CREATE USER IF NOT EXISTS \"hop\"@\"localhost\" IDENTIFIED BY \"hop\"'"
+eval "$mysql -e 'CREATE USER IF NOT EXISTS \"hop\"@\"%\" IDENTIFIED BY \"hop\"'"
+eval "$mysql -e 'GRANT ALL ON *.* TO \"hop\"@\"localhost\"'"
+eval "$mysql -e 'GRANT ALL ON *.* TO \"hop\"@\"%\""
+
+user=hop
+password=hop
 
 set -x
 #set -e
@@ -30,4 +50,4 @@ eval "$mysql -e 'DROP LOGFILE GROUP lg_1 ENGINE ndbcluster'"
 
 echo "Applying Schema updates" 
 cd ~/code/hops/hops-metadata-dal-impl-ndb/schema
-./create-tables.sh 127.0.0.1 3306 hop hop $database
+./create-tables.sh 127.0.0.1 $port $user "$password" $database

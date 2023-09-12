@@ -1,11 +1,11 @@
 #!/bin/bash
-alias grey-grep="GREP_COLOR='1;30'    grep --color=always --line-buffered"
-alias red-grep="GREP_COLOR='1;31'     grep --color=always --line-buffered"
-alias green-grep="GREP_COLOR='1;32'   grep --color=always --line-buffered"
-alias yellow-grep="GREP_COLOR='1;33'  grep --color=always --line-buffered"
-alias blue-grep="GREP_COLOR='1;34'    grep --color=always --line-buffered"
-alias magenta-grep="GREP_COLOR='1;35' grep --color=always --line-buffered"
-alias cyan-grep="GREP_COLOR='1;36'    grep --color=always --line-buffered"
+alias grey-grep="GREP_COLORS='1;30'    grep --color=always --line-buffered"
+alias red-grep="GREP_COLORS='1;31'     grep --color=always --line-buffered"
+alias green-grep="GREP_COLORS='1;32'   grep --color=always --line-buffered"
+alias yellow-grep="GREP_COLORS='1;33'  grep --color=always --line-buffered"
+alias blue-grep="GREP_COLORS='1;34'    grep --color=always --line-buffered"
+alias magenta-grep="GREP_COLORS='1;35' grep --color=always --line-buffered"
+alias cyan-grep="GREP_COLORS='1;36'    grep --color=always --line-buffered"
 
 alias less="less -R"
 
