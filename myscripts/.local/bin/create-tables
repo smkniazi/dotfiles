@@ -3,6 +3,9 @@
 # password=hop
 # port=3306
 #
+
+set -x
+
 user=root
 password=
 port=13001
@@ -27,12 +30,11 @@ echo "Creating user"
 eval "$mysql -e 'CREATE USER IF NOT EXISTS \"hop\"@\"localhost\" IDENTIFIED BY \"hop\"'"
 eval "$mysql -e 'CREATE USER IF NOT EXISTS \"hop\"@\"%\" IDENTIFIED BY \"hop\"'"
 eval "$mysql -e 'GRANT ALL ON *.* TO \"hop\"@\"localhost\"'"
-eval "$mysql -e 'GRANT ALL ON *.* TO \"hop\"@\"%\""
+eval "$mysql -e 'GRANT ALL ON *.* TO \"hop\"@\"%\"'"
 
 user=hop
 password=hop
 
-set -x
 #set -e
 
 echo "Dropping Schema" 

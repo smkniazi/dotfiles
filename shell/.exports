@@ -25,5 +25,5 @@ export MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
 #export GOPATH=~/code/gocode
 
 #FZF ag respects the .gitignore
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 

@@ -25,6 +25,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'liuchengxu/vista.vim'
 Plug 'm-pilia/vim-ccls'
 Plug 'will133/vim-dirdiff'
+Plug 'vim-autoformat/vim-autoformat'
 
 "Plug 'octol/vim-cpp-enhanced-highlight'
 "Plug 'NLKNguyen/papercolor-theme'
