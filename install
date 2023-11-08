@@ -28,6 +28,7 @@ stow -t ~ kitty
 stow -t ~ mycli
 stow -t ~ karabiner
 stow -t ~ run-or-raise
+stow -t ~ bat 
 
 #set extentions for urxvt
 mkdir -p ~/.urxvt/ext

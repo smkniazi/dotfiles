@@ -17,6 +17,7 @@
   // bash
   "sh.enable": true,
 
+  // GO lang
   "go.goplsOptions": {
     "codelenses": {
       "test": true
@@ -39,5 +40,23 @@
 
   "yaml.schemas": {
     "kubernetes": "/*.yaml"
+  },
+
+  "python.pythonPath": "/home/salman/code/hops/arrow-dev/arrow/python/mypython",
+
+  // Rust lang
+  "workspace.ignoredFolders": [
+    "$HOME",
+    "$HOME/.cargo/**",
+    "$HOME/.rustup/**"
+  ],
+  "rust-analyzer.enable": true,
+
+  // Java
+  "java.configuration.runtimes": [
+  {
+    "name": "JavaSE-1.8",
+    "path": "/home/salman/usr/bin/jdk"
   }
+  ]
 }

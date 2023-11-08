@@ -49,7 +49,8 @@ eval "$mysql -e 'DROP TABLESPACE ts_1 ENGINE ndbcluster'"
 eval "$mysql -e 'DROP LOGFILE GROUP lg_1 ENGINE ndbcluster'"
 
 
-
 echo "Applying Schema updates" 
 cd ~/code/hops/hops-metadata-dal-impl-ndb/schema
 ./create-tables.sh 127.0.0.1 $port $user "$password" $database
+
+eval "$mysql -e 'ALTER TABLE hops.hdfs_cloud_buckets ENGINE = ndbcluster'"
