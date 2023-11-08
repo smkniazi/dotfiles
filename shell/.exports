@@ -3,7 +3,6 @@ export PATH=~/usr/bin/ssh:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/usr/bin/maven/bin:$PATH
 export PATH=/usr/local/texlive/2017/bin/x86_64-linux:$PATH
-export PATH=~/usr/bin/jdk/bin:$PATH
 export PATH=~/usr/bin/protobuf/src:$PATH
 export PATH=~/go/bin:$PATH
 
@@ -14,6 +13,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/clusterj/
 
 export LIBNDBPATH=$LIBNDBPATH:~/usr/bin/clusterj
 
+export PATH=~/usr/bin/jdk/bin:$PATH
 export JAVA_HOME=~/usr/bin/jdk/
 
 export M2_HOME=~/usr/bin/maven

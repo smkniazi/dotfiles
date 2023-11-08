@@ -1,5 +1,11 @@
 [core]
+
+  #Git quotes any non-ascii character by default. 
+  #There's an option to disable this quoting behaviour.
+  quotepath = false
+
 	editor = vim
+	precomposeunicode = true
     #pager = less -S 
     #pager = diff-so-fancy | less -S --tabs=4 -RFX
 [user]
