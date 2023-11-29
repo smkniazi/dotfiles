@@ -6,9 +6,9 @@
 
 set -x
 
-user=root
-password=
-port=13001
+user=hops
+password=hops
+port=3306
 
 if [ "$#" -ne 1 ]; then
   database="hops"
@@ -26,14 +26,13 @@ else
   mysql="mysql -P $port -u$user --protocol=TCP "
 fi
 
-echo "Creating user"
-eval "$mysql -e 'CREATE USER IF NOT EXISTS \"hop\"@\"localhost\" IDENTIFIED BY \"hop\"'"
-eval "$mysql -e 'CREATE USER IF NOT EXISTS \"hop\"@\"%\" IDENTIFIED BY \"hop\"'"
-eval "$mysql -e 'GRANT ALL ON *.* TO \"hop\"@\"localhost\"'"
-eval "$mysql -e 'GRANT ALL ON *.* TO \"hop\"@\"%\"'"
-
-user=hop
-password=hop
+#echo "Creating user"
+#eval "$mysql -e 'CREATE USER IF NOT EXISTS \"hop\"@\"localhost\" IDENTIFIED BY \"hop\"'"
+#eval "$mysql -e 'CREATE USER IF NOT EXISTS \"hop\"@\"%\" IDENTIFIED BY \"hop\"'"
+#eval "$mysql -e 'GRANT ALL ON *.* TO \"hop\"@\"localhost\"'"
+#eval "$mysql -e 'GRANT ALL ON *.* TO \"hop\"@\"%\"'"
+# user=hop
+# password=hop
 
 #set -e
 

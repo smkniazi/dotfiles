@@ -46,3 +46,6 @@
 #	threads = 3
 #[grep]
 #	threads = 3
+[safe]
+	directory = /arrow
+	directory = /arrow
