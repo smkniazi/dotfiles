@@ -1,7 +1,8 @@
 #!/bin/bash
-
 source ~/.aws/azure
 export GOOGLE_APPLICATION_CREDENTIALS="/home/salman/.aws.work/google-cloud-perm.json"
+export LD_LIBRARY_PATH="$HOME/code/hops/rondb-docker/:$LD_LIBRARY_PATH"
+echo "$LD_LIBRARY_PATH"
 #export CLUSTERJ_LOGGER_FACTORY=io.hops.metadata.ndb.wrapper.HopsLoggerFactory
 
 zenity --question --text "Do you want to start IntelliJ?"

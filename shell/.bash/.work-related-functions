@@ -47,7 +47,7 @@ hops-build-verbose (){
 
 	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/clusterj/ && \
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
 	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources install -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true" && \
 
@@ -85,7 +85,7 @@ hops-build-distro (){
 
 	  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/clusterj/ && \
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
     exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
 	popd &> /dev/null
@@ -107,7 +107,28 @@ mi () {
 mig () {
   export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/clusterj/ && \
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
+    exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
+	popd &> /dev/null
+}
+
+hops-unit-test (){
+	pushd . &> /dev/null && \
+	base_folder="~/code/hops"
+	display_colored_msg "Unit Testing $1" && \
+	exe_and_display "cd $base_folder/hops && mvn -Pndb surefire:test -Dtest=$1 -DfailIfNoTests=false" && \
+	popd &> /dev/null
+}
+
+
+mi () {
+ 	exe_and_display "mvn $@ install -Dmaven.test.skip=true "
+}
+
+mig () {
+  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/
 	exe_and_display "mvn $@ install generate-sources install -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true"
 }
 
