@@ -1,3 +1,6 @@
 [submodule "xkb/xkb-vim-like-custom-keyboard"]
 	path = xkb/xkb-vim-like-custom-keyboard
 	url = https://github.com/smkniazi/xkb-vim-like-custom-keyboard
+[submodule "kitty/.config/kitty/kitty_grab"]
+	path = kitty/.config/kitty/kitty_grab
+	url = https://github.com/yurikhan/kitty_grab.git
