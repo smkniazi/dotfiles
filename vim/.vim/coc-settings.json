@@ -56,7 +56,7 @@
   "java.configuration.runtimes": [
   {
     "name": "JavaSE-1.8",
-    "path": "/home/salman/usr/bin/jdk"
+    "path": "~/usr/bin/jdk"
   }
   ]
 }
