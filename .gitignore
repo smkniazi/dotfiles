@@ -3,6 +3,6 @@ mlterm/.mlterm/vaafont
 mlterm/msg.log
 vim/
 urxvt/.Xresources-themes/.Xresources.font
-fonts
+fonts/*
 myscripts
 karabiner/.config/karabiner/automatic_backups/
