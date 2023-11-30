@@ -21,3 +21,4 @@ create_path_alias  r2         ~/code/hops/rondb2
 create_path_alias  rest       ~/code/hops/rondb/storage/ndb/rest-server
 create_path_alias  rest2      ~/code/hops/rondb2/storage/ndb/rest-server
 create_path_alias  hmnt       ~/code/hops/hopsfs-go/hopsfs-go-mount
+create_path_alias  libhdfs    ~/code/hops/hops/hadoop-hdfs-project/hadoop-hdfs/src/main/native/libhdfs-golang
