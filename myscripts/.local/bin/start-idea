@@ -1,9 +1,13 @@
 #!/bin/bash
 source ~/.aws/azure
+
+#export CLUSTERJ_LOGGER_FACTORY=io.hops.metadata.ndb.wrapper.HopsLoggerFactory
+
 export GOOGLE_APPLICATION_CREDENTIALS="/home/salman/.aws.work/google-cloud-perm.json"
 export LD_LIBRARY_PATH="$HOME/code/hops/rondb-docker/:$LD_LIBRARY_PATH"
-echo "$LD_LIBRARY_PATH"
-#export CLUSTERJ_LOGGER_FACTORY=io.hops.metadata.ndb.wrapper.HopsLoggerFactory
+
+export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs 
 
 zenity --question --text "Do you want to start IntelliJ?"
 if (( "$?" == "0" )) ; then
