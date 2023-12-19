@@ -67,6 +67,7 @@ map <C-p> :FZF<CR>
 
 "coc-vim
 source ~/.cocvimrc
+let g:coc_start_at_startup = v:false
 
 " comment style
 autocmd FileType go,c,cpp,cs,java setlocal commentstring=//\ %s
@@ -339,7 +340,13 @@ nmap <silent> <leader>o :diffoff  <CR>
 nmap <silent> <leader>u :diffupdate <CR>
 
 " leader makes
-map <silent> <leader>m :w<CR>  :!make <CR>
+map <silent> <leader>m :w<CR>  :!clear; make; <CR>
+
+" leader tests
+map <silent> <leader>tc :w<CR>  :GoTestFunc <CR>
+
+" leader cocs
+map <silent> <leader>cs :CocStart <CR>
 
 " format code 
 autocmd FileType c      nnoremap <buffer><silent><leader>f :ClangFormat<CR>

@@ -60,7 +60,7 @@ do
     secondpart="$secondpart $grp \"^\|${!i}\" "
     firstpart="$firstpart${!i}"
 done
-firstpart="$firstpart\" ${!fileIndex}  "
+firstpart="$firstpart\" \"${!fileIndex}\"  "
 command="$firstpart | $secondpart "
 #echo "$command"
 eval $command
