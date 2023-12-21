@@ -1,0 +1,19 @@
+" set leader key
+let mapleader = "\<Space>"
+
+" clipboard
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
+
+noremap <silent> <leader>y "*y 
+set nonumber nolist showtabline=0 foldcolumn=0 laststatus=0
+noremap q :q<CR>
+noremap y "*y:q<CR>
+tnoremap <Esc> <C-\><C-n>:q<CR>
+
+"highlight colo
+highlight   Visual ctermfg=NONE ctermbg=DARKRED      cterm=NONE   
+highlight   Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE   
