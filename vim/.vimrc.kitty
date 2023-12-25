@@ -9,11 +9,23 @@ else
 endif
 
 noremap <silent> <leader>y "*y 
+noremap <silent> <leader>0 G:?\S<CR>$:nohl<Enter>
+
 set nonumber nolist showtabline=0 foldcolumn=0 laststatus=0
 noremap q :q<CR>
+noremap i :q<CR>
+noremap <Esc> :q<CR>
 noremap y "*y:q<CR>
+noremap Y "*y
 tnoremap <Esc> <C-\><C-n>:q<CR>
 
-"highlight colo
+"highlight column
 highlight   Visual ctermfg=NONE ctermbg=DARKRED      cterm=NONE   
-highlight   Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE   
+highlight   Search ctermfg=NONE ctermbg=lightgreen   cterm=NONE   
+
+"au! VimEnter normal G:?\S<CR>:nohl<CR>
+"au! TermOpen normal G:?\S<CR>$:nohl<Enter>
+
+
+
+
