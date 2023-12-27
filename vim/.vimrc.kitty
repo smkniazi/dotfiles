@@ -23,9 +23,5 @@ tnoremap <Esc> <C-\><C-n>:q<CR>
 highlight   Visual ctermfg=NONE ctermbg=DARKRED      cterm=NONE   
 highlight   Search ctermfg=NONE ctermbg=lightgreen   cterm=NONE   
 
-"au! VimEnter normal G:?\S<CR>:nohl<CR>
-"au! TermOpen normal G:?\S<CR>$:nohl<Enter>
-
-
-
-
+set cursorline
+highlight CursorLine cterm=none term=none ctermbg=white ctermfg=NONE
