@@ -19,6 +19,9 @@ noremap y "*y:q<CR>
 noremap Y "*y
 tnoremap <Esc> <C-\><C-n>:q<CR>
 
+" skip new line character 
+noremap $ g_
+
 "highlight column
 highlight   Visual ctermfg=NONE ctermbg=DARKRED      cterm=NONE   
 highlight   Search ctermfg=NONE ctermbg=lightgreen   cterm=NONE   
@@ -28,4 +31,6 @@ highlight CursorLine cterm=none term=none ctermbg=white ctermfg=NONE
 
 noremap <Leader>g G$?\S<Enter>:nohl<Enter>
 
-"autocmd TermOpen * startinsert 
+":set nosmd   " short for 'showmode'
+set noruler
+set cmdheight=0
