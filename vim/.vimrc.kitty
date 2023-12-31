@@ -25,3 +25,7 @@ highlight   Search ctermfg=NONE ctermbg=lightgreen   cterm=NONE
 
 set cursorline
 highlight CursorLine cterm=none term=none ctermbg=white ctermfg=NONE
+
+noremap <Leader>g G$?\S<Enter>:nohl<Enter>
+
+"autocmd TermOpen * startinsert 
