@@ -15,6 +15,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.scrollback = INPUT_LINE_NUMBER + CURSOR_LINE
   local term_buf = vim.api.nvim_create_buf(true, false);
   local term_io = vim.api.nvim_open_term(term_buf, {})
+
   vim.api.nvim_buf_set_keymap(term_buf, 'n', 'q', '<Cmd>q<CR>', { })
   vim.api.nvim_buf_set_keymap(term_buf, 'v', 'q', '<Cmd>q<CR>', { })
 
@@ -27,6 +28,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.api.nvim_buf_set_keymap(term_buf, 'v', '$', 'g_', { })
   vim.api.nvim_buf_set_keymap(term_buf, 'v', 'y', 'y<Cmd>q<CR>', { })
   vim.api.nvim_buf_set_keymap(term_buf, 'v', 'S-Y', 'y', { })
+
   local group = vim.api.nvim_create_augroup('kitty+page', {})
 
   local setCursor = function()
