@@ -19,6 +19,8 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.api.nvim_buf_set_keymap(term_buf, 'n', 'q', '<Cmd>q<CR>', { })
   vim.api.nvim_buf_set_keymap(term_buf, 'v', 'q', '<Cmd>q<CR>', { })
 
+  vim.api.nvim_buf_set_keymap(term_buf, 'n', 'yy', '0vg_y<Cmd>q<CR>', { })
+
   vim.api.nvim_buf_set_keymap(term_buf, 'n', '<ESC>', '<Cmd>q<CR>', { })
   vim.api.nvim_buf_set_keymap(term_buf, 'v', '<ESC>', '<Cmd>q<CR>', { })
 
