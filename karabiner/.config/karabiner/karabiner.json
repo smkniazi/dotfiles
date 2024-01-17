@@ -640,6 +640,7 @@
                         "is_game_pad": false,
                         "is_keyboard": true,
                         "is_pointing_device": false,
+                        "is_built_in_keyboard": false,
                         "product_id": 37904,
                         "vendor_id": 1423
                     },
