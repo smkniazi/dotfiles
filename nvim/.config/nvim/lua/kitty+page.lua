@@ -19,8 +19,6 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.api.nvim_buf_set_keymap(term_buf, 'n', 'q', '<Cmd>q<CR>', { })
   vim.api.nvim_buf_set_keymap(term_buf, 'v', 'q', '<Cmd>q<CR>', { })
 
-  vim.api.nvim_buf_set_keymap(term_buf, 'n', 'yy', '0vg_y<Cmd>q<CR>', { })
-
   vim.api.nvim_buf_set_keymap(term_buf, 'n', '<ESC>', '<Cmd>q<CR>', { })
   vim.api.nvim_buf_set_keymap(term_buf, 'v', '<ESC>', '<Cmd>q<CR>', { })
 
@@ -28,8 +26,11 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.api.nvim_buf_set_keymap(term_buf, 'v', 'i', '<Cmd>q<CR>', { })
 
   vim.api.nvim_buf_set_keymap(term_buf, 'v', '$', 'g_', { })
-  vim.api.nvim_buf_set_keymap(term_buf, 'v', 'y', 'y<Cmd>q<CR>', { })
-  vim.api.nvim_buf_set_keymap(term_buf, 'v', 'S-Y', 'y', { })
+
+  -- vim.api.nvim_buf_set_keymap(term_buf, 'v', 'Y', 'y', { })
+  -- vim.api.nvim_buf_set_keymap(term_buf, 'v', 'y', 'y<Cmd>q<CR>', { })
+  -- vim.api.nvim_buf_set_keymap(term_buf, 'n', 'yy', '0vg_y<Cmd>q<CR>', { })
+  vim.api.nvim_buf_set_keymap(term_buf, 'n', 'yy', '0vg_y', { })
 
   local group = vim.api.nvim_create_augroup('kitty+page', {})
 
