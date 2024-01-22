@@ -154,6 +154,7 @@ EXEC 01;32  # Unix
 .C      35
 .cc     35
 .cpp    35
+.hpp    35
 .cxx    35
 .objc   35
 .sh     35

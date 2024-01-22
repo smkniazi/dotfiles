@@ -26,10 +26,10 @@ Plug 'liuchengxu/vista.vim'
 Plug 'm-pilia/vim-ccls'
 Plug 'will133/vim-dirdiff'
 Plug 'vim-autoformat/vim-autoformat'
+Plug 'powerman/vim-plugin-AnsiEsc'
 
 "Plug 'octol/vim-cpp-enhanced-highlight'
 "Plug 'NLKNguyen/papercolor-theme'
-"Plug 'powerman/vim-plugin-AnsiEsc'
 "Plug 'dhruvasagar/vim-table-mode'
 "Plug 'shime/vim-livedown'
 " Plug 'rust-lang/rust.vim'
@@ -230,6 +230,15 @@ set hlsearch
 
 " Makes search act like search in modern browsers
 set incsearch 
+
+" highlight colors 
+highlight GREEN ctermbg=green  
+highlight YELLOW ctermbg=yellow  
+highlight RED ctermbg=red
+highlight GREY ctermbg=grey
+highlight CYAN ctermbg=cyan
+":call matchadd("MyGroup1", "foo")
+":call clearmatches()
 
 " bash like tab completion for file names
 set wildmode=longest,list,full
