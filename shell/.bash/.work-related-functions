@@ -146,6 +146,8 @@ mig () {
 
 
 mtc () {
+	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
    exe_and_display "mvn test-compile "
 }
 
