@@ -56,8 +56,9 @@
   // Java
   "java.configuration.runtimes": [
   {
-    "name": "JavaSE-1.8",
+    "name": "Java",
     "path": "~/usr/bin/jdk"
   }
-  ]
+  ],
+  "java.jdt.ls.vmargs": "-noverify -Xmx6G -XX:+UseG1GC -XX:+UseStringDeduplication"
 }

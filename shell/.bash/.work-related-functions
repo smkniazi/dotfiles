@@ -38,10 +38,10 @@ hops-build-verbose (){
 	# exe_and_display "cd $base_folder/hops-gpu-management-impl-amd && mvn  $@ install -DskipTests " && \
 
 	display_colored_msg "Building Hops-metadata-dal" && \
-	exe_and_display "cd $base_folder/hops-metadata-dal && mvn  $@ install -DskipTests " && \
+	exe_and_display "cd $base_folder/hops-metadata-dal && mvn  clean install -DskipTests " && \
 
 	display_colored_msg "Building Hops-metadata-dal-impl-ndb" && \
-	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && mvn  $@ install -DskipTests " && \
+	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && mvn  clean install -DskipTests " && \
 
 	display_colored_msg "Building Hops" && \
 
@@ -49,7 +49,7 @@ hops-build-verbose (){
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
-	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources install -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true" && \
+	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources install -DskipTests -Dmaven.javadoc.skip=true" && \
 
 	display_colored_msg "Building Hops Tests" && \
 	exe_and_display "cd $base_folder/hops && mvn test-compile " && \
@@ -64,6 +64,10 @@ hops-build-verbose (){
 
 hops-build (){
 	eval "hops-build-verbose $@| $mvnc"
+}
+
+hops-build-quick (){
+	eval "hops-build-verbose $@ -DskipShade -Danimal.sniffer.skip | $mvnc"
 }
 
 

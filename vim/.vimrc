@@ -58,7 +58,7 @@ let g:go_info_mode='gopls'
 " FZF
 map <C-p> :FZF<CR>
 " let g:fzf_preview_window = ['hidden', 'ctrl-/']
-" let g:fzf_layout = { 'window': { 'width': 0.99, 'height': 0.99 } }
+let g:fzf_layout = { 'window': { 'width': 0.99, 'height': 0.99 } }
 
 " map <C-g> :GFiles<CR>
 
