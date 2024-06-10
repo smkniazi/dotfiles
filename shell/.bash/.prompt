@@ -21,6 +21,9 @@
 #
 #   https://gist.github.com/31967
 
+
+export PROMPT_DIRTRIM=3
+
 # The various escape codes that we can use to color our prompt.
         RED="\[\033[0;31m\]"
      YELLOW="\[\033[1;33m\]"
@@ -101,7 +104,8 @@ function set_bash_prompt () {
 
   # Set the bash prompt variable.
   # w for complete path
-  PS1="${PYTHON_VIRTUALENV}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\W${COLOR_NONE}${BRANCH} ${PROMPT_SYMBOL} "
+  # checkout PROMPT_DIRTRIM
+  PS1="${PYTHON_VIRTUALENV}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${COLOR_NONE}${BRANCH} ${PROMPT_SYMBOL} "
 }
 
 # Tell bash to execute this function just before displaying its prompt.
