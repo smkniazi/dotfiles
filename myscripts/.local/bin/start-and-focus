@@ -10,7 +10,7 @@ elif [[ "$1" == "firefox" ]];  then
   open -a firefox
   osascript -e 'tell application "firefox" to activate' 
 elif [[ "$1" == "chrome" ]];  then
-  open -a firefox
+  open -a '/Applications/Google Chrome.app'
   osascript -e 'tell application "chrome" to activate' 
 elif [[ "$1" == "idea" ]];  then
   open -a /Applications/IntelliJ IDEA CE.app
