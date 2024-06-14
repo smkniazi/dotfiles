@@ -85,3 +85,4 @@ nnoremap <leader>a :action Annotate<cr>
 nnoremap ]e :action GotoNextError<cr>
 nnoremap [e :action GotoPreviousError<cr>
 nnoremap <leader>cs :action Compare.Selected<cr>
+nnoremap <leader>fc :action ReformatCode<cr>
