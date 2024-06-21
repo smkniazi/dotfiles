@@ -22,6 +22,24 @@
                         "manipulators": [
                             {
                                 "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "option"
+                                        ],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "osascript /Users/salman/.local/bin/hide-all-macos-windows"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "t",
                                     "modifiers": {
                                         "mandatory": [
