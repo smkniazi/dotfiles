@@ -235,8 +235,8 @@
       "keyCode" : 4,
       "modifierFlags" : 786432
     },
-    "nextDisplay" : {
-      "keyCode" : 45,
+    "maximize" : {
+      "keyCode" : 3,
       "modifierFlags" : 786432
     },
     "reflowTodo" : {
