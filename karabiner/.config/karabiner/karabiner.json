@@ -134,9 +134,11 @@
                                     "key_code": "0",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "right_command",
+                                            "left_control"
                                         ],
-                                        "optional": []
+                                        "optional": [
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -152,9 +154,11 @@
                                     "key_code": "9",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "right_command",
+                                            "left_control"
                                         ],
-                                        "optional": []
+                                        "optional": [
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -170,9 +174,11 @@
                                     "key_code": "4",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "right_command",
+                                            "left_control"
                                         ],
-                                        "optional": []
+                                        "optional": [
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -188,9 +194,11 @@
                                     "key_code": "3",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "right_command",
+                                            "left_control"
                                         ],
-                                        "optional": []
+                                        "optional": [
+                                        ]
                                     }
                                 },
                                 "to": [

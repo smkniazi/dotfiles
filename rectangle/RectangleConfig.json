@@ -233,10 +233,14 @@
   "shortcuts" : {
     "leftHalf" : {
       "keyCode" : 4,
-      "modifierFlags" : 786432
+      "modifierFlags" : 1310720
     },
     "maximize" : {
       "keyCode" : 3,
+      "modifierFlags" : 1310720
+    },
+    "nextDisplay" : {
+      "keyCode" : 45,
       "modifierFlags" : 786432
     },
     "reflowTodo" : {
@@ -245,7 +249,7 @@
     },
     "rightHalf" : {
       "keyCode" : 37,
-      "modifierFlags" : 786432
+      "modifierFlags" : 1310720
     },
     "toggleTodo" : {
       "keyCode" : 11,
