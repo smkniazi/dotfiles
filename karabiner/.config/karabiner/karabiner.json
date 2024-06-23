@@ -131,7 +131,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "s",
+                                    "key_code": "0",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command"
@@ -149,11 +149,10 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "s",
+                                    "key_code": "9",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift"
+                                            "right_command"
                                         ],
                                         "optional": []
                                     }
@@ -168,7 +167,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "b",
+                                    "key_code": "4",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command"
@@ -186,11 +185,10 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "b",
+                                    "key_code": "3",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command",
-                                            "right_shift"
+                                            "right_command"
                                         ],
                                         "optional": []
                                     }
