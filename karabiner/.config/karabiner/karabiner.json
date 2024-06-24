@@ -131,7 +131,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "0",
+                                    "key_code": "s",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command",
@@ -151,11 +151,12 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "9",
+                                    "key_code": "s",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command",
-                                            "left_control"
+                                            "left_control",
+                                            "shift"
                                         ],
                                         "optional": [
                                         ]
@@ -171,7 +172,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "4",
+                                    "key_code": "b",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command",
@@ -191,11 +192,12 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "3",
+                                    "key_code": "b",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command",
-                                            "left_control"
+                                            "left_control",
+                                            "shift"
                                         ],
                                         "optional": [
                                         ]
