@@ -47,11 +47,12 @@
 # custom	'center'	'$HOME/.local/bin/resize-window -c'	'<Primary><Super>m'
 #custom	'lock-screen'	'$HOME/.local/bin/lock-screen'	'<Primary><Super><Alt>l'
 
-custom	'brightness-inc'	'$HOME/.local/bin/brightness up'	'<Super>b'
-custom	'brightness-dec'	'$HOME/.local/bin/brightness down'	'<Super><Shift>b'
-org.gnome.settings-daemon.plugins.media-keys	volume-down	['<Super><Shift>w']
-org.gnome.settings-daemon.plugins.media-keys	volume-up	['<Super>w']
+custom	'brightness-inc'	'$HOME/.local/bin/brightness up'	['<Primary><Super>b']
+custom	'brightness-dec'	'$HOME/.local/bin/brightness down'	['<Primary><Super><Shift>b']
+org.gnome.settings-daemon.plugins.media-keys	volume-down	['<Primary><Super><Shift>s']
+org.gnome.settings-daemon.plugins.media-keys	volume-up	['<Primary><Super>s']
 org.gnome.desktop.wm.keybindings	close	['<Alt>F4','<Super>q']
+
 
 # GNOME
 #org.gnome.desktop.wm.keybindings	switch-to-workspace-1	['<Super><Shift>1']
