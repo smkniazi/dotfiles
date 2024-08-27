@@ -83,7 +83,7 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "control",
-                                            "option"
+                                            "command"
                                         ],
                                         "optional": []
                                     }

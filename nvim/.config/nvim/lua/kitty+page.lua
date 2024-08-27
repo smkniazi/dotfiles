@@ -14,7 +14,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.showcmd = false
   vim.opt.cursorline= true
   vim.opt.scrollback = INPUT_LINE_NUMBER + CURSOR_LINE
-  vim.cmd('colorscheme vim')
+  -- vim.cmd('colorscheme vim')
 
   local term_buf = vim.api.nvim_create_buf(true, false);
   local term_io = vim.api.nvim_open_term(term_buf, {})
