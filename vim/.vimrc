@@ -1,5 +1,6 @@
 " set leader key
 let mapleader = "\<Space>"
+set clipboard=exclude:.*
 
 "##########################################################
 "################### Plugins ##############################                    
@@ -436,3 +437,8 @@ nmap <leader>sl :Lines<CR>
 ":w
 "
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
+
+" highligh current line and column
+nmap <silent> <Leader>x  :set cursorline! cursorcolumn!<CR>
+hi CursorLine   cterm=NONE ctermbg=lightgray ctermfg=NONE "guibg=lightgrey guifg=white
+hi CursorColumn cterm=NONE ctermbg=lightgray ctermfg=NONE "guibg=lightgrey guifg=white

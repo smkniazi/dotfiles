@@ -115,7 +115,10 @@ FIFO 30;44
 SOCK 30;45
 BLK  30;43
 CHR  30;43
- 
+
+#  
+OTHER_WRITABLE 01;34;47           # Directory that is sticky and other-writable (chmod +t,o+w)
+STICKY_OTHER_WRITABLE 01;34;47    # Directory that is other-writable (o+w) but not sticky
  
 #############################################################################
 ### By file attributes
@@ -331,3 +334,4 @@ EXEC 01;32  # Unix
 #.blg    01;30
 #.toc    01;30
 #.fls    01;30
+

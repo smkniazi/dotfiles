@@ -52,6 +52,20 @@ custom	'brightness-dec'	'$HOME/.local/bin/brightness down'	['<Primary><Super><Sh
 org.gnome.settings-daemon.plugins.media-keys	volume-down	['<Primary><Super><Shift>s']
 org.gnome.settings-daemon.plugins.media-keys	volume-up	['<Primary><Super>s']
 org.gnome.desktop.wm.keybindings	close	['<Alt>F4','<Super>q']
+org.gnome.settings-daemon.plugins.media-keys	previous	['<Primary><Alt><Super>u']
+org.gnome.settings-daemon.plugins.media-keys	play	['<Primary><Alt><Super>i']
+org.gnome.settings-daemon.plugins.media-keys	next	['<Primary><Alt><Super>o']
+
+org.gnome.settings-daemon.plugins.media-keys	email	[]
+org.gnome.settings-daemon.plugins.media-keys	help	[]
+org.gnome.settings-daemon.plugins.media-keys	home	[]
+org.gnome.settings-daemon.plugins.media-keys	next-static	[]
+org.gnome.settings-daemon.plugins.media-keys	playback-forward	[]
+org.gnome.settings-daemon.plugins.media-keys	playback-rewind	[]
+org.gnome.settings-daemon.plugins.media-keys	screen-brightness-down	[]
+org.gnome.settings-daemon.plugins.media-keys	screen-brightness-up	[]
+org.gnome.settings-daemon.plugins.media-keys	www	[]
+
 
 
 # GNOME
