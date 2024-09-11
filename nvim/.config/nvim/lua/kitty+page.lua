@@ -13,6 +13,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.o.cmdheight = 0
   vim.opt.showcmd = false
   vim.opt.cursorline= true
+  vim.o.ignorecase = true
   vim.opt.scrollback = INPUT_LINE_NUMBER + CURSOR_LINE
   -- vim.cmd('colorscheme vim')
 
