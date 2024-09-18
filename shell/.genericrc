@@ -1,5 +1,5 @@
 source ~/.exports
 source ~/.tty_font
 
-tmux-auto-start
+#tmux-auto-start
 
