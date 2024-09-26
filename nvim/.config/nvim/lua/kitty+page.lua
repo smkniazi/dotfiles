@@ -17,11 +17,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.scrollback = INPUT_LINE_NUMBER + CURSOR_LINE
 
   local os_name = vim.loop.os_uname().sysname
-  if os_name == "Linux" then
-     vim.cmd('colorscheme vim')
-  elseif os_name == "Darwin" then
-     --vim.cmd('colorscheme vim')
-  end
+  vim.cmd('colorscheme vim')
 
   local term_buf = vim.api.nvim_create_buf(true, false);
   local term_io = vim.api.nvim_open_term(term_buf, {})
