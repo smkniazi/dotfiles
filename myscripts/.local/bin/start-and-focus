@@ -13,6 +13,7 @@ elif [[ "$1" == "chrome" ]];  then
   open -a '/Applications/Google Chrome.app'
   osascript -e 'tell application "chrome" to activate' 
 elif [[ "$1" == "idea" ]];  then
-  open -a /Applications/IntelliJ IDEA CE.app
-  osascript -e 'tell application "/Applications/IntelliJ IDEA CE.app" to activate' 
+  # open -a /Applications/IntelliJ IDEA CE.app
+  # osascript -e 'tell application "/Applications/IntelliJ IDEA CE.app" to activate' 
+  ${HOME}/.local/bin/start-idea
 fi

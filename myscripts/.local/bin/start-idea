@@ -3,13 +3,19 @@ source ~/.aws/azure
 
 #export CLUSTERJ_LOGGER_FACTORY=io.hops.metadata.ndb.wrapper.HopsLoggerFactory
 
-export GOOGLE_APPLICATION_CREDENTIALS="/home/salman/.aws.work/google-cloud-perm.json"
+export GOOGLE_APPLICATION_CREDENTIALS="${HOME}/.aws.work/google-cloud-perm.json"
 export LD_LIBRARY_PATH="$HOME/code/hops/rondb-docker/:$LD_LIBRARY_PATH"
 
-export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs 
+export PATH=${HOME}/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs 
 
-zenity --question --text "Do you want to start IntelliJ?"
-if (( "$?" == "0" )) ; then
- /home/salman/usr/bin/idea/bin/idea.sh & 
+os=$(uname)
+if [[ $os == "Darwin" ]]; then
+  open -a /Applications/IntelliJ IDEA CE.app
+  osascript -e 'tell application "/Applications/IntelliJ IDEA CE.app" to activate' 
+else
+  zenity --question --text "Do you want to start IntelliJ?"
+  if (( "$?" == "0" )) ; then
+   ${HOME}/usr/bin/idea/bin/idea.sh & 
+  fi
 fi
