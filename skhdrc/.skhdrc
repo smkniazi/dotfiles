@@ -1,0 +1,8 @@
+#skhd --restart-service                                                                                                                                                                                                │
+cmd + shift - f :open -a /Users/salman/.local/bin/start-and-focus --args firefox
+cmd + shift - v :open -a /Users/salman/.local/bin/start-and-focus --args mpv
+cmd + shift - c :open -a /Users/salman/.local/bin/start-and-focus --args chrome
+cmd + shift - i :open -a /Users/salman/.local/bin/start-and-focus --args idea
+cmd + shift - t :open -a /Users/salman/.local/bin/start-and-focus --args kitty
+cmd + ctrl - d  :osascript /Users/salman/.local/bin/hide-all-macos-windows
+cmd -m :open -a "Mission Control"

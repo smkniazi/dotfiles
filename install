@@ -30,6 +30,7 @@ stow -t ~ karabiner
 stow -t ~ run-or-raise
 stow -t ~ bat 
 stow -t ~ nvim 
+stow -t ~ skhdrc 
 
 #set extentions for urxvt
 mkdir -p ~/.urxvt/ext
