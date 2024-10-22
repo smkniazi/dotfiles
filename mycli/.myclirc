@@ -129,3 +129,39 @@ loadfns = "drop function if exists getpathfn; CREATE FUNCTION getpathfn (inode_i
 # example_dsn = mysql://[user[:password]@][host][:port][/dbname]
 test = mysql://hop:hop@localhost/hop_salman
 
+## mysql
+## mysql> fn.sql
+## mysql> select getpathfn(11880274);
+##
+#DELIMITER $$
+#
+#USE hops$$
+#
+#DROP FUNCTION IF EXISTS getpathfn$$
+#
+#CREATE FUNCTION getpathfn (inode_id BIGINT) 
+#RETURNS varchar(8000) 
+#DETERMINISTIC
+#BEGIN 
+#    DECLARE mypid BIGINT;
+#    DECLARE myname VARCHAR(256); 
+#    DECLARE mypath VARCHAR(8000) DEFAULT '';
+#    
+#    -- Get the name and parent ID for the given inode
+#    SELECT name INTO myname FROM hdfs_inodes WHERE id = inode_id;
+#    SELECT parent_id INTO mypid FROM hdfs_inodes WHERE id = inode_id;
+#    
+#    -- Start building the path
+#    SET mypath = myname;
+#    
+#    -- Loop to walk up the directory tree
+#    WHILE mypid != 0 AND myname IS NOT NULL DO
+#        SELECT name INTO myname FROM hdfs_inodes WHERE id = mypid;
+#        SELECT parent_id INTO mypid FROM hdfs_inodes WHERE id = mypid;
+#        SET mypath = CONCAT(myname, '/', mypath);
+#    END WHILE;
+#    
+#    RETURN mypath;
+#END$$
+#
+#DELIMITER ;
