@@ -1,8 +1,8 @@
 #skhd --restart-service
-cmd + shift - f :open -a /Users/salman/.local/bin/start-and-focus --args firefox
-cmd + shift - v :open -a /Users/salman/.local/bin/start-and-focus --args mpv
-cmd + shift - c :open -a /Users/salman/.local/bin/start-and-focus --args chrome
-cmd + shift - i :open -a /Users/salman/.local/bin/start-and-focus --args idea
-cmd + shift - t :open -a /Users/salman/.local/bin/start-and-focus --args kitty
+cmd + shift - f :open -a firefox; osascript -e 'tell application "firefox" to activate' 
+cmd + shift - v :osascript -e 'tell application "/opt/homebrew/bin/mpv" to activate' 
+cmd + shift - c :open -a '/Applications/Google Chrome.app'; osascript -e 'tell application "chrome" to activate'
+cmd + shift - i :${HOME}/.local/bin/start-idea
+cmd + shift - t :open -a kitty; osascript -e 'tell application "kitty" to activate' 
 ctrl + alt - d  :osascript /Users/salman/.local/bin/hide-all-macos-windows
 cmd -m :open -a "Mission Control"
