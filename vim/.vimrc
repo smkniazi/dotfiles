@@ -110,7 +110,7 @@ highlight   Visual ctermfg=NONE ctermbg=39      cterm=NONE
 highlight   Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE   
 
 " split divider line 
-"set fillchars+=vert:\▏
+set fillchars+=vert:⎪
 highlight VertSplit cterm=NONE
 
 "color column if line length exceeds lenght
