@@ -55,4 +55,18 @@ function fo(){
 function n() {
     vim ~/.mynotes.md
 }
-    
+
+function beep() {
+  msg="$1"
+  if [[ -z ${msg} ]]; then
+     msg="Command completed";
+  else
+     msg=$1;
+  fi
+
+  if [ "$(uname)" == "Darwin" ]; then
+     osascript -e "display notification \"${msg}\" with title \"Beep Beep\""
+  else 
+    notify-send "${msg}" 
+  fi
+}

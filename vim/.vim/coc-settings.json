@@ -7,7 +7,7 @@
   "diagnostic.hintSign": "▷",
   "diagnostic.infoSign": "▷",
   "diagnostic.warningSign": "▷",
-  "list.maxPreviewHeight": 40,
+  "list.maxPreviewHeight": 20,
 
   // coc-clangd
   "clangd.enabled": true,

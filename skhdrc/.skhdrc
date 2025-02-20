@@ -4,7 +4,7 @@ cmd + shift - v :osascript -e 'tell application "/opt/homebrew/bin/mpv" to activ
 cmd + shift - c :open -a '/Applications/Google Chrome.app'; osascript -e 'tell application "chrome" to activate'
 cmd + shift - i :${HOME}/.local/bin/start-idea
 cmd + shift - t :open -a kitty; osascript -e 'tell application "kitty" to activate' 
-ctrl + alt - d  :osascript /Users/salman/.local/bin/hide-all-macos-windows
+ctrl + cmd - d  :osascript /Users/salman/.local/bin/hide-all-macos-windows
 cmd + shift - s  :m volume up
 alt + cmd + shift - s  :m volume down 
 cmd + shift - b  :m display down
