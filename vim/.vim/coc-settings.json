@@ -52,6 +52,7 @@
     "$HOME/.rustup/**"
   ],
   "rust-analyzer.enable": true,
+  "rust-analyzer.cargo.features": "all",
 
   // Java
   "java.configuration.runtimes": [
