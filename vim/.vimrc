@@ -383,7 +383,8 @@ nmap <silent> <leader>a :call <SID>ToggleBlame()<CR>
 " Do not fix eol or eoffile
 set nofixeol
 set nofixendofline
-
+set  noeol
+ 
 "##########################################################
 "################### Buffer Mgm  ##########################                    
 "##########################################################
