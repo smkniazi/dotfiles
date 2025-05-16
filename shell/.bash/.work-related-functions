@@ -61,6 +61,14 @@ hops-build-verbose (){
 }
 
 
+build-build-apache-hadoop (){
+	#export PATH=/Users/salman/usr/bin/protocol_buffer_all_versions/protoc25.7/bin:$PATH 
+	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH 
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs
+	mvn clean install generate-sources -DskipTests
+}
+
+
 
 hops-build (){
 	eval "hops-build-verbose $@| $mvnc"

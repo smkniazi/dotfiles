@@ -6,9 +6,14 @@
 
 set -x
 
-user=hops
+#user=hops
+#password=hops
+#port=3306
+
+#ALTER USER 'root'@'localhost' IDENTIFIED BY 'hops'
+user=root
 password=hops
-port=3306
+port=13001
 
 if [ "$#" -ne 1 ]; then
   database="hops"

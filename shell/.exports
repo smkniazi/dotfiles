@@ -13,7 +13,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker
 
 export LIBNDBPATH=$LIBNDBPATH:~/code/hops/rondb-docker
 
-export PATH=~/usr/bin/jdk/bin:$PATH
 export JAVA_HOME=~/usr/bin/jdk/
 
 export M2_HOME=~/usr/bin/maven
