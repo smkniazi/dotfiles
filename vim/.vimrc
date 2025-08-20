@@ -358,6 +358,9 @@ map <silent> <leader>tc :w<CR>  :GoTestFunc <CR>
 " leader cocs
 map <silent> <leader>cs :CocStart <CR>
 
+"not to add newline at EOF
+set nofixeol
+
 " format code 
 autocmd FileType c      nnoremap <buffer><silent><leader>f :ClangFormat<CR>
 autocmd FileType cpp    nnoremap <buffer><silent><leader>f :ClangFormat<CR>

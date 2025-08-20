@@ -45,8 +45,7 @@ hops-build-verbose (){
 
 	display_colored_msg "Building Hops" && \
 
-	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
+	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
 	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources install -DskipTests -DskipShade -Dmaven.javadoc.skip=true" && \
@@ -62,8 +61,7 @@ hops-build-verbose (){
 
 
 build-build-apache-hadoop (){
-	#export PATH=/Users/salman/usr/bin/protocol_buffer_all_versions/protoc25.7/bin:$PATH 
-	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH 
+	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH 
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs
 	mvn clean install generate-sources -DskipTests
 }
@@ -95,8 +93,7 @@ hops-build-distro (){
 	display_colored_msg "Building Distribution" && \
     #exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist,native -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
 
-	  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
+	  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
     exe_and_display "cd $base_folder/hops && mvn install generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
@@ -119,8 +116,7 @@ mi () {
 mig () {
 	pushd . &> /dev/null && \
     base_folder="~/code/hops"
-  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
+  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
     exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
 	popd &> /dev/null
@@ -129,8 +125,7 @@ mig () {
 mg () {
 	pushd . &> /dev/null && \
     base_folder="~/code/hops"
-  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
+  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
     exe_and_display "cd $base_folder/hops && mvn generate-sources -DskipTests" && \
 	popd &> /dev/null
@@ -150,16 +145,14 @@ mi () {
 }
 
 mig () {
-  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
+  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/
 	exe_and_display "mvn $@ install generate-sources install -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true"
 }
 
 
 mtc () {
-	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs && \
+	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
    exe_and_display "mvn test-compile "
 }
 

@@ -10,6 +10,7 @@ set -x
 #password=hops
 #port=3306
 
+#/Users/salman/code/hops/rondb2/build/bin/mysql -uroot -P 13001 --protocol=TCP
 #ALTER USER 'root'@'localhost' IDENTIFIED BY 'hops'
 user=root
 password=hops
