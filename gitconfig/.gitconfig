@@ -38,6 +38,11 @@
 	trustExitCode = true
 [mergetool]
 	trustExitCode = true
+[mergetool "vimdiff3"]
+    cmd = vimdiff \"$LOCAL\"  \"$MERGED\"  \"$REMOTE\"
+    trustExitCode = true
+[alias]
+	mergetool3 = mergetool -t vimdiff3
 #[index]
 #	threads = 3
 #[pack]
