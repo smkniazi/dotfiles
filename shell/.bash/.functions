@@ -52,7 +52,7 @@ function fo(){
 #fi
 
 # for taking notes
-function n() {
+function mynotes() {
     vim ~/.mynotes.md
 }
 

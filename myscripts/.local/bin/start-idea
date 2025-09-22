@@ -6,11 +6,17 @@ source ~/.aws/azure
 export GOOGLE_APPLICATION_CREDENTIALS="${HOME}/.aws.work/google-cloud-perm.json"
 export LD_LIBRARY_PATH="$HOME/code/hops/rondb-docker/:$LD_LIBRARY_PATH"
 
-export PATH=${HOME}/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/:$PATH 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs 
+unset  JAVA_HOME
+export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+export IDEA_JDK="$JAVA_HOME"
+export PATH="${JAVA_HOME}/bin:$PATH"
+export PATH="${HOME}/Users/salman/usr/bin/protocol_buffer_all_versions/protoc_for_hadooop/src:$PATH"
+export test=testing
 
 os=$(uname)
 if [[ $os == "Darwin" ]]; then
+  launchctl setenv JAVA_HOME "$JAVA_HOME"
+  launchctl setenv IDEA_JDK "$IDEA_JDK"
   open -a /Applications/IntelliJ IDEA CE.app
   osascript -e 'tell application "/Applications/IntelliJ IDEA CE.app" to activate' 
 else

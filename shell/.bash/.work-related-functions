@@ -23,19 +23,12 @@ NC='\033[0m' # No Color
 
 mvnc=' grep --line-buffered --color=always "cd ~.*\|===.*\|Downloading\|\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED\|\[WARNING]\|Building.*" | red-grep  "^\|\[ERROR]\|\[WARN]" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED" | green-grep "^\|\[INFO]" | blue-grep "^\|Building.*" | grey-grep "^\|Installing\|Downloading" | red-grep "^\|cd ~.*" | blue-grep "^\|===.*" '
 
-hops-build-verbose (){
+hops-build (){
+  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 #	set -e  # strange maven kill bash when there is a build failure
     base_folder="~/code/hops"
 	pushd . &> /dev/null && \
 	start=`date +%s` && \
-	# display_colored_msg "Building Hops-gpu-management" && \
-    # exe_and_display "cd $base_folder/hops-gpu-management && mvn  $@ install -DskipTests " && \
-
-	# display_colored_msg "Building Hops-gpu-management-impl-nvidia" && \
-    # exe_and_display "cd $base_folder//hops-gpu-management-impl-nvidia && mvn  $@ install -DskipTests " && \
-
-	# display_colored_msg "Building Hops-gpu-management-impl-amd" && \
-	# exe_and_display "cd $base_folder/hops-gpu-management-impl-amd && mvn  $@ install -DskipTests " && \
 
 	display_colored_msg "Building Hops-metadata-dal" && \
 	exe_and_display "cd $base_folder/hops-metadata-dal && mvn  clean install -DskipTests " && \
@@ -45,7 +38,7 @@ hops-build-verbose (){
 
 	display_colored_msg "Building Hops" && \
 
-	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
+	export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
 	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources install -DskipTests -DskipShade -Dmaven.javadoc.skip=true" && \
@@ -59,25 +52,18 @@ hops-build-verbose (){
 	display_colored_msg "[INFO] Building Hops Took: $runtime sec(s)"
 }
 
-
 build-build-apache-hadoop (){
-	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH 
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protocol_buffer_all_versions/protobuf-2.5.0/src/.libs
+  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+ 	export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" 
 	mvn clean install generate-sources -DskipTests
 }
 
-
-
-hops-build (){
-	eval "hops-build-verbose $@| $mvnc"
-}
-
 hops-build-quick (){
-	eval "hops-build-verbose $@ -DskipShade -Danimal.sniffer.skip | $mvnc"
+	eval "hops-build $@ -DskipShade -Danimal.sniffer.skip"
 }
-
 
 hops-build-distro (){
+  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
     base_folder="~/code/hops"
 
@@ -93,7 +79,7 @@ hops-build-distro (){
 	display_colored_msg "Building Distribution" && \
     #exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist,native -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
 
-	  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
+	  export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
     exe_and_display "cd $base_folder/hops && mvn install generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
@@ -114,18 +100,20 @@ mi () {
 }
 
 mig () {
+  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
-    base_folder="~/code/hops"
-  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
+   base_folder="~/code/hops"
+  export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
     exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
 	popd &> /dev/null
 }
 
 mg () {
+  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
-    base_folder="~/code/hops"
-  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
+  base_folder="~/code/hops"
+  export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
     exe_and_display "cd $base_folder/hops && mvn generate-sources -DskipTests" && \
 	popd &> /dev/null
@@ -145,15 +133,26 @@ mi () {
 }
 
 mig () {
-  export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
+  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+  export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/
 	exe_and_display "mvn $@ install generate-sources install -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true"
 }
 
 
 mtc () {
-	export PATH=~/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH && \
+   export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+   export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
    exe_and_display "mvn test-compile "
+}
+
+mt () {
+   export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+   export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
+   if [ -z "$1" ]; then
+     echo "No argument supplied"
+   fi
+   exe_and_display "mvn test -Pndb -Dtest=$1 -Dsurefire.failIfNoSpecifiedTests=false"
 }
 
 s2 () {
@@ -215,4 +214,37 @@ ndb-mycli(){
 
 b() {
   ~/.local/bin/build-rondb
+}
+
+# notify about status of last command 
+n() {
+  local last_status=$?   
+  local message
+
+  if (( $# > 0 )); then
+    message="$*"
+    icon="informational"
+  else
+    local last_command
+    last_command="$(fc -ln -1 | sed -n '1p')"
+
+    local status_text
+    if (( last_status == 0 )); then
+      status_text="✅ Passed. Exit Code: ${last_status}"
+      icon="informational"
+    else
+      status_text="❌ Failed. Exit Code: ${last_status}"
+      icon="critical"
+    fi
+
+    message="${last_command}"
+  fi
+
+  local msg_escaped=${message//\"/\\\"}
+
+  #OSC
+  printf "\x1b]99;i=1:d=0;${msg_escaped}\x1b\\"
+  printf "\x1b]99;i=1:p=body;${status_text}\x1b\\"
+  #afplay /System/Library/Sounds/Glass.aiff & 
+  #osascript -e "display alert \"Notification\" message \"$msg_escaped\" as $icon"
 }
