@@ -243,8 +243,13 @@ n() {
   local msg_escaped=${message//\"/\\\"}
 
   #OSC
-  printf "\x1b]99;i=1:d=0;${msg_escaped}\x1b\\"
-  printf "\x1b]99;i=1:p=body;${status_text}\x1b\\"
+  if [ -n "$TMUX" ]; then
+    printf $'\033Ptmux;\033\033]99;i=1:d=0;'"$msg_escaped"$'\033\033\\\033\\'
+    printf $'\033Ptmux;\033\033]99;i=1:p=body;'"$status_text"$'\033\033\\\033\\'
+  else
+    printf "\x1b]99;i=1:d=0;${msg_escaped}\x1b\\";
+    printf "\x1b]99;i=1:p=body;${status_text}\x1b\\"
+  fi
   #afplay /System/Library/Sounds/Glass.aiff & 
   #osascript -e "display alert \"Notification\" message \"$msg_escaped\" as $icon"
 }
