@@ -24,7 +24,7 @@ NC='\033[0m' # No Color
 mvnc=' grep --line-buffered --color=always "cd ~.*\|===.*\|Downloading\|\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED\|\[WARNING]\|Building.*" | red-grep  "^\|\[ERROR]\|\[WARN]" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED" | green-grep "^\|\[INFO]" | blue-grep "^\|Building.*" | grey-grep "^\|Installing\|Downloading" | red-grep "^\|cd ~.*" | blue-grep "^\|===.*" '
 
 hops-build (){
-  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+  local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 #	set -e  # strange maven kill bash when there is a build failure
     base_folder="~/code/hops"
 	pushd . &> /dev/null && \
@@ -38,8 +38,8 @@ hops-build (){
 
 	display_colored_msg "Building Hops" && \
 
-	export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
+	local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
+  local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
 	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources install -DskipTests -DskipShade -Dmaven.javadoc.skip=true" && \
 
@@ -53,8 +53,8 @@ hops-build (){
 }
 
 build-build-apache-hadoop (){
-  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
- 	export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" 
+  local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+ 	local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" 
 	mvn clean install generate-sources -DskipTests
 }
 
@@ -63,7 +63,7 @@ hops-build-quick (){
 }
 
 hops-build-distro (){
-  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+  local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
     base_folder="~/code/hops"
 
@@ -79,8 +79,8 @@ hops-build-distro (){
 	display_colored_msg "Building Distribution" && \
     #exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist,native -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
 
-	  export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
+	  local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
+    local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
     exe_and_display "cd $base_folder/hops && mvn install generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
 	popd &> /dev/null
@@ -100,21 +100,21 @@ mi () {
 }
 
 mig () {
-  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+  local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
    base_folder="~/code/hops"
-  export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
+  local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
+  local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
     exe_and_display "cd $base_folder/hops && mvn generate-sources package -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true -nsu" && \
 	popd &> /dev/null
 }
 
 mg () {
-  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+  local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
   base_folder="~/code/hops"
-  export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
+  local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
+  local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
     exe_and_display "cd $base_folder/hops && mvn generate-sources -DskipTests" && \
 	popd &> /dev/null
 }
@@ -133,83 +133,40 @@ mi () {
 }
 
 mig () {
-  export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
-  export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/
+  local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+  local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
+  local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/
 	exe_and_display "mvn $@ install generate-sources install -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true"
 }
 
 
 mtc () {
-   export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
-   export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
+   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+   local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
    exe_and_display "mvn test-compile "
 }
 
 mt () {
-   export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
-   export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
+   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+   local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
    if [ -z "$1" ]; then
      echo "No argument supplied"
    fi
    exe_and_display "mvn test -Pndb -Dtest=$1 -Dsurefire.failIfNoSpecifiedTests=false"
 }
 
-s2 () {
-#ssh -A -t nzo@cloud1.sics.se ssh -A -t salman@salman2.sics.se
-	ssh salman@salman2.sics.se
+m () {
+   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+   local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
+   exe_and_display "mvn $@" 
 }
 
-ice () {
-	ssh -p 8209 hdp@ice $@
-}
-
-ice-test () {
-    ssh -p 8209 hdp@ice -t ssh tester@10.0.208.1
-}
-
-c1 () { 
-	ssh nzo@cloud1.sics.se
-}
-
-#if [ -n "$DISPLAY" ]; then
-#   Xaxis=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
-#   if [ "$Xaxis" -gt "2000" ]; then
-#   	   alias mupdf="mupdf -r 400"
-#   fi
-#fi
 
 tmux-pane-color(){
   	tmux select-pane -t:.$1 -P "fg=$2,bg=$3"
   	if [ "$?" -ne "0" ]; then
   		echo "Usage command {pane-number} {fg-color} {bg-color} "
   	fi
-}
-
-ndb-start-vm(){
-    pushd .; cd /tmp
-    VBoxManage startvm centos --type headless
-    echo "Starting VM ..."
-    sleep 15
-    echo "Starting Starting NDB ..."
-    ssh -p 2222 salman@localhost ./start-cluster
-    popd
-}
-
-ndb-stop-vm(){
-    VBoxManage controlvm centos acpipowerbutton
-}
-
-ndb-ssh-vm(){
-    ssh -p 2222 salman@localhost
-}
-
-ndb-mysql(){
-   ssh -p 2222 -t salman@localhost "/home/salman/.mysql/ndb/scripts/mysql $@"
-}
-
-ndb-mycli(){
-   ssh -p 2222 -t salman@localhost "/home/salman/.mysql/ndb/scripts/mycli $@"
 }
 
 b() {
