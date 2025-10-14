@@ -96,6 +96,8 @@ hops-unit-test (){
 
 
 mi () {
+  local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+  local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH"
  	exe_and_display "mvn $@ install -Dmaven.test.skip=true "
 }
 
@@ -125,11 +127,6 @@ hops-unit-test (){
 	display_colored_msg "Unit Testing $1" && \
 	exe_and_display "cd $base_folder/hops && mvn -Pndb surefire:test -Dtest=$1 -DfailIfNoTests=false" && \
 	popd &> /dev/null
-}
-
-
-mi () {
- 	exe_and_display "mvn $@ install -Dmaven.test.skip=true "
 }
 
 mig () {
@@ -188,6 +185,14 @@ set-java24() {
    export PATH="$JAVA_HOME/bin:$PATH"
 }
 
+set-protc2_5() {
+  export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protobuf-2.5/src:$PATH" 
+}
+
+set-protc3_20_3() {
+  export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protobuf-3.20.3/src:$PATH" 
+}
+
 # notify about status of last command 
 n() {
   local last_status=$?   
@@ -200,12 +205,13 @@ n() {
     local last_command
     last_command="$(fc -ln -1 | sed -n '1p')"
 
+    
     local status_text
     if (( last_status == 0 )); then
-      status_text="✅ Passed. Exit Code: ${last_status}"
+      status_text="PWD: ${PWD}\n✅ Passed. Exit Code: ${last_status}"
       icon="informational"
     else
-      status_text="❌ Failed. Exit Code: ${last_status}"
+      status_text="PWD: ${PWD}\n❌ Failed. Exit Code: ${last_status}"
       icon="critical"
     fi
 
