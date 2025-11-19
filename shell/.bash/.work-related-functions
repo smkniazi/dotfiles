@@ -86,6 +86,24 @@ hops-build-distro (){
 	popd &> /dev/null
 }
 
+hops-build-distro-quick (){
+  local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
+	pushd . &> /dev/null && \
+    base_folder="~/code/hops"
+
+	display_colored_msg "Building Hops-metadata-dal" && \
+	exe_and_display "cd $base_folder/hops-metadata-dal && mvn install -DskipTests " && \
+
+	display_colored_msg "Building Hops-metadata-dal-impl-ndb" && \
+	exe_and_display "cd $base_folder/hops-metadata-dal-impl-ndb && mvn clean assembly:assembly -DskipTests " && \
+
+  local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
+  local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
+
+  exe_and_display "cd $base_folder/hops && mvn install generate-sources package -Pdist -DskipTests -Dmaven.javadoc.skip=true -DskipShade -Danimal.sniffer.skip " && \
+	popd &> /dev/null
+}
+
 hops-unit-test (){
 	pushd . &> /dev/null && \
 	base_folder="~/code/hops"
