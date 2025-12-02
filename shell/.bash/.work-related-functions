@@ -41,7 +41,7 @@ hops-build (){
 	local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
-	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources install -DskipTests -DskipShade -Dmaven.javadoc.skip=true" && \
+	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources install -DskipTests -Dmaven.javadoc.skip=true" && \
 
 	display_colored_msg "Building Hops Tests" && \
 	exe_and_display "cd $base_folder/hops && mvn test-compile " && \
