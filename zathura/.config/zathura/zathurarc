@@ -11,4 +11,4 @@ set scroll-page-aware true
 #set default-bg "#FFFFFF"
 set smooth-scroll "true"
 set adjust-open "best-fit"
-
+set recolor-keephue true
