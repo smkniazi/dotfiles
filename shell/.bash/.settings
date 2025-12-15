@@ -17,3 +17,9 @@
 #unset PROMPT_COMMAND
 #export PROMPT_COMMAND="history -n;history -w;history -c;history -r;$PROMPT_COMMAND"
 
+colors() {
+  for i in {0..15}; do
+  printf "\e[48;5;%sm %3s \e[0m" "$i" "$i"
+  (( (i + 1) % 8 == 0 )) && echo
+  done
+}
