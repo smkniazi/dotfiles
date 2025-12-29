@@ -1,3 +1,0 @@
-#ssh -A -t -p 8209 -l hdp ice -L 9999:hadoop4:26800
-ssh -D 8888 -C -q -N -p 8209 hdp@ice
-

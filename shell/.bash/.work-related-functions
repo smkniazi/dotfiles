@@ -26,9 +26,9 @@ mvnc=' grep --line-buffered --color=always "cd ~.*\|===.*\|Downloading\|\[INFO] 
 hops-build (){
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 #	set -e  # strange maven kill bash when there is a build failure
-    base_folder="~/code/hops"
+    local base_folder="~/code/hops"
 	pushd . &> /dev/null && \
-	start=`date +%s` && \
+	local start=`date +%s` && \
 
 	display_colored_msg "Building Hops-metadata-dal" && \
 	exe_and_display "cd $base_folder/hops-metadata-dal && mvn  clean install -DskipTests " && \
@@ -47,8 +47,8 @@ hops-build (){
 	exe_and_display "cd $base_folder/hops && mvn test-compile " && \
 
 	popd &> /dev/null  && \
-	end=`date +%s` && \
-	runtime=$((end-start)) && \
+	local end=`date +%s` && \
+	local runtime=$((end-start)) && \
 	display_colored_msg "[INFO] Building Hops Took: $runtime sec(s)"
 }
 
@@ -65,7 +65,7 @@ hops-build-quick (){
 hops-build-distro (){
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
-    base_folder="~/code/hops"
+    local base_folder="~/code/hops"
 
 	display_colored_msg "Building Hops-metadata-dal" && \
 	exe_and_display "cd $base_folder/hops-metadata-dal && mvn install -DskipTests " && \
@@ -89,7 +89,7 @@ hops-build-distro (){
 hops-build-distro-quick (){
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
-    base_folder="~/code/hops"
+    local base_folder="~/code/hops"
 
 	display_colored_msg "Building Hops-metadata-dal" && \
 	exe_and_display "cd $base_folder/hops-metadata-dal && mvn install -DskipTests " && \
@@ -106,12 +106,11 @@ hops-build-distro-quick (){
 
 hops-unit-test (){
 	pushd . &> /dev/null && \
-	base_folder="~/code/hops"
+	local base_folder="~/code/hops"
 	display_colored_msg "Unit Testing $1" && \
 	exe_and_display "cd $base_folder/hops && mvn -Pndb surefire:test -Dtest=$1 -DfailIfNoTests=false" && \
 	popd &> /dev/null
 }
-
 
 mi () {
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
@@ -122,7 +121,7 @@ mi () {
 mig () {
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
-   base_folder="~/code/hops"
+   local base_folder="~/code/hops"
   local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
   exe_and_display "cd $base_folder/hops && mvn generate-sources install -DskipTests -Dmaven.javadoc.skip=true" && \
@@ -132,28 +131,12 @@ mig () {
 mg () {
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
-  base_folder="~/code/hops"
+  local base_folder="~/code/hops"
   local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
     exe_and_display "cd $base_folder/hops && mvn generate-sources -DskipTests" && \
 	popd &> /dev/null
 }
-
-hops-unit-test (){
-	pushd . &> /dev/null && \
-	base_folder="~/code/hops"
-	display_colored_msg "Unit Testing $1" && \
-	exe_and_display "cd $base_folder/hops && mvn -Pndb surefire:test -Dtest=$1 -DfailIfNoTests=false" && \
-	popd &> /dev/null
-}
-
-mig () {
-  local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
-  local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
-  local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/
-	exe_and_display "mvn $@ install generate-sources install -Pdist -Dtar -DskipTests -Dmaven.javadoc.skip=true"
-}
-
 
 mtc () {
    local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
@@ -176,13 +159,6 @@ m () {
    exe_and_display "mvn $@" 
 }
 
-
-tmux-pane-color(){
-  	tmux select-pane -t:.$1 -P "fg=$2,bg=$3"
-  	if [ "$?" -ne "0" ]; then
-  		echo "Usage command {pane-number} {fg-color} {bg-color} "
-  	fi
-}
 
 b() {
   ~/.local/bin/build-rondb
@@ -213,8 +189,9 @@ set-protc3_20_3() {
 
 # notify about status of last command 
 n() {
-  local last_status=$?   
+  local last_status=$?
   local message
+  local icon
 
   if (( $# > 0 )); then
     message="$*"

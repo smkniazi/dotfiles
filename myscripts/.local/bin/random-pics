@@ -1,3 +1,0 @@
-#!/bin/bash
-
-feh --recursive --randomize --auto-zoom --geometry 1600x1000 $1

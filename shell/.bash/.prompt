@@ -49,7 +49,7 @@ function parse_hg_branch(){
 # Determine the branch/state information for this git repository.
 function set_git_branch() {
   # Get the name of the branch.
-  branch=$(parse_git_branch)
+  local branch=$(parse_git_branch)
   # if not git then maybe mercurial
   if [ "$branch" == "" ]
   then
@@ -86,7 +86,7 @@ function set_bash_prompt () {
 
   local EXIT=$?
 
-  CUR_CMD="$(history | tail -1)"
+  local CUR_CMD="$(history | tail -1)"
 
   #echo "Cur: $CUR_CMD, Old: $OLD_CMD"
   if [ "$CUR_CMD" != "$OLD_CMD" ]; then

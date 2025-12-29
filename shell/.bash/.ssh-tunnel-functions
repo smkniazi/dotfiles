@@ -21,10 +21,10 @@ get-chrome(){
 }
 
 chrome-with-proxy(){
-    browser=""
+    local browser=""
     echo $browser
     get-chrome browser
-    command="$browser https://www.iplocation.net/find-ip-address  --proxy-server=\"socks://localhost:8080\""
+    local command="$browser https://www.iplocation.net/find-ip-address  --proxy-server=\"socks://localhost:8080\""
     echo $command
     eval "$command"
 }

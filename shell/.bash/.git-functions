@@ -10,8 +10,7 @@ gc() {
 	if [ "$#" -ne 0 ]; then
 		git commit -am "$@" 
 	else
-		joke="Auto generated commit msg.  $joke"
-		git commit -am "$joke" 
+		git commit -am "Auto generated commit msg." 
 	fi
 }
 
@@ -22,19 +21,15 @@ gcp (){
 
 
 gb (){
-refs="refs/heads refs/remotes/origin"
-#lines=" | tail -n 50 "
-lines=""
-if [[ -n $1 ]]; then 
+local refs="refs/heads refs/remotes/origin"
+if [[ -n $1 ]]; then
     if [[ "$1" = "all" ]]; then
         refs=""
-        lines=""
-    else 
+    else
         echo "Usage gb [all]"
-        return 
+        return
     fi
 fi
-#command="git for-each-ref  --color=always --sort=committerdate  $refs --format='%(contents:subject)%0a%(color:yellow)%(refname:short)%(color:reset) [%(color:green)%(committerdate:relative)%(color:reset)]%0a'  $lines | tac | less -r -S --quit-if-one-screen"
-command="git for-each-ref  --sort=committerdate  $refs --format='%(contents:subject)%0a%(color:yellow)%(refname:short)%(color:reset) [%(color:green)%(committerdate:relative)%(color:reset)]%0a'  $lines | tac | less -r -S "
-eval $command
+local command="git for-each-ref --sort=committerdate $refs --format='%(contents:subject)%0a%(color:yellow)%(refname:short)%(color:reset) [%(color:green)%(committerdate:relative)%(color:reset)]%0a' | tac | less -r -S"
+eval "$command"
 }

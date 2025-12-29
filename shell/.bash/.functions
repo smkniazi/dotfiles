@@ -57,7 +57,7 @@ function mynotes() {
 }
 
 function beep() {
-  msg="$1"
+  local msg="$1"
   if [[ -z ${msg} ]]; then
      msg="Command completed";
   else

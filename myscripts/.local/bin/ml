@@ -1,2 +1,0 @@
-#!/bin/bash
-mlterm -name=Terminal --title=Terminal -A -k esc -K alt &
