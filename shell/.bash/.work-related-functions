@@ -1,4 +1,16 @@
 #!/bin/bash
+
+# Helper function to display colored messages
+display_colored_msg() {
+  echo -e "${Cyan}$1${NC}"
+}
+
+# Helper function to display and execute a command
+exe_and_display() {
+  echo -e "${Yellow}Executing: $1${NC}"
+  eval "$1"
+}
+
 alias grey-grep="GREP_COLORS='1;30'    grep --color=always --line-buffered"
 alias red-grep="GREP_COLORS='1;31'     grep --color=always --line-buffered"
 alias green-grep="GREP_COLORS='1;32'   grep --color=always --line-buffered"

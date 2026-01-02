@@ -33,7 +33,7 @@
     renameLimit = 10000
 	algorithm = patience
 [branch]
-    autosetuprebase = always
+    autoSetupMerge = always
 [difftool]
 	trustExitCode = true
 [mergetool]
@@ -52,5 +52,4 @@
 #[grep]
 #	threads = 3
 [safe]
-	directory = /arrow
 	directory = /arrow

@@ -10,7 +10,7 @@ unset  JAVA_HOME
 export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 export IDEA_JDK="$JAVA_HOME"
 export PATH="${JAVA_HOME}/bin:$PATH"
-export PATH="${HOME}/Users/salman/usr/bin/protocol_buffer_all_versions/protoc_for_hadooop/src:$PATH"
+export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH"
 export test=testing
 
 os=$(uname)
