@@ -1,6 +1,5 @@
 " set leader key
 let mapleader = "\<Space>"
-set clipboard=exclude:.*
 
 "##########################################################
 "################### Plugins ##############################                    
@@ -48,7 +47,7 @@ call plug#end()
 
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
-  let g:go_metalinter_autosave_enabled = ['vet','revive','errcheck','staticcheck','unused','varcheck']
+let g:go_metalinter_autosave_enabled = ['vet','revive','errcheck','staticcheck','unused']
 "##########################################################
 "################### Plugins' setup #######################                    
 "##########################################################
@@ -113,16 +112,13 @@ highlight   Search ctermfg=NONE ctermbg=lightgreen  cterm=NONE
 set fillchars+=vert:⎪
 highlight VertSplit cterm=NONE
 
-"color column if line length exceeds lenght
+"color column if line length exceeds limit
 autocmd BufEnter * highlight OverLength cterm=none ctermbg=lightred 
 " autocmd  BufEnter * match OverLength /\%101v/
 autocmd BufEnter * if &ft ==# 'c'
       \ || &ft ==# 'cpp'
-      \ || &ft ==# 'cc'
-      \ || &ft ==# 'h'
-      \ || &ft ==# 'hpp'
       \ || &ft ==# 'go'
-      \ || &ft ==# 'sh' 
+      \ || &ft ==# 'sh'
       \ | match OverLength /\%101v/ | endif
 
 "mode indicator
@@ -130,7 +126,7 @@ set showmode
 highlight ModeMsg ctermbg=none ctermfg=DARKRED
 "set noshowmode
 
-" Add a bit extra margin to the left
+" Left margin for fold indicators (values > 0 add space)
 set foldcolumn=0
 
 " show commands in at the bottom of the screen
@@ -147,7 +143,7 @@ autocmd User CocStatusChange redrawstatus
 "SignColumn
 set signcolumn=auto
 
-" Need the following two lines for iterm to support italics
+" Enable italics in terminal (works with kitty, iterm, etc.)
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
@@ -181,7 +177,7 @@ if has('syntax') && !exists('g:syntax_on')
 endif
 
 "delay on escape
-set timeoutlen=1000 ttimeoutlen=0
+"set timeoutlen=1000 ttimeoutlen=0
 
 " show partial lines 
 set display=lastline
@@ -256,7 +252,7 @@ endif
 "set paste
 
 " not to break on words
-set formatoptions=1
+set formatoptions+=1
 set linebreak
 
 " Enable folding
@@ -382,12 +378,6 @@ nmap <silent> <leader>a :call <SID>ToggleBlame()<CR>
 "https://vim.fandom.com/wiki/View_text_file_in_two_columns
 :noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 
-
-" Do not fix eol or eoffile
-set nofixeol
-set nofixendofline
-set  noeol
- 
 "##########################################################
 "################### Buffer Mgm  ##########################                    
 "##########################################################
@@ -425,9 +415,6 @@ set  noeol
 autocmd BufRead *.tex setlocal spell spelllang=en_us
 nmap <silent> <leader>c :set spell!<CR>
 
-" Auto correct mistakes
-iab filesystem file system
-
 let g:vista_default_executive = 'coc'
 let g:vista#renderer#enable_icon = 0
 
@@ -451,3 +438,16 @@ autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.ven
 nmap <silent> <Leader>x  :set cursorline! cursorcolumn!<CR>
 hi CursorLine   cterm=NONE ctermbg=white ctermfg=NONE "guibg=lightgrey guifg=white
 hi CursorColumn cterm=NONE ctermbg=white ctermfg=NONE "guibg=lightgrey guifg=white
+
+" Tell kitty we're in an editor (for conditional keymaps)
+let &t_ti = &t_ti . "\033]1337;SetUserVar=in_editor=MQo\007"
+let &t_te = &t_te . "\033]1337;SetUserVar=in_editor\007"
+
+execute "set <F13>=\<Esc>[57344;6u"
+execute "set <F14>=\<Esc>[57345;6u"
+
+nnoremap <F13> :bnext<CR>
+nnoremap <F14> :bprevious<CR>
+
+set ttimeout
+set ttimeoutlen=50
