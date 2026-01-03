@@ -45,7 +45,6 @@ fi
 # user=hop
 # password=hop
 
-#set -e
 
 echo "Dropping Schema" 
 eval "$mysql -e 'DROP DATABASE IF EXISTS $database'"
@@ -58,6 +57,7 @@ eval "$mysql -e 'ALTER TABLESPACE ts_1 drop datafile \"ts_1_data_file_0.dat\" EN
 eval "$mysql -e 'DROP TABLESPACE ts_1 ENGINE ndbcluster'"
 eval "$mysql -e 'DROP LOGFILE GROUP lg_1 ENGINE ndbcluster'"
 
+set -e
 
 echo "Applying Schema updates" 
 cd ~/code/hops/hops-metadata-dal-impl-ndb/schema
