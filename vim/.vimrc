@@ -440,8 +440,14 @@ hi CursorLine   cterm=NONE ctermbg=white ctermfg=NONE "guibg=lightgrey guifg=whi
 hi CursorColumn cterm=NONE ctermbg=white ctermfg=NONE "guibg=lightgrey guifg=white
 
 " Tell kitty we're in an editor (for conditional keymaps)
-let &t_ti = &t_ti . "\033]1337;SetUserVar=in_editor=MQo\007"
-let &t_te = &t_te . "\033]1337;SetUserVar=in_editor\007"
+if exists('$TMUX')
+  " Use DCS passthrough for tmux
+  let &t_ti = &t_ti . "\033Ptmux;\033\033]1337;SetUserVar=in_editor=MQo\007\033\\"
+  let &t_te = &t_te . "\033Ptmux;\033\033]1337;SetUserVar=in_editor\007\033\\"
+else
+  let &t_ti = &t_ti . "\033]1337;SetUserVar=in_editor=MQo\007"
+  let &t_te = &t_te . "\033]1337;SetUserVar=in_editor\007"
+endif
 
 execute "set <F13>=\<Esc>[57344;6u"
 execute "set <F14>=\<Esc>[57345;6u"

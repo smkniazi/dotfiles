@@ -4,7 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "CapsLock to Hyper/Escape, Fn copy/paste",
+                        "description": "My custom keys",
                         "manipulators": [
                             {
                                 "from": {
@@ -58,7 +58,7 @@
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
-                                        "mandatory": ["right_command", "left_control"],
+                                        "mandatory": ["command", "control"],
                                         "optional": []
                                     }
                                 },
@@ -74,7 +74,7 @@
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
-                                        "mandatory": ["right_command", "left_control", "shift"],
+                                        "mandatory": ["command", "control", "shift"],
                                         "optional": []
                                     }
                                 },
@@ -90,7 +90,7 @@
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": {
-                                        "mandatory": ["right_command", "left_control"],
+                                        "mandatory": ["command", "control"],
                                         "optional": []
                                     }
                                 },
@@ -106,7 +106,7 @@
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": {
-                                        "mandatory": ["right_command", "left_control", "shift"],
+                                        "mandatory": ["command", "control", "shift"],
                                         "optional": []
                                     }
                                 },
