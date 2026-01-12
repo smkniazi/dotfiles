@@ -19,7 +19,7 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
+"Plug 'fatih/vim-go' , { 'do': ':GoInstallBinaries' }
 Plug 'rhysd/vim-clang-format'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'liuchengxu/vista.vim'
@@ -361,6 +361,7 @@ set nofixeol
 autocmd FileType c      nnoremap <buffer><silent><leader>f :ClangFormat<CR>
 autocmd FileType cpp    nnoremap <buffer><silent><leader>f :ClangFormat<CR>
 autocmd FileType proto  nnoremap <buffer><silent><leader>f :ClangFormat<CR>
+autocmd FileType go     nnoremap <buffer><silent><leader>f :call CocAction('format')<CR>
 
 autocmd FileType taglist set norelativenumber
 
@@ -372,7 +373,7 @@ function! s:ToggleBlame()
         Git blame
     endif
 endfunction
-nmap <silent> <leader>a :call <SID>ToggleBlame()<CR>
+" nmap <silent> <leader>a :call <SID>ToggleBlame()<CR>
 
 "synchronized split
 "https://vim.fandom.com/wiki/View_text_file_in_two_columns
