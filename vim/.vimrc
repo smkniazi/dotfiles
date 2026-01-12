@@ -45,9 +45,6 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 
 call plug#end()
 
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-let g:go_metalinter_autosave_enabled = ['vet','revive','errcheck','staticcheck','unused']
 "##########################################################
 "################### Plugins' setup #######################                    
 "##########################################################

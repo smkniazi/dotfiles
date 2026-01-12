@@ -1,5 +1,30 @@
-//https://github.com/hanleylee/dotvim/blob/main/coc-settings.json
 {
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".git/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "codelenses": {
+          "test": true
+        },
+        "experimentalPostfixCompletions": true,
+        "semanticTokens": true,
+        "linksInHover": false,
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": false,
+          "rangeVariableTypes": true
+        },
+        "usePlaceholders": true,
+        "staticcheck": true
+      }
+    }
+  },
   "inlayHint.enable": false,
   "notification.border": true,
   "diagnostic.enable": true,
@@ -8,44 +33,14 @@
   "diagnostic.infoSign": "▷",
   "diagnostic.warningSign": "▷",
   "list.maxPreviewHeight": 20,
-
-  // coc-clangd
   "clangd.enabled": true,
   "clangd.path": "clangd",
   "clangd.arguments": [],
-  "clangd.trace.file": "",
-
-  // bash
   "sh.enable": true,
-
-  // GO lang
-  "go.goplsOptions": {
-    "codelenses": {
-      "test": true
-    },
-    "experimentalPostfixCompletions": true,
-    "semanticTokens": true,
-    "linksInHover": false,
-    "hints": {
-      "assignVariableTypes": true,
-      "compositeLiteralFields": true,
-      "compositeLiteralTypes": true,
-      "constantValues": true,
-      "functionTypeParameters": true,
-      "parameterNames": false,
-      "rangeVariableTypes": true
-    },
-    "usePlaceholders": true,
-    "staticcheck": true
-  },
-
   "yaml.schemas": {
     "kubernetes": "/*.yaml"
   },
-
   "python.pythonPath": "/home/salman/code/hops/arrow-dev/arrow/python/mypython",
-
-  // Rust lang
   "workspace.ignoredFolders": [
     "$HOME",
     "$HOME/.cargo/**",
@@ -53,13 +48,11 @@
   ],
   "rust-analyzer.enable": true,
   "rust-analyzer.cargo.features": "all",
-
-  // Java
   "java.configuration.runtimes": [
-  {
-    "name": "Java",
-    "path": "~/usr/bin/jdk"
-  }
+    {
+      "name": "Java",
+      "path": "~/usr/bin/jdk"
+    }
   ],
   "java.jdt.ls.vmargs": "-noverify -Xmx6G -XX:+UseG1GC -XX:+UseStringDeduplication"
 }
