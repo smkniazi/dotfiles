@@ -15,6 +15,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.cursorline= true
   vim.o.ignorecase = true
   vim.opt.scrollback = INPUT_LINE_NUMBER + CURSOR_LINE
+  vim.opt.virtualedit:append("block")
 
   local os_name = vim.loop.os_uname().sysname
   vim.cmd('colorscheme vim')
