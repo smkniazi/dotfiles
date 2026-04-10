@@ -53,7 +53,7 @@ hops-build (){
 	local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
-	exe_and_display "cd $base_folder/hops && mvn $@ generate-sources install -DskipTests -Dmaven.javadoc.skip=true" && \
+	exe_and_display "cd $base_folder/hops && mvn $* generate-sources install -DskipTests -Dmaven.javadoc.skip=true" && \
 
 	display_colored_msg "Building Hops Tests" && \
 	exe_and_display "cd $base_folder/hops && mvn test-compile " && \
@@ -71,7 +71,7 @@ build-build-apache-hadoop (){
 }
 
 hops-build-quick (){
-	eval "hops-build $@ -DskipShade -Danimal.sniffer.skip"
+	eval "hops-build $* -DskipShade -Danimal.sniffer.skip"
 }
 
 hops-build-distro (){
@@ -127,7 +127,7 @@ hops-unit-test (){
 mi () {
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
   local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH"
- 	exe_and_display "mvn $@ install -Dmaven.test.skip=true "
+ 	exe_and_display "mvn $* install -Dmaven.test.skip=true "
 }
 
 mig () {
@@ -168,7 +168,7 @@ mt () {
 m () {
    local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
    local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
-   exe_and_display "mvn $@" 
+   exe_and_display "mvn $*" 
 }
 
 
