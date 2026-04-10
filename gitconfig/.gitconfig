@@ -53,3 +53,6 @@
 #	threads = 3
 [safe]
 	directory = /arrow
+[checkout]
+	workers = 6
+	thresholdForParallelism = 0
