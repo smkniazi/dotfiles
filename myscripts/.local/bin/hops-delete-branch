@@ -8,7 +8,7 @@ source ~/.bash/.work-related-functions
 	    return 1
     fi
 	pushd . &> /dev/null 
-    base_folder="~/code/hops"
+    base_folder="${HOPS_BASE_DIR:-$HOME/code/hops}"
 
 	start=`date +%s` 
 	display_colored_msg "DELETING BRANCH $1 IN HOPS-METADATA-DAL" 

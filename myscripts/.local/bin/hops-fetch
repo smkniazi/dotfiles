@@ -3,7 +3,7 @@ source ~/.bash/.work-related-functions
 
     set -e
 	pushd . &> /dev/null 
-    base_folder="~/code/hops"
+    base_folder="${HOPS_BASE_DIR:-$HOME/code/hops}"
 
 	display_colored_msg "Hops" 
 	exe_and_display "cd $base_folder/hops && git fetch $@"  

@@ -11,14 +11,16 @@ export JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 export IDEA_JDK="$JAVA_HOME"
 export PATH="${JAVA_HOME}/bin:$PATH"
 export PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH"
-export test=testing
+export HOPSFS_SKIP_GCS_TEST=true
+export HOPSFS_SKIP_AZURE_TEST=true
+
 
 os=$(uname)
 if [[ $os == "Darwin" ]]; then
   launchctl setenv JAVA_HOME "$JAVA_HOME"
   launchctl setenv IDEA_JDK "$IDEA_JDK"
   open -a /Applications/IntelliJ IDEA CE.app
-  osascript -e 'tell application "/Applications/IntelliJ IDEA CE.app" to activate' 
+  osascript -e 'tell application "/Users/salman/Applications/IntelliJ IDEA.app" to activate'
 else
   zenity --question --text "Do you want to start IntelliJ?"
   if (( "$?" == "0" )) ; then

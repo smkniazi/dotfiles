@@ -9,7 +9,7 @@ source ~/.bash/.work-related-functions
     fi
 
 	pushd . &> /dev/null && \
-    base_folder="~/code/hops"
+    base_folder="${HOPS_BASE_DIR:-$HOME/code/hops}"
 
     dst_branch=$1
     src_remote=$2

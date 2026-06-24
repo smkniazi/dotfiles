@@ -27,6 +27,7 @@ stow -t ~ run-or-raise
 stow -t ~ bat 
 stow -t ~ nvim 
 stow -t ~ skhdrc 
+stow -t ~ claude
 
 
 #set mlterm vaafont file

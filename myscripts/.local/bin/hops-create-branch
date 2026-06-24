@@ -7,7 +7,7 @@ set -e
 	    echo "./command {branch} {remote}"
 	    return 1
     fi
-    base_folder="~/code/hops"
+    base_folder="${HOPS_BASE_DIR:-$HOME/code/hops}"
 	pushd . &> /dev/null 
 	start=`date +%s` 
 	display_colored_msg "CREATING BRANCH $1 IN HOPS-METADATA-DAL" 

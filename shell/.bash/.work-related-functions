@@ -31,6 +31,25 @@ Cyan='\033[1;36m'         # Cyan
 White='\033[0;37m'        # White
 NC='\033[0m' # No Color
 
+# Base directory containing the Hops projects (hops, hops-metadata-dal,
+# hops-metadata-dal-impl-ndb). Override per-session with:
+#   export HOPS_BASE_DIR=/path/to/your/hops
+# A directory passed as the first argument to a build function still wins.
+export HOPS_BASE_DIR="${HOPS_BASE_DIR:-$HOME/code/hops}"
+
+# Show the current Hops base dir, or set it for this session when a path is given:
+#   hops-base-dir                 -> prints $HOPS_BASE_DIR
+#   hops-base-dir ~/code/myhops   -> sets it (affects all hops-* build/nav helpers)
+hops-base-dir() {
+  if [ $# -eq 0 ]; then
+    echo "$HOPS_BASE_DIR"
+    return
+  fi
+  export HOPS_BASE_DIR="$1"
+  [ -d "$HOPS_BASE_DIR" ] || display_colored_msg "Warning: '$HOPS_BASE_DIR' does not exist yet"
+  echo "HOPS_BASE_DIR=$HOPS_BASE_DIR"
+}
+
 
 
 mvnc=' grep --line-buffered --color=always "cd ~.*\|===.*\|Downloading\|\[INFO] Building\|\[ERROR].*\|\[WARN].*\| SUCCESS \[.*\| FAILURE \[.*\| SKIPPED\|\[WARNING]\|Building.*" | red-grep  "^\|\[ERROR]\|\[WARN]" | green-grep "^\|SUCCESS" | cyan-grep "^\|SKIPPED" | green-grep "^\|\[INFO]" | blue-grep "^\|Building.*" | grey-grep "^\|Installing\|Downloading" | red-grep "^\|cd ~.*" | blue-grep "^\|===.*" '
@@ -38,7 +57,8 @@ mvnc=' grep --line-buffered --color=always "cd ~.*\|===.*\|Downloading\|\[INFO] 
 hops-build (){
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 #	set -e  # strange maven kill bash when there is a build failure
-    local base_folder="~/code/hops"
+    local base_folder="$HOPS_BASE_DIR"
+    [ -d "$1" ] && { base_folder="$1"; shift; }
 	pushd . &> /dev/null && \
 	local start=`date +%s` && \
 
@@ -56,7 +76,7 @@ hops-build (){
 	exe_and_display "cd $base_folder/hops && mvn $* generate-sources install -DskipTests -Dmaven.javadoc.skip=true" && \
 
 	display_colored_msg "Building Hops Tests" && \
-	exe_and_display "cd $base_folder/hops && mvn test-compile " && \
+	exe_and_display "cd $base_folder/hops && mvn test-compile $* " && \
 
 	popd &> /dev/null  && \
 	local end=`date +%s` && \
@@ -71,13 +91,13 @@ build-build-apache-hadoop (){
 }
 
 hops-build-quick (){
-	eval "hops-build $* -DskipShade -Danimal.sniffer.skip"
+	eval "hops-build $* -DskipShade -Danimal.sniffer.skip -Denforcer.skip=true"
 }
 
 hops-build-distro (){
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
-    local base_folder="~/code/hops"
+    local base_folder="${1:-$HOPS_BASE_DIR}"
 
 	display_colored_msg "Building Hops-metadata-dal" && \
 	exe_and_display "cd $base_folder/hops-metadata-dal && mvn install -DskipTests " && \
@@ -101,7 +121,7 @@ hops-build-distro (){
 hops-build-distro-quick (){
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
-    local base_folder="~/code/hops"
+    local base_folder="${1:-$HOPS_BASE_DIR}"
 
 	display_colored_msg "Building Hops-metadata-dal" && \
 	exe_and_display "cd $base_folder/hops-metadata-dal && mvn install -DskipTests " && \
@@ -118,7 +138,8 @@ hops-build-distro-quick (){
 
 hops-unit-test (){
 	pushd . &> /dev/null && \
-	local base_folder="~/code/hops"
+	local base_folder="$HOPS_BASE_DIR"
+	[ -d "$1" ] && { base_folder="$1"; shift; }
 	display_colored_msg "Unit Testing $1" && \
 	exe_and_display "cd $base_folder/hops && mvn -Pndb surefire:test -Dtest=$1 -DfailIfNoTests=false" && \
 	popd &> /dev/null
@@ -133,7 +154,7 @@ mi () {
 mig () {
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
-   local base_folder="~/code/hops"
+   local base_folder="${1:-$HOPS_BASE_DIR}"
   local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
   exe_and_display "cd $base_folder/hops && mvn generate-sources install -DskipTests -Dmaven.javadoc.skip=true" && \
@@ -143,7 +164,7 @@ mig () {
 mg () {
   local JAVA_HOME="${HOME}/usr/bin/jdk_for_hadoop"
 	pushd . &> /dev/null && \
-  local base_folder="~/code/hops"
+  local base_folder="${1:-$HOPS_BASE_DIR}"
   local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
     exe_and_display "cd $base_folder/hops && mvn generate-sources -DskipTests" && \
@@ -162,7 +183,7 @@ mt () {
    if [ -z "$1" ]; then
      echo "No argument supplied"
    fi
-   exe_and_display "mvn test -Pndb -Dtest=$1 -Dsurefire.failIfNoSpecifiedTests=false"
+   exe_and_display "HOPSFS_SKIP_GCS_TEST=true HOPSFS_SKIP_AZURE_TEST=true mvn test -Pndb -Dtest=$1 -Dsurefire.failIfNoSpecifiedTests=false"
 }
 
 m () {
