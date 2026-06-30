@@ -7,9 +7,6 @@ export PATH=~/go/bin:$PATH
 
 #export GOROOT=$GOROOT:~/usr/bin/go
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/bin/protobuf/src/.libs
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker
-
 export LIBNDBPATH=$LIBNDBPATH:~/code/hops/rondb-docker
 
 export JAVA_HOME=~/usr/bin/jdk/

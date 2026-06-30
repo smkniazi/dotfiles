@@ -114,7 +114,8 @@
     "command": "bash ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "gopls-lsp@claude-plugins-official": true
+    "gopls-lsp@claude-plugins-official": true,
+    "clangd-lsp@claude-plugins-official": true
   },
   "outputStyle": "Explanatory",
   "sandbox": {
@@ -127,7 +128,7 @@
   },
   "feedbackSurveyRate": 0,
   "alwaysThinkingEnabled": true,
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "autoCompactWindow": 1000000,
   "tui": "default",
   "theme": "light-daltonized",

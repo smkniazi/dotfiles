@@ -59,9 +59,34 @@ hops-build (){
 #	set -e  # strange maven kill bash when there is a build failure
     local base_folder="$HOPS_BASE_DIR"
     [ -d "$1" ] && { base_folder="$1"; shift; }
-	pushd . &> /dev/null && \
-	local start=`date +%s` && \
 
+    # Pull a -T thread count out of the args. When present we switch the Hops
+    # build to the race-safe parallel reactor sequence (see test.jenkinsfile
+    # ~L446). Everything else flows through to mvn unchanged via $extra_args.
+    local thread_count=""
+    local extra_args=""
+    local expect_thread=0
+    local do_clean=0
+    local arg
+    for arg in "$@"; do
+      if [ "$expect_thread" -eq 1 ]; then
+        thread_count="$arg"
+        expect_thread=0
+      elif [ "$arg" = "-T" ]; then
+        expect_thread=1                 # value comes as the next token ("-T 4")
+      elif [ "${arg#-T}" != "$arg" ]; then
+        thread_count="${arg#-T}"        # attached form ("-T4", "-T1C")
+      elif [ "$arg" = "clean" ]; then
+        do_clean=1                      # handled explicitly per path, not via $extra_args
+      else
+        extra_args="$extra_args $arg"
+      fi
+    done
+
+	local start=`date +%s`
+	local status
+
+	pushd . &> /dev/null && \
 	display_colored_msg "Building Hops-metadata-dal" && \
 	exe_and_display "cd $base_folder/hops-metadata-dal && mvn  clean install -DskipTests " && \
 
@@ -73,15 +98,36 @@ hops-build (){
 	local PATH="${HOME}/usr/bin/protocol_buffer_all_versions/protoc_for_hadoop/src:$PATH" && \
   local LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/code/hops/rondb-docker/ && \
 
-	exe_and_display "cd $base_folder/hops && mvn $* generate-sources install -DskipTests -Dmaven.javadoc.skip=true" && \
+	if [ -n "$thread_count" ]; then
+	    # Parallel reactor (-T N) races on hadoop-annotations classpath
+	    # resolution for its consumers, so split the build into three steps.
+	    # (1) parallel clean — no inter-module dependencies, race-free.
+	    exe_and_display "cd $base_folder/hops && mvn -T $thread_count clean -Drat.skip=true" && \
+	    # (2) serial install of hadoop-common + its dependency closure. This is
+	    # the racy prefix; running it without -T puts a stable copy of
+	    # hadoop-annotations/hadoop-auth/hadoop-common into the local repo.
+	    exe_and_display "cd $base_folder/hops && mvn -pl hadoop-common-project/hadoop-common -am$extra_args generate-sources install -DskipTests -Dmaven.javadoc.skip=true" && \
+	    # (3) parallel install of the rest. -Dremoteresources.skip skips
+	    # maven-remote-resources-plugin, which isn't thread-safe and races on
+	    # version-range resolution under -T (false null).
+	    exe_and_display "cd $base_folder/hops && mvn -T $thread_count$extra_args generate-sources install -DskipTests -Dmaven.javadoc.skip=true -Dremoteresources.skip=true" && \
 
-	display_colored_msg "Building Hops Tests" && \
-	exe_and_display "cd $base_folder/hops && mvn test-compile $* " && \
+	    display_colored_msg "Building Hops Tests" && \
+	    exe_and_display "cd $base_folder/hops && mvn -T $thread_count test-compile$extra_args "
+	else
+	    local clean_goal=""; [ "$do_clean" -eq 1 ] && clean_goal=" clean"
+	    exe_and_display "cd $base_folder/hops && mvn$clean_goal$extra_args generate-sources install -DskipTests -Dmaven.javadoc.skip=true" && \
 
-	popd &> /dev/null  && \
-	local end=`date +%s` && \
-	local runtime=$((end-start)) && \
-	display_colored_msg "[INFO] Building Hops Took: $runtime sec(s)"
+	    display_colored_msg "Building Hops Tests" && \
+	    exe_and_display "cd $base_folder/hops && mvn test-compile$extra_args "
+	fi
+	status=$?
+
+	popd &> /dev/null
+	local end=`date +%s`
+	local runtime=$((end-start))
+	display_colored_msg "[INFO] Building Hops Took: $((runtime/60))m $((runtime%60))s ($runtime sec(s))"
+	return $status
 }
 
 build-build-apache-hadoop (){
