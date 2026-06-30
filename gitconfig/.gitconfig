@@ -43,14 +43,6 @@
     trustExitCode = true
 [alias]
 	mergetool3 = mergetool -t vimdiff3
-#[index]
-#	threads = 3
-#[pack]
-#	threads = 3
-#[format]
-#	threads = 3
-#[grep]
-#	threads = 3
 [safe]
 	directory = /arrow
 [checkout]
