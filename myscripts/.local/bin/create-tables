@@ -37,6 +37,20 @@ else
   mysql="mysql -P $port -u$user --protocol=TCP "
 fi
 
+echo "Testing MySQL connection"
+for attempt in $(seq 1 30); do
+  if eval "$mysql -e 'SELECT 1'" >/dev/null 2>&1; then
+    echo "MySQL connection succeeded (attempt $attempt)"
+    break
+  fi
+  if [ "$attempt" -eq 15 ]; then
+    echo "Failed to connect to MySQL after 15 attempts" >&2
+    exit 1
+  fi
+  echo "MySQL connection failed (attempt $attempt/15), retrying in 1s..."
+  sleep 1
+done
+
 #echo "Creating user"
 #eval "$mysql -e 'CREATE USER IF NOT EXISTS \"hop\"@\"localhost\" IDENTIFIED BY \"hop\"'"
 #eval "$mysql -e 'CREATE USER IF NOT EXISTS \"hop\"@\"%\" IDENTIFIED BY \"hop\"'"
