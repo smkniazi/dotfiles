@@ -104,7 +104,7 @@ output.header = "#008888 bold"
 output.odd-row = ""
 output.even-row = ""
 
-Token.Prompt = '#0087af bold'
+prompt = "#0087af bold"
 
 
 [favorite_queries]

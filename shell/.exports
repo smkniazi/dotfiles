@@ -9,7 +9,8 @@ export PATH=~/go/bin:$PATH
 
 #export LIBNDBPATH=$LIBNDBPATH:~/code/hops/rondb-docker
 
-export JAVA_HOME=~/usr/bin/jdk/
+# JAVA_HOME is set in ~/.bashrc (Homebrew openjdk, the normal-operation default).
+# Work builds override it with a local JAVA_HOME in ~/.bash/.work-related-functions.
 
 export M2_HOME=~/usr/bin/maven
 export MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
