@@ -19,7 +19,7 @@ os=$(uname)
 if [[ $os == "Darwin" ]]; then
   launchctl setenv JAVA_HOME "$JAVA_HOME"
   launchctl setenv IDEA_JDK "$IDEA_JDK"
-  open -a /Applications/IntelliJ IDEA CE.app
+  open -a "/Applications/IntelliJ IDEA CE.app"
   osascript -e 'tell application "/Users/salman/Applications/IntelliJ IDEA.app" to activate'
 else
   zenity --question --text "Do you want to start IntelliJ?"
