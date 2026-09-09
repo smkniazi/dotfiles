@@ -43,11 +43,11 @@ for attempt in $(seq 1 30); do
     echo "MySQL connection succeeded (attempt $attempt)"
     break
   fi
-  if [ "$attempt" -eq 15 ]; then
+  if [ "$attempt" -eq 30 ]; then
     echo "Failed to connect to MySQL after 15 attempts" >&2
     exit 1
   fi
-  echo "MySQL connection failed (attempt $attempt/15), retrying in 1s..."
+  echo "MySQL connection failed (attempt $attempt/30), retrying in 1s..."
   sleep 1
 done
 

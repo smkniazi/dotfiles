@@ -31,3 +31,4 @@ create_path_alias  rest2      ~/code/hops/rondb2/storage/ndb/rest-server2/server
 create_path_alias  rd         ~/code/hops/rondb-docker
 create_hops_nav    hmnt       hopsfs-go/hopsfs-go-mount
 create_hops_nav    libhdfs    hops/hadoop-hdfs-project/hadoop-hdfs/src/main/native/libhdfs-golang
+create_path_alias  hgc        ~/code/hops/hopsfs-go/hopsfs-go-client
