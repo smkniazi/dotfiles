@@ -109,7 +109,7 @@
       "/tmp"
     ]
   },
-  "model": "claude-fable-5-1[1m]",
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
@@ -130,6 +130,11 @@
   "feedbackSurveyRate": 0,
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
   "autoCompactWindow": 1000000,
   "tui": "default",
   "theme": "light-daltonized",
