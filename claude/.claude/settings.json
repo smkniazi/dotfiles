@@ -116,7 +116,16 @@
   },
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
-    "clangd-lsp@claude-plugins-official": true
+    "clangd-lsp@claude-plugins-official": true,
+    "codex@openai-codex": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
   },
   "outputStyle": "Explanatory",
   "sandbox": {
@@ -138,5 +147,38 @@
   "autoCompactWindow": 1000000,
   "tui": "default",
   "theme": "light-daltonized",
-  "preferredNotifChannel": "kitty"
+  "preferredNotifChannel": "kitty",
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(terraform apply:*) in terraform/backend/* — Protected-Scope IaC Apply for eks/evroc/gke/ovh/proxmox backends",
+      "Bash(terraform destroy:*) in terraform/external-vm and terraform/backend/* — Irreversible Deletion / Protected-Scope IaC Apply"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Cloud provider(s)**: None configured — repo contains Terraform backends for eks, evroc, gke, ovh, and proxmox, but these are config-derived only and not corroborated by usage evidence, so none are adopted as trusted deploy targets",
+      "**Repository visibility**: private (smkniazi/workspaces, verified via gh)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: None configured",
+      "**Default / protected branches**: main (default); no branch protection rules or rulesets listed for smkniazi/workspaces",
+      "**CI/CD deploy targets**: None configured",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine with open internet",
+      "**Source control**: smkniazi/workspaces (origin, private) and logicalclocks/workspaces (upstream) — no additional orgs configured",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: terraform/.env.template, terraform/backend/proxmox/credentials.tf, terraform/backend/*/terraform.tfvars.example files, rondb/sql/rpl_channel_credentials.{cc,h}, rondb/unittest/gunit/rpl_channel_credentials-t.cc, hopsworks-api/python/hopsworks_common/secret.py, rondb/man/ndb_secretsfile_reader.1, rondb/mysql-test keyring/secret test fixtures — share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries prod or production as a whole word or name segment — includes terraform/backend/evroc/prod.tfvars.example and rondb/build_scripts/build_script_prod.sh",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources across terraform/backend/{eks,evroc,gke,ovh,proxmox} and terraform/modules/{k8s,okd}; anything whose name or tag carries prod or production as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development",
+      "**Trusted repo**: /Users/salman/code/hops/workspaces/RONDB-1153-26.02.13-release (origin: smkniazi/workspaces, private; upstream: logicalclocks/workspaces) — confidential material is fine here, but secrets and personal/regulated data are never cleared by visibility alone",
+      "**Org-specific CLIs**: None configured"
+    ]
+  }
 }
